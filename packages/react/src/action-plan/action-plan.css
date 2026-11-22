@@ -1,0 +1,39 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .il-plan { display: flex; flex-direction: column; gap: var(--il-space-150); }
+  .il-plan-title { margin: 0; font: var(--il-font-heading-xsmall); }
+  .il-plan-steps { margin: 0; padding: 0; list-style: none; }
+  .il-plan-step { position: relative; display: flex; gap: var(--il-space-150); padding-bottom: var(--il-space-200); }
+  .il-plan-step:last-child { padding-bottom: 0; }
+  .il-plan-step:not(:last-child)::before {
+    position: absolute;
+    top: var(--il-space-250);
+    bottom: 0;
+    left: calc(var(--il-space-100) - 1px);
+    width: 2px;
+    background: var(--il-border);
+    content: '';
+  }
+  .il-plan-step[data-status='done']:not(:last-child)::before { background: var(--il-border-brand); }
+  .il-plan-dot {
+    position: relative;
+    display: inline-grid;
+    flex: none;
+    place-items: center;
+    width: var(--il-space-200);
+    height: var(--il-space-200);
+    margin-top: var(--il-space-025);
+    border: 2px solid var(--il-border-bold);
+    border-radius: var(--il-radius-full);
+    background: var(--il-elevation-surface-current, var(--il-surface));
+    color: var(--il-icon-inverse);
+  }
+  .il-plan-step[data-status='done'] .il-plan-dot { border-color: var(--il-background-brand-bold); background: var(--il-background-brand-bold); }
+  .il-plan-step[data-status='current'] .il-plan-dot { border-color: var(--il-border-brand); box-shadow: inset 0 0 0 3px var(--il-elevation-surface-current, var(--il-surface)); background: var(--il-background-brand-bold); }
+  .il-plan-step[data-status='failed'] .il-plan-dot { border-color: var(--il-border-danger); background: var(--il-background-danger-bold); }
+  .il-plan-text { display: flex; flex-direction: column; gap: var(--il-space-025); min-width: 0; }
+  .il-plan-step-title { font: var(--il-font-body); font-weight: var(--il-font-weight-medium); }
+  .il-plan-step[data-status='upcoming'] .il-plan-step-title { color: var(--il-text-subtle); font-weight: var(--il-font-weight-regular); }
+  .il-plan-detail { color: var(--il-text-subtle); font: var(--il-font-body-small); }
+  .il-plan-actions { display: flex; gap: var(--il-space-100); }
+}
