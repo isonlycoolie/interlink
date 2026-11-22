@@ -1,0 +1,75 @@
+---
+title: Color
+description: Color that carries meaning, holds up in every theme and never gets in the way of the work.
+---
+
+Interlink color is built for long working sessions: calm neutrals for most of the screen, and saturated color
+saved for actions, status and moments that need attention. Every color in a product comes from a design token, so
+light, dark and increased-contrast themes stay correct without extra work.
+
+## Color anatomy
+
+### Saturated colors
+
+Ten hues give status and emphasis their meaning. Each ramp runs from a soft tint to a deep shade, tuned so the
+steps used for text and icons meet contrast on Interlink surfaces.
+
+<PaletteRamps ramps="Brand,Blue,Teal,Green,Lime,Yellow,Orange,Red,Magenta,Purple" />
+
+### Neutral colors
+
+Neutrals do most of the work: surfaces, text, borders and quiet controls. Light and dark themes each have their own
+neutral ramp so contrast feels equal in both.
+
+<PaletteRamps ramps="Neutral,DarkNeutral" />
+
+### Alpha colors
+
+Translucent neutrals sit on any surface and keep their relationship to it, which is why hover and pressed
+backgrounds use them.
+
+<PaletteRamps ramps="NeutralA,DarkNeutralA" />
+
+## Applying color with design tokens
+
+Never use a palette value directly. Tokens name the job a color does (`color.text.subtle`,
+`color.background.danger.bold`) and resolve to the right palette step for the active theme.
+
+## Color roles
+
+Each role has a fixed meaning across the whole system. Choose by what the color says, not how it looks.
+
+<ColorRoles />
+
+<Guideline id="color.semantic-roles" />
+
+## Emphasis levels
+
+Roles come in emphasis steps from subtlest to boldest. Use subtle steps for large areas and bold steps for small,
+important elements such as primary buttons.
+
+<EmphasisLadder role="brand" />
+
+### Use inverse tokens on bold backgrounds
+
+Text and icons on bold backgrounds use the inverse tokens. Interlink's `Text` and `Heading` pick them for you when
+they sit inside a `Box` with a bold background.
+
+<InverseOnBold />
+
+## Interaction states
+
+Interactive backgrounds have hovered and pressed tokens. Layer them on top of the current state instead of
+inventing new colors, and keep selected and focused states visually distinct from each other.
+
+<InteractionStates />
+
+## Accessibility in color
+
+Body text meets a contrast ratio of at least 4.5:1, and large text, icons and focus rings at least 3:1, in every
+theme. Never rely on color alone: pair status color with an icon, a label or both.
+
+## Designing in dark mode
+
+Dark mode is a theme, not an inversion. Surfaces get lighter as they rise, shadows soften, and saturated colors
+shift toward lighter steps to keep contrast. Using tokens is all it takes to support it.
