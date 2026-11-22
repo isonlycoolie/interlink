@@ -1,0 +1,12 @@
+{
+  "color.background.accent.lime": {"subtle":"Lime300","subtle.hovered":"Lime200","subtle.pressed":"Lime100","bolder":"Lime900","bolder.hovered":"Lime1000","bolder.pressed":"#233013"},
+  "color.background.accent.red": {"subtle":"#fbb7ae","subtle.hovered":"Red200","subtle.pressed":"Red100","bolder":"Red900","bolder.hovered":"Red1000","bolder.pressed":"#49120C"},
+  "color.background.accent.orange": {"subtle":"Orange300","subtle.hovered":"Orange200","subtle.pressed":"Orange100","bolder":"Orange900","bolder.hovered":"Orange1000","bolder.pressed":"#3E2108"},
+  "color.background.accent.yellow": {"subtle.hovered":"Yellow200","subtle.pressed":"Yellow100","bolder":"Yellow900","bolder.hovered":"Yellow1000","bolder.pressed":"#342800"},
+  "color.background.accent.green": {"subtle":"Green300","subtle.hovered":"Green200","subtle.pressed":"Green100","bolder":"Green900","bolder.hovered":"Green1000","bolder.pressed":"#0F3324"},
+  "color.background.accent.teal": {"subtle":"Teal300","subtle.hovered":"Teal200","subtle.pressed":"Teal100","bolder":"Teal900","bolder.hovered":"Teal1000","bolder.pressed":"#103034"},
+  "color.background.accent.blue": {"subtle":"Blue300","subtle.hovered":"Blue200","subtle.pressed":"Blue100","bolder":"Blue900","bolder.hovered":"Blue1000","bolder.pressed":"#022353"},
+  "color.background.accent.purple": {"subtle":"#c3b9fa","subtle.hovered":"Purple200","subtle.pressed":"Purple100","bolder":"Purple900","bolder.hovered":"Purple1000","bolder.pressed":"#211A47"},
+  "color.background.accent.magenta": {"subtle":"#f2a6d4","subtle.hovered":"Magenta200","subtle.pressed":"Magenta100","bolder":"Magenta900","bolder.hovered":"Magenta1000","bolder.pressed":"#37172A"},
+  "color.background.accent.gray": {"subtle":"Neutral400","subtle.hovered":"Neutral300","subtle.pressed":"Neutral200","bolder":"Neutral800","bolder.hovered":"Neutral900","bolder.pressed":"Neutral1000"}
+}

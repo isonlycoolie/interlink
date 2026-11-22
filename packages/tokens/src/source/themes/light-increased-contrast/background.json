@@ -1,0 +1,10 @@
+{
+  "color.background.draghandle": {".":"Brand900"},
+  "color.background.selected": {"bold":"Brand900","bold.hovered":"Brand1000","bold.pressed":"#022353"},
+  "color.background.brand": {"bold":"Brand900","bold.hovered":"Brand1000","bold.pressed":"#022353"},
+  "color.background.danger": {"bold":"Red900","bold.hovered":"Red1000","bold.pressed":"#49120C"},
+  "color.background.warning": {"bold":"Yellow900","bold.hovered":"Yellow1000","bold.pressed":"#342800"},
+  "color.background.success": {"bold":"Green900","bold.hovered":"Green1000","bold.pressed":"#0F3324"},
+  "color.background.discovery": {"bold":"Purple900","bold.hovered":"Purple1000","bold.pressed":"#211A47"},
+  "color.background.information": {"bold":"Blue900","bold.hovered":"Blue1000","bold.pressed":"#022353"}
+}
