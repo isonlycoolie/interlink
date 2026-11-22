@@ -1,0 +1,54 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.base {
+  .il-pressable {
+    box-sizing: border-box;
+    appearance: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    text-align: inherit;
+    cursor: pointer;
+  }
+  .il-pressable:disabled {
+    cursor: not-allowed;
+  }
+  .il-anchor {
+    position: relative;
+    box-sizing: border-box;
+    color: inherit;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-color: currentColor;
+  }
+
+  .il-focusable:focus:not(:focus-visible) {
+    outline: none;
+  }
+  .il-focusable:focus-visible {
+    outline: var(--il-border-width-focused) solid var(--il-border-focused);
+    outline-offset: var(--il-border-width-focused);
+  }
+  .il-focusable-inset:focus-visible {
+    outline-offset: calc(0px - var(--il-border-width-focused));
+  }
+  @media (forced-colors: active) {
+    .il-focusable:focus-visible {
+      outline: 1px solid;
+    }
+  }
+
+  .il-visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+  }
+}
