@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 const PATHS = [
   { Art: CreateProject, title: 'Design', text: 'Color, type, spacing and the rules behind every component.', href: '/foundations', tone: 'purple' },
-  { Art: LearnBasics, title: 'Develop', text: 'Install the packages and build with 60 accessible React components.', href: '/components', tone: 'blue' },
+  { Art: LearnBasics, title: 'Develop', text: 'Install the packages and build with 59 accessible React components.', href: '/components', tone: 'blue' },
   { Art: AssistantChat, title: 'With AI', text: 'Agent components, and guidance an AI can read and run.', href: '/components/chat', tone: 'saffron' },
   { Art: Writing, title: 'Content', text: 'Illustrations, sample people and the words we use.', href: '/foundations/illustrations', tone: 'lime' },
 ];
