@@ -3,7 +3,41 @@ title: Design tokens
 description: Named design decisions for color, space, type, elevation, shape and motion.
 ---
 
+Tokens are the single source of every visual value in Interlink. A token's name says what it is for, and its value
+follows the active theme, so one component works in light, dark and increased-contrast themes without changes.
+
 ## Using tokens
 
-Tokens carry intent in their names. Choose the role you need, such as `color.text.subtle` or
-`color.background.danger.bold`, and the right value follows in every theme.
+Use tokens through the `token()` helper, the primitives and `xcss`, or as CSS variables:
+
+```tsx
+import { token } from '@interlink/tokens';
+import { Box, xcss } from '@interlink/react/primitives';
+
+const card = xcss({ backgroundColor: 'elevation.surface.raised', boxShadow: 'elevation.shadow.raised', padding: 'space.200' });
+
+<Box xcss={card} />;
+<div style={{ color: token('color.text.subtle') }} />;
+```
+
+```css
+.panel {
+  background: var(--il-surface-sunken);
+  padding: var(--il-space-200);
+}
+```
+
+## Naming
+
+Color tokens read as `color.{property}.{role}.{emphasis}.{state}`, for example
+`color.background.danger.bold.hovered`. Pick the property you are styling, then the role that matches the meaning,
+then the emphasis. Never pick a token because its value happens to look right.
+
+## Themes
+
+Set the theme on the root element with `setGlobalTheme`, or let it follow the operating system. Increased contrast
+is a separate switch that works with both light and dark.
+
+## All tokens
+
+<TokenTable />
