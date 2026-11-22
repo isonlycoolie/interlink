@@ -7,6 +7,7 @@ const withMDX = createMDX();
 const config = {
   output: 'export',
   reactStrictMode: true,
+  transpilePackages: ['@interlink/guidelines'],
 };
 
 export default withMDX(config);
