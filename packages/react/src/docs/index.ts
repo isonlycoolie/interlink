@@ -43,6 +43,18 @@ import { calendarDocs } from '../calendar/calendar.docs';
 import { datetimePickerDocs } from '../datetime-picker/datetime-picker.docs';
 import { spotlightDocs } from '../spotlight/spotlight.docs';
 import { dynamicTableDocs } from '../dynamic-table/dynamic-table.docs';
+import { agentAvatarDocs } from '../agent-avatar/agent-avatar.docs';
+import { presenceCursorDocs } from '../presence-cursor/presence-cursor.docs';
+import { assistButtonDocs } from '../assist-button/assist-button.docs';
+import { generativeBorderDocs } from '../generative-border/generative-border.docs';
+import { thinkingIndicatorDocs } from '../thinking-indicator/thinking-indicator.docs';
+import { chatDocs } from '../chat/chat.docs';
+import { promptInputDocs } from '../prompt-input/prompt-input.docs';
+import { promptSuggestionsDocs } from '../prompt-suggestions/prompt-suggestions.docs';
+import { aiDisclaimerDocs } from '../ai-disclaimer/ai-disclaimer.docs';
+import { suggestionCardDocs } from '../suggestion-card/suggestion-card.docs';
+import { actionPlanDocs } from '../action-plan/action-plan.docs';
+import { agentCardDocs } from '../agent-card/agent-card.docs';
 import { iconDocs } from './icon.docs';
 import type { ComponentDoc } from './types';
 
@@ -95,4 +107,16 @@ export const componentDocs: Record<string, ComponentDoc> = {
   "datetime-picker": datetimePickerDocs,
   spotlight: spotlightDocs,
   "dynamic-table": dynamicTableDocs,
+  "agent-avatar": agentAvatarDocs,
+  "presence-cursor": presenceCursorDocs,
+  "assist-button": assistButtonDocs,
+  "generative-border": generativeBorderDocs,
+  "thinking-indicator": thinkingIndicatorDocs,
+  chat: chatDocs,
+  "prompt-input": promptInputDocs,
+  "prompt-suggestions": promptSuggestionsDocs,
+  "ai-disclaimer": aiDisclaimerDocs,
+  "suggestion-card": suggestionCardDocs,
+  "action-plan": actionPlanDocs,
+  "agent-card": agentCardDocs,
 };

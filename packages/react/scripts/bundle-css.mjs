@@ -52,6 +52,18 @@ const files = [
   'src/range/range.css',
   'src/spotlight/spotlight.css',
   'src/tile/tile.css',
+  'src/action-plan/action-plan.css',
+  'src/agent-avatar/agent-avatar.css',
+  'src/agent-card/agent-card.css',
+  'src/ai-disclaimer/ai-disclaimer.css',
+  'src/assist-button/assist-button.css',
+  'src/chat/chat.css',
+  'src/generative-border/generative-border.css',
+  'src/presence-cursor/presence-cursor.css',
+  'src/prompt-input/prompt-input.css',
+  'src/prompt-suggestions/prompt-suggestions.css',
+  'src/suggestion-card/suggestion-card.css',
+  'src/thinking-indicator/thinking-indicator.css',
   'src/generated/xcss.css',
 ];
 const css = files.map((f) => fs.readFileSync(path.join(root, f), 'utf8')).join('\n');

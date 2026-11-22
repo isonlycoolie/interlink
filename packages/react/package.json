@@ -192,6 +192,54 @@
       "types": "./dist/dynamic-table.d.mts",
       "default": "./dist/dynamic-table.mjs"
     },
+    "./agent-avatar": {
+      "types": "./dist/agent-avatar.d.mts",
+      "default": "./dist/agent-avatar.mjs"
+    },
+    "./presence-cursor": {
+      "types": "./dist/presence-cursor.d.mts",
+      "default": "./dist/presence-cursor.mjs"
+    },
+    "./assist-button": {
+      "types": "./dist/assist-button.d.mts",
+      "default": "./dist/assist-button.mjs"
+    },
+    "./generative-border": {
+      "types": "./dist/generative-border.d.mts",
+      "default": "./dist/generative-border.mjs"
+    },
+    "./thinking-indicator": {
+      "types": "./dist/thinking-indicator.d.mts",
+      "default": "./dist/thinking-indicator.mjs"
+    },
+    "./chat": {
+      "types": "./dist/chat.d.mts",
+      "default": "./dist/chat.mjs"
+    },
+    "./prompt-input": {
+      "types": "./dist/prompt-input.d.mts",
+      "default": "./dist/prompt-input.mjs"
+    },
+    "./prompt-suggestions": {
+      "types": "./dist/prompt-suggestions.d.mts",
+      "default": "./dist/prompt-suggestions.mjs"
+    },
+    "./ai-disclaimer": {
+      "types": "./dist/ai-disclaimer.d.mts",
+      "default": "./dist/ai-disclaimer.mjs"
+    },
+    "./suggestion-card": {
+      "types": "./dist/suggestion-card.d.mts",
+      "default": "./dist/suggestion-card.mjs"
+    },
+    "./action-plan": {
+      "types": "./dist/action-plan.d.mts",
+      "default": "./dist/action-plan.mjs"
+    },
+    "./agent-card": {
+      "types": "./dist/agent-card.d.mts",
+      "default": "./dist/agent-card.mjs"
+    },
     "./docs": {
       "types": "./dist/docs.d.mts",
       "default": "./dist/docs.mjs"
