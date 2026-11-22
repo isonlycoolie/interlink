@@ -1,0 +1,16 @@
+{
+  "color.background.code": {"added.highlight":"Green100","added.line":"Green200A40","default":"Neutral0","gutter":"Neutral200","highlight":"Neutral200","removed.highlight":"Red100","removed.line":"Red200A40"},
+  "color.background.disabled": {".":"Neutral200A"},
+  "color.background.draghandle": {".":"Brand700"},
+  "color.background.droptarget": {".":"Brand100","hovered":"Brand200"},
+  "color.background.input": {".":"Neutral0","hovered":"Neutral100","pressed":"Neutral0"},
+  "color.background.inverse": {"subtle":"#00000029","subtle.hovered":"#0000003D","subtle.pressed":"#00000052"},
+  "color.background.neutral": {".":"Neutral200A","hovered":"Neutral300A","pressed":"Neutral400A","subtle":"transparent","subtle.hovered":"Neutral200A","subtle.pressed":"Neutral300A","bold":"Neutral1000","bold.hovered":"Neutral900","bold.pressed":"Neutral800"},
+  "color.background.selected": {".":"Brand100","hovered":"Brand200","pressed":"Brand300","bold":"Brand700","bold.hovered":"Brand800","bold.pressed":"Brand900"},
+  "color.background.brand": {"subtlest":"Brand100","subtlest.hovered":"Brand200","subtlest.pressed":"Brand250","bold":"Brand700","bold.hovered":"Brand800","bold.pressed":"Brand850","boldest":"Brand1000","boldest.hovered":"Brand900","boldest.pressed":"Brand850"},
+  "color.background.danger": {".":"Red100","hovered":"Red200","pressed":"Red250","subtler":"Red200","subtler.hovered":"Red250","subtler.pressed":"Red300","subtle":"Red300","bold":"Red700","bold.hovered":"Red800","bold.pressed":"Red850"},
+  "color.background.warning": {".":"Orange100","hovered":"Orange200","pressed":"Orange250","subtler":"Orange200","subtler.hovered":"Orange250","subtler.pressed":"Orange300","subtle":"Orange250","bold":"Orange300","bold.hovered":"Orange400","bold.pressed":"Orange500"},
+  "color.background.success": {".":"Lime100","hovered":"Lime200","pressed":"Lime250","subtler":"Lime200","subtler.hovered":"Lime250","subtler.pressed":"Lime300","subtle":"Lime300","bold":"Lime700","bold.hovered":"Lime800","bold.pressed":"Lime850"},
+  "color.background.discovery": {".":"Purple100","hovered":"Purple200","pressed":"Purple250","subtler":"Purple200","subtler.hovered":"Purple250","subtler.pressed":"Purple300","subtle":"Purple300","bold":"Purple700","bold.hovered":"Purple800","bold.pressed":"Purple850"},
+  "color.background.information": {".":"Blue100","hovered":"Blue200","pressed":"Blue250","subtler":"Blue200","subtler.hovered":"Blue250","subtler.pressed":"Blue300","subtle":"Blue300","bold":"Blue700","bold.hovered":"Blue800","bold.pressed":"Blue850"}
+}
