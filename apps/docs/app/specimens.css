@@ -1,0 +1,12 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer site {
+  .spec-space-bar { display: block; height: var(--il-space-200); min-width: 1px; border-radius: var(--il-radius-xsmall); background: var(--il-background-discovery-bold); }
+  .spec-bands { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--il-space-200); margin-top: var(--il-space-300); }
+  @media (max-width: 48rem) { .spec-bands { grid-template-columns: 1fr; } }
+  .spec-band { padding: var(--il-space-200); border: var(--il-border-width) solid var(--il-border); border-radius: var(--il-radius-large); }
+  .spec-band p { margin: 0; }
+  .spec-band-title { font: var(--il-font-heading-xsmall); }
+  .spec-band-range { margin-top: var(--il-space-050) !important; font: var(--il-font-body-small); }
+  .spec-band-use { margin-top: var(--il-space-100) !important; font: var(--il-font-body); color: var(--il-text-subtle); }
+  .doc-guideline { margin-top: var(--il-space-300); }
+}
