@@ -1,0 +1,13 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .il-image { max-width: 100%; height: auto; }
+  .il-image[data-theme-variant='dark'] { display: none; }
+  [data-color-mode='dark'] .il-image[data-theme-variant='light'] { display: none; }
+  [data-color-mode='dark'] .il-image[data-theme-variant='dark'] { display: revert; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-color-mode]) .il-image[data-theme-variant='light'],
+    :root[data-color-mode='auto'] .il-image[data-theme-variant='light'] { display: none; }
+    :root:not([data-color-mode]) .il-image[data-theme-variant='dark'],
+    :root[data-color-mode='auto'] .il-image[data-theme-variant='dark'] { display: revert; }
+  }
+}
