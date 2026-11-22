@@ -1,0 +1,26 @@
+---
+title: Modal dialog usage
+description: A modal dialog shows one focused task or message above the page.
+---
+
+## Usage
+
+A modal dialog interrupts people to focus on one task or message. Everything behind it is inert until it closes, so use it only when the interruption is worth it.
+
+## Button alignment
+
+<Guidelines topic="modal-dialog" section="Button alignment" />
+
+## Simple and focused experiences
+
+<Guidelines topic="modal-dialog" section="Simple and focused experiences" />
+
+## Nesting
+
+<Guidelines topic="modal-dialog" section="Nesting" />
+
+## Accessibility
+
+- Every modal needs a name: a `ModalTitle`, or a `label`.
+- Focus moves into the modal and back to where it was when it closes. Tab stays inside the modal.
+- Escape closes the modal unless `shouldCloseOnEscapePress` is false; offer another clear way out.
