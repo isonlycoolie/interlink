@@ -1,0 +1,49 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .il-progress-tracker {
+    --il-pt-gap: var(--il-space-100);
+    display: grid;
+    grid-template-columns: repeat(var(--il-stages), minmax(0, 1fr));
+    gap: var(--il-pt-gap);
+    width: 100%;
+    margin: var(--il-space-500) auto 0;
+    padding: 0;
+    list-style: none;
+  }
+  .il-progress-tracker[data-spacing='comfortable'] { --il-pt-gap: var(--il-space-200); }
+  .il-progress-tracker[data-spacing='compact'] { --il-pt-gap: var(--il-space-050); }
+  .il-progress-stage { position: relative; margin: 0; text-align: center; overflow-wrap: break-word; }
+  .il-progress-bar {
+    position: absolute;
+    inset-inline-start: 50%;
+    /* From this marker to the next one: one column plus the gap, times how complete the stage is. */
+    width: calc((100% + var(--il-pt-gap)) * var(--il-stage-fraction));
+    height: var(--il-space-100);
+    border-start-end-radius: var(--il-radius-full);
+    border-end-end-radius: var(--il-radius-full);
+    background-color: var(--il-background-brand-bold);
+    transform: translateY(calc(var(--il-space-250) * -1));
+  }
+  .il-progress-marker {
+    position: absolute;
+    inset-inline-start: 50%;
+    width: var(--il-space-100);
+    height: var(--il-space-100);
+    border-radius: var(--il-space-100);
+    background-color: var(--il-background-neutral-bold);
+    transform: translate(-50%, calc(var(--il-space-250) * -1));
+  }
+  .il-progress-stage:is([data-status='current'], [data-status='visited']) .il-progress-marker { background-color: var(--il-background-brand-bold); }
+  .il-progress-stage[data-status='disabled'] .il-progress-marker { background-color: var(--il-background-disabled); }
+  .il-progress-label,
+  .il-progress-link { display: block; color: var(--il-text-subtlest); font: var(--il-font-body); }
+  .il-progress-stage[data-status='current'] .il-progress-label { color: var(--il-text-brand); font-weight: var(--il-font-weight-bold); }
+  .il-progress-stage[data-status='disabled'] .il-progress-label { color: var(--il-text-disabled); }
+  .il-progress-link { border-radius: var(--il-radius-small); color: var(--il-text); text-decoration: none; }
+  .il-progress-link:hover { color: var(--il-link); text-decoration: underline; }
+  .il-progress-link:active { color: var(--il-link-pressed); }
+  .il-progress-tracker[data-animated] :is(.il-progress-bar, .il-progress-marker) { transition: width var(--il-duration-long) var(--il-easing-out-practical), background-color var(--il-duration-long) var(--il-easing-out-practical); }
+  @media (prefers-reduced-motion: reduce) {
+    .il-progress-tracker[data-animated] :is(.il-progress-bar, .il-progress-marker) { transition: none; }
+  }
+}
