@@ -1,0 +1,6 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .il-ai-disclaimer { display: flex; align-items: center; justify-content: space-between; gap: var(--il-space-100); min-height: var(--il-space-300); color: var(--il-text-subtlest); font: var(--il-font-body-small); }
+  .il-ai-disclaimer-text { display: inline-flex; align-items: center; gap: var(--il-space-050); }
+  .il-ai-disclaimer-actions { display: inline-flex; align-items: center; gap: var(--il-space-025); }
+}
