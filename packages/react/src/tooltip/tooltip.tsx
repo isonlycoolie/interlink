@@ -2,9 +2,9 @@
 'use client';
 import { cloneElement, isValidElement, useCallback, useEffect, useId, useLayoutEffect, useRef, useState, type FocusEvent, type HTMLAttributes, type MouseEvent, type ReactElement, type ReactNode } from 'react';
 
-import { placeTooltip, type Placement, type TooltipPosition } from './tooltip-position';
+import { canPopover, place as placeLayer, type Position } from '../layering/place';
 
-export type { TooltipPosition } from './tooltip-position';
+export type TooltipPosition = 'top' | 'bottom' | 'left' | 'right';
 
 export interface TooltipTriggerProps {
   'aria-describedby'?: string;
@@ -28,9 +28,6 @@ export interface TooltipProps {
   testId?: string;
 }
 
-/** Top layer when the browser supports popovers, so tooltips are never clipped; fixed position otherwise. */
-const canPopover = () => typeof HTMLElement !== 'undefined' && 'showPopover' in HTMLElement.prototype;
-
 /** A short label that appears on hover or focus, for icon buttons and truncated text. */
 export function Tooltip({ content, children, position = 'top', delay = 300, hideTooltipOnClick = false, testId }: TooltipProps) {
   const id = useId();
@@ -38,7 +35,7 @@ export function Tooltip({ content, children, position = 'top', delay = 300, hide
   const tip = useRef<HTMLDivElement | null>(null);
   const timer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   const [open, setOpen] = useState(false);
-  const [place, setPlace] = useState<Placement | null>(null);
+  const [place, setPlace] = useState<Position | null>(null);
 
   const show = useCallback((wait: number) => {
     clearTimeout(timer.current);
@@ -62,7 +59,7 @@ export function Tooltip({ content, children, position = 'top', delay = 300, hide
     const el = tip.current;
     if (!open || !t || !el) return;
     if (canPopover() && !el.matches(':popover-open')) el.showPopover();
-    setPlace(placeTooltip(t, el.offsetWidth, el.offsetHeight, position));
+    setPlace(placeLayer(t, el.offsetWidth, el.offsetHeight, position));
   }, [open, position, content]);
 
   const props: TooltipTriggerProps = {
