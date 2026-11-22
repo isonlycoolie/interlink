@@ -1,7 +1,9 @@
 // SPDX-License-Identifier: Apache-2.0
+import GetStarted from '@interlink/illustrations/art/get-started';
 import { screens } from '@interlink/guidelines/screens';
 import { Anchor, Box, Heading, Stack, Text, xcss } from '@interlink/react/primitives';
 import Link from 'next/link';
+import { PathCards } from '@/components/specimens/path-cards';
 
 const page = xcss({ maxWidth: '72rem', paddingBlock: 'space.1000', paddingInline: 'space.400' });
 const cta = xcss({
@@ -18,15 +20,21 @@ export default function Home() {
   return (
     <Box as="main" xcss={page}>
       <Stack space="space.300" alignInline="start">
-        <Heading size="xxlarge" as="h1">
-          Interlink
-        </Heading>
-        <Text size="large" color="color.text.subtle">
-          An enterprise design system. Every Do and Don&apos;t is live code an AI can read and run.
-        </Text>
-        <Anchor href="/get-started" xcss={cta}>
-          Get started
-        </Anchor>
+        <div className="site-home-hero">
+          <Stack space="space.300" alignInline="start">
+            <Heading size="xxlarge" as="h1">
+              Interlink
+            </Heading>
+            <Text size="large" color="color.text.subtle">
+              An enterprise design system. Every Do and Don&apos;t is live code an AI can read and run.
+            </Text>
+            <Anchor href="/get-started" xcss={cta}>
+              Get started
+            </Anchor>
+          </Stack>
+          <GetStarted size="large" />
+        </div>
+        <PathCards />
         <Stack space="space.200">
           <Heading size="large" as="h2">
             Screens
