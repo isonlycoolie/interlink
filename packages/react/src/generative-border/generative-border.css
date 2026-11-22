@@ -1,0 +1,39 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@property --il-gen-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+@layer interlink.components {
+  .il-generative-border {
+    --gen-r: var(--il-radius-large);
+    --gen-w: var(--il-border-width-selected);
+    position: relative;
+    padding: var(--gen-w);
+    border-radius: calc(var(--gen-r) + var(--gen-w));
+    /* Hard stops: solid blocks of colour, never a blended gradient. */
+    background: conic-gradient(
+      from var(--il-gen-angle),
+      var(--il-assist-border-blue) 0 25%,
+      var(--il-assist-border-purple) 25% 50%,
+      var(--il-assist-border-saffron) 50% 75%,
+      var(--il-assist-border-lime) 75% 100%
+    );
+  }
+  .il-generative-border[data-width='thick'] { --gen-w: var(--il-space-050); }
+  .il-generative-border[data-radius='small'] { --gen-r: var(--il-radius-small); }
+  .il-generative-border[data-radius='medium'] { --gen-r: var(--il-radius-medium); }
+  .il-generative-border[data-radius='xlarge'] { --gen-r: var(--il-radius-xlarge); }
+  .il-generative-border[data-radius='full'] { --gen-r: var(--il-radius-full); }
+  .il-generative-border-content {
+    border-radius: var(--gen-r);
+    background: var(--il-elevation-surface-current, var(--il-surface));
+  }
+  .il-generative-border[data-generating] { animation: il-gen-turn 3s linear infinite; }
+  @keyframes il-gen-turn {
+    to { --il-gen-angle: 360deg; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .il-generative-border[data-generating] { animation: none; }
+  }
+}
