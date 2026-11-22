@@ -1,18 +1,29 @@
 // SPDX-License-Identifier: Apache-2.0
 import '@interlink/css/interlink.css';
+import '@interlink/icons/styles.css';
 import '@interlink/react/styles.css';
+import './shell.css';
+import './content.css';
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
+import { SiteHeader } from '@/components/shell/site-header';
+import { themeScript } from '@/components/shell/theme-script';
 
 export const metadata: Metadata = {
-  title: { default: 'Interlink', template: '%s · Interlink' },
+  title: { default: 'Interlink Design', template: '%s · Interlink Design' },
   description: 'An enterprise design system with guidance an AI can read and run.',
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
+      <body>
+        <SiteHeader />
+        {children}
+      </body>
     </html>
   );
 }
