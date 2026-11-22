@@ -1,0 +1,33 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .il-section-message {
+    padding-block: var(--il-space-200);
+    padding-inline: var(--il-space-200);
+    border-radius: var(--il-radius-large);
+    word-break: break-word;
+  }
+  .il-section-message[data-appearance='information'] { background-color: var(--il-background-information); }
+  .il-section-message[data-appearance='warning'] { background-color: var(--il-background-warning); }
+  .il-section-message[data-appearance='error'] { background-color: var(--il-background-danger); }
+  .il-section-message[data-appearance='success'] { background-color: var(--il-background-success); }
+  .il-section-message[data-appearance='discovery'] { background-color: var(--il-background-discovery); }
+  .il-section-message-icon {
+    display: flex;
+    margin-block: var(--il-space-negative-025);
+  }
+  .il-section-message-content {
+    font: var(--il-font-body);
+    color: var(--il-text);
+  }
+  .il-section-message-dismiss {
+    margin-block-start: var(--il-space-negative-025);
+  }
+  .il-section-message-action {
+    font: var(--il-font-body);
+    color: var(--il-link);
+  }
+  button.il-section-message-action:hover,
+  a.il-section-message-action:hover {
+    text-decoration: underline;
+  }
+}
