@@ -32,6 +32,62 @@
       "types": "./dist/spinner.d.mts",
       "default": "./dist/spinner.mjs"
     },
+    "./textfield": {
+      "types": "./dist/textfield.d.mts",
+      "default": "./dist/textfield.mjs"
+    },
+    "./textarea": {
+      "types": "./dist/textarea.d.mts",
+      "default": "./dist/textarea.mjs"
+    },
+    "./checkbox": {
+      "types": "./dist/checkbox.d.mts",
+      "default": "./dist/checkbox.mjs"
+    },
+    "./radio": {
+      "types": "./dist/radio.d.mts",
+      "default": "./dist/radio.mjs"
+    },
+    "./toggle": {
+      "types": "./dist/toggle.d.mts",
+      "default": "./dist/toggle.mjs"
+    },
+    "./form": {
+      "types": "./dist/form.d.mts",
+      "default": "./dist/form.mjs"
+    },
+    "./badge": {
+      "types": "./dist/badge.d.mts",
+      "default": "./dist/badge.mjs"
+    },
+    "./tag": {
+      "types": "./dist/tag.d.mts",
+      "default": "./dist/tag.mjs"
+    },
+    "./avatar": {
+      "types": "./dist/avatar.d.mts",
+      "default": "./dist/avatar.mjs"
+    },
+    "./link": {
+      "types": "./dist/link.d.mts",
+      "default": "./dist/link.mjs"
+    },
+    "./tooltip": {
+      "types": "./dist/tooltip.d.mts",
+      "default": "./dist/tooltip.mjs"
+    },
+    "./skeleton": {
+      "types": "./dist/skeleton.d.mts",
+      "default": "./dist/skeleton.mjs"
+    },
+    "./progress-bar": {
+      "types": "./dist/progress-bar.d.mts",
+      "default": "./dist/progress-bar.mjs"
+    },
+    "./empty-state": {
+      "types": "./dist/empty-state.d.mts",
+      "default": "./dist/empty-state.mjs"
+    },
     "./docs": {
       "types": "./dist/docs.d.mts",
       "default": "./dist/docs.mjs"
