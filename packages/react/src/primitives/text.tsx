@@ -1,9 +1,10 @@
 // SPDX-License-Identifier: Apache-2.0
+'use client';
 import type { ReactNode, Ref } from 'react';
 import type { TokenName } from '@interlink/tokens';
 import { tokenNames } from '@interlink/tokens';
-import { HasTextAncestorContext, inverseTextColor, testIdProps, useHasTextAncestor, useSurface } from './surface';
-import type { FontSize, FontWeight, MetricTextFontSize, TextAlign } from './types';
+import { HasTextAncestorContext, inverseTextColor, useHasTextAncestor, useSurface } from './surface';
+import { testIdProps, type FontSize, type FontWeight, type MetricTextFontSize, type TextAlign } from './types';
 
 type TextColor = Extract<TokenName, `color.text${string}` | `color.link${string}`>;
 const v = (name: string) => `var(${(tokenNames as Record<string, string>)[name]})`;

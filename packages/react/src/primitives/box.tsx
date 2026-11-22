@@ -1,8 +1,9 @@
 // SPDX-License-Identifier: Apache-2.0
+'use client';
 import type { ComponentPropsWithoutRef, ElementType, ReactNode, Ref } from 'react';
 import { mergeXcss, xcss as compile } from '../xcss/xcss';
-import { SurfaceContext, testIdProps } from './surface';
-import type { BackgroundToken, BasePrimitiveProps, PaddingToken, StyleProp } from './types';
+import { SurfaceContext } from './surface';
+import { testIdProps, type BackgroundToken, type BasePrimitiveProps, type PaddingToken, type StyleProp } from './types';
 
 type Padding = {
   padding?: PaddingToken;

@@ -42,3 +42,6 @@ export type MetricTextFontSize = 'small' | 'medium' | 'large';
 /** Flex alignment keywords mapped to CSS values. */
 export const flexAlign = (v: string | undefined) =>
   v === 'start' ? 'flex-start' : v === 'end' ? 'flex-end' : v;
+
+/** Normalise a test id into the data attribute primitives render. */
+export const testIdProps = (testId?: string) => (testId ? { 'data-testid': testId } : {});

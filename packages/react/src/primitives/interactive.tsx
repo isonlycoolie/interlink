@@ -1,8 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
 import type { ComponentPropsWithoutRef, ElementType, ReactNode, Ref } from 'react';
 import { mergeXcss } from '../xcss/xcss';
-import { testIdProps } from './surface';
-import type { BasePrimitiveProps, StyleProp } from './types';
+import { testIdProps, type BasePrimitiveProps, type StyleProp } from './types';
 
 export type PressableProps = Omit<ComponentPropsWithoutRef<'button'>, 'disabled' | 'style' | 'className'> &
   BasePrimitiveProps &

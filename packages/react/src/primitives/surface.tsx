@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
+'use client';
 import { createContext, useContext } from 'react';
 
 /** The background a primitive sits on, so text can pick a readable colour. */
@@ -22,5 +23,3 @@ export function inverseTextColor(surface: string): string | undefined {
   return m[1] === 'warning' ? WARNING_INVERSE : INVERSE;
 }
 
-/** Normalise a test id into the data attribute primitives render. */
-export const testIdProps = (testId?: string) => (testId ? { 'data-testid': testId } : {});

@@ -1,16 +1,16 @@
 // SPDX-License-Identifier: Apache-2.0
 import type { ReactNode, Ref } from 'react';
 import { mergeXcss, xcss as compile } from '../xcss/xcss';
-import { testIdProps } from './surface';
-import type {
-  AlignContent,
-  AlignItems,
-  AutoFlow,
-  BasePrimitiveProps,
-  BleedSpaceToken,
-  GapToken,
-  JustifyContent,
-  JustifyItems,
+import {
+  testIdProps,
+  type AlignContent,
+  type AlignItems,
+  type AutoFlow,
+  type BasePrimitiveProps,
+  type BleedSpaceToken,
+  type GapToken,
+  type JustifyContent,
+  type JustifyItems,
 } from './types';
 
 export type GridProps = BasePrimitiveProps & {

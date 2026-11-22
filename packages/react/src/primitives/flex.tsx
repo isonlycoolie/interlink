@@ -1,8 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
 import type { AriaAttributes, ReactNode, Ref } from 'react';
 import { mergeXcss, xcss as compile } from '../xcss/xcss';
-import { testIdProps } from './surface';
-import { flexAlign, type AlignItems, type BasePrimitiveProps, type Direction, type GapToken, type JustifyContent, type Wrap } from './types';
+import { flexAlign, testIdProps, type AlignItems, type BasePrimitiveProps, type Direction, type GapToken, type JustifyContent, type Wrap } from './types';
 
 export type FlexProps = BasePrimitiveProps &
   AriaAttributes & {
