@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
+'use client';
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes, MouseEvent, ReactNode, Ref } from 'react';
 import { ButtonContent, buttonAttrs, guardClick, type BaseProps, type IconProp } from './button-base';
 
