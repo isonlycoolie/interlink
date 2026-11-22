@@ -32,6 +32,21 @@
     font: var(--il-font-body);
     font-weight: var(--il-font-weight-medium);
   }
+  .il-lozenge-metric {
+    margin-inline-end: calc(-1 * var(--il-space-025));
+    padding-inline: var(--il-space-050);
+    border-radius: var(--il-radius-xsmall);
+    background: var(--il-background-neutral);
+    font: var(--il-font-body-small);
+    font-variant-numeric: tabular-nums;
+  }
+  button.il-lozenge {
+    cursor: pointer;
+    font: inherit;
+  }
+  button.il-lozenge:hover {
+    filter: brightness(0.97);
+  }
   .il-lozenge-icon {
     display: flex;
   }

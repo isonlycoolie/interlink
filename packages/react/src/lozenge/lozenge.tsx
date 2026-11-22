@@ -17,11 +17,13 @@ export interface LozengeProps {
   iconBefore?: ComponentType<IconProps>;
   /** Truncate after this width (px or %). */
   maxWidth?: number | string;
+  /** A short number shown at the end, such as a score. */
+  trailingMetric?: string;
   testId?: string;
 }
 
 /** A short status label. Use sentence case and one or two words. */
-export function Lozenge({ children, appearance = 'neutral', spacing = 'default', iconBefore: Icon, maxWidth = 200, testId }: LozengeProps) {
+export function Lozenge({ children, appearance = 'neutral', spacing = 'default', iconBefore: Icon, maxWidth = 200, trailingMetric, testId }: LozengeProps) {
   const color = LEGACY[appearance] ?? appearance;
   const max = typeof maxWidth === 'number' ? `${maxWidth}px` : maxWidth;
   return (
@@ -32,6 +34,7 @@ export function Lozenge({ children, appearance = 'neutral', spacing = 'default',
         </span>
       ) : null}
       <span className="il-lozenge-text">{children}</span>
+      {trailingMetric ? <span className="il-lozenge-metric">{trailingMetric}</span> : null}
     </span>
   );
 }
