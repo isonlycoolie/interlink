@@ -1,0 +1,47 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .il-cursor {
+    --cur-bg: var(--il-assist-icon-blue);
+    --cur-fg: var(--il-text-inverse);
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    pointer-events: none;
+  }
+  .il-cursor[data-pointer='top-right'] { align-items: flex-end; }
+  .il-cursor[data-color='purple'] { --cur-bg: var(--il-assist-icon-purple); }
+  .il-cursor[data-color='saffron'] { --cur-bg: var(--il-assist-icon-saffron); --cur-fg: var(--il-text); }
+  .il-cursor[data-color='lime'] { --cur-bg: var(--il-assist-icon-lime); }
+  .il-cursor[data-color='brand'] { --cur-bg: var(--il-background-brand-bold); }
+  .il-cursor[data-color='agent'] { --cur-bg: var(--il-assist-background-brand-bold); --cur-fg: var(--il-assist-surface-overlay); }
+  .il-cursor-arrow { width: var(--il-space-200); height: var(--il-space-200); fill: var(--cur-bg); }
+  .il-cursor[data-pointer='top-right'] .il-cursor-arrow { transform: scaleX(-1); }
+  .il-cursor-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--il-space-050);
+    margin-inline-start: var(--il-space-150);
+    padding: var(--il-space-025) var(--il-space-100);
+    border-radius: var(--il-radius-full);
+    background: var(--cur-bg);
+    color: var(--cur-fg);
+    font: var(--il-font-body-small);
+    font-weight: var(--il-font-weight-semibold);
+    white-space: nowrap;
+  }
+  .il-cursor[data-pointer='top-right'] .il-cursor-pill { margin-inline: 0 var(--il-space-150); }
+  .il-cursor[data-size='large'] .il-cursor-arrow { width: var(--il-space-300); height: var(--il-space-300); }
+  .il-cursor[data-size='large'] .il-cursor-pill { padding: var(--il-space-075) var(--il-space-200); font: var(--il-font-heading-small); }
+  .il-cursor-hex {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.25em;
+    height: 1.25em;
+    padding: 0.2em;
+    box-sizing: border-box;
+    background: var(--il-background-brand-bold);
+    clip-path: polygon(50% 0, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%);
+    color: var(--il-text-inverse);
+  }
+}
