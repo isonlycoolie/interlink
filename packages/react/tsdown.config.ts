@@ -11,6 +11,7 @@ export default defineConfig({
     lozenge: 'src/lozenge/index.ts',
     'section-message': 'src/section-message/index.ts',
     spinner: 'src/spinner/index.ts',
+    docs: 'src/docs/index.ts',
   },
   format: 'esm',
   dts: true,

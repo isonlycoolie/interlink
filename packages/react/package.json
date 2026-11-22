@@ -32,6 +32,10 @@
       "types": "./dist/spinner.d.mts",
       "default": "./dist/spinner.mjs"
     },
+    "./docs": {
+      "types": "./dist/docs.d.mts",
+      "default": "./dist/docs.mjs"
+    },
     "./styles.css": "./dist/styles.css"
   },
   "files": [
