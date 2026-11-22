@@ -30,13 +30,29 @@ export function Guideline({ id }: { id: string }) {
   );
 }
 
-/** Every guideline in one section of a topic, in order. */
+/** Every guideline in one section of a topic, as one grid of Do and Don't cards. */
 export function Guidelines({ topic, section }: { topic: Topic; section: string }) {
+  const cards = byTopic(topic, section).flatMap((g) => {
+    const ex = examples[g.id] ?? {};
+    const src = sources[g.id] ?? {};
+    const Do = ex.do;
+    const Dont = ex.dont;
+    return [
+      Do && g.do ? (
+        <DoDont key={`${g.id}-do`} kind="do" caption={g.do} code={src.do}>
+          <Do />
+        </DoDont>
+      ) : null,
+      Dont && g.dont ? (
+        <DoDont key={`${g.id}-dont`} kind="dont" caption={g.dont} code={src.dont}>
+          <Dont />
+        </DoDont>
+      ) : null,
+    ];
+  });
   return (
-    <>
-      {byTopic(topic, section).map((g) => (
-        <Guideline key={g.id} id={g.id} />
-      ))}
-    </>
+    <div className="doc-guideline">
+      <DoDontGrid>{cards}</DoDontGrid>
+    </div>
   );
 }
