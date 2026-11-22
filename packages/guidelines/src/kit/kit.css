@@ -56,3 +56,5 @@
   box-shadow: var(--il-shadow-overlay);
   color: var(--il-text);
 }
+.ilk-spotlight { display: inline-flex; padding: var(--il-space-200); }
+.ilk-spotlight-media { display: flex; flex-direction: column; justify-content: center; gap: var(--il-space-100); height: 100%; padding: var(--il-space-200); background-color: var(--il-background-accent-blue-subtler); }

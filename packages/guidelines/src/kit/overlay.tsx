@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
 'use client';
 import { ModalContext } from '@interlink/react/modal-dialog';
+import { SpotlightContext } from '@interlink/react/spotlight';
 import { useId, type CSSProperties, type ReactNode } from 'react';
 
 /**
@@ -25,6 +26,16 @@ export function MenuShape({ children, width = '16rem' }: { children: ReactNode; 
   return (
     <div className="ilk-menu" style={{ width }}>
       {children}
+    </div>
+  );
+}
+
+/** A spotlight card frozen in place for guideline pictures, with its caret on the given side. */
+export function SpotlightShape({ children, side = 'bottom' }: { children: ReactNode; side?: 'top' | 'bottom' | 'left' | 'right' }) {
+  const headingId = useId();
+  return (
+    <div className="ilk-spotlight" role="dialog" aria-labelledby={headingId}>
+      <SpotlightContext.Provider value={{ headingId, side }}>{children}</SpotlightContext.Provider>
     </div>
   );
 }
