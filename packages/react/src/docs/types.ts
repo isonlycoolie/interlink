@@ -7,7 +7,7 @@ export interface PropDoc {
   description: string;
 }
 
-export type Category = 'Forms and input' | 'Images and icons' | 'Labels' | 'Loading' | 'Messaging' | 'Navigation' | 'Text and data display';
+export type Category = 'Forms and input' | 'Images and icons' | 'Labels' | 'Loading' | 'Messaging' | 'Navigation' | 'Overlays and layering' | 'Text and data display';
 
 export interface ComponentDoc {
   name: string;
