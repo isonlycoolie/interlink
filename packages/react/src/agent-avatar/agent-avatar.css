@@ -1,0 +1,50 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .il-agent-avatar {
+    --ag: var(--il-space-400);
+    --ag-bg: var(--il-background-brand-bold);
+    position: relative;
+    display: inline-flex;
+    flex-shrink: 0;
+    width: var(--ag);
+    height: var(--ag);
+    vertical-align: middle;
+  }
+  .il-agent-avatar[data-size='xsmall'] { --ag: var(--il-space-200); }
+  .il-agent-avatar[data-size='small'] { --ag: var(--il-space-300); }
+  .il-agent-avatar[data-size='large'] { --ag: var(--il-space-500); }
+  .il-agent-avatar[data-size='xlarge'] { --ag: var(--il-space-1000); }
+  .il-agent-avatar[data-color='blue'] { --ag-bg: var(--il-assist-icon-blue); }
+  .il-agent-avatar[data-color='purple'] { --ag-bg: var(--il-assist-icon-purple); }
+  .il-agent-avatar[data-color='saffron'] { --ag-bg: var(--il-assist-icon-saffron); }
+  .il-agent-avatar[data-color='lime'] { --ag-bg: var(--il-assist-icon-lime); }
+  .il-agent-avatar[data-color='ink'] { --ag-bg: var(--il-assist-background-brand-bold); }
+  /* A pointy-top hexagon: the shape reserved for agents. */
+  .il-agent-avatar-hex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: var(--ag-bg);
+    clip-path: polygon(50% 0, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%);
+    color: var(--il-text-inverse);
+  }
+  .il-agent-avatar-hex > .il-icon { width: 55%; height: 55%; }
+  .il-agent-avatar-hex > img { width: 100%; height: 100%; object-fit: cover; }
+  .il-agent-avatar-initial { color: var(--il-text-inverse); font-size: calc(var(--ag) * 0.42); font-weight: var(--il-font-weight-bold); line-height: 1; }
+  .il-agent-avatar-delegate {
+    position: absolute;
+    inset-inline-end: calc(var(--ag) * -0.12);
+    inset-block-end: calc(var(--ag) * -0.12);
+    display: flex;
+    width: calc(var(--ag) * 0.5);
+    height: calc(var(--ag) * 0.5);
+    overflow: hidden;
+    border-radius: var(--il-radius-full);
+    box-shadow: 0 0 0 var(--il-border-width-selected) var(--il-elevation-surface-current, var(--il-surface));
+  }
+  .il-agent-avatar-delegate > * { width: 100% !important; height: 100% !important; }
+  .il-agent-avatar-delegate img { width: 100%; height: 100%; object-fit: cover; }
+}
