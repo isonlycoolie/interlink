@@ -1,0 +1,69 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .il-textfield,
+  .il-textarea {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    border: var(--il-border-width) solid var(--il-border-input);
+    border-radius: var(--il-radius-medium);
+    background-color: var(--il-background-input);
+    color: var(--il-text);
+    font: var(--il-font-body);
+    cursor: text;
+    transition: var(--il-input);
+  }
+  :is(.il-textfield, .il-textarea)[data-appearance='subtle'] { border-color: transparent; background-color: transparent; }
+  :is(.il-textfield, .il-textarea)[data-appearance='none'] { border-color: transparent; background-color: transparent; }
+  :is(.il-textfield, .il-textarea):not([data-disabled], [data-appearance='none']):hover {
+    border-color: var(--il-border-input);
+    background-color: var(--il-background-input-hovered);
+  }
+  :is(.il-textfield, .il-textarea):not([data-appearance='none']):focus-within {
+    border-color: var(--il-border-focused);
+    background-color: var(--il-background-input-pressed);
+    box-shadow: inset 0 0 0 var(--il-border-width) var(--il-border-focused);
+  }
+  :is(.il-textfield, .il-textarea)[data-invalid]:not(:focus-within) {
+    border-color: var(--il-border-danger);
+    box-shadow: inset 0 0 0 var(--il-border-width) var(--il-border-danger);
+  }
+  :is(.il-textfield, .il-textarea)[data-disabled] {
+    border-color: var(--il-background-disabled);
+    background-color: var(--il-background-disabled);
+    color: var(--il-text-disabled);
+    cursor: not-allowed;
+  }
+  :is(.il-textfield, .il-textarea)[data-appearance]:not([data-appearance='standard'])[data-disabled] { border-color: transparent; background-color: transparent; }
+  .il-textfield-input,
+  .il-textarea-input {
+    box-sizing: border-box;
+    flex: 1 1 100%;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: var(--il-space-075);
+    border: 0;
+    outline: none;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    cursor: inherit;
+  }
+  .il-textfield[data-compact] .il-textfield-input { padding-block: var(--il-space-025); }
+  [data-monospaced] :is(.il-textfield-input, .il-textarea-input) { font-family: var(--il-font-family-code); }
+  :is(.il-textfield-input, .il-textarea-input)::placeholder { color: var(--il-text-subtlest); }
+  :is(.il-textfield-input, .il-textarea-input):disabled::placeholder { color: var(--il-text-disabled); }
+  .il-textfield > :not(input) { display: flex; flex-shrink: 0; align-items: center; padding-inline: var(--il-space-075); color: var(--il-icon-subtle); }
+  .il-textarea { align-items: stretch; }
+  .il-textarea-input { min-height: calc(var(--rows, 3) * 1.25rem + 2 * var(--il-space-075)); resize: none; }
+  .il-textarea[data-resize='vertical'] .il-textarea-input { resize: vertical; }
+  .il-textarea[data-resize='horizontal'] .il-textarea-input { resize: horizontal; }
+  .il-textarea[data-resize='auto'] .il-textarea-input { resize: both; }
+  @media (forced-colors: active) {
+    :is(.il-textfield, .il-textarea):focus-within { border-color: Highlight; }
+    :is(.il-textfield, .il-textarea)[data-disabled] { border-color: GrayText; }
+  }
+}
