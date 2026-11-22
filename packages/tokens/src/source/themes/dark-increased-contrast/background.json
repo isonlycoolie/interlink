@@ -1,0 +1,10 @@
+{
+  "color.background.draghandle": {".":"Brand200"},
+  "color.background.selected": {"bold":"Brand200","bold.hovered":"Brand100","bold.pressed":"DarkNeutral1100"},
+  "color.background.brand": {"bold":"Brand200","bold.hovered":"Brand100","bold.pressed":"DarkNeutral1100"},
+  "color.background.danger": {"bold":"Red200","bold.hovered":"Red100","bold.pressed":"DarkNeutral1100"},
+  "color.background.warning": {"bold":"Yellow200","bold.hovered":"Yellow100","bold.pressed":"DarkNeutral1100"},
+  "color.background.success": {"bold":"Green200","bold.hovered":"Green100","bold.pressed":"DarkNeutral1100"},
+  "color.background.discovery": {"bold":"Purple200","bold.hovered":"Purple100","bold.pressed":"DarkNeutral1100"},
+  "color.background.information": {"bold":"Blue200","bold.hovered":"Blue100","bold.pressed":"DarkNeutral1100"}
+}

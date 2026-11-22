@@ -1,0 +1,5 @@
+{
+  "elevation.shadow.overflow": {".":[{"radius":12,"offset":{"x":0,"y":0},"color":"DarkNeutral-100A","opacity":0.56}]},
+  "elevation.shadow.overlay": {".":[{"radius":0,"spread":1,"color":"DarkNeutral500A","offset":{"x":0,"y":0},"opacity":0.5,"inset":true}]},
+  "elevation.shadow.raised": {".":[{"radius":0,"spread":1,"color":"DarkNeutral500A","offset":{"x":0,"y":0},"opacity":0.5,"inset":true}]}
+}

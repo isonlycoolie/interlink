@@ -1,0 +1,11 @@
+{
+  "color.background.accent.lime": {"bolder":"Lime200","bolder.hovered":"Lime100"},
+  "color.background.accent.red": {"bolder":"Red200","bolder.hovered":"Red100"},
+  "color.background.accent.orange": {"bolder":"Orange200","bolder.hovered":"Orange100"},
+  "color.background.accent.yellow": {"bolder":"Yellow200","bolder.hovered":"Yellow100"},
+  "color.background.accent.green": {"bolder":"Green200","bolder.hovered":"Green100"},
+  "color.background.accent.teal": {"bolder":"Teal200","bolder.hovered":"Teal100"},
+  "color.background.accent.purple": {"bolder":"Purple200","bolder.hovered":"Purple100"},
+  "color.background.accent.magenta": {"bolder":"Magenta200","bolder.hovered":"Magenta100"},
+  "color.background.accent.gray": {"subtle":"DarkNeutral400","subtle.hovered":"DarkNeutral300","subtle.pressed":"DarkNeutral200","bolder":"DarkNeutral800","bolder.hovered":"DarkNeutral900","bolder.pressed":"DarkNeutral1000"}
+}
