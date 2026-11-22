@@ -1,0 +1,32 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .il-tile {
+    --il-tile-size: var(--il-space-400);
+    --il-tile-inner: var(--il-space-200);
+    position: relative;
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: var(--il-tile-size);
+    min-width: 0;
+    height: var(--il-tile-size);
+    min-height: 0;
+    overflow: hidden;
+    border-radius: 25%;
+    font-size: var(--il-tile-inner);
+    line-height: 1;
+    vertical-align: middle;
+  }
+  .il-tile[data-size='xxsmall'] { --il-tile-size: var(--il-space-200); --il-tile-inner: calc(var(--il-space-100) + var(--il-space-025)); }
+  .il-tile[data-size='xsmall'] { --il-tile-size: var(--il-space-250); --il-tile-inner: var(--il-space-150); }
+  .il-tile[data-size='small'] { --il-tile-size: var(--il-space-300); --il-tile-inner: calc(var(--il-space-150) + var(--il-space-025)); }
+  .il-tile[data-size='large'] { --il-tile-size: var(--il-space-500); --il-tile-inner: var(--il-space-250); }
+  .il-tile[data-size='xlarge'] { --il-tile-size: var(--il-space-600); --il-tile-inner: var(--il-space-300); }
+  .il-tile[data-border] { border: var(--il-border-width) solid var(--il-border); }
+  .il-tile[data-inset] > :is(div, img, span, svg) { width: var(--il-tile-inner); height: auto; }
+  .il-tile:not([data-inset]) > :is(div, img, span, svg) { width: 100%; height: 100%; }
+  .il-tile:not([data-inset]) > img { object-fit: cover; }
+  .il-tile[data-inset] > .il-icon { width: var(--il-tile-inner); height: var(--il-tile-inner); }
+}
