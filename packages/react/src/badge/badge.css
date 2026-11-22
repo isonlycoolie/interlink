@@ -1,0 +1,16 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .il-badge { display: inline-flex; flex-shrink: 0; justify-content: center; box-sizing: border-box; min-width: var(--il-space-300); block-size: min-content; padding-inline: var(--il-space-050); border-radius: var(--il-radius-xsmall); font: var(--il-font-body-small); font-variant-numeric: tabular-nums; background: var(--bd-bg); color: var(--bd-text); }
+  .il-badge[data-appearance='neutral'] { --bd-bg: var(--il-background-accent-gray-subtler); --bd-text: var(--il-text); }
+  .il-badge[data-appearance='inverse'] { --bd-bg: var(--il-surface); --bd-text: var(--il-text); }
+  .il-badge[data-appearance='information'] { --bd-bg: var(--il-background-information-subtler); --bd-text: var(--il-text-information-bolder); }
+  .il-badge[data-appearance='success'] { --bd-bg: var(--il-background-success-subtler); --bd-text: var(--il-text-success-bolder); }
+  .il-badge[data-appearance='warning'] { --bd-bg: var(--il-background-warning-subtler); --bd-text: var(--il-text-warning-bolder); }
+  .il-badge[data-appearance='danger'] { --bd-bg: var(--il-background-danger-subtler); --bd-text: var(--il-text-danger-bolder); }
+  .il-badge[data-appearance='discovery'] { --bd-bg: var(--il-background-discovery-subtler); --bd-text: var(--il-text-discovery-bolder); }
+  .il-badge[data-appearance='informationBold'] { --bd-bg: var(--il-background-information-subtle); --bd-text: var(--il-text-information-bolder); }
+  .il-badge[data-appearance='successBold'] { --bd-bg: var(--il-background-success-subtle); --bd-text: var(--il-text-success-bolder); }
+  .il-badge[data-appearance='warningBold'] { --bd-bg: var(--il-background-warning-bold); --bd-text: var(--il-text-warning-bolder); }
+  .il-badge[data-appearance='dangerBold'] { --bd-bg: var(--il-background-danger-subtle); --bd-text: var(--il-text-danger-bolder); }
+  .il-badge[data-appearance='discoveryBold'] { --bd-bg: var(--il-background-discovery-subtle); --bd-text: var(--il-text-discovery-bolder); }
+}
