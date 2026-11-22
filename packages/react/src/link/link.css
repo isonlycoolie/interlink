@@ -1,0 +1,10 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .il-link { color: var(--il-link); text-decoration-line: underline; text-underline-offset: 0.15em; }
+  .il-link:hover { color: var(--il-link); text-decoration-thickness: 2px; }
+  .il-link:active { color: var(--il-link-pressed); }
+  .il-link:visited { color: var(--il-link-visited); }
+  .il-link[data-appearance='subtle'] { color: var(--il-text-subtle); text-decoration-line: none; }
+  .il-link[data-appearance='subtle']:hover { color: var(--il-text); text-decoration-line: underline; }
+  .il-link[data-appearance='inverse'] { color: var(--il-text-inverse); }
+}
