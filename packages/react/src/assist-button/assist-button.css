@@ -1,0 +1,14 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .il-assist-mark { display: inline-flex; flex-shrink: 0; line-height: 0; vertical-align: middle; }
+  .il-assist-mark[data-scale] { width: 100%; height: 100%; }
+  .il-assist-mark > svg { display: block; }
+  .il-button:hover .il-assist-mark > svg { animation: il-assist-turn var(--il-duration-long) var(--il-easing-out-practical); }
+  @keyframes il-assist-turn {
+    from { transform: rotate(-90deg); }
+    to { transform: rotate(0deg); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .il-button:hover .il-assist-mark > svg { animation: none; }
+  }
+}
