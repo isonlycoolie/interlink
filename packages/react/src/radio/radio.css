@@ -1,0 +1,38 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .il-radio-group { display: flex; flex-direction: column; }
+  .il-radio { display: flex; align-items: flex-start; gap: var(--il-space-050); padding-block: var(--il-space-025); font: var(--il-font-body); color: var(--il-text); }
+  .il-radio-input {
+    --r-bg: var(--il-background-input);
+    --r-border: var(--il-border-input);
+    --r-dot: var(--il-icon-inverse);
+    --r-dot-opacity: 0;
+    position: relative;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: var(--il-space-300);
+    height: var(--il-space-300);
+    margin: 0;
+    appearance: none;
+    border: var(--il-border-width) solid var(--r-border);
+    border-radius: var(--il-radius-full);
+    background-color: var(--r-bg);
+    transform: scale(0.625);
+    cursor: pointer;
+    transition: var(--il-input-selection);
+  }
+  .il-radio-input::after { content: ''; width: 0.5rem; height: 0.5rem; border-radius: var(--il-radius-full); background: var(--r-dot); opacity: var(--r-dot-opacity); }
+  .il-radio-input:hover { --r-bg: var(--il-background-input-hovered); }
+  .il-radio-input:active { --r-bg: var(--il-background-input-pressed); }
+  .il-radio-input:checked { --r-bg: var(--il-background-selected-bold); --r-border: var(--il-background-selected-bold); --r-dot-opacity: 1; }
+  .il-radio-input:checked:hover { --r-bg: var(--il-background-selected-bold-hovered); --r-border: var(--il-background-selected-bold-hovered); }
+  .il-radio-input:checked:active { --r-bg: var(--il-background-selected-bold-pressed); }
+  .il-radio-input[data-invalid] { --r-border: var(--il-icon-danger); }
+  .il-radio-input:focus-visible { outline: calc(var(--il-border-width-focused) * 1.6) solid var(--il-border-focused); outline-offset: var(--il-border-width-focused); }
+  .il-radio-input:disabled { --r-bg: var(--il-background-disabled); --r-border: var(--il-border-disabled); --r-dot: var(--il-icon-disabled); cursor: not-allowed; }
+  .il-radio[data-disabled] { color: var(--il-text-disabled); }
+  .il-radio-label { align-self: center; }
+  @media (forced-colors: active) { .il-radio-input { --r-border: CanvasText; } .il-radio-input:checked { --r-dot: CanvasText; --r-bg: Canvas; } }
+}
