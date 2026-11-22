@@ -1,0 +1,68 @@
+---
+title: Illustrations
+description: Flat spot and hero illustrations in pure colour that bring warmth to empty states, onboarding and landing pages.
+---
+
+Illustrations give a moment personality: an empty list, a first visit, a finished task. Interlink ships 55 of them
+in one style, drawn from simple shapes in a few pure colours, so they sit comfortably next to icons and type.
+
+## Gallery
+
+<IllustrationGallery />
+
+## Install and use
+
+```bash
+pnpm add @interlink/illustrations
+```
+
+```tsx
+import '@interlink/illustrations/styles.css';
+import EmptySearch from '@interlink/illustrations/art/empty-search';
+
+<EmptySearch size="medium" label="No results" />;
+```
+
+Each illustration also ships as a standalone file, such as `@interlink/illustrations/svg/empty-search.svg`, for
+design tools, emails and slides.
+
+## Recolour to your brand
+
+Every illustration is drawn with eight colour roles. Pass any of them to `colors` and the whole piece follows, in
+light and dark mode.
+
+| Role | Default | Use |
+| --- | --- | --- |
+| `primary` | Brand colour | The main shape |
+| `secondary` | Purple | Supporting shapes |
+| `tertiary` | Saffron | Highlights and sparks |
+| `quaternary` | Lime | Success and growth |
+| `accent` | Blue | Small details |
+| `neutral` | Quiet gray | Pages, cards and backgrounds |
+| `ink` | Near black, mid gray in dark mode | Small doses of contrast |
+| `paper` | White | Seams between shapes |
+
+```tsx
+<Growth colors={{ primary: '#00875A', tertiary: '#FF8B00' }} label="Revenue is up" />
+```
+
+## When to use
+
+- **Empty states**: explain why a space is empty and what to do next. Pair with `EmptyState`.
+- **Onboarding**: welcome people and show the path ahead.
+- **Status**: soften errors, outages and confirmations without hiding the message.
+- **Landing pages and cards**: give entry points a recognizable face.
+
+## Best practices
+
+- Use one illustration per view. Several at once compete for attention.
+- Pick the piece whose meaning matches the moment; the gallery lists the meaning of each one.
+- Size it to the space: `small` in panels and cards, `medium` in empty states, `large` or hero pieces on landing
+  pages.
+- Keep the words doing the work. An illustration supports the message; it never replaces it.
+
+## Accessibility
+
+- When the text beside an illustration already says what it shows, leave out `label` so screen readers skip it.
+- When the picture carries meaning on its own, give it a short `label`.
+- Never put text inside an illustration; it would not translate or scale.
