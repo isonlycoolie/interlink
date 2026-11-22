@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 96">
+  <rect x="106" y="30" width="56" height="44" rx="22" fill="N"/>
+  <polygon points="140,70 154,70 154,86" fill="N"/>
+  <rect x="118" y="44" width="24" height="5" rx="2.5" fill="W"/>
+  <rect x="118" y="55" width="32" height="5" rx="2.5" fill="W"/>
+  <path d="M84 44 L56 44 A28 28 0 0 1 84 16 Z" fill="S"/>
+  <path d="M84 44 L84 16 A28 28 0 0 1 112 44 Z" fill="T"/>
+  <path d="M84 44 L112 44 A28 28 0 0 1 84 72 Z" fill="P"/>
+  <path d="M84 44 L84 72 A28 28 0 0 1 56 44 Z" fill="Q"/>
+  <polygon points="58,58 68,58 54,78" fill="Q"/>
+  <rect x="82.5" y="14" width="3" height="60" fill="W"/>
+  <rect x="54" y="42.5" width="60" height="3" fill="W"/>
+  <path d="M100.5 15.42 L103.5 10.23" fill="none" stroke="T" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M109.28 22.79 L113.88 18.93" fill="none" stroke="T" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M115.01 32.71 L120.65 30.66" fill="none" stroke="T" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="40,18 41.8,22.2 46,24 41.8,25.8 40,30 38.2,25.8 34,24 38.2,22.2" fill="A"/>
+  <polygon points="174,65 175.5,68.5 179,70 175.5,71.5 174,75 172.5,71.5 169,70 172.5,68.5" fill="S"/>
+</svg>
