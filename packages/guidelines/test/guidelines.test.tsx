@@ -28,7 +28,7 @@ describe('guideline data', () => {
     for (const [id, s] of Object.entries(sources)) if (s.dont) expect(s.dont.startsWith(`// @interlink-dont ${id}`), id).toBe(true);
   });
 
-  it('keeps good examples on tokens: no raw colours or pixel sizes', () => {
+  it('keeps good examples on tokens: no raw colors or pixel sizes', () => {
     for (const [id, s] of Object.entries(sources)) if (s.do) expect(s.do, id).not.toMatch(/#[0-9a-f]{3,8}\b|\d+px/i);
   });
 });
