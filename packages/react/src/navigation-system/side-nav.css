@@ -1,0 +1,62 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .il-ns-side { display: flex; grid-area: side; flex-direction: column; width: 15rem; min-height: 0; border-inline-end: var(--il-border-width) solid var(--il-border); background: var(--il-surface); }
+  .il-ns-side[hidden] { display: none; }
+  .il-ns-side-header { display: flex; align-items: center; gap: var(--il-space-100); padding: var(--il-space-150) var(--il-space-150) var(--il-space-100); }
+  .il-ns-side-header-text { display: flex; flex: 1; flex-direction: column; min-width: 0; }
+  .il-ns-side-header-title { overflow: hidden; font: var(--il-font-heading-xsmall); text-overflow: ellipsis; white-space: nowrap; }
+  .il-ns-side-header-subtitle { color: var(--il-text-subtle); font: var(--il-font-body-small); }
+  .il-ns-side-content { display: flex; flex: 1; flex-direction: column; gap: var(--il-space-100); min-height: 0; padding: var(--il-space-100) var(--il-space-150); overflow-y: auto; }
+  .il-ns-side-footer { display: flex; flex-direction: column; gap: var(--il-space-025); padding: var(--il-space-100) var(--il-space-150) var(--il-space-150); border-top: var(--il-border-width) solid var(--il-border); }
+  .il-ns-section[data-separator] { padding-top: var(--il-space-100); border-top: var(--il-border-width) solid var(--il-border); }
+  .il-ns-section-head { display: flex; align-items: center; justify-content: space-between; min-height: var(--il-space-300); padding: 0 var(--il-space-050) 0 var(--il-space-100); }
+  .il-ns-section-title { margin: 0; color: var(--il-text-subtle); font: var(--il-font-heading-xxsmall); }
+  .il-ns-list { display: flex; flex-direction: column; gap: var(--il-space-025); margin: 0; padding: 0; list-style: none; }
+  .il-ns-nested { padding-inline-start: var(--il-space-200); }
+  .il-ns-nested[hidden] { display: none; }
+  .il-ns-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--il-space-100);
+    width: 100%;
+    min-height: var(--il-space-400);
+    padding: 0 var(--il-space-100);
+    border: 0;
+    border-radius: var(--il-radius-small);
+    background: transparent;
+    color: var(--il-text-subtle);
+    font: var(--il-font-body);
+    font-weight: var(--il-font-weight-medium);
+    text-align: start;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .il-ns-item:hover { background: var(--il-background-neutral-subtle-hovered); color: var(--il-text-subtle); }
+  .il-ns-item:active { background: var(--il-background-neutral-subtle-pressed); }
+  .il-ns-item:focus-visible { outline: var(--il-border-width-focused) solid var(--il-border-focused); outline-offset: calc(-1 * var(--il-border-width-focused)); }
+  .il-ns-item[aria-current='page'], .il-ns-item[data-selected] { background: var(--il-background-selected); color: var(--il-text-selected); }
+  .il-ns-item[aria-current='page']:hover, .il-ns-item[data-selected]:hover { background: var(--il-background-selected-hovered); }
+  .il-ns-item[aria-current='page']::before, .il-ns-item[data-selected]::before {
+    position: absolute;
+    top: var(--il-space-100);
+    bottom: var(--il-space-100);
+    left: 0;
+    width: 2px;
+    border-radius: 0 var(--il-radius-xsmall) var(--il-radius-xsmall) 0;
+    background: var(--il-border-selected);
+    content: '';
+  }
+  .il-ns-item-icon { display: inline-flex; flex: none; align-items: center; justify-content: center; width: var(--il-space-300); color: var(--il-icon-subtle); }
+  .il-ns-item[aria-current='page'] .il-ns-item-icon, .il-ns-item[data-selected] .il-ns-item-icon { color: var(--il-icon-selected); }
+  .il-ns-item-label { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .il-ns-item-after { display: inline-flex; flex: none; align-items: center; }
+  .il-ns-expand-row { position: relative; display: flex; align-items: center; }
+  .il-ns-chevron { width: var(--il-space-200); transition: transform var(--il-duration-short) var(--il-easing-out-practical); }
+  [data-expanded] > .il-ns-expand-row .il-ns-chevron { transform: rotate(90deg); }
+  .il-ns-item-actions { position: absolute; right: var(--il-space-050); display: flex; opacity: 0; }
+  .il-ns-expand-row:hover .il-ns-item-actions, .il-ns-expand-row:focus-within .il-ns-item-actions { opacity: 1; }
+  @media (prefers-reduced-motion: reduce) {
+    .il-ns-chevron { transition: none; }
+  }
+}
