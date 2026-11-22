@@ -1,0 +1,77 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* Colours per appearance; hover and pressed only while the button is interactive. */
+@layer interlink.components {
+  .il-button[data-appearance='default']::after {
+    border-color: var(--il-border);
+  }
+  .il-button:is([data-appearance='default'], [data-appearance='subtle']) {
+    --b-bg: var(--il-background-neutral-subtle);
+    --b-hover: var(--il-background-neutral-subtle-hovered);
+    --b-press: var(--il-background-neutral-subtle-pressed);
+    background-color: var(--b-bg);
+    color: var(--il-text-subtle);
+  }
+  .il-button[data-appearance='primary'] {
+    --b-bg: var(--il-background-brand-bold);
+    --b-hover: var(--il-background-brand-bold-hovered);
+    --b-press: var(--il-background-brand-bold-pressed);
+  }
+  .il-button[data-appearance='warning'] {
+    --b-bg: var(--il-background-warning-bold);
+    --b-hover: var(--il-background-warning-bold-hovered);
+    --b-press: var(--il-background-warning-bold-pressed);
+  }
+  .il-button[data-appearance='danger'] {
+    --b-bg: var(--il-background-danger-bold);
+    --b-hover: var(--il-background-danger-bold-hovered);
+    --b-press: var(--il-background-danger-bold-pressed);
+  }
+  .il-button[data-appearance='discovery'] {
+    --b-bg: var(--il-background-discovery-bold);
+    --b-hover: var(--il-background-discovery-bold-hovered);
+    --b-press: var(--il-background-discovery-bold-pressed);
+  }
+  .il-button:is([data-appearance='primary'], [data-appearance='danger'], [data-appearance='discovery']) {
+    background-color: var(--b-bg);
+    color: var(--il-text-inverse);
+  }
+  .il-button[data-appearance='warning'] {
+    background-color: var(--b-bg);
+    color: var(--il-text-warning-inverse);
+  }
+  .il-button[data-interactive]:hover {
+    background-color: var(--b-hover);
+  }
+  .il-button[data-interactive]:active {
+    background-color: var(--b-press);
+  }
+
+  .il-button[data-selected] {
+    --b-bg: var(--il-background-selected);
+    --b-hover: var(--il-background-selected-hovered);
+    --b-press: var(--il-background-selected-pressed);
+    background-color: var(--b-bg);
+    color: var(--il-text-selected);
+  }
+  .il-button[data-selected]::after {
+    border-color: var(--il-border-selected);
+  }
+  .il-button[data-selected]:is([data-appearance='warning'], [data-appearance='danger'], [data-appearance='discovery']) {
+    --b-hover: var(--il-background-selected);
+    --b-press: var(--il-background-selected);
+  }
+
+  .il-button[data-disabled] {
+    cursor: not-allowed;
+    color: var(--il-text-disabled);
+  }
+  .il-button[data-disabled]:not([data-appearance='default'], [data-appearance='subtle']) {
+    background-color: var(--il-background-disabled);
+  }
+  .il-button[data-disabled]:is([data-appearance='default'], [data-appearance='subtle']) {
+    background-color: transparent;
+  }
+  .il-button[data-disabled][data-appearance='default']::after {
+    border-color: var(--il-border-disabled);
+  }
+}
