@@ -1,0 +1,50 @@
+{
+  "name": "@interlink/illustrations",
+  "version": "0.0.0",
+  "description": "Interlink spot and hero illustrations: flat shapes in pure colours that products can recolour.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "sideEffects": [
+    "*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
+    },
+    "./all": {
+      "types": "./dist/generated/all.d.mts",
+      "default": "./dist/generated/all.mjs"
+    },
+    "./art/*": {
+      "types": "./dist/generated/art/*.d.mts",
+      "default": "./dist/generated/art/*.mjs"
+    },
+    "./svg/*": "./dist/svg/*",
+    "./styles.css": "./dist/styles.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "node scripts/build-illustrations.mjs && tsdown",
+    "test": "node scripts/build-illustrations.mjs && vitest run",
+    "typecheck": "node scripts/build-illustrations.mjs && tsc --noEmit",
+    "sheet": "node scripts/render-sheet.mjs"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0"
+  },
+  "devDependencies": {
+    "@resvg/resvg-js": "2.6.2",
+    "@testing-library/react": "16.3.3",
+    "@types/node": "26.6.6",
+    "@types/react": "19.3.0",
+    "jsdom": "31.0.1",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "tsdown": "0.23.7",
+    "typescript": "7.0.2",
+    "vitest": "5.1.1"
+  }
+}
