@@ -15,7 +15,8 @@
     "./kit.css": "./src/kit/kit.css",
     "./sources": "./src/generated/sources.ts",
     "./screens": "./screens/index.ts",
-    "./screens.css": "./screens/screens.css"
+    "./screens.css": "./screens/screens.css",
+    "./people": "./src/people.ts"
   },
   "scripts": {
     "build": "node scripts/build-sources.mjs",
