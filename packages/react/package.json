@@ -240,6 +240,14 @@
       "types": "./dist/agent-card.d.mts",
       "default": "./dist/agent-card.mjs"
     },
+    "./navigation-system": {
+      "types": "./dist/navigation-system.d.mts",
+      "default": "./dist/navigation-system.mjs"
+    },
+    "./page-header": {
+      "types": "./dist/page-header.d.mts",
+      "default": "./dist/page-header.mjs"
+    },
     "./docs": {
       "types": "./dist/docs.d.mts",
       "default": "./dist/docs.mjs"

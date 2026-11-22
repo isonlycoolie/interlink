@@ -64,6 +64,9 @@ const files = [
   'src/prompt-suggestions/prompt-suggestions.css',
   'src/suggestion-card/suggestion-card.css',
   'src/thinking-indicator/thinking-indicator.css',
+  'src/navigation-system/shell.css',
+  'src/navigation-system/side-nav.css',
+  'src/page-header/page-header.css',
   'src/generated/xcss.css',
 ];
 const css = files.map((f) => fs.readFileSync(path.join(root, f), 'utf8')).join('\n');

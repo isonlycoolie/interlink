@@ -55,6 +55,8 @@ import { aiDisclaimerDocs } from '../ai-disclaimer/ai-disclaimer.docs';
 import { suggestionCardDocs } from '../suggestion-card/suggestion-card.docs';
 import { actionPlanDocs } from '../action-plan/action-plan.docs';
 import { agentCardDocs } from '../agent-card/agent-card.docs';
+import { navigationSystemDocs } from '../navigation-system/navigation-system.docs';
+import { pageHeaderDocs } from '../page-header/page-header.docs';
 import { iconDocs } from './icon.docs';
 import type { ComponentDoc } from './types';
 
@@ -119,4 +121,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
   "suggestion-card": suggestionCardDocs,
   "action-plan": actionPlanDocs,
   "agent-card": agentCardDocs,
+  "navigation-system": navigationSystemDocs,
+  "page-header": pageHeaderDocs,
 };
