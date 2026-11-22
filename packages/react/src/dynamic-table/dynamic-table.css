@@ -1,0 +1,47 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .il-dynamic-table-frame { position: relative; }
+  .il-dynamic-table-frame[data-loading] .il-table tbody { opacity: var(--il-opacity-loading); }
+  .il-table { width: 100%; border-collapse: separate; border-spacing: 0; color: var(--il-text); font: var(--il-font-body); }
+  .il-table[data-fixed] { table-layout: fixed; }
+  .il-table-caption { margin: var(--il-space-300) 0 var(--il-space-100); font: var(--il-font-heading-medium); text-align: start; }
+  .il-table th {
+    padding: var(--il-space-050) var(--il-space-100);
+    border-block-end: var(--il-border-width-selected) solid var(--il-border);
+    color: var(--il-text-subtle);
+    font: var(--il-font-body-small);
+    font-weight: var(--il-font-weight-bold);
+    text-align: start;
+    vertical-align: bottom;
+  }
+  .il-table td { padding: var(--il-space-100); border-block-end: var(--il-border-width) solid var(--il-border); vertical-align: middle; }
+  .il-table :is(th, td):first-child { padding-inline-start: 0; }
+  .il-table :is(th, td):last-child { padding-inline-end: 0; }
+  .il-table tbody tr { background-color: var(--il-background-neutral-subtle); transition: var(--il-listitem-hovered); }
+  .il-table tbody tr:hover { background-color: var(--il-background-neutral-subtle-hovered); }
+  .il-table tbody tr[data-highlighted] { background-color: var(--il-background-selected); }
+  .il-table th[data-truncate] .il-table-head-text { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .il-table-sort {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--il-space-050);
+    max-width: 100%;
+    padding: 0;
+    border: 0;
+    border-radius: var(--il-radius-small);
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+  }
+  .il-table-sort-icon { display: flex; opacity: 0; transition: opacity var(--il-duration-short); }
+  .il-table-sort:is(:hover, :focus-visible) .il-table-sort-icon,
+  .il-table-sort[data-active] .il-table-sort-icon { opacity: 1; }
+  .il-table-sort[data-active] { color: var(--il-text); }
+  .il-table-empty { width: 50%; margin: auto; padding: var(--il-space-300) var(--il-space-100); text-align: center; }
+  .il-table-loading { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; }
+  .il-table-pagination { display: flex; justify-content: center; margin-block-start: var(--il-space-300); }
+  @media (prefers-reduced-motion: reduce) {
+    .il-table tbody tr, .il-table-sort-icon { transition: none; }
+  }
+}
