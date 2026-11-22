@@ -58,3 +58,11 @@
 }
 .ilk-spotlight { display: inline-flex; padding: var(--il-space-200); }
 .ilk-spotlight-media { display: flex; flex-direction: column; justify-content: center; gap: var(--il-space-100); height: 100%; padding: var(--il-space-200); background-color: var(--il-background-accent-blue-subtler); }
+.ilk-app { position: relative; display: flex; flex-direction: column; box-sizing: border-box; overflow: hidden; border: var(--il-border-width) solid var(--il-border); border-radius: var(--il-radius-large); background: var(--il-surface); color: var(--il-text); }
+.ilk-app[data-row] { flex-direction: row; }
+.ilk-app-page { flex: 1; min-width: 0; padding: var(--il-space-250) var(--il-space-300); }
+.ilk-app-lines { display: flex; flex-direction: column; gap: var(--il-space-150); }
+.ilk-app .il-ns-panel { position: relative; flex: none; width: min(22rem, 100%); }
+.ilk-app[data-row] .il-ns-panel { width: 50%; }
+.ilk-cover { position: absolute; inset: 0; z-index: 1; }
+.ilk-cover > .ilk-blanket { box-sizing: border-box; height: 100%; align-items: center; border-radius: 0; }
