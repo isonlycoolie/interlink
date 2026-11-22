@@ -16,4 +16,15 @@
   .ilk-align-guide[data-verdict='good'] { --mark: var(--il-border-discovery); }
   .ilk-align-guide[data-verdict='bad'] { --mark: var(--il-border-danger); }
   .ilk-crop { position: relative; overflow: hidden; width: 100%; }
+  .ilk-token-tag { display: inline-flex; align-items: center; gap: var(--il-space-075); padding: var(--il-space-050) var(--il-space-100); border-radius: var(--il-radius-small); background: var(--il-background-neutral); color: var(--il-text); white-space: nowrap; }
+  .ilk-token-tag code { font: var(--il-font-code); font-size: 0.8125rem; }
+  .ilk-token-swatch { display: inline-block; width: var(--il-space-200); height: var(--il-space-200); border-radius: var(--il-radius-xsmall); box-shadow: inset 0 0 0 var(--il-border-width) var(--il-border); }
+  .ilk-pointer { display: inline-flex; flex-direction: column; align-items: center; }
+  .ilk-pointer[data-direction='horizontal'] { flex-direction: row; }
+  .ilk-connector { position: relative; display: block; flex-shrink: 0; width: var(--il-border-width-selected); height: var(--il-space-400); background: var(--il-text); }
+  .ilk-connector::after { content: ''; position: absolute; left: 50%; bottom: calc(-1 * var(--il-space-050)); width: var(--il-space-100); height: var(--il-space-100); border-radius: 50%; background: var(--il-text); transform: translateX(-50%); }
+  .ilk-connector[data-direction='horizontal'] { width: var(--il-space-500); height: var(--il-border-width-selected); }
+  .ilk-connector[data-direction='horizontal']::after { left: auto; right: calc(-1 * var(--il-space-050)); bottom: 50%; transform: translateY(50%); }
+  .ilk-avatar { display: inline-flex; align-items: center; justify-content: center; width: var(--il-space-500); height: var(--il-space-500); border-radius: var(--il-radius-full); box-shadow: 0 0 0 var(--il-border-width-selected) var(--il-surface); font: var(--il-font-heading-xsmall); color: var(--il-text); }
+  .ilk-avatar[data-size='large'] { width: var(--il-space-800); height: var(--il-space-800); font: var(--il-font-heading-medium); }
 }

@@ -31,7 +31,7 @@ export function Card({ children, width, padding = 'space.300', style }: { childr
 
 /**
  * A vertical gap of exactly one space token. Give it a verdict to draw it as a hatched band that marks the gap
- * the rule is about: `good` in the discovery colour, `bad` in the danger colour.
+ * the rule is about: `good` in the discovery color, `bad` in the danger color.
  */
 export function Gap({ space, verdict }: { space: string; verdict?: 'good' | 'bad' }) {
   return (
