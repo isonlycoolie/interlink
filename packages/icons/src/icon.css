@@ -1,0 +1,31 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.base {
+  .il-icon {
+    display: inline-block;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    line-height: 1;
+    vertical-align: bottom;
+    color: currentColor;
+  }
+  .il-icon > svg {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    color: inherit;
+    pointer-events: none;
+  }
+  .il-icon-medium-none { width: var(--il-space-200); height: var(--il-space-200); }
+  .il-icon-medium-compact,
+  .il-icon-medium-spacious { width: var(--il-space-300); height: var(--il-space-300); }
+  .il-icon-small-none { width: var(--il-space-150); height: var(--il-space-150); }
+  .il-icon-small-compact { width: var(--il-space-200); height: var(--il-space-200); }
+  .il-icon-small-spacious { width: var(--il-space-300); height: var(--il-space-300); }
+  .il-icon-scale { width: inherit; height: inherit; }
+  @media (forced-colors: active) {
+    .il-icon > svg {
+      color: CanvasText;
+    }
+  }
+}
