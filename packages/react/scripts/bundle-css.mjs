@@ -40,6 +40,18 @@ const files = [
   'src/pagination/pagination.css',
   'src/select/select.css',
   'src/tabs/tabs.css',
+  'src/calendar/calendar.css',
+  'src/comment/comment.css',
+  'src/date-label/date-label.css',
+  'src/datetime-picker/datetime-picker.css',
+  'src/dynamic-table/dynamic-table.css',
+  'src/image/image.css',
+  'src/object/object.css',
+  'src/progress-indicator/progress-indicator.css',
+  'src/progress-tracker/progress-tracker.css',
+  'src/range/range.css',
+  'src/spotlight/spotlight.css',
+  'src/tile/tile.css',
   'src/generated/xcss.css',
 ];
 const css = files.map((f) => fs.readFileSync(path.join(root, f), 'utf8')).join('\n');

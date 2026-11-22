@@ -31,6 +31,18 @@ import { tabsDocs } from '../tabs/tabs.docs';
 import { breadcrumbsDocs } from '../breadcrumbs/breadcrumbs.docs';
 import { paginationDocs } from '../pagination/pagination.docs';
 import { selectDocs } from '../select/select.docs';
+import { tileDocs } from '../tile/tile.docs';
+import { objectDocs } from '../object/object.docs';
+import { dateLabelDocs } from '../date-label/date-label.docs';
+import { imageDocs } from '../image/image.docs';
+import { rangeDocs } from '../range/range.docs';
+import { progressIndicatorDocs } from '../progress-indicator/progress-indicator.docs';
+import { progressTrackerDocs } from '../progress-tracker/progress-tracker.docs';
+import { commentDocs } from '../comment/comment.docs';
+import { calendarDocs } from '../calendar/calendar.docs';
+import { datetimePickerDocs } from '../datetime-picker/datetime-picker.docs';
+import { spotlightDocs } from '../spotlight/spotlight.docs';
+import { dynamicTableDocs } from '../dynamic-table/dynamic-table.docs';
 import { iconDocs } from './icon.docs';
 import type { ComponentDoc } from './types';
 
@@ -71,4 +83,16 @@ export const componentDocs: Record<string, ComponentDoc> = {
   breadcrumbs: breadcrumbsDocs,
   pagination: paginationDocs,
   select: selectDocs,
+  tile: tileDocs,
+  object: objectDocs,
+  "date-label": dateLabelDocs,
+  image: imageDocs,
+  range: rangeDocs,
+  "progress-indicator": progressIndicatorDocs,
+  "progress-tracker": progressTrackerDocs,
+  comment: commentDocs,
+  calendar: calendarDocs,
+  "datetime-picker": datetimePickerDocs,
+  spotlight: spotlightDocs,
+  "dynamic-table": dynamicTableDocs,
 };
