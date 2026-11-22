@@ -1,0 +1,22 @@
+---
+title: Radius
+description: A small set of corner radii that grow with the size of the element.
+---
+
+Corner radius sets the character of an interface. Interlink uses small radii for dense controls and larger ones
+for containers, so shapes nest neatly: the inner radius is always smaller than the outer one.
+
+## Radius tokens
+
+<RadiusScale />
+
+## Choosing a radius
+
+- Match the radius to the size of the element: small controls, small radius.
+- Inside a container, use a smaller radius than the container itself.
+- Never mix radii within one component.
+
+## Focus state
+
+Focus rings follow the radius of the element they surround, offset by the ring width, so the ring and the element
+always share the same curve.

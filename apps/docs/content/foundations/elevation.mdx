@@ -1,0 +1,49 @@
+---
+title: Elevation
+description: Surfaces and shadows that show what sits on top of what.
+---
+
+Elevation tells people how the layers of an interface stack: what is the page, what can be picked up, and what is
+floating above everything else. Each level is a pair of tokens, a surface color and a shadow, that move together.
+
+## Applying elevations
+
+Interlink has four levels. Pick the lowest level that does the job; every step up asks for more attention.
+
+<ElevationStack />
+
+### Elevations in dark theme
+
+In dark mode, higher surfaces get lighter and shadows soften. The surface does most of the work, which is why the
+pairing rule below matters.
+
+## Levels
+
+### Sunken
+
+A recessed backdrop for grouping, such as the columns of a board. It holds content; it is never interactive itself.
+
+<SunkenVsNeutral />
+
+### Default, raised and overlay
+
+The default surface is the page. Raised surfaces hold cards people can open or move. Overlay surfaces hold
+anything that floats above the page: menus, popups, dialogs and floating toolbars.
+
+### Overflow
+
+The overflow shadow sits under sticky headers and scroll containers to show there is more content beneath.
+
+## States
+
+Raised and overlay surfaces have hovered and pressed variants. Dragged items rise to the overlay level.
+
+<ElevationStates />
+
+## Follow the recommended surface and shadow pairings
+
+<Guideline id="elevation.surface-shadow-pairs" />
+
+## Avoid excessive use of raised and overlay elevations
+
+<Guideline id="elevation.limit-floating" />

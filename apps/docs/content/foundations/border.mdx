@@ -1,0 +1,28 @@
+---
+title: Border
+description: Borders that separate, select and show focus, from three widths and a set of color tokens.
+---
+
+Borders define edges, separate content and show state. Interlink keeps them thin and quiet; a border should only be
+noticed when it carries a state such as selected or focused.
+
+## About border tokens
+
+A border is always a width token paired with a color token. Use the pairings below rather than mixing your own.
+
+<BorderSpecimen />
+
+### Default border width
+
+`border.width` draws inputs, dividers and outlined containers. Pair it with `color.border` for quiet edges or
+`color.border.bold` where the edge must stand out, such as an empty input.
+
+### Selected states
+
+Selected items use `border.width.selected` with `color.border.selected`, together with a selected background. The
+thicker edge keeps selection visible without relying on color alone.
+
+### Focus ring
+
+Keyboard focus uses `border.width.focused` and `color.border.focused`, drawn as an outline outside the element so it
+never shifts layout. Every interactive Interlink component draws it for you.
