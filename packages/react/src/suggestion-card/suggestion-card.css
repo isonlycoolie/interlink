@@ -1,0 +1,21 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .il-suggestion-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--il-space-100);
+    padding: var(--il-space-150) var(--il-space-200) var(--il-space-200);
+    border: var(--il-border-width) solid var(--il-border);
+    border-radius: var(--il-radius-large);
+    background: var(--il-surface-raised);
+    box-shadow: var(--il-shadow-raised);
+  }
+  .il-suggestion-card-head { display: flex; align-items: center; justify-content: space-between; min-height: var(--il-space-300); }
+  .il-suggestion-card-eyebrow { display: inline-flex; align-items: center; gap: var(--il-space-075); color: var(--il-text-subtle); font: var(--il-font-body-small); font-weight: var(--il-font-weight-semibold); }
+  .il-suggestion-card-title { margin: 0; font: var(--il-font-heading-small); }
+  .il-suggestion-card-reason { color: var(--il-text-subtle); font: var(--il-font-body); }
+  .il-suggestion-card-context { display: flex; flex-wrap: wrap; align-items: center; gap: var(--il-space-075); font: var(--il-font-body-small); }
+  .il-suggestion-card-context-label { color: var(--il-text-subtlest); }
+  .il-suggestion-card-actions { display: flex; justify-content: flex-end; gap: var(--il-space-100); margin-top: var(--il-space-100); }
+  .il-suggestion-card-done { color: var(--il-text-success); font: var(--il-font-body); font-weight: var(--il-font-weight-medium); }
+}
