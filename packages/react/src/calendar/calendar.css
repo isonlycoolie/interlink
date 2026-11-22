@@ -1,0 +1,46 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .il-calendar { display: inline-block; padding: var(--il-space-200); color: var(--il-text); }
+  .il-calendar-header { display: flex; align-items: center; justify-content: space-between; gap: var(--il-space-100); margin-block-end: var(--il-space-100); }
+  .il-calendar-title { margin: 0; font: var(--il-font-heading-xsmall); text-align: center; }
+  .il-calendar-grid { border-collapse: separate; border-spacing: 0; }
+  .il-calendar-weekday { min-width: var(--il-space-500); padding-block: var(--il-space-050); color: var(--il-text-subtle); font: var(--il-font-body-small); font-weight: var(--il-font-weight-bold); white-space: nowrap; }
+  .il-calendar-grid td { padding: 0; }
+  .il-calendar-day {
+    all: unset;
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: var(--il-space-050) calc(var(--il-space-100) + var(--il-space-025) / 2);
+    border: var(--il-border-width-selected) solid transparent;
+    border-radius: var(--il-radius-medium);
+    background-color: transparent;
+    color: var(--il-text);
+    font: var(--il-font-body);
+    text-align: center;
+    cursor: pointer;
+    transition: var(--il-listitem-hovered);
+  }
+  .il-calendar-day:hover { background-color: var(--il-background-neutral-subtle-hovered); }
+  .il-calendar-day:active { background-color: var(--il-background-neutral-subtle-pressed); transition: var(--il-listitem-pressed); }
+  .il-calendar-day:focus-visible { border-color: var(--il-border-focused); }
+  .il-calendar-day[data-sibling] { color: var(--il-text-subtlest); }
+  .il-calendar-day[data-today] { color: var(--il-text-selected); font-weight: var(--il-font-weight-bold); }
+  .il-calendar-day[data-today]::after {
+    content: '';
+    position: absolute;
+    inset-inline: var(--il-space-025);
+    inset-block-end: var(--il-space-025);
+    height: var(--il-border-width-selected);
+    background-color: currentColor;
+  }
+  .il-calendar-day[data-selected] { background-color: var(--il-background-selected-bold); color: var(--il-text-inverse); }
+  .il-calendar-day[data-selected]:hover { background-color: var(--il-background-selected-bold-hovered); }
+  .il-calendar-day[data-selected]:active { background-color: var(--il-background-selected-bold-pressed); }
+  .il-calendar-day[aria-disabled] { color: var(--il-text-disabled); cursor: not-allowed; }
+  .il-calendar-day[aria-disabled]:is(:hover, :active) { background-color: transparent; }
+  @media (prefers-reduced-motion: reduce) {
+    .il-calendar-day { transition: none; }
+  }
+}
