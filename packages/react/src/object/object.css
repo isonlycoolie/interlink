@@ -1,0 +1,4 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .il-object { display: inline-flex; flex-shrink: 0; vertical-align: middle; }
+}
