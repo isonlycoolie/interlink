@@ -4,6 +4,8 @@ import type { MDXComponents } from 'mdx/types';
 import type { ComponentProps, ReactNode } from 'react';
 import { ColorRoles, PaletteRamps } from '../specimens/color';
 import { AccentGrid, EmphasisLadder, InteractionStates, InverseOnBold } from '../specimens/color-states';
+import { ElevationStack, ElevationStates, SunkenVsNeutral } from '../specimens/elevation';
+import { BorderSpecimen, RadiusScale } from '../specimens/shape';
 import { SpacingBands, SpacingScale } from '../specimens/spacing-scale';
 import { DoDont, DoDontGrid, Example } from './do-dont';
 import { Guideline, Guidelines } from './guideline';
@@ -46,4 +48,9 @@ export const mdxComponents: MDXComponents = {
   InverseOnBold,
   InteractionStates,
   AccentGrid,
+  ElevationStack,
+  ElevationStates,
+  SunkenVsNeutral,
+  BorderSpecimen,
+  RadiusScale,
 };
