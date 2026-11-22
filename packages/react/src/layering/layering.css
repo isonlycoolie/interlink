@@ -1,0 +1,56 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  /* Shared overlay surface: popups, menus, inline dialogs and select menus. */
+  .il-layer {
+    position: fixed;
+    inset: auto;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: var(--il-radius-large);
+    background-color: var(--il-surface-overlay);
+    box-shadow: var(--il-shadow-overlay);
+    color: var(--il-text);
+    --il-elevation-surface-current: var(--il-surface-overlay);
+    z-index: 400;
+    overflow: auto;
+  }
+  .il-layer:focus { outline: none; }
+  .il-layer[data-side='bottom'] { animation: var(--il-popup-enter-bottom); }
+  .il-layer[data-side='top'] { animation: var(--il-popup-enter-top); }
+  .il-layer[data-side='left'] { animation: var(--il-popup-enter-left); }
+  .il-layer[data-side='right'] { animation: var(--il-popup-enter-right); }
+  .il-layer::backdrop { background: transparent; }
+
+  /* Native dialog shell for modal dialogs and drawers: fills the viewport, the panel sits inside. */
+  .il-dialog-shell {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--il-text);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    z-index: 510;
+  }
+  .il-dialog-shell:not([open]) { display: none; }
+  .il-dialog-shell:focus { outline: none; }
+  .il-dialog-shell::backdrop { background-color: var(--il-blanket); animation: var(--il-blanket-enter); }
+  .il-dialog-shell[data-blanket='hidden']::backdrop { background-color: transparent; }
+  .il-dialog-shell[data-exiting]::backdrop { animation: var(--il-blanket-exit); }
+  /* Without native modal support the shell paints the blanket itself. */
+  .il-dialog-shell[data-fallback] { background-color: var(--il-blanket); }
+  .il-dialog-shell[data-fallback][data-blanket='hidden'] { background-color: transparent; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .il-layer,
+    .il-dialog-shell::backdrop { animation: none; }
+  }
+}
