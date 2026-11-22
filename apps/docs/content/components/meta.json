@@ -1,0 +1,15 @@
+{
+  "title": "Components",
+  "pages": [
+    "---Forms and input---",
+    "button",
+    "---Images and icons---",
+    "icon",
+    "---Labels---",
+    "lozenge",
+    "---Loading---",
+    "spinner",
+    "---Messaging---",
+    "section-message"
+  ]
+}

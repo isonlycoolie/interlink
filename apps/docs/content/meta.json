@@ -1,3 +1,8 @@
 {
-  "pages": ["get-started", "foundations", "tokens"]
+  "pages": [
+    "get-started",
+    "foundations",
+    "tokens",
+    "components"
+  ]
 }
