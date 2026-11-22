@@ -16,6 +16,22 @@
       "types": "./dist/xcss.d.mts",
       "default": "./dist/xcss.mjs"
     },
+    "./button": {
+      "types": "./dist/button.d.mts",
+      "default": "./dist/button.mjs"
+    },
+    "./lozenge": {
+      "types": "./dist/lozenge.d.mts",
+      "default": "./dist/lozenge.mjs"
+    },
+    "./section-message": {
+      "types": "./dist/section-message.d.mts",
+      "default": "./dist/section-message.mjs"
+    },
+    "./spinner": {
+      "types": "./dist/spinner.d.mts",
+      "default": "./dist/spinner.mjs"
+    },
     "./styles.css": "./dist/styles.css"
   },
   "files": [
@@ -31,7 +47,8 @@
     "react-dom": "^19.0.0"
   },
   "dependencies": {
-    "@interlink/tokens": "workspace:*"
+    "@interlink/tokens": "workspace:*",
+    "@interlink/icons": "workspace:*"
   },
   "devDependencies": {
     "@testing-library/react": "16.3.3",
