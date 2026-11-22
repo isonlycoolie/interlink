@@ -12,7 +12,7 @@ export const elevation = defineGuidelines([
     do: 'Give a menu the overlay surface and the overlay shadow together.',
     dont: 'Mix levels, such as the default surface with a raised shadow; it breaks in dark mode.',
     why: 'Surface and shadow are tuned as a pair. In dark mode the surface does most of the lifting, so a mismatched pair loses depth.',
-    basis: ['ads:/foundations/elevation#17', 'ads:/foundations/elevation#18'],
+    basis: ['ref:/foundations/elevation#17', 'ref:/foundations/elevation#18'],
   },
   {
     id: 'elevation.limit-floating',
@@ -24,6 +24,6 @@ export const elevation = defineGuidelines([
     do: 'Collect related floating actions into a single toolbar.',
     dont: 'Float several buttons side by side, each with its own shadow.',
     why: 'Every elevated element competes for attention; many small shadows read as clutter and blur what is on top.',
-    basis: ['ads:/foundations/elevation#20', 'ads:/foundations/elevation#21'],
+    basis: ['ref:/foundations/elevation#20', 'ref:/foundations/elevation#21'],
   },
 ]);

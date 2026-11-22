@@ -12,7 +12,7 @@ export const color = defineGuidelines([
     do: 'Use the role that matches the message, such as discovery for something new to try.',
     dont: 'Use an accent token where the color carries meaning, even when the two look alike.',
     why: 'Semantic tokens can change together across themes and future palettes; accents that only look right today drift apart.',
-    basis: ['ads:/foundations/color#09', 'ads:/foundations/color#10'],
+    basis: ['ref:/foundations/color#09', 'ref:/foundations/color#10'],
   },
 ]);
 
@@ -27,7 +27,7 @@ export const accents = defineGuidelines([
     do: 'Give decorative elements, such as avatar badges, an accent color.',
     dont: 'Borrow a semantic color such as information for decoration; people will look for a meaning.',
     why: 'Semantic colors promise status. Spending them on decoration weakens every real status on the screen.',
-    basis: ['ads:/foundations/color/accents#03', 'ads:/foundations/color/accents#04'],
+    basis: ['ref:/foundations/color/accents#03', 'ref:/foundations/color/accents#04'],
   },
   {
     id: 'accents.avoid-yellow',
@@ -39,7 +39,7 @@ export const accents = defineGuidelines([
     do: 'Use orange for small accent icons and marks.',
     dont: 'Use yellow for small foreground elements; to stay readable it darkens toward brown.',
     why: 'Yellow only reaches accessible contrast on light surfaces at dark, muddy values.',
-    basis: ['ads:/foundations/color/accents#10', 'ads:/foundations/color/accents#11'],
+    basis: ['ref:/foundations/color/accents#10', 'ref:/foundations/color/accents#11'],
   },
   {
     id: 'accents.match-hues',
@@ -51,6 +51,6 @@ export const accents = defineGuidelines([
     do: 'Match the foreground hue to the background hue.',
     dont: 'Mix hues between background and foreground; contrast is no longer guaranteed.',
     why: 'Each hue is tuned so its foreground meets contrast on its own backgrounds, not on other hues.',
-    basis: ['ads:/foundations/color/accents#13', 'ads:/foundations/color/accents#14'],
+    basis: ['ref:/foundations/color/accents#13', 'ref:/foundations/color/accents#14'],
   },
 ]);

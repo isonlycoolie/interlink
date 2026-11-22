@@ -12,7 +12,7 @@ const pair = (id: string, section: string, severity: Guideline['severity'], rule
   do: d,
   dont,
   why,
-  basis: [`ads:${P}#${String(n).padStart(2, '0')}`, `ads:${P}#${String(n + 1).padStart(2, '0')}`],
+  basis: [`ref:${P}#${String(n).padStart(2, '0')}`, `ref:${P}#${String(n + 1).padStart(2, '0')}`],
 });
 
 export const typography = defineGuidelines([
@@ -45,7 +45,7 @@ export const typography = defineGuidelines([
     rule: 'Set type with font tokens or the Text and Heading primitives, never with raw sizes.',
     do: 'Use the type tokens; body text has a line height tuned for comfortable reading.',
     why: 'Tokens keep size, weight, line height and family in step across every product and theme.',
-    basis: [`ads:${P}#11`],
+    basis: [`ref:${P}#11`],
   },
   pair('metric-for-chart-figures', 'Apply metric style in sizes S, M, or L', 'should', 'Use the metric style for the key figure in a chart, and small body text for its label.',
     'Make the main number the metric, with a small body label under it.',
