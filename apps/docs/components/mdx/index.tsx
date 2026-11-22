@@ -11,6 +11,7 @@ import { TokenTable } from '../specimens/token-table';
 import { FontFamilies, TypeScale, WeightScale } from '../specimens/type';
 import { IconGallery } from '../specimens/icon-gallery';
 import { IllustrationGallery } from '../specimens/illustration-gallery';
+import { PathCards } from '../specimens/path-cards';
 import { CodeFrame } from './code-block';
 import { ComponentIntro, ExampleSet, PropsTable } from './component-parts';
 import { DoDont, DoDontGrid, Example } from './do-dont';
@@ -73,4 +74,5 @@ export const mdxComponents: MDXComponents = {
   ComponentIntro,
   IconGallery,
   IllustrationGallery,
+  PathCards,
 };
