@@ -42,3 +42,17 @@
   .ilk-legend-swatch { width: var(--il-space-150); height: var(--il-space-150); border-radius: var(--il-radius-xsmall); flex-shrink: 0; }
   .ilk-tooltip { display: inline-block; max-width: 10rem; padding: var(--il-space-025) var(--il-space-075); border-radius: var(--il-radius-small); background: var(--il-background-neutral-bold); color: var(--il-text-inverse); font: var(--il-font-body-small); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 }
+
+/* Overlays frozen in place for guideline pictures. */
+.ilk-blanket { display: flex; justify-content: center; padding: var(--il-space-300); border-radius: var(--il-radius-medium); }
+.ilk-blanket[data-tinted] { background-color: var(--il-blanket); }
+.ilk-modal { margin: 0; animation: none; max-width: 100%; }
+.ilk-menu {
+  box-sizing: border-box;
+  padding-block: var(--il-space-075);
+  overflow: hidden;
+  border-radius: var(--il-radius-large);
+  background-color: var(--il-surface-overlay);
+  box-shadow: var(--il-shadow-overlay);
+  color: var(--il-text);
+}
