@@ -3,11 +3,12 @@ import type { Guideline, Topic } from './define';
 import { accents, color } from './foundations/color';
 import { elevation } from './foundations/elevation';
 import { spacing } from './foundations/spacing';
+import { typography } from './foundations/typography';
 
 export type { Guideline, Severity, Topic } from './define';
 
 /** Every guideline, in page order. */
-export const allGuidelines: readonly Guideline[] = [...color, ...accents, ...spacing, ...elevation];
+export const allGuidelines: readonly Guideline[] = [...color, ...accents, ...spacing, ...elevation, ...typography];
 
 export function getGuideline(id: string): Guideline | undefined {
   return allGuidelines.find((g) => g.id === id);
