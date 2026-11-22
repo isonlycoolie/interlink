@@ -1,0 +1,15 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .scr-admin { display: flex; flex-direction: column; gap: var(--il-space-300); }
+  .scr-admin-top { display: grid; grid-template-columns: minmax(0, 2fr) minmax(18rem, 1fr); gap: var(--il-space-200); align-items: stretch; }
+  .scr-admin-top .scr-kpis { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .scr-ring-card { display: flex; flex-direction: column; }
+  .scr-ring-body { display: flex; align-items: center; gap: var(--il-space-250); }
+  .scr-ring { flex: none; width: 7rem; height: 7rem; }
+  .scr-ring-value { fill: var(--il-text); font: var(--il-font-heading-small); }
+  .scr-ring-label { fill: var(--il-text-subtle); font-size: 0.625rem; }
+  .scr-actor { display: flex; flex-direction: column; gap: var(--il-space-050); }
+  @media (max-width: 64rem) {
+    .scr-admin-top { grid-template-columns: minmax(0, 1fr); }
+  }
+}
