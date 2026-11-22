@@ -2,7 +2,8 @@
 import { cleanup, render } from '@testing-library/react';
 import axe from 'axe-core';
 import { afterEach, describe, expect, it } from 'vitest';
-import { examples, sources } from '../src/generated/registry';
+import { examples } from '../src/generated/registry';
+import { sources } from '../src/generated/sources';
 import { allGuidelines } from '../src/index';
 
 afterEach(cleanup);

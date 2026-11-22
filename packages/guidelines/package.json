@@ -12,7 +12,8 @@
     ".": "./src/index.ts",
     "./registry": "./src/generated/registry.ts",
     "./kit": "./src/kit/index.ts",
-    "./kit.css": "./src/kit/kit.css"
+    "./kit.css": "./src/kit/kit.css",
+    "./sources": "./src/generated/sources.ts"
   },
   "scripts": {
     "build": "node scripts/build-sources.mjs",

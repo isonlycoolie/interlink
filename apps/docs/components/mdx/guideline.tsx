@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
 import { byTopic, getGuideline, type Topic } from '@interlink/guidelines';
-import { examples, sources } from '@interlink/guidelines/registry';
+import { examples } from '@interlink/guidelines/registry';
+import { sources } from '@interlink/guidelines/sources';
 import { DoDont, DoDontGrid } from './do-dont';
 
 /** One guideline rendered as live Do and Don't examples, with their code. Unknown ids fail the build. */
