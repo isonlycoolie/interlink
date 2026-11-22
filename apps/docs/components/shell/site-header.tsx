@@ -2,6 +2,7 @@
 import SearchIcon from '@interlink/icons/core/search';
 import Link from 'next/link';
 import { Logo } from './logo';
+import { SearchDialog } from './search-dialog';
 import { ThemeMenu } from './theme-menu';
 
 /** Top bar: logo, primary sections, search and theme. */
@@ -24,6 +25,7 @@ export function SiteHeader() {
         </button>
         <ThemeMenu />
       </nav>
+      <SearchDialog />
     </header>
   );
 }
