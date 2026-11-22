@@ -1,0 +1,53 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.base {
+  .il-box,
+  .il-flex,
+  .il-grid,
+  .il-bleed {
+    box-sizing: border-box;
+  }
+  .il-flex {
+    display: flex;
+  }
+  .il-grid {
+    display: grid;
+  }
+  .il-inline-separator {
+    margin-block: var(--il-space-0);
+    margin-inline: var(--il-space-negative-025);
+    color: var(--il-text-subtle);
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .il-text,
+  .il-heading,
+  .il-metric-text {
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+  .il-text-truncate {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .il-text-break-all {
+    word-break: break-all;
+  }
+  .il-text-italic {
+    font-style: italic;
+  }
+  .il-text-align-start {
+    text-align: start;
+  }
+  .il-text-align-center {
+    text-align: center;
+  }
+  .il-text-align-end {
+    text-align: end;
+  }
+  .il-metric-text {
+    color: var(--il-text);
+    font-variant-numeric: tabular-nums;
+  }
+}
