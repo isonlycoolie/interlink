@@ -1,0 +1,10 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .il-page-header { display: flex; flex-direction: column; gap: var(--il-space-100); margin-bottom: var(--il-space-300); }
+  .il-page-header-breadcrumbs { min-height: var(--il-space-300); }
+  .il-page-header-main { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: var(--il-space-100) var(--il-space-300); }
+  .il-page-header-title { flex: 1 1 20rem; min-width: 0; margin: 0; color: var(--il-text); font: var(--il-font-heading-large); }
+  .il-page-header-title[data-truncate] { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .il-page-header-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--il-space-100); padding-top: var(--il-space-025); }
+  .il-page-header-bottom { display: flex; flex-wrap: wrap; align-items: center; gap: var(--il-space-100); margin-top: var(--il-space-100); }
+}
