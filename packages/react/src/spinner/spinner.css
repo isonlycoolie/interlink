@@ -1,0 +1,47 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  @keyframes il-spinner-rotate {
+    to {
+      transform: rotate(1turn);
+    }
+  }
+  @keyframes il-spinner-load-in {
+    from {
+      transform: rotate(50deg);
+      stroke-dashoffset: 60;
+    }
+    to {
+      transform: rotate(230deg);
+      stroke-dashoffset: 50;
+    }
+  }
+  .il-spinner {
+    display: inline-flex;
+    vertical-align: middle;
+    transform-origin: center;
+    animation: il-spinner-rotate 0.86s cubic-bezier(0.4, 0.15, 0.6, 0.85) infinite;
+  }
+  .il-spinner-svg {
+    animation: il-spinner-load-in 1s ease-in-out both;
+  }
+  .il-spinner-circle {
+    fill: none;
+    stroke: var(--il-icon-subtle);
+    stroke-dasharray: 60;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+  }
+  .il-spinner-circle[data-appearance='invert'] {
+    stroke: var(--il-icon-inverse);
+  }
+  @media (forced-colors: active) {
+    .il-spinner-circle {
+      stroke: CanvasText;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .il-spinner {
+      animation-duration: 2.5s;
+    }
+  }
+}
