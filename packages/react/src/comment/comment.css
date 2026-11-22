@@ -1,0 +1,48 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .il-comment {
+    position: relative;
+    display: grid;
+    grid-template-areas: 'avatar main' '. replies';
+    grid-template-columns: auto 1fr;
+    column-gap: var(--il-space-100);
+  }
+  .il-comment-highlight {
+    position: absolute;
+    inset: var(--il-space-negative-100);
+    grid-area: 1 / 1 / 2 / 3;
+    border-radius: var(--il-radius-medium);
+    background-color: var(--il-background-selected);
+    pointer-events: none;
+  }
+  .il-comment-avatar { position: relative; grid-area: avatar; }
+  .il-comment-main { position: relative; grid-area: main; min-width: 0; padding-block-start: var(--il-space-025); word-wrap: break-word; }
+  .il-comment-replies { grid-area: replies; display: grid; gap: var(--il-space-300); padding-block-start: var(--il-space-300); }
+  .il-comment-body { display: grid; gap: var(--il-space-050); }
+  .il-comment-header { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--il-space-100); margin: 0; font: var(--il-font-body); }
+  .il-comment-author { color: var(--il-text); font-weight: var(--il-font-weight-medium); text-decoration: none; word-break: break-all; }
+  a.il-comment-author:hover { color: var(--il-link); text-decoration: underline; }
+  .il-comment-time,
+  .il-comment-edited,
+  .il-comment-type,
+  .il-comment-restricted { color: var(--il-text-subtlest); font-weight: var(--il-font-weight-regular); white-space: nowrap; }
+  a.il-comment-time { text-decoration: none; }
+  a.il-comment-time:hover { color: var(--il-link); text-decoration: underline; }
+  .il-comment-content { color: var(--il-text); font: var(--il-font-body); }
+  .il-comment-content[data-disabled] { color: var(--il-text-disabled); }
+  .il-comment-actions { display: flex; flex-wrap: wrap; gap: var(--il-space-100); }
+  .il-comment-action {
+    padding: 0;
+    border: 0;
+    border-radius: var(--il-radius-small);
+    background: none;
+    color: var(--il-text-subtle);
+    font: var(--il-font-body-small);
+    font-weight: var(--il-font-weight-medium);
+    cursor: pointer;
+  }
+  .il-comment-action:hover { color: var(--il-link); text-decoration: underline; }
+  .il-comment-action:active { color: var(--il-link-pressed); }
+  .il-comment-action:disabled { color: var(--il-text-disabled); cursor: not-allowed; text-decoration: none; }
+  .il-comment-actions[data-error] .il-comment-action { color: var(--il-text-danger); }
+}
