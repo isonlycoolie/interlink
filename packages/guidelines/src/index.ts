@@ -6,11 +6,13 @@ import { spacing } from './foundations/spacing';
 import { typography } from './foundations/typography';
 import { button } from './components/button';
 import { icon, lozenge } from './components/lozenge-icon';
+import { badge, emptyState, link, progressBar, tag, tooltip } from './components/display';
+import { form } from './components/form';
 
 export type { Guideline, Severity, Topic } from './define';
 
 /** Every guideline, in page order. */
-export const allGuidelines: readonly Guideline[] = [...color, ...accents, ...spacing, ...elevation, ...typography, ...button, ...lozenge, ...icon];
+export const allGuidelines: readonly Guideline[] = [...color, ...accents, ...spacing, ...elevation, ...typography, ...button, ...lozenge, ...icon, ...form, ...tooltip, ...tag, ...badge, ...link, ...emptyState, ...progressBar];
 
 export function getGuideline(id: string): Guideline | undefined {
   return allGuidelines.find((g) => g.id === id);
