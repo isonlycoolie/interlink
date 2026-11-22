@@ -1,0 +1,66 @@
+---
+title: Spacing
+description: A small, fixed set of space values keeps every layout calm and predictable.
+---
+
+Consistent spacing is what makes a dense product feel orderly. Interlink uses one scale for every gap, margin
+and padding, so screens built by different teams line up with each other and adapt together when density changes.
+
+## 8px base unit
+
+Every space value is a multiple of 8 pixels, with half and quarter steps for tight component internals. A single
+base keeps rhythm across type, icons and controls, which are sized on the same grid.
+
+## Scale
+
+The scale runs from 0 to 80 pixels. Use the smallest value that separates two things clearly; reach for a larger
+one only to mark a new group or region.
+
+## Space tokens
+
+Each value is a token named after its multiple of the base: `space.100` is one base unit (8px) and `space.200` is
+two (16px). Use tokens instead of raw pixel or rem values so spacing changes in one place.
+
+<SpacingScale />
+
+### Negative values
+
+`space.negative.*` tokens pull an element outward, for example to let a highlighted row run to the edge of its
+padded container. Use them through the `Bleed` primitive rather than ad hoc margins.
+
+## Spacing usage
+
+<SpacingBands />
+
+## Layout guidelines
+
+### Group by similarity
+
+Items that do the same job should look like they belong together. Equal spacing is the quickest way to say so.
+
+<Guideline id="spacing.group-by-similarity" />
+
+### Group by proximity
+
+Distance tells people what belongs together before they read a word. Keep content and its actions close.
+
+<Guideline id="spacing.group-by-proximity" />
+
+### Create order and hierarchy
+
+Size and space together rank what people should read first. Give the main element room and let supporting
+detail stay small.
+
+<Guideline id="spacing.order-and-hierarchy" />
+
+### Introduce visual rhythm
+
+Repeat the same spacing pattern across similar parts of a page, such as cards in a grid or sections in a form.
+A steady rhythm makes long pages easy to scan.
+
+### Use optical adjustment
+
+Spacing that measures right can still look wrong once icons and glyphs are added. Adjust until the content looks
+aligned.
+
+<Guideline id="spacing.optical-adjustment" />
