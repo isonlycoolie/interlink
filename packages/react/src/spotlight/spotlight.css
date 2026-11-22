@@ -1,0 +1,75 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .il-spotlight-target { display: inline-block; }
+  .il-spotlight-layer { position: fixed; inset: auto; margin: 0; padding: 0; border: 0; overflow: visible; background: transparent; z-index: 700; }
+  .il-spotlight-layer:focus { outline: none; }
+  .il-spotlight-layer[data-side='bottom'] { animation: var(--il-popup-enter-bottom); }
+  .il-spotlight-layer[data-side='top'] { animation: var(--il-popup-enter-top); }
+  .il-spotlight-layer[data-side='left'] { animation: var(--il-popup-enter-left); }
+  .il-spotlight-layer[data-side='right'] { animation: var(--il-popup-enter-right); }
+
+  .il-spotlight-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--il-space-100);
+    box-sizing: border-box;
+    width: 18.4375rem;
+    padding-block-end: var(--il-space-150);
+    border-radius: var(--il-radius-large);
+    background-color: var(--il-background-neutral-bold);
+    box-shadow: var(--il-shadow-overflow);
+    color: var(--il-text-inverse);
+    font: var(--il-font-body);
+  }
+  .il-spotlight-caret {
+    position: absolute;
+    width: var(--il-space-200);
+    height: var(--il-space-200);
+    background-color: var(--il-background-neutral-bold);
+    clip-path: polygon(0 0, 100% 100%, 0 100%);
+  }
+  .il-spotlight-card[data-side='bottom'] .il-spotlight-caret { inset-block-start: 0; inset-inline-start: calc(50% - var(--il-space-100)); transform: translateY(-50%) rotate(135deg); }
+  .il-spotlight-card[data-side='top'] .il-spotlight-caret { inset-block-end: 0; inset-inline-start: calc(50% - var(--il-space-100)); transform: translateY(50%) rotate(315deg); }
+  .il-spotlight-card[data-side='right'] .il-spotlight-caret { inset-inline-start: 0; inset-block-start: calc(50% - var(--il-space-100)); transform: translateX(-50%) rotate(45deg); }
+  .il-spotlight-card[data-side='left'] .il-spotlight-caret { inset-inline-end: 0; inset-block-start: calc(50% - var(--il-space-100)); transform: translateX(50%) rotate(225deg); }
+
+  .il-spotlight-header { display: flex; align-items: center; justify-content: space-between; gap: var(--il-space-100); padding: var(--il-space-150) var(--il-space-075) 0 var(--il-space-200); }
+  .il-spotlight-headline { margin: 0; color: var(--il-text-inverse); font: var(--il-font-heading-xsmall); }
+  .il-spotlight-controls { display: flex; flex-direction: row-reverse; }
+  .il-spotlight-dismiss {
+    display: flex;
+    padding: var(--il-space-075);
+    border: 0;
+    border-radius: var(--il-radius-medium);
+    background: transparent;
+    cursor: pointer;
+  }
+  .il-spotlight-dismiss:hover { background-color: var(--il-background-neutral-bold-hovered); }
+  .il-spotlight-dismiss:active { background-color: var(--il-background-neutral-bold-pressed); }
+  .il-spotlight-media { height: 8.4375rem; overflow: hidden; }
+  .il-spotlight-media > * { width: 100%; height: 100%; object-fit: cover; }
+  .il-spotlight-body { padding: var(--il-space-100) var(--il-space-200) 0; color: var(--il-text-inverse); }
+  .il-spotlight-footer { display: flex; align-items: center; justify-content: space-between; gap: var(--il-space-100); padding-inline: var(--il-space-200) var(--il-space-150); }
+  .il-spotlight-step-count { min-width: max-content; color: var(--il-text-inverse); font: var(--il-font-body-small); }
+  .il-spotlight-actions { display: flex; flex: 1; justify-content: flex-end; gap: var(--il-space-100); }
+  .il-spotlight-action {
+    padding: var(--il-space-025) var(--il-space-075);
+    border: var(--il-border-width) solid transparent;
+    border-radius: var(--il-radius-small);
+    background: transparent;
+    color: var(--il-text-inverse);
+    font: var(--il-font-body);
+    font-weight: var(--il-font-weight-medium);
+    cursor: pointer;
+    transition: background-color var(--il-duration-short);
+  }
+  .il-spotlight-action[data-appearance='outline'] { border-color: var(--il-border-accent-gray); }
+  .il-spotlight-action:is([data-appearance='outline'], [data-appearance='subtle']):hover { background-color: var(--il-background-neutral-bold-hovered); }
+  .il-spotlight-action[data-appearance='primary'] { border-color: var(--il-border-brand); background-color: var(--il-background-brand-bold); }
+  .il-spotlight-action[data-appearance='primary']:hover { background-color: var(--il-background-brand-bold-hovered); }
+  .il-spotlight-action[data-appearance='primary']:active { background-color: var(--il-background-brand-bold-pressed); }
+  @media (prefers-reduced-motion: reduce) {
+    .il-spotlight-layer { animation: none !important; }
+  }
+}
