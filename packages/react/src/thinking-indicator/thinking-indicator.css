@@ -1,0 +1,21 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .il-thinking { display: inline-flex; align-items: center; gap: var(--il-space-100); color: var(--il-text-subtle); font: var(--il-font-body); }
+  .il-thinking-dots { display: inline-flex; gap: var(--il-space-050); }
+  .il-thinking-dots > span {
+    width: var(--il-space-075);
+    height: var(--il-space-075);
+    border-radius: var(--il-radius-xsmall);
+    animation: il-thinking-pulse 1.2s var(--il-easing-inout-bold) infinite;
+  }
+  .il-thinking-dots > span:nth-child(1) { background: var(--il-assist-icon-purple); }
+  .il-thinking-dots > span:nth-child(2) { background: var(--il-assist-icon-blue); animation-delay: 0.15s; }
+  .il-thinking-dots > span:nth-child(3) { background: var(--il-assist-icon-saffron); animation-delay: 0.3s; }
+  @keyframes il-thinking-pulse {
+    0%, 60%, 100% { transform: translateY(0); opacity: 1; }
+    30% { transform: translateY(calc(var(--il-space-050) * -1)); opacity: 0.6; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .il-thinking-dots > span { animation: none; }
+  }
+}
