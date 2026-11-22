@@ -1,0 +1,56 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .il-breadcrumbs-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .il-breadcrumbs-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    max-width: 100%;
+    height: var(--il-space-300);
+    margin: 0;
+    padding: 0;
+    color: var(--il-text-subtlest);
+    font-family: var(--il-font-family-body);
+  }
+  .il-breadcrumbs-item:not(:last-child)::after {
+    content: '/';
+    flex-shrink: 0;
+    width: var(--il-space-100);
+    padding: var(--il-space-025) var(--il-space-100);
+    color: var(--il-text-subtlest);
+    text-align: center;
+  }
+  .il-breadcrumbs-link,
+  .il-breadcrumbs-ellipsis {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--il-space-050);
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    border-radius: var(--il-radius-xsmall);
+    background-color: var(--il-background-neutral-subtle);
+    color: var(--il-text-subtlest);
+    font: var(--il-font-body);
+    text-decoration: underline transparent;
+    cursor: pointer;
+    transition: var(--il-listitem-hovered);
+  }
+  :is(.il-breadcrumbs-link, .il-breadcrumbs-ellipsis):hover { color: var(--il-text-subtlest); text-decoration-color: var(--il-text-subtlest); }
+  .il-breadcrumbs-link:active { color: var(--il-text); text-decoration-color: var(--il-text); }
+  .il-breadcrumbs-text { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .il-breadcrumbs-icon { display: flex; flex-shrink: 0; align-items: center; color: var(--il-icon-subtlest); }
+  @media (prefers-reduced-motion: reduce) {
+    .il-breadcrumbs-link,
+    .il-breadcrumbs-ellipsis { transition: none; }
+  }
+}
