@@ -1,0 +1,40 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .il-range {
+    --il-range-track: var(--il-space-050);
+    --il-range-thumb: var(--il-space-200);
+    width: 100%;
+    height: var(--il-space-500);
+    margin: 0;
+    background: transparent;
+    appearance: none;
+    cursor: pointer;
+  }
+  .il-range:focus { outline: none; }
+  .il-range:disabled { cursor: not-allowed; opacity: var(--il-opacity-disabled); }
+  .il-range::-webkit-slider-runnable-track {
+    height: var(--il-range-track);
+    border-radius: var(--il-radius-full);
+    background: linear-gradient(to right, var(--il-background-brand-bold) var(--il-range-fill), var(--il-background-neutral) var(--il-range-fill));
+  }
+  .il-range::-moz-range-track { height: var(--il-range-track); border-radius: var(--il-radius-full); background: var(--il-background-neutral); }
+  .il-range::-moz-range-progress { height: var(--il-range-track); border-radius: var(--il-radius-full); background: var(--il-background-brand-bold); }
+  .il-range::-webkit-slider-thumb {
+    width: var(--il-range-thumb);
+    height: var(--il-range-thumb);
+    margin-top: calc((var(--il-range-track) - var(--il-range-thumb)) / 2);
+    border: 0;
+    border-radius: var(--il-radius-full);
+    background: var(--il-surface-raised);
+    box-shadow: var(--il-shadow-raised);
+    appearance: none;
+    transition: transform var(--il-duration-short);
+  }
+  .il-range::-moz-range-thumb { width: var(--il-range-thumb); height: var(--il-range-thumb); border: 0; border-radius: var(--il-radius-full); background: var(--il-surface-raised); box-shadow: var(--il-shadow-raised); }
+  .il-range:focus-visible::-webkit-slider-thumb { outline: var(--il-border-width-focused) solid var(--il-border-focused); outline-offset: var(--il-border-width-focused); }
+  .il-range:focus-visible::-moz-range-thumb { outline: var(--il-border-width-focused) solid var(--il-border-focused); outline-offset: var(--il-border-width-focused); }
+  .il-range:not(:disabled):active::-webkit-slider-thumb { transform: scale(1.1); }
+  @media (prefers-reduced-motion: reduce) {
+    .il-range::-webkit-slider-thumb { transition: none; }
+  }
+}
