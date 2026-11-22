@@ -1,0 +1,26 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .il-inline-message { display: inline-block; max-width: 100%; }
+  .il-inline-message-button {
+    position: relative;
+    display: inline-flex;
+    align-items: baseline;
+    gap: var(--il-space-050);
+    width: auto;
+    height: auto;
+    padding: 0;
+    border: 0;
+    border-radius: var(--il-radius-medium);
+    background-color: var(--il-background-neutral-subtle);
+    color: var(--il-text-subtle);
+    font: var(--il-font-body);
+    white-space: nowrap;
+    vertical-align: baseline;
+    cursor: pointer;
+  }
+  .il-inline-message-button:hover { text-decoration: underline solid currentColor; }
+  .il-inline-message-icon { display: flex; flex: 0 0 auto; align-items: center; align-self: center; }
+  .il-inline-message-title { color: var(--il-text); font-weight: var(--il-font-weight-medium); }
+  .il-inline-message-secondary { color: var(--il-text-subtlest); }
+  .il-inline-message-content { max-width: 28rem; max-height: 28rem; overflow: auto; }
+}
