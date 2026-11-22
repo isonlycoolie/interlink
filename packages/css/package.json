@@ -1,0 +1,25 @@
+{
+  "name": "@interlink/css",
+  "version": "0.0.0",
+  "description": "Interlink base stylesheet: cascade layers, design tokens, fonts and reset.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "sideEffects": [
+    "*.css"
+  ],
+  "exports": {
+    "./interlink.css": "./dist/interlink.css",
+    "./fonts.css": "./dist/fonts.css",
+    "./reset.css": "./dist/reset.css"
+  },
+  "files": [
+    "dist",
+    "fonts"
+  ],
+  "scripts": {
+    "build": "node scripts/bundle.mjs"
+  },
+  "dependencies": {
+    "@interlink/tokens": "workspace:*"
+  }
+}

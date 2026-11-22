@@ -1,0 +1,6 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/*
+ * Interlink cascade order. Anything a consumer writes outside these layers wins over all of them,
+ * so app overrides never need !important.
+ */
+@layer interlink.tokens, interlink.reset, interlink.fonts, interlink.base, interlink.components, interlink.utilities;
