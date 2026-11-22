@@ -1,0 +1,58 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* Document, body, links and headings. */
+@layer interlink.reset {
+  html, body, p, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, img, pre, form, fieldset {
+    margin: 0;
+    padding: 0;
+  }
+  img, fieldset {
+    border: 0;
+  }
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body, html {
+    height: 100%;
+    width: 100%;
+  }
+  body, [data-color-mode] {
+    background-color: var(--il-surface);
+    color: var(--il-text);
+    font: var(--il-font-body);
+  }
+  body {
+    text-decoration-skip-ink: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  p, ul, ol, dl, h1, h2, h3, h4, h5, h6, blockquote, pre, form, table {
+    margin: var(--il-space-150) 0 0 0;
+  }
+  :is(p, ul, ol, dl, h1, h2, h3, h4, h5, h6, blockquote, pre, form, table):first-child {
+    margin-top: 0;
+  }
+  a {
+    color: var(--il-link);
+    text-decoration: none;
+  }
+  a:hover {
+    color: var(--il-link);
+    text-decoration: underline;
+  }
+  a:active {
+    color: var(--il-link-pressed);
+  }
+  a:focus-visible {
+    outline: var(--il-border-width-focused) solid var(--il-border-focused);
+    outline-offset: var(--il-space-025);
+  }
+  h1 { font: var(--il-font-heading-xlarge); color: var(--il-text); margin-top: var(--il-space-500); }
+  h2 { font: var(--il-font-heading-large); color: var(--il-text); margin-top: var(--il-space-500); }
+  h3 { font: var(--il-font-heading-medium); color: var(--il-text); margin-top: var(--il-space-300); }
+  h4 { font: var(--il-font-heading-small); color: var(--il-text); margin-top: var(--il-space-300); }
+  h5 { font: var(--il-font-heading-xsmall); color: var(--il-text); margin-top: var(--il-space-200); }
+  h6 { font: var(--il-font-heading-xxsmall); color: var(--il-text); margin-top: var(--il-space-250); }
+  button, input, select, textarea {
+    font-family: inherit;
+  }
+}
