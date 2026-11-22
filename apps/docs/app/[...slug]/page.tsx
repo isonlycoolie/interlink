@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { mdxComponents } from '@/components/mdx';
 import { PageHead, PageTabs, Toc, type TocItem } from '@/components/shell/page-parts';
+import { PageTransition } from '@/components/shell/page-transition';
 import { SideNav, type NavNode } from '@/components/shell/side-nav';
 import { source } from '@/lib/source';
 
@@ -43,14 +44,16 @@ export default async function DocPage({ params }: Props) {
     <div className="site-body">
       <SideNav tree={source.pageTree.children as unknown as NavNode[]} status={status} />
       <main id="main" className="site-main">
-        <PageHead title={head.data.title} description={head.data.description} notice={head.data.notice} />
-        <PageTabs tabs={tabsFor(slug)} current={page.url} />
-        <div className="site-page-body">
-          <article className="doc-article">
-            <MDX components={mdxComponents} />
-          </article>
-          <Toc items={page.data.toc as unknown as TocItem[]} />
-        </div>
+        <PageTransition>
+          <PageHead title={head.data.title} description={head.data.description} notice={head.data.notice} />
+          <PageTabs tabs={tabsFor(slug)} current={page.url} />
+          <div className="site-page-body">
+            <article className="doc-article">
+              <MDX components={mdxComponents} />
+            </article>
+            <Toc items={page.data.toc as unknown as TocItem[]} />
+          </div>
+        </PageTransition>
       </main>
     </div>
   );
