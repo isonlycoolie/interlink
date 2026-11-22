@@ -1,0 +1,40 @@
+---
+title: Navigation system usage
+description: The frame of an app: top bar, side navigation, page and side panel.
+---
+
+## Usage
+
+The navigation system gives every page of an app the same frame, so people always know which app they are in, where
+they are inside it, and how to get somewhere else.
+
+## Parts
+
+- **Top bar** (48px): sidebar toggle, app switcher and the app logo at the start; search and the create button in the
+  middle; notifications, help and the person's avatar at the end.
+- **Side navigation** (240px): the space people are in at the top, then groups of 32px rows. The current page has a
+  selected fill and a bar on its leading edge. Trees of pages open with `ExpandableNavItem`.
+- **Main**: the page, starting with a page header. The skip link lands here.
+- **Panel**: detail or a short task beside the page, opposite the side navigation.
+
+Below 48rem the side navigation and panel open over the page instead of beside it.
+
+## Best practices
+
+- Put the app logo in the same place on every page and link it home.
+- Keep one create button, in the top bar, for the thing people make most.
+- Name sections in the side navigation only when there are more than one.
+
+## Panels
+
+### Name the header after the task
+
+<Guidelines topic="panel" section="Name the header after the task" />
+
+### Keep the header to four icons
+
+<Guidelines topic="panel" section="Keep the header to four icons" />
+
+### Show dialogs over the whole page
+
+<Guidelines topic="panel" section="Show dialogs over the whole page" />
