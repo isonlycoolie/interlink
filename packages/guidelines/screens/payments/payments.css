@@ -1,0 +1,23 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .scr-pay { display: flex; flex-direction: column; gap: var(--il-space-300); }
+  .scr-balance { display: flex; flex-direction: column; gap: var(--il-space-050); }
+  .scr-balance-code { display: inline-grid; place-items: center; min-width: var(--il-space-500); height: var(--il-space-300); padding: 0 var(--il-space-075); border-radius: var(--il-radius-small); background: var(--il-background-neutral); font: var(--il-font-heading-xxsmall); }
+  .scr-pay-charts { display: grid; grid-template-columns: minmax(0, 2fr) minmax(16rem, 1fr); gap: var(--il-space-200); }
+  .scr-legend-row { flex-direction: row; gap: var(--il-space-200); }
+  .scr-bars { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: var(--il-space-150); align-items: end; height: 12rem; padding-top: var(--il-space-100); border-bottom: var(--il-border-width) solid var(--il-border); }
+  .scr-bar-col { display: flex; flex-direction: column; justify-content: flex-end; align-items: center; height: 100%; }
+  .scr-bar-stack { display: flex; flex-direction: column; gap: 2px; width: min(2.5rem, 100%); }
+  .scr-bar-stack span:first-child { border-radius: var(--il-radius-small) var(--il-radius-small) 0 0; }
+  .scr-bar-label { position: relative; top: var(--il-space-300); height: 0; color: var(--il-text-subtle); font: var(--il-font-body-small); white-space: nowrap; }
+  .scr-bars + * { margin-top: var(--il-space-300); }
+  .scr-meters { display: flex; flex-direction: column; gap: var(--il-space-200); margin: 0; padding: 0; list-style: none; font: var(--il-font-body); }
+  .scr-meters li { display: flex; flex-direction: column; gap: var(--il-space-075); }
+  .scr-meter { display: block; height: var(--il-space-100); overflow: hidden; border-radius: var(--il-radius-full); background: var(--il-background-neutral); }
+  .scr-meter span { display: block; height: 100%; border-radius: var(--il-radius-full); }
+  .scr-amount { font-variant-numeric: tabular-nums; font-weight: var(--il-font-weight-medium); white-space: nowrap; }
+  .scr-pay .scr-card-box:has(.scr-bars) { padding-bottom: var(--il-space-500); }
+  @media (max-width: 64rem) {
+    .scr-pay-charts { grid-template-columns: minmax(0, 1fr); }
+  }
+}
