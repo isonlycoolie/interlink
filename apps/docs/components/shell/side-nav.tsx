@@ -20,13 +20,16 @@ const STATUS_LABEL: Record<string, { text: string; appearance: 'warning' | 'info
   deprecated: { text: 'Deprecated', appearance: 'neutral' },
 };
 
+/** True when `path` is this url, or one of the url's tab pages (components/<name>/code and /usage). */
+const matches = (url: string | undefined, path: string) => !!url && (url === path || (url.startsWith('/components/') && path.startsWith(`${url}/`)));
+
 const contains = (node: NavNode, path: string): boolean =>
-  node.url === path || node.index?.url === path || (node.children ?? []).some((c) => contains(c, path));
+  matches(node.url, path) || matches(node.index?.url, path) || (node.children ?? []).some((c) => contains(c, path));
 
 function Item({ node, path, status, depth }: { node: NavNode; path: string; status: Record<string, string>; depth: number }) {
   if (node.type === 'separator') return <li className="site-nav-group">{node.name}</li>;
   const url = node.type === 'folder' ? node.index?.url : node.url;
-  const active = url === path;
+  const active = matches(url, path);
   const badge = url && status[url] ? STATUS_LABEL[status[url]] : undefined;
   const label = (
     <>
@@ -41,7 +44,8 @@ function Item({ node, path, status, depth }: { node: NavNode; path: string; stat
   ) : (
     <span className="site-nav-link">{label}</span>
   );
-  if (node.type !== 'folder') return <li style={{ ['--depth' as string]: depth }}>{link}</li>;
+  const kids = (node.children ?? []).filter((c) => !(c.type === 'page' && c.url === url));
+  if (node.type !== 'folder' || kids.length === 0) return <li style={{ ['--depth' as string]: depth }}>{link}</li>;
   return <Folder node={node} url={url} path={path} status={status} depth={depth} link={link} />;
 }
 

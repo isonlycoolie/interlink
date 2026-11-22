@@ -10,15 +10,23 @@ interface Props {
   params: Promise<{ slug: string[] }>;
 }
 
-const TAB_ORDER = ['examples', 'code', 'usage', 'changelog'];
+const TABS = [
+  { suffix: [] as string[], label: 'Examples' },
+  { suffix: ['code'], label: 'Code' },
+  { suffix: ['usage'], label: 'Usage' },
+];
 
-/** Sibling tab pages (examples, code, usage, changelog) for a component page. */
+/** Component pages live at components/<name>/{index,code,usage}; other pages have no tabs. */
+function componentBase(slug: string[]) {
+  return slug[0] === 'components' && slug.length >= 2 ? slug.slice(0, 2) : null;
+}
+
 function tabsFor(slug: string[]) {
-  const last = slug.at(-1) ?? '';
-  const base = TAB_ORDER.includes(last) ? slug.slice(0, -1) : slug;
-  return TAB_ORDER.map((t) => source.getPage([...base, t]))
-    .filter((p) => p !== undefined)
-    .map((p) => ({ url: p.url, label: p.data.title }));
+  const base = componentBase(slug);
+  if (!base) return [];
+  return TABS.map((t) => ({ page: source.getPage([...base, ...t.suffix]), label: t.label }))
+    .filter((t) => t.page !== undefined)
+    .map((t) => ({ url: t.page!.url, label: t.label }));
 }
 
 export default async function DocPage({ params }: Props) {
@@ -26,6 +34,8 @@ export default async function DocPage({ params }: Props) {
   const page = source.getPage(slug);
   if (!page) notFound();
   const MDX = page.data.body;
+  const base = componentBase(slug);
+  const head = (base && source.getPage(base)) || page;
   const status = Object.fromEntries(
     source.getPages().filter((p) => p.data.status).map((p) => [p.url, p.data.status as string]),
   );
@@ -33,7 +43,7 @@ export default async function DocPage({ params }: Props) {
     <div className="site-body">
       <SideNav tree={source.pageTree.children as unknown as NavNode[]} status={status} />
       <main id="main" className="site-main">
-        <PageHead title={page.data.title} description={page.data.description} notice={page.data.notice} />
+        <PageHead title={head.data.title} description={head.data.description} notice={head.data.notice} />
         <PageTabs tabs={tabsFor(slug)} current={page.url} />
         <div className="site-page-body">
           <article className="doc-article">
