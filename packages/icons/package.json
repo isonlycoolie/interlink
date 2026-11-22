@@ -1,0 +1,51 @@
+{
+  "name": "@interlink/icons",
+  "version": "0.0.0",
+  "description": "Interlink icons: 16px glyphs drawn in currentColor, with search metadata and a sprite.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "sideEffects": [
+    "*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
+    },
+    "./core": {
+      "types": "./dist/generated/core/index.d.mts",
+      "default": "./dist/generated/core/index.mjs"
+    },
+    "./core/*": {
+      "types": "./dist/generated/core/*.d.mts",
+      "default": "./dist/generated/core/*.mjs"
+    },
+    "./metadata.json": "./dist/metadata.json",
+    "./sprite.svg": "./dist/sprite.svg",
+    "./styles.css": "./dist/styles.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "node scripts/build-icons.mjs && tsdown",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0"
+  },
+  "dependencies": {
+    "@interlink/tokens": "workspace:*"
+  },
+  "devDependencies": {
+    "@testing-library/react": "16.3.3",
+    "@types/react": "19.3.0",
+    "jsdom": "31.0.1",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "tsdown": "0.23.7",
+    "typescript": "7.0.2",
+    "vitest": "5.1.1"
+  }
+}
