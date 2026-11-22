@@ -1,0 +1,68 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .il-tabs { display: flex; flex: 1 1 100%; flex-direction: column; min-height: 0; max-width: 100%; }
+  .il-tab-list {
+    position: relative;
+    display: flex;
+    margin-inline-start: var(--il-space-negative-100);
+    padding: 0;
+    font-weight: var(--il-font-weight-medium);
+  }
+  /* The line under all tabs. */
+  .il-tab-list::before {
+    content: '';
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline: var(--il-space-100) 0;
+    height: var(--il-border-width);
+    background-color: var(--il-border);
+  }
+  .il-tab {
+    position: relative;
+    margin: 0;
+    padding: var(--il-space-075) var(--il-space-100);
+    overflow: hidden;
+    border: 0;
+    border-radius: var(--il-radius-medium);
+    background: none;
+    color: var(--il-text-subtle);
+    font: var(--il-font-body);
+    font-weight: var(--il-font-weight-medium);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: var(--il-tab);
+  }
+  .il-tab-label { display: block; overflow: hidden; text-overflow: ellipsis; }
+  /* Hover underline, then the selected indicator above it. */
+  .il-tab::before,
+  .il-tab::after {
+    content: '';
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline: var(--il-space-100);
+    border-block-end: var(--il-border-width-selected) solid var(--il-border);
+    pointer-events: none;
+  }
+  .il-tab::before { opacity: 0; transition: var(--il-tab); }
+  .il-tab::after { display: none; }
+  .il-tab:hover { color: var(--il-text-subtle); }
+  .il-tab:is(:hover, :active)::before { opacity: 1; }
+  .il-tab:active { color: var(--il-text); }
+  .il-tab[aria-selected='true'],
+  .il-tab[aria-selected='true']:is(:hover, :active) { color: var(--il-text-selected); }
+  .il-tab[aria-selected='true']::after { display: block; z-index: 1; border-color: var(--il-border-selected); }
+  .il-tab[data-motion='right']::after { animation: var(--il-tab-indicator-enter-right); }
+  .il-tab[data-motion='left']::after { animation: var(--il-tab-indicator-enter-left); }
+  .il-tab:focus { outline: none; }
+  .il-tab:focus-visible { outline: var(--il-border-width-focused) solid var(--il-border-focused); outline-offset: calc(0px - var(--il-border-width-focused)); }
+  .il-tab-panel { display: flex; flex-grow: 1; }
+  .il-tab-panel[hidden] { display: none; }
+  .il-tab-panel:focus { outline: none; }
+  .il-tab-panel:focus-visible { outline: var(--il-border-width-focused) solid var(--il-border-focused); }
+  @media (prefers-reduced-motion: reduce) {
+    .il-tab,
+    .il-tab::before { transition: none; }
+    .il-tab[data-motion]::after { animation: none; }
+  }
+}
