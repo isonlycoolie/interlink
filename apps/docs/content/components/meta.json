@@ -3,13 +3,29 @@
   "pages": [
     "---Forms and input---",
     "button",
+    "checkbox",
+    "form",
+    "radio",
+    "textarea",
+    "textfield",
+    "toggle",
     "---Images and icons---",
+    "avatar",
     "icon",
     "---Labels---",
+    "badge",
     "lozenge",
+    "tag",
     "---Loading---",
+    "progress-bar",
+    "skeleton",
     "spinner",
     "---Messaging---",
-    "section-message"
+    "empty-state",
+    "section-message",
+    "---Navigation---",
+    "link",
+    "---Overlays and layering---",
+    "tooltip"
   ]
 }
