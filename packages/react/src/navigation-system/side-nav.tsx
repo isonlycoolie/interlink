@@ -45,8 +45,13 @@ export function SideNavHeader({ icon, title, subtitle, actions }: SideNavHeaderP
 export function SideNavContent({ children }: { children: ReactNode }) {
   return <div className="il-ns-side-content">{children}</div>;
 }
+/** Rows pinned to the bottom, such as Create and Apps. Pass NavItem rows. */
 export function SideNavFooter({ children }: { children: ReactNode }) {
-  return <div className="il-ns-side-footer">{children}</div>;
+  return (
+    <div className="il-ns-side-footer">
+      <ul className="il-ns-list">{children}</ul>
+    </div>
+  );
 }
 
 export interface SideNavSectionProps {
@@ -55,11 +60,13 @@ export interface SideNavSectionProps {
   title?: string;
   /** An action beside the heading, such as an add button. */
   action?: ReactNode;
+  /** A SideNavHeader that names the space this group belongs to, in place of a title. */
+  header?: ReactNode;
   /** Draws a divider above the group. */
   hasSeparator?: boolean;
 }
 /** A group of navigation items. */
-export function SideNavSection({ children, title, action, hasSeparator = false }: SideNavSectionProps) {
+export function SideNavSection({ children, title, action, header, hasSeparator = false }: SideNavSectionProps) {
   const id = useId();
   return (
     <section className="il-ns-section" data-separator={hasSeparator || undefined} aria-labelledby={title ? id : undefined}>
@@ -71,6 +78,7 @@ export function SideNavSection({ children, title, action, hasSeparator = false }
           {action}
         </div>
       ) : null}
+      {header}
       <ul className="il-ns-list">{children}</ul>
     </section>
   );
