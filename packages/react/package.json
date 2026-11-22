@@ -88,6 +88,62 @@
       "types": "./dist/empty-state.d.mts",
       "default": "./dist/empty-state.mjs"
     },
+    "./popup": {
+      "types": "./dist/popup.d.mts",
+      "default": "./dist/popup.mjs"
+    },
+    "./inline-dialog": {
+      "types": "./dist/inline-dialog.d.mts",
+      "default": "./dist/inline-dialog.mjs"
+    },
+    "./modal-dialog": {
+      "types": "./dist/modal-dialog.d.mts",
+      "default": "./dist/modal-dialog.mjs"
+    },
+    "./drawer": {
+      "types": "./dist/drawer.d.mts",
+      "default": "./dist/drawer.mjs"
+    },
+    "./blanket": {
+      "types": "./dist/blanket.d.mts",
+      "default": "./dist/blanket.mjs"
+    },
+    "./flag": {
+      "types": "./dist/flag.d.mts",
+      "default": "./dist/flag.mjs"
+    },
+    "./banner": {
+      "types": "./dist/banner.d.mts",
+      "default": "./dist/banner.mjs"
+    },
+    "./inline-message": {
+      "types": "./dist/inline-message.d.mts",
+      "default": "./dist/inline-message.mjs"
+    },
+    "./menu": {
+      "types": "./dist/menu.d.mts",
+      "default": "./dist/menu.mjs"
+    },
+    "./dropdown-menu": {
+      "types": "./dist/dropdown-menu.d.mts",
+      "default": "./dist/dropdown-menu.mjs"
+    },
+    "./tabs": {
+      "types": "./dist/tabs.d.mts",
+      "default": "./dist/tabs.mjs"
+    },
+    "./breadcrumbs": {
+      "types": "./dist/breadcrumbs.d.mts",
+      "default": "./dist/breadcrumbs.mjs"
+    },
+    "./pagination": {
+      "types": "./dist/pagination.d.mts",
+      "default": "./dist/pagination.mjs"
+    },
+    "./select": {
+      "types": "./dist/select.d.mts",
+      "default": "./dist/select.mjs"
+    },
     "./docs": {
       "types": "./dist/docs.d.mts",
       "default": "./dist/docs.mjs"
