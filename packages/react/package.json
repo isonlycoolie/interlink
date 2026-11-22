@@ -1,0 +1,48 @@
+{
+  "name": "@interlink/react",
+  "version": "0.0.0",
+  "description": "Interlink primitives and components for React.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "sideEffects": [
+    "*.css"
+  ],
+  "exports": {
+    "./primitives": {
+      "types": "./dist/primitives.d.mts",
+      "default": "./dist/primitives.mjs"
+    },
+    "./xcss": {
+      "types": "./dist/xcss.d.mts",
+      "default": "./dist/xcss.mjs"
+    },
+    "./styles.css": "./dist/styles.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "node scripts/build-xcss.mjs && tsdown && node scripts/bundle-css.mjs",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "dependencies": {
+    "@interlink/tokens": "workspace:*"
+  },
+  "devDependencies": {
+    "@testing-library/react": "16.3.3",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "axe-core": "4.14.1",
+    "jsdom": "31.0.1",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "tsdown": "0.23.7",
+    "typescript": "7.0.2",
+    "vitest": "5.1.1"
+  }
+}
