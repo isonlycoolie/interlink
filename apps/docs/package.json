@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev --webpack --port 3110",
     "build": "next build --webpack",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "compare": "node scripts/link-reference.mjs && next dev --webpack --port 3110"
   },
   "dependencies": {
     "@interlink/css": "workspace:*",
