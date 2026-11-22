@@ -1,0 +1,13 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .il-pagination { display: flex; align-items: center; }
+  .il-pagination-list { display: flex; align-items: center; margin: 0; padding: 0; list-style: none; font-family: var(--il-font-family-body); }
+  .il-pagination-ellipsis {
+    display: flex;
+    align-items: center;
+    padding-inline: var(--il-space-100);
+    color: var(--il-text);
+    font: var(--il-font-body);
+  }
+  .il-pagination > .il-button { padding-inline: var(--il-space-075); }
+}
