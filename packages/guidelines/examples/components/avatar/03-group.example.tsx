@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: Apache-2.0
 import { AvatarGroup } from '@interlink/react/avatar';
+import { people } from '../../../src/people';
 
 /** Title: Avatar group */
 export default function Example() {
-  return (
-    <AvatarGroup maxCount={4} data={[{ name: 'Kai Moto' }, { name: 'Lena Ruiz' }, { name: 'Omar Haddad' }, { name: 'Sam Ito' }, { name: 'Ada Byron' }, { name: 'Eli Cole' }]} />
-  );
+  const team = [people.amara, people.kwame, people.zawadi, people.tunde, people.imani, people.kofi, people.neema];
+  return <AvatarGroup maxCount={5} data={team.map((p) => ({ name: p.name, src: p.photo }))} />;
 }

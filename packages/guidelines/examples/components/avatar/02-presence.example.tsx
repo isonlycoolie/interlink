@@ -1,15 +1,17 @@
 // SPDX-License-Identifier: Apache-2.0
-import { Inline } from '@interlink/react/primitives';
 import { Avatar } from '@interlink/react/avatar';
+import { Inline } from '@interlink/react/primitives';
+import { people } from '../../../src/people';
 
-/** Title: Presence and status */
+/** Title: Presence, status and the initials fallback */
 export default function Example() {
   return (
-    <Inline space="space.200">
-      <Avatar name="Kai Moto" presence="online" />
-      <Avatar name="Lena Ruiz" presence="busy" />
-      <Avatar name="Omar Haddad" status="approved" />
-      <Avatar name="Design team" appearance="square" />
+    <Inline space="space.200" alignBlock="center">
+      <Avatar name={people.kwame.name} src={people.kwame.photo} presence="online" size="large" />
+      <Avatar name={people.zawadi.name} src={people.zawadi.photo} presence="busy" size="large" />
+      <Avatar name={people.baraka.name} src={people.baraka.photo} status="approved" size="large" />
+      <Avatar name="Design team" appearance="square" size="large" />
+      <Avatar name="Lindiwe Dube" size="large" />
     </Inline>
   );
 }
