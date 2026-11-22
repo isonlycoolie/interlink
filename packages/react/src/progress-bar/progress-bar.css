@@ -1,0 +1,11 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .il-progress { position: relative; display: block; width: 100%; height: var(--il-space-075); overflow: hidden; border-radius: var(--il-radius-full); background: var(--il-background-neutral); }
+  .il-progress[data-appearance='inverse'] { background: var(--il-background-inverse-subtle); }
+  .il-progress-bar { position: absolute; inset-block: 0; inset-inline-start: 0; border-radius: var(--il-radius-full); background: var(--il-background-neutral-bold); transition: width var(--il-duration-medium) ease-out; }
+  .il-progress[data-appearance='success'] .il-progress-bar { background: var(--il-background-success-bold); }
+  .il-progress[data-appearance='inverse'] .il-progress-bar { background: var(--il-surface); }
+  .il-progress[data-indeterminate] .il-progress-bar { width: 40%; animation: il-progress-slide 1.6s ease-in-out infinite; }
+  @keyframes il-progress-slide { from { transform: translateX(-100%); } to { transform: translateX(250%); } }
+  @media (prefers-reduced-motion: reduce) { .il-progress[data-indeterminate] .il-progress-bar { animation-duration: 4s; } }
+}
