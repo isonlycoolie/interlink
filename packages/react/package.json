@@ -144,6 +144,54 @@
       "types": "./dist/select.d.mts",
       "default": "./dist/select.mjs"
     },
+    "./tile": {
+      "types": "./dist/tile.d.mts",
+      "default": "./dist/tile.mjs"
+    },
+    "./object": {
+      "types": "./dist/object.d.mts",
+      "default": "./dist/object.mjs"
+    },
+    "./date-label": {
+      "types": "./dist/date-label.d.mts",
+      "default": "./dist/date-label.mjs"
+    },
+    "./image": {
+      "types": "./dist/image.d.mts",
+      "default": "./dist/image.mjs"
+    },
+    "./range": {
+      "types": "./dist/range.d.mts",
+      "default": "./dist/range.mjs"
+    },
+    "./progress-indicator": {
+      "types": "./dist/progress-indicator.d.mts",
+      "default": "./dist/progress-indicator.mjs"
+    },
+    "./progress-tracker": {
+      "types": "./dist/progress-tracker.d.mts",
+      "default": "./dist/progress-tracker.mjs"
+    },
+    "./comment": {
+      "types": "./dist/comment.d.mts",
+      "default": "./dist/comment.mjs"
+    },
+    "./calendar": {
+      "types": "./dist/calendar.d.mts",
+      "default": "./dist/calendar.mjs"
+    },
+    "./datetime-picker": {
+      "types": "./dist/datetime-picker.d.mts",
+      "default": "./dist/datetime-picker.mjs"
+    },
+    "./spotlight": {
+      "types": "./dist/spotlight.d.mts",
+      "default": "./dist/spotlight.mjs"
+    },
+    "./dynamic-table": {
+      "types": "./dist/dynamic-table.d.mts",
+      "default": "./dist/dynamic-table.mjs"
+    },
     "./docs": {
       "types": "./dist/docs.d.mts",
       "default": "./dist/docs.mjs"
