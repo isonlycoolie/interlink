@@ -1,0 +1,41 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .il-banner {
+    --il-banner-bg: var(--il-background-warning-bold);
+    --il-banner-text-color: var(--il-text-warning-inverse);
+    display: flex;
+    align-items: center;
+    gap: var(--il-space-050);
+    box-sizing: border-box;
+    width: 100%;
+    height: 3rem;
+    padding-inline: var(--il-space-150);
+    background-color: var(--il-banner-bg);
+    color: var(--il-banner-text-color);
+  }
+  .il-banner[data-appearance='error'] { --il-banner-bg: var(--il-background-danger-bold); --il-banner-text-color: var(--il-text-inverse); }
+  .il-banner[data-appearance='announcement'] { --il-banner-bg: var(--il-background-neutral-bold); --il-banner-text-color: var(--il-text-inverse); }
+  .il-banner-icon {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--il-banner-text-color);
+  }
+  .il-banner-text {
+    min-width: 0;
+    overflow: hidden;
+    color: var(--il-banner-text-color);
+    font: var(--il-font-body);
+    font-weight: var(--il-font-weight-medium);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .il-banner-text a,
+  .il-banner-text a:is(:hover, :focus, :active, :visited) {
+    color: currentColor;
+    text-decoration: underline solid currentColor;
+  }
+}
