@@ -1,0 +1,18 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .il-field { display: flex; flex-direction: column; gap: var(--il-space-050); margin-top: var(--il-space-100); }
+  .il-label { display: block; margin: 0; padding: 0; font: var(--il-font-body-small); font-weight: var(--il-font-weight-bold); color: var(--il-text-subtle); }
+  .il-form-message { display: flex; align-items: flex-start; gap: var(--il-space-050); margin-top: var(--il-space-025); font: var(--il-font-body-small); color: var(--il-text-subtlest); animation: var(--il-form-message-enter); }
+  .il-form-message .il-icon { margin-block-start: var(--il-space-025); }
+  .il-form-message[data-kind='error'] { color: var(--il-text-danger); }
+  .il-form-message[data-kind='valid'] { color: var(--il-text-success); }
+  .il-fieldset { margin: var(--il-space-100) 0 0; padding: 0; border: 0; }
+  .il-fieldset > .il-label { margin-bottom: var(--il-space-050); }
+  .il-form-header { margin-bottom: var(--il-space-200); }
+  .il-form-title { margin: 0; font: var(--il-font-heading-large); color: var(--il-text); }
+  .il-form-description { margin-top: var(--il-space-100); font: var(--il-font-body); color: var(--il-text-subtle); }
+  .il-form-section { margin-top: var(--il-space-300); }
+  .il-form-section-title { margin: 0; font: var(--il-font-heading-medium); color: var(--il-text); }
+  .il-form-footer { display: flex; gap: var(--il-space-100); margin-top: var(--il-space-300); }
+  .il-form-footer[data-align='end'] { justify-content: flex-end; }
+}
