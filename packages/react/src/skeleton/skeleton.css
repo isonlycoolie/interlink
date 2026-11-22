@@ -1,0 +1,8 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .il-skeleton { display: block; background: var(--il-skeleton); border-radius: var(--il-radius-small); }
+  .il-skeleton[data-shimmer] { animation: il-skeleton-shimmer 1.5s ease-in-out infinite alternate; }
+  @keyframes il-skeleton-shimmer { from { background: var(--il-skeleton); } to { background: var(--il-skeleton-subtle); } }
+  @media (prefers-reduced-motion: reduce) { .il-skeleton[data-shimmer] { animation: none; } }
+  .il-skeleton-text { display: flex; flex-direction: column; gap: var(--il-space-100); }
+}
