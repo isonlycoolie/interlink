@@ -1,0 +1,21 @@
+---
+title: Flag usage
+description: A flag is a short notification at the bottom of the screen about an event or action.
+---
+
+## Usage
+
+Flags confirm that something happened or report a problem that is not tied to one place on the page. Raise them
+with `useFlags()` inside a `FlagsProvider`, or render a `FlagGroup` yourself.
+
+## Best practices
+
+- Write the title as what happened: "Page saved", not "Success".
+- Use bold appearances for system messages; use normal flags for confirmations with actions.
+- Auto-dismiss only success messages that need no action.
+- Offer at most two short actions, such as Undo or View.
+
+## Accessibility
+
+- Warnings and errors are announced straight away; other flags are announced politely.
+- Auto-dismissing flags pause while hovered or focused.
