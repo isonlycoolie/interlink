@@ -1,0 +1,21 @@
+---
+title: Popup usage
+description: A popup is a layer anchored to a trigger for menus, pickers and small dialogs.
+---
+
+## Usage
+
+Popup is the building block under dropdown menus, inline dialogs and select menus. Reach for those first; use
+Popup directly for custom layers such as filters or pickers.
+
+## Behaviour
+
+- The popup renders in the top layer, so it is never clipped by a scrolling parent.
+- It flips to the other side of the trigger when there is no room, then shifts to stay on screen.
+- Escape and clicks outside close it. Inside a modal, Escape closes the popup first.
+
+## Accessibility
+
+- Spread `triggerProps` on the trigger so it gets `aria-expanded`, `aria-controls` and `aria-haspopup`.
+- Give dialog popups a `label` or a visible title with `titleId`.
+- Focus moves in when the popup opens and back to the trigger when it closes.
