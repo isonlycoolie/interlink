@@ -11,11 +11,12 @@ import { form } from './components/form';
 import { tabs } from './components/navigation';
 import { menu, modalDialog } from './components/overlays';
 import { select } from './components/select';
+import { dateLabel, objectGuidelines, spotlight, tile } from './components/wave2b';
 
 export type { Guideline, Severity, Topic } from './define';
 
 /** Every guideline, in page order. */
-export const allGuidelines: readonly Guideline[] = [...color, ...accents, ...spacing, ...elevation, ...typography, ...button, ...lozenge, ...icon, ...form, ...tooltip, ...tag, ...badge, ...link, ...emptyState, ...progressBar, ...select, ...menu, ...modalDialog, ...tabs];
+export const allGuidelines: readonly Guideline[] = [...color, ...accents, ...spacing, ...elevation, ...typography, ...button, ...lozenge, ...icon, ...form, ...tooltip, ...tag, ...badge, ...link, ...emptyState, ...progressBar, ...select, ...menu, ...modalDialog, ...tabs, ...dateLabel, ...spotlight, ...tile, ...objectGuidelines];
 
 export function getGuideline(id: string): Guideline | undefined {
   return allGuidelines.find((g) => g.id === id);
