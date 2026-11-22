@@ -7,6 +7,7 @@ import { AccentGrid, EmphasisLadder, InteractionStates, InverseOnBold } from '..
 import { ElevationStack, ElevationStates, SunkenVsNeutral } from '../specimens/elevation';
 import { BorderSpecimen, RadiusScale } from '../specimens/shape';
 import { SpacingBands, SpacingScale } from '../specimens/spacing-scale';
+import { FontFamilies, TypeScale, WeightScale } from '../specimens/type';
 import { DoDont, DoDontGrid, Example } from './do-dont';
 import { Guideline, Guidelines } from './guideline';
 
@@ -53,4 +54,7 @@ export const mdxComponents: MDXComponents = {
   SunkenVsNeutral,
   BorderSpecimen,
   RadiusScale,
+  TypeScale,
+  WeightScale,
+  FontFamilies,
 };

@@ -43,3 +43,11 @@
   .spec-border-box[data-kind='Selected'] { background: var(--il-background-selected); color: var(--il-text-selected); }
   .spec-border-box[data-kind='Focused'] { border-color: var(--il-border) !important; border-width: var(--il-border-width) !important; outline: var(--il-border-width-focused) solid var(--il-border-focused); outline-offset: var(--il-border-width-focused); }
 }
+@layer site {
+  .spec-type td { vertical-align: middle; }
+  .spec-weights, .spec-fonts { display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); gap: var(--il-space-300); margin-top: var(--il-space-300); }
+  .spec-weights p, .spec-fonts p { margin: var(--il-space-050) 0 0; font: var(--il-font-body-small); }
+  .spec-weight-sample { font-size: 3rem; line-height: 1; }
+  .spec-font-sample { margin: 0 !important; font-size: 2rem !important; line-height: 1.2 !important; }
+  .spec-font-note { color: var(--il-text-subtle); }
+}
