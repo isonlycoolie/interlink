@@ -1,0 +1,51 @@
+---
+title: Typography
+description: A type system built for reading and working all day, set in open typefaces.
+---
+
+Type carries most of what a product says. Interlink typography favours clarity over personality: one family for
+the interface, one for code, and a short scale where every step has a job.
+
+## Typographic principles
+
+### Optimize for readability
+
+Body text is set at 14px with a 20px line height, sized for long sessions on dense screens. Keep lines between 50
+and 90 characters and give paragraphs room.
+
+### Create visual harmony
+
+Heading, body and metric styles share one family and a common grid, so text lines up with icons, controls and the
+8px spacing scale.
+
+## Typefaces
+
+<FontFamilies />
+
+Brand moments, such as landing pages, use the same family at display sizes; there is no separate brand typeface
+to load.
+
+## Text styles and tokens
+
+Each style is a single composite token that sets size, line height, weight and family together. Apply it with
+the `Heading`, `Text` and `MetricText` primitives or with `font` in xcss, never with separate raw properties.
+
+### Heading
+
+<TypeScale group="heading" />
+
+### Body
+
+<TypeScale group="body" />
+
+### Body font weight
+
+<WeightScale />
+
+### Metric
+
+Metric styles emphasise a single number in dashboards and charts.
+
+<TypeScale group="metric" />
+
+For how to apply these styles, see [Applying typography](/foundations/typography/applying-typography).
