@@ -10,3 +10,24 @@
   .spec-band-use { margin-top: var(--il-space-100) !important; font: var(--il-font-body); color: var(--il-text-subtle); }
   .doc-guideline { margin-top: var(--il-space-300); }
 }
+@layer site {
+  .spec-ramps { display: grid; gap: var(--il-space-200); margin-top: var(--il-space-300); }
+  .spec-ramp-name { margin: 0 0 var(--il-space-075); font: var(--il-font-heading-xxsmall); color: var(--il-text-subtle); }
+  .spec-ramp-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(3rem, 1fr)); gap: var(--il-space-050); }
+  .spec-chip { display: flex; flex-direction: column; gap: var(--il-space-025); }
+  .spec-chip-swatch { height: var(--il-space-500); border-radius: var(--il-radius-small); box-shadow: inset 0 0 0 var(--il-border-width) var(--il-border); }
+  .spec-chip-label { font: var(--il-font-body-small); color: var(--il-text-subtle); }
+  .spec-roles { display: grid; gap: var(--il-space-150); margin-top: var(--il-space-300); }
+  .spec-role { display: grid; grid-template-columns: var(--il-space-500) var(--il-space-500) 1fr; gap: var(--il-space-150); align-items: center; }
+  .spec-role-swatch { height: var(--il-space-500); border-radius: var(--il-radius-small); box-shadow: inset 0 0 0 var(--il-border-width) var(--il-border); }
+  .spec-role p { margin: 0; }
+  .spec-role-name { font: var(--il-font-heading-xsmall); text-transform: capitalize; }
+  .spec-role-use { font: var(--il-font-body); color: var(--il-text-subtle); }
+  .spec-ladder { display: grid; grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr)); gap: var(--il-space-100); margin-top: var(--il-space-300); }
+  .spec-ladder > .il-box { border-radius: var(--il-radius-medium); }
+  .spec-state { display: block; width: var(--il-space-600); height: var(--il-space-400); border-radius: var(--il-radius-small); box-shadow: inset 0 0 0 var(--il-border-width) var(--il-border); }
+  .spec-accents { display: grid; gap: var(--il-space-050); margin-top: var(--il-space-300); }
+  .spec-accent-row { display: grid; grid-template-columns: 5rem repeat(4, minmax(0, 1fr)); gap: var(--il-space-050); align-items: stretch; }
+  .spec-accent-row > .il-box { border-radius: var(--il-radius-small); }
+  .spec-accent-name { align-self: center; font: var(--il-font-body); text-transform: capitalize; }
+}

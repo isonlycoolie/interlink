@@ -14,7 +14,7 @@ export function DoDontGrid({ children }: { children: ReactNode }) {
   return <div className="doc-dodont-grid">{children}</div>;
 }
 
-/** A live example on a neutral tile, a coloured rule and the guidance in one sentence. */
+/** A live example on a neutral tile, a colored rule and the guidance in one sentence. */
 export function DoDont({ kind, caption, children, code }: { kind: DoDontKind; caption: ReactNode; children: ReactNode; code?: string }) {
   const Icon = ICON[kind];
   return (

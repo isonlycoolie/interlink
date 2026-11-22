@@ -2,6 +2,8 @@
 import { SectionMessage } from '@interlink/react/section-message';
 import type { MDXComponents } from 'mdx/types';
 import type { ComponentProps, ReactNode } from 'react';
+import { ColorRoles, PaletteRamps } from '../specimens/color';
+import { AccentGrid, EmphasisLadder, InteractionStates, InverseOnBold } from '../specimens/color-states';
 import { SpacingBands, SpacingScale } from '../specimens/spacing-scale';
 import { DoDont, DoDontGrid, Example } from './do-dont';
 import { Guideline, Guidelines } from './guideline';
@@ -38,4 +40,10 @@ export const mdxComponents: MDXComponents = {
   Guidelines,
   SpacingScale,
   SpacingBands,
+  PaletteRamps,
+  ColorRoles,
+  EmphasisLadder,
+  InverseOnBold,
+  InteractionStates,
+  AccentGrid,
 };
