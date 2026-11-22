@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
 'use client';
 import ThemeIcon from '@interlink/icons/core/theme';
-import CheckMarkIcon from '@interlink/icons/core/check-mark';
+import { DropdownItemRadio, DropdownItemRadioGroup, DropdownMenu } from '@interlink/react/dropdown-menu';
 import { setGlobalTheme, type ColorMode } from '@interlink/tokens';
 import { useEffect, useState } from 'react';
 import { THEME_KEY as KEY } from './theme-script';
@@ -12,7 +12,7 @@ const OPTIONS: { value: ColorMode; label: string }[] = [
   { value: 'auto', label: 'Match system' },
 ];
 
-
+/** Theme picker in the site header, built from Interlink's own DropdownMenu. */
 export function ThemeMenu() {
   const [mode, setMode] = useState<ColorMode>('auto');
   useEffect(() => {
@@ -28,22 +28,25 @@ export function ThemeMenu() {
       if (value === 'auto') localStorage.removeItem(KEY);
       else localStorage.setItem(KEY, value);
     } catch {}
-    document.getElementById('theme-menu')?.hidePopover();
   };
   return (
-    <>
-      <button type="button" className="site-theme-button il-focusable" popoverTarget="theme-menu" aria-haspopup="menu">
-        <ThemeIcon label="" />
-        Theme
-      </button>
-      <div id="theme-menu" popover="auto" role="menu" className="site-menu">
+    <DropdownMenu
+      label="Theme"
+      placement="bottom-end"
+      trigger={({ isSelected, testId, ...props }) => (
+        <button type="button" className="site-theme-button il-focusable" data-selected={isSelected || undefined} data-testid={testId} {...props}>
+          <ThemeIcon label="" />
+          Theme
+        </button>
+      )}
+    >
+      <DropdownItemRadioGroup id="theme">
         {OPTIONS.map((o) => (
-          <button key={o.value} type="button" role="menuitemradio" aria-checked={mode === o.value} className="site-menu-item il-focusable" onClick={() => choose(o.value)}>
-            <span>{o.label}</span>
-            {mode === o.value ? <CheckMarkIcon label="" color="color.icon.selected" /> : null}
-          </button>
+          <DropdownItemRadio key={o.value} id={o.value} isSelected={mode === o.value} onClick={() => choose(o.value)}>
+            {o.label}
+          </DropdownItemRadio>
         ))}
-      </div>
-    </>
+      </DropdownItemRadioGroup>
+    </DropdownMenu>
   );
 }
