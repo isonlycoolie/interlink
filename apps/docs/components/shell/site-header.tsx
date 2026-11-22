@@ -19,6 +19,9 @@ export function SiteHeader() {
         <Link href="/get-started" className="site-header-link il-focusable" data-active="">
           Design system
         </Link>
+        <Link href="/screens" className="site-header-link il-focusable">
+          Screens
+        </Link>
         <button type="button" className="site-header-link site-search-button il-focusable" aria-keyshortcuts="Control+K Meta+K" data-search-trigger="">
           <SearchIcon label="" />
           Search

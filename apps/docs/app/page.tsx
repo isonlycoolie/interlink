@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
+import { screens } from '@interlink/guidelines/screens';
 import { Anchor, Box, Heading, Stack, Text, xcss } from '@interlink/react/primitives';
+import Link from 'next/link';
 
 const page = xcss({ maxWidth: '72rem', paddingBlock: 'space.1000', paddingInline: 'space.400' });
 const cta = xcss({
@@ -25,6 +27,20 @@ export default function Home() {
         <Anchor href="/get-started" xcss={cta}>
           Get started
         </Anchor>
+        <Stack space="space.200">
+          <Heading size="large" as="h2">
+            Screens
+          </Heading>
+          <Text color="color.text.subtle">Full dashboards, settings and landing pages built only from Interlink.</Text>
+          <div className="site-landing-strip">
+            {screens.map((s) => (
+              <Link key={s.slug} href={`/screens/${s.slug}`} className="site-screen-card il-focusable">
+                <span className="site-screen-card-title">{s.title}</span>
+                <span className="site-screen-card-text">{s.description}</span>
+              </Link>
+            ))}
+          </div>
+        </Stack>
       </Stack>
     </Box>
   );

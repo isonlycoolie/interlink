@@ -3,6 +3,7 @@ import '@interlink/css/interlink.css';
 import '@interlink/icons/styles.css';
 import '@interlink/react/styles.css';
 import '@interlink/guidelines/kit.css';
+import '@interlink/guidelines/screens.css';
 import './shell.css';
 import './content.css';
 import './specimens.css';
