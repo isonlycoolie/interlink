@@ -2,6 +2,7 @@
 import { exampleSets } from '@interlink/guidelines/registry';
 import { exampleSources } from '@interlink/guidelines/sources';
 import { componentDocs } from '@interlink/react/docs';
+import { CodeBlock, CodeDisclosure } from './code-block';
 
 /** Every live example for a component, each with its code. */
 export function ExampleSet({ component }: { component: string }) {
@@ -16,12 +17,7 @@ export function ExampleSet({ component }: { component: string }) {
             <div className="doc-example-stage" data-padded="">
               <Component />
             </div>
-            <details className="doc-example-code">
-              <summary className="il-focusable">Show code</summary>
-              <pre>
-                <code>{exampleSources[component]?.[slug] ?? ''}</code>
-              </pre>
-            </details>
+            <CodeDisclosure code={exampleSources[component]?.[slug] ?? ''} className="doc-example-code" />
           </figure>
         </section>
       ))}
@@ -61,8 +57,8 @@ export function ComponentIntro({ component }: { component: string }) {
   const pkg = doc.package.split('/').slice(0, 2).join('/');
   return (
     <div className="doc-intro">
-      <pre><code>{`pnpm add ${pkg}`}</code></pre>
-      <pre><code>{doc.package.includes('<name>') ? `import AddIcon from '@interlink/icons/core/add';` : `import { ${doc.exports.join(', ')} } from '${doc.package}';`}</code></pre>
+      <CodeBlock lang="bash" code={`pnpm add ${pkg}`} />
+      <CodeBlock code={doc.package.includes('<name>') ? `import AddIcon from '@interlink/icons/core/add';` : `import { ${doc.exports.join(', ')} } from '${doc.package}';`} />
     </div>
   );
 }

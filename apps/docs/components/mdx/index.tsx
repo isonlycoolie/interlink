@@ -10,6 +10,7 @@ import { SpacingBands, SpacingScale } from '../specimens/spacing-scale';
 import { TokenTable } from '../specimens/token-table';
 import { FontFamilies, TypeScale, WeightScale } from '../specimens/type';
 import { IconGallery } from '../specimens/icon-gallery';
+import { CodeFrame } from './code-block';
 import { ComponentIntro, ExampleSet, PropsTable } from './component-parts';
 import { DoDont, DoDontGrid, Example } from './do-dont';
 import { Guideline, Guidelines } from './guideline';
@@ -38,6 +39,11 @@ export const mdxComponents: MDXComponents = {
     </div>
   ),
   a: (p) => <a className="doc-link il-focusable" {...p} />,
+  pre: (p) => (
+    <CodeFrame>
+      <pre {...p} />
+    </CodeFrame>
+  ),
   DoDont,
   DoDontGrid,
   Example,

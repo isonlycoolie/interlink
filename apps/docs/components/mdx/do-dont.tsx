@@ -3,6 +3,7 @@ import StatusErrorIcon from '@interlink/icons/core/status-error';
 import StatusSuccessIcon from '@interlink/icons/core/status-success';
 import StatusWarningIcon from '@interlink/icons/core/status-warning';
 import type { ReactNode } from 'react';
+import { CodeDisclosure } from './code-block';
 
 export type DoDontKind = 'do' | 'dont' | 'caution';
 const LABEL: Record<DoDontKind, string> = { do: 'Do', dont: 'Don’t', caution: 'Caution' };
@@ -27,14 +28,7 @@ export function DoDont({ kind, caption, children, code }: { kind: DoDontKind; ca
         </span>
         <span>{caption}</span>
       </figcaption>
-      {code ? (
-        <details className="doc-dodont-code">
-          <summary className="il-focusable">Show code</summary>
-          <pre>
-            <code>{code}</code>
-          </pre>
-        </details>
-      ) : null}
+      {code ? <CodeDisclosure code={code} className="doc-dodont-code" /> : <span className="doc-dodont-code" aria-hidden="true" />}
     </figure>
   );
 }
