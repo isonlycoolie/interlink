@@ -1,0 +1,16 @@
+Interlink
+Copyright 2026 Interlink contributors
+
+This product includes software derived from the Atlassian Design System
+(https://atlassian.design), Copyright 2019-2025 Atlassian Pty Ltd,
+licensed under the Apache License, Version 2.0.
+
+Derived work includes design token names, structure and values (from @atlaskit/tokens),
+primitive and component APIs and behaviour (from @atlaskit/primitives and other @atlaskit
+packages), and icon artwork (from @atlaskit/icon). All derived files were modified by
+Interlink contributors.
+
+Atlassian, Jira, Confluence and Rovo are trademarks of Atlassian Pty Ltd. Interlink is not
+affiliated with or endorsed by Atlassian.
+
+Interlink uses the Inter and JetBrains Mono typefaces under the SIL Open Font License 1.1.
