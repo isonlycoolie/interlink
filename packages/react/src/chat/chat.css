@@ -1,0 +1,41 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .il-chat {
+    --il-elevation-surface-current: var(--il-assist-surface-overlay);
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow: hidden;
+    background: var(--il-assist-surface-overlay);
+    color: var(--il-text);
+  }
+  .il-chat[data-variant='floating'] { border-radius: var(--il-radius-xlarge); box-shadow: var(--il-shadow-overlay); }
+  .il-chat[data-variant='docked'] { height: 100%; border-inline-start: var(--il-border-width) solid var(--il-border); }
+  .il-chat-header { display: flex; align-items: center; justify-content: space-between; gap: var(--il-space-100); padding: var(--il-space-150) var(--il-space-150) var(--il-space-100) var(--il-space-200); }
+  .il-chat-agent { display: flex; align-items: center; gap: var(--il-space-100); min-width: 0; font: var(--il-font-heading-xsmall); }
+  .il-chat-header-actions { display: flex; align-items: center; gap: var(--il-space-025); }
+  .il-chat-thread { display: flex; flex: 1 1 auto; flex-direction: column; gap: var(--il-space-300); min-height: 0; padding: var(--il-space-200); overflow-y: auto; }
+  .il-chat-footer { display: flex; flex-direction: column; gap: var(--il-space-100); padding: 0 var(--il-space-200) var(--il-space-150); }
+  .il-chat-message { display: flex; flex-direction: column; gap: var(--il-space-100); max-width: 100%; animation: il-chat-in var(--il-duration-medium) var(--il-easing-out-practical) both; }
+  .il-chat-message[data-from='user'] { align-items: flex-end; }
+  .il-chat-message[data-from='user'] .il-chat-body {
+    max-width: 85%;
+    padding: var(--il-space-150) var(--il-space-200);
+    border-radius: var(--il-radius-xlarge);
+    background: var(--il-background-neutral);
+    font: var(--il-font-body-large);
+  }
+  .il-chat-message[data-from='agent'] .il-chat-body { font: var(--il-font-body-large); }
+  .il-chat-body > :first-child { margin-top: 0; }
+  .il-chat-body > :last-child { margin-bottom: 0; }
+  .il-chat-byline { display: flex; align-items: center; gap: var(--il-space-100); }
+  .il-chat-author { font: var(--il-font-heading-xsmall); }
+  .il-chat-time { color: var(--il-text-subtlest); font: var(--il-font-body-small); }
+  .il-chat-message-footer { display: flex; flex-direction: column; gap: var(--il-space-150); width: 100%; }
+  @keyframes il-chat-in {
+    from { opacity: 0; transform: translateY(var(--il-space-100)); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .il-chat-message { animation: none; }
+  }
+}
