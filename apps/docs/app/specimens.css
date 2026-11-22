@@ -85,4 +85,13 @@
   .spec-icon span { font: var(--il-font-body-small); color: var(--il-text-subtle); word-break: break-word; text-align: center; }
   .spec-icon:hover { background: var(--il-background-neutral-subtle-hovered); }
   .spec-icon[aria-pressed='true'] { background: var(--il-background-selected); color: var(--il-text-selected); }
+  .spec-illos { margin-top: var(--il-space-300); }
+  .spec-illo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr)); gap: var(--il-space-150); margin-top: var(--il-space-200); }
+  .spec-illo { display: flex; flex-direction: column; align-items: stretch; gap: var(--il-space-050); padding: 0 0 var(--il-space-150); overflow: hidden; border: var(--il-border-width) solid var(--il-border); border-radius: var(--il-radius-large); background: var(--il-surface); color: var(--il-text); text-align: start; cursor: pointer; }
+  .spec-illo[data-hero] { grid-column: span 2; }
+  .spec-illo:hover { box-shadow: var(--il-shadow-raised); }
+  .spec-illo[aria-pressed='true'] { border-color: var(--il-border-selected); box-shadow: inset 0 0 0 var(--il-border-width) var(--il-border-selected); }
+  .spec-illo-stage { display: flex; align-items: center; justify-content: center; height: 8.5rem; margin-bottom: var(--il-space-100); background: var(--il-surface-sunken); }
+  .spec-illo-name { padding-inline: var(--il-space-150); font: var(--il-font-heading-xxsmall); }
+  .spec-illo-meaning { padding-inline: var(--il-space-150); color: var(--il-text-subtle); font: var(--il-font-body-small); }
 }
