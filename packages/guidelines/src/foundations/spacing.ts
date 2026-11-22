@@ -1,0 +1,53 @@
+// SPDX-License-Identifier: Apache-2.0
+import { defineGuidelines } from '../define';
+
+export const spacing = defineGuidelines([
+  {
+    id: 'spacing.group-by-similarity',
+    topic: 'spacing',
+    section: 'Group by similarity',
+    kind: 'pair',
+    severity: 'must',
+    rule: 'Give items of the same kind the same spacing.',
+    do: 'Repeat the same gap between items that do the same job, such as the fields of a form.',
+    dont: 'Vary the gap between items of the same kind; people read the change as a new group.',
+    why: 'Equal spacing tells people that items are peers. A different gap implies a boundary that is not there.',
+    basis: ['ads:/foundations/spacing#04', 'ads:/foundations/spacing#05'],
+  },
+  {
+    id: 'spacing.group-by-proximity',
+    topic: 'spacing',
+    section: 'Group by proximity',
+    kind: 'pair',
+    severity: 'must',
+    rule: 'Keep related content close and put more space between unrelated groups.',
+    do: 'Place an action close to the content it acts on so the two scan as one unit.',
+    dont: 'Separate related content with a large gap; it splits one task into two.',
+    why: 'Distance is the first cue people use to decide what belongs together.',
+    basis: ['ads:/foundations/spacing#06', 'ads:/foundations/spacing#07'],
+  },
+  {
+    id: 'spacing.order-and-hierarchy',
+    topic: 'spacing',
+    section: 'Create order and hierarchy',
+    kind: 'pair',
+    severity: 'should',
+    rule: 'Use size and space together to rank content by importance.',
+    do: 'Make the main title the largest element and let supporting context sit smaller above it.',
+    dont: 'Give every element the same size and weight; nothing tells people where to start.',
+    why: 'Clear hierarchy lets people find the main point first and the details second.',
+    basis: ['ads:/foundations/spacing#08', 'ads:/foundations/spacing#09'],
+  },
+  {
+    id: 'spacing.optical-adjustment',
+    topic: 'spacing',
+    section: 'Use optical adjustment',
+    kind: 'pair',
+    severity: 'consider',
+    rule: 'Adjust spacing so content looks aligned, not only measures aligned.',
+    do: 'Let leading icons hang outside the text edge so headings and body text share one line.',
+    dont: 'Apply the same padding everywhere when it pushes text off the shared edge.',
+    why: 'Icons and glyphs carry their own visual weight; a strict grid can look crooked once they are added.',
+    basis: ['ads:/foundations/spacing#11', 'ads:/foundations/spacing#12'],
+  },
+]);
