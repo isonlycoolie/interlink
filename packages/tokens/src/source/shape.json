@@ -1,0 +1,13 @@
+{
+  "radius.xsmall": "Radius02",
+  "radius.small": "Radius04",
+  "radius.medium": "Radius06",
+  "radius.large": "Radius08",
+  "radius.xlarge": "Radius12",
+  "radius.xxlarge": "Radius16",
+  "radius.full": "Radius99",
+  "radius.tile": "RadiusPercentage25",
+  "border.width": "BorderWidth1",
+  "border.width.selected": "BorderWidth2",
+  "border.width.focused": "BorderWidth2"
+}
