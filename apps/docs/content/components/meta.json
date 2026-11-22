@@ -55,6 +55,8 @@
     "---Navigation---",
     "breadcrumbs",
     "link",
+    "navigation-system",
+    "page-header",
     "pagination",
     "progress-indicator",
     "progress-tracker",
