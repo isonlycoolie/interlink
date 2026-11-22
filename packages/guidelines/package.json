@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "@interlink/icons": "workspace:*",
+    "@interlink/illustrations": "workspace:*",
     "@interlink/react": "workspace:*",
     "@interlink/tokens": "workspace:*"
   },

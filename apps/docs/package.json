@@ -12,6 +12,7 @@
     "@interlink/css": "workspace:*",
     "@interlink/guidelines": "workspace:*",
     "@interlink/icons": "workspace:*",
+    "@interlink/illustrations": "workspace:*",
     "@interlink/react": "workspace:*",
     "@interlink/tokens": "workspace:*",
     "fumadocs-core": "16.19.7",

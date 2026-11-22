@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
 import '@interlink/css/interlink.css';
 import '@interlink/icons/styles.css';
+import '@interlink/illustrations/styles.css';
 import '@interlink/react/styles.css';
 import '@interlink/guidelines/kit.css';
 import '@interlink/guidelines/screens.css';

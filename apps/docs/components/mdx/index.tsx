@@ -10,6 +10,7 @@ import { SpacingBands, SpacingScale } from '../specimens/spacing-scale';
 import { TokenTable } from '../specimens/token-table';
 import { FontFamilies, TypeScale, WeightScale } from '../specimens/type';
 import { IconGallery } from '../specimens/icon-gallery';
+import { IllustrationGallery } from '../specimens/illustration-gallery';
 import { CodeFrame } from './code-block';
 import { ComponentIntro, ExampleSet, PropsTable } from './component-parts';
 import { DoDont, DoDontGrid, Example } from './do-dont';
@@ -71,4 +72,5 @@ export const mdxComponents: MDXComponents = {
   PropsTable,
   ComponentIntro,
   IconGallery,
+  IllustrationGallery,
 };
