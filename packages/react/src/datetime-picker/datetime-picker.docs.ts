@@ -1,0 +1,42 @@
+// SPDX-License-Identifier: Apache-2.0
+import { docsFor } from '../docs/types';
+import type { DatePickerProps } from './date-picker-types';
+
+export const datetimePickerDocs = docsFor<DatePickerProps>({
+  name: "Date time picker",
+  package: '@interlink/react/datetime-picker',
+  exports: ["DatePicker", "TimePicker", "DateTimePicker"],
+  description: "Date and time pickers let people choose a date, a time, or both.",
+  status: 'ga',
+  category: "Date and time",
+  keywords: ["date picker", "time picker", "datetime", "calendar"],
+  props: {
+    value: {"type": "string", "description": "Controlled value, YYYY-MM-DD."},
+    defaultValue: {"type": "string", "description": "Initial value.", "default": "''"},
+    onChange: {"type": "(iso) => void", "description": "Called with the new date, or an empty string."},
+    defaultIsOpen: {"type": "boolean", "description": "Open on mount.", "default": "false"},
+    isClearable: {"type": "boolean", "description": "Show a clear button.", "default": "false"},
+    weekStartDay: {"type": "0 \u2013 6", "description": "First day of the week.", "default": "0"},
+    clearControlLabel: {"type": "string", "description": "Label of the clear button.", "default": "'Clear'"},
+    isDisabled: {"type": "boolean", "description": "Prevents changes.", "default": "false"},
+    isInvalid: {"type": "boolean", "description": "Shows the error border.", "default": "false"},
+    isRequired: {"type": "boolean", "description": "Marks it required.", "default": "false"},
+    appearance: {"type": "'default' | 'subtle' | 'none'", "description": "Control style.", "default": "'default'"},
+    spacing: {"type": "'default' | 'compact'", "description": "Control height.", "default": "'default'"},
+    placeholder: {"type": "string", "description": "An example of the format."},
+    locale: {"type": "string", "description": "Language and region for names and formats.", "default": "'en-US'"},
+    id: {"type": "string", "description": "Input id, so a label can point at it."},
+    name: {"type": "string", "description": "Submits a hidden input."},
+    label: {"type": "string", "description": "Accessible name without a visible label."},
+    "aria-describedby": {"type": "string", "description": "Ids of help and error text."},
+    "aria-invalid": {"type": "boolean", "description": "Marks it invalid."},
+    onFocus: {"type": "(event) => void", "description": "Input focused."},
+    onBlur: {"type": "(event) => void", "description": "Input blurred."},
+    testId: {"type": "string", "description": "Rendered as data-testid."},
+    ref: {"type": "Ref<HTMLInputElement>", "description": "Ref to the input."},
+    minDate: {"type": "string", "description": "Earliest date people can pick, as YYYY-MM-DD."},
+    maxDate: {"type": "string", "description": "Latest date people can pick."},
+    disabled: {"type": "string[]", "description": "Dates that cannot be picked."},
+    disabledDateFilter: {"type": "(iso) => boolean", "description": "Return true to disable a date."},
+  },
+});
