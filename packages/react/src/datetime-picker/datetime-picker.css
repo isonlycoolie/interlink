@@ -1,0 +1,10 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  /* The pickers reuse the Select control styles; these only arrange the date and time halves. */
+  .il-date-time-picker { align-items: stretch; }
+  .il-date-time-date { flex: 1 1 60%; min-width: 0; }
+  .il-date-time-time { flex: 1 1 40%; min-width: 0; border-inline-start: var(--il-border-width) solid var(--il-border); }
+  .il-date-time-picker .il-select-control,
+  .il-date-time-picker .il-select-control:focus-within { border: 0; box-shadow: none; background: transparent; }
+  .il-date-picker .il-select-indicators > .il-icon { pointer-events: none; }
+}
