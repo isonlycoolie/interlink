@@ -1,0 +1,19 @@
+---
+title: Text field usage
+description: A text field lets people enter and edit a single line of text.
+---
+
+## Usage
+
+Use a text field for short answers such as names, emails and search terms. For longer answers, use a text area.
+
+## Best practices
+
+- Always pair a text field with a visible label, usually through `Field`.
+- Size the field to the expected answer: a postcode field should be short.
+- Put format rules in helper text, not in the placeholder.
+
+## Accessibility
+
+- Connect helper and error messages with `aria-describedby`; `Field` does this for you.
+- Set `isInvalid` together with an error message that says how to fix the value.
