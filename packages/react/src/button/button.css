@@ -1,0 +1,99 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .il-button {
+    position: relative;
+    box-sizing: border-box;
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: baseline;
+    justify-content: center;
+    column-gap: var(--il-space-050);
+    width: auto;
+    max-width: 100%;
+    height: 2rem;
+    margin: 0;
+    padding-block: var(--il-space-075);
+    padding-inline: var(--il-space-150);
+    border-width: 0;
+    border-radius: var(--il-radius-medium);
+    font: var(--il-font-body);
+    font-weight: var(--il-font-weight-medium);
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: var(--il-button-hovered);
+  }
+  .il-button:active {
+    transition: var(--il-button-pressed);
+  }
+  .il-button:is(:hover, :focus, :active, :visited) {
+    text-decoration: none;
+  }
+  .il-button::after {
+    content: '';
+    position: absolute;
+    inset: var(--il-space-0);
+    border: var(--il-border-width) solid transparent;
+    border-radius: inherit;
+    pointer-events: none;
+  }
+  .il-button[data-spacing='compact'] {
+    height: 1.5rem;
+    padding-block: var(--il-space-025);
+    border-radius: var(--il-radius-small);
+  }
+  .il-button[data-icon-before] {
+    column-gap: var(--il-space-075);
+  }
+  .il-button[data-icon-after] {
+    column-gap: var(--il-space-075);
+  }
+  .il-button[data-icon-button] {
+    width: 2rem;
+    padding-inline: var(--il-space-0);
+  }
+  .il-button[data-icon-button][data-spacing='compact'] {
+    width: 1.5rem;
+  }
+  .il-button[data-shape='circle'] {
+    border-radius: var(--il-radius-full);
+  }
+  .il-button[data-fit] {
+    width: 100%;
+  }
+  .il-button[data-loading] {
+    cursor: progress;
+  }
+  .il-button-text {
+    flex: 1 1 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: opacity 0.3s;
+  }
+  .il-button-icon {
+    display: flex;
+    flex: 0 0 auto;
+    align-self: center;
+    font-size: 0;
+    line-height: 0;
+    user-select: none;
+    transition: opacity 0.3s;
+  }
+  .il-button[data-loading] :is(.il-button-text, .il-button-icon) {
+    opacity: 0;
+  }
+  .il-button-loading {
+    position: absolute;
+    inset: var(--il-space-0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .il-button-group {
+    display: inline-flex;
+    gap: var(--il-space-100);
+  }
+}
