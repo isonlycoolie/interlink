@@ -1,0 +1,12 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .il-inline-dialog-trigger { display: inline-block; }
+  .il-layer.il-inline-dialog {
+    box-sizing: content-box;
+    max-width: 28rem;
+    max-height: 28rem;
+    padding: var(--il-space-200) var(--il-space-300);
+    border-radius: var(--il-radius-small);
+    font: var(--il-font-body);
+  }
+}
