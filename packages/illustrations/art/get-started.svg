@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 96">
+  <path d="M28 12 L28 42" fill="none" stroke="I" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="28,12 14,17 28,22" fill="T"/>
+  <path d="M36 28 L120 28 Q138 28 138 42" fill="none" stroke="P" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M138 42 Q138 56 120 56 L72 56 Q54 56 54 68" fill="none" stroke="S" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M54 68 Q54 80 72 80 L130 80" fill="none" stroke="P" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="122" y="39" width="22" height="3" fill="W"/>
+  <rect x="48" y="65" width="13" height="3" fill="W"/>
+  <circle cx="152" cy="72" r="15" fill="Q"/>
+  <polygon points="146,64 160,72 146,80" fill="W"/>
+  <path d="M150 22 L156 18" fill="none" stroke="T" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M152 30 L159 30" fill="none" stroke="T" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M40 50 L34 48" fill="none" stroke="T" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
