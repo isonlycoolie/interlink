@@ -1,0 +1,6 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .scr-settings { max-width: 40rem; }
+  .scr-settings > * > form { display: flex; flex-direction: column; gap: var(--il-space-300); }
+  .scr-danger { padding: var(--il-space-300); border: var(--il-border-width) solid var(--il-border-danger); border-radius: var(--il-radius-large); }
+}

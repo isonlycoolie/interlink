@@ -2,7 +2,7 @@
 'use client';
 import { Button } from '@interlink/react/button';
 import { Checkbox } from '@interlink/react/checkbox';
-import { FlagsProvider, useFlags } from '@interlink/react/flag';
+import { useFlags } from '@interlink/react/flag';
 import { CheckboxField, ErrorMessage, Field, Form, FormFooter, FormHeader, FormSection, HelperMessage } from '@interlink/react/form';
 import { Heading, Stack, Text } from '@interlink/react/primitives';
 import { RadioGroup } from '@interlink/react/radio';
@@ -16,17 +16,18 @@ import { DeleteWorkspace } from './delete-workspace';
 const ZONES = ['UTC', 'Africa/Nairobi', 'Europe/London', 'America/New_York', 'Asia/Singapore'].map((z) => ({ label: z.replace('_', ' '), value: z }));
 const DIGEST = [{ label: 'Daily', value: 'daily' }, { label: 'Weekly', value: 'weekly' }, { label: 'Never', value: 'never' }];
 
-function Settings() {
+/** The workspace form: general details, notifications, then the danger zone. */
+export function WorkspaceForm() {
   const { showFlag } = useFlags();
   return (
-    <main className="scr-page scr-narrow">
+    <div className="scr-settings">
       <Stack space="space.400">
         <Form onSubmit={() => void showFlag({ title: 'Settings saved', appearance: 'success', isAutoDismiss: true })}>
           {({ formProps, submitting }) => (
             <form {...formProps}>
-              <FormHeader title="Workspace settings" description="Required fields are marked with an asterisk." />
+              <FormHeader title="Workspace details" description="Required fields are marked with an asterisk." />
               <FormSection title="General">
-                <Field name="name" label="Workspace name" isRequired defaultValue="Riverbend" validate={(v) => (v && v.length < 3 ? 'Use at least 3 characters.' : undefined)}>
+                <Field name="name" label="Workspace name" isRequired defaultValue="Launch Hub" validate={(v) => (v && v.length < 3 ? 'Use at least 3 characters.' : undefined)}>
                   {({ fieldProps, error }) => (
                     <>
                       <TextField {...fieldProps} />
@@ -68,20 +69,11 @@ function Settings() {
               <Text>Export anything you want to keep first. People lose access straight away.</Text>
             </SectionMessage>
             <div>
-              <DeleteWorkspace name="Riverbend" />
+              <DeleteWorkspace name="Launch Hub" />
             </div>
           </Stack>
         </section>
       </Stack>
-    </main>
-  );
-}
-
-/** Workspace settings: a validated form in sections, notification preferences and a confirmed destructive action. */
-export default function SettingsScreen() {
-  return (
-    <FlagsProvider>
-      <Settings />
-    </FlagsProvider>
+    </div>
   );
 }
