@@ -8,7 +8,11 @@ const cssVar = (name: string) => `var(${(tokenNames as Record<string, string>)[n
 export function TokenTag({ token }: { token: string }) {
   return (
     <span className="ilk-token-tag">
-      <span className="ilk-token-swatch" style={{ background: cssVar(token) }} aria-hidden="true" />
+      <span
+        className="ilk-token-swatch"
+        style={token.startsWith('elevation.shadow') ? { background: 'var(--il-surface-raised)', boxShadow: cssVar(token) } : { background: cssVar(token) }}
+        aria-hidden="true"
+      />
       <code>{token}</code>
     </span>
   );
