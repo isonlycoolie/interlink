@@ -1,0 +1,15 @@
+---
+title: Generative border usage
+description: A four-colour border that marks an AI surface and turns while content is generated.
+---
+
+## Usage
+
+The generative border frames a surface where AI is writing. It turns while content is being generated and rests
+when it is done, so people can tell at a glance whether the answer is still changing.
+
+## Best practices
+
+- Wrap one surface at a time, usually the prompt or the answer being written.
+- Set `isGenerating` only while content is actually changing.
+- The motion stops for people who ask for reduced motion; the colours stay.

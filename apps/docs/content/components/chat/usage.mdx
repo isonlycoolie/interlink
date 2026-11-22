@@ -1,0 +1,19 @@
+---
+title: Chat usage
+description: The parts of a conversation with an agent: panel, header, thread, messages and footer.
+---
+
+## Usage
+
+Build a conversation from its parts: `ChatPanel` holds a `ChatHeader`, a `ChatThread` of `ChatMessage` items and a
+`ChatFooter` with the prompt. Dock the panel beside the work, or float it as a card.
+
+## Best practices
+
+- Greet people in the empty thread and offer two or three prompt suggestions.
+- Show the agent's name and hexagon on its answers; people's messages need neither.
+- Keep the AI disclaimer under the prompt, where it is seen but quiet.
+
+## Accessibility
+
+- The thread is a log, so new messages are announced without moving focus.
