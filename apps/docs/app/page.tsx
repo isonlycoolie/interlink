@@ -22,7 +22,7 @@ export default function Home() {
         <Text size="large" color="color.text.subtle">
           An enterprise design system. Every Do and Don&apos;t is live code an AI can read and run.
         </Text>
-        <Anchor href="/docs" xcss={cta}>
+        <Anchor href="/get-started" xcss={cta}>
           Get started
         </Anchor>
       </Stack>
