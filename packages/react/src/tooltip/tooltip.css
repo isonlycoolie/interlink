@@ -1,0 +1,27 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .il-tooltip {
+    position: fixed;
+    inset: auto;
+    margin: 0;
+    box-sizing: border-box;
+    max-width: 15rem;
+    padding: var(--il-space-050) var(--il-space-075);
+    border: 0;
+    border-radius: var(--il-radius-small);
+    background-color: var(--il-background-neutral-bold);
+    color: var(--il-text-inverse);
+    font: var(--il-font-body-small);
+    overflow-wrap: break-word;
+    pointer-events: none;
+    animation: il-tooltip-in var(--il-duration-short, 0.15s) ease-out;
+    z-index: 800;
+  }
+  @keyframes il-tooltip-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .il-tooltip { animation: none; }
+  }
+}
