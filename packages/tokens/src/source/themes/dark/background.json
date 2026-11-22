@@ -1,0 +1,16 @@
+{
+  "color.background.code": {"added.highlight":"Green1000","added.line":"Green900A70","default":"DarkNeutral100","gutter":"DarkNeutral200","highlight":"DarkNeutral200","removed.highlight":"Red1000","removed.line":"Red900A70"},
+  "color.background.disabled": {".":"DarkNeutral300A"},
+  "color.background.draghandle": {".":"Brand400"},
+  "color.background.droptarget": {".":"Brand1000","hovered":"Brand900"},
+  "color.background.input": {".":"DarkNeutral200","hovered":"DarkNeutral250","pressed":"DarkNeutral200"},
+  "color.background.inverse": {"subtle":"#FFFFFF29","subtle.hovered":"#FFFFFF3D","subtle.pressed":"#FFFFFF52"},
+  "color.background.neutral": {".":"DarkNeutral200A","hovered":"DarkNeutral300A","pressed":"DarkNeutral400A","subtle":"transparent","subtle.hovered":"DarkNeutral200A","subtle.pressed":"DarkNeutral300A","bold":"DarkNeutral1000","bold.hovered":"DarkNeutral900","bold.pressed":"DarkNeutral800"},
+  "color.background.selected": {".":"Brand1000","hovered":"Brand900","pressed":"Brand800","bold":"Brand400","bold.hovered":"Brand300","bold.pressed":"Brand200"},
+  "color.background.brand": {"subtlest":"Brand1000","subtlest.hovered":"Brand900","subtlest.pressed":"Brand850","bold":"Brand400","bold.hovered":"Brand300","bold.pressed":"Brand250","boldest":"Brand100","boldest.hovered":"Brand200","boldest.pressed":"Brand250"},
+  "color.background.danger": {".":"Red1000","hovered":"Red900","pressed":"Red850","subtler":"Red900","subtler.hovered":"Red850","subtler.pressed":"Red800","subtle":"Red800","bold":"Red400","bold.hovered":"Red300","bold.pressed":"Red250"},
+  "color.background.warning": {".":"Orange1000","hovered":"Orange900","pressed":"Orange850","subtler":"Orange900","subtler.hovered":"Orange850","subtler.pressed":"Orange800","subtle":"Orange800","bold":"Orange300","bold.hovered":"Orange400","bold.pressed":"Orange500"},
+  "color.background.success": {".":"Lime1000","hovered":"Lime900","pressed":"Lime850","subtler":"Lime900","subtler.hovered":"Lime850","subtler.pressed":"Lime800","subtle":"Lime800","bold":"Lime400","bold.hovered":"Lime300","bold.pressed":"Lime250"},
+  "color.background.discovery": {".":"Purple1000","hovered":"Purple900","pressed":"Purple850","subtler":"Purple900","subtler.hovered":"Purple850","subtler.pressed":"Purple800","subtle":"Purple800","bold":"Purple400","bold.hovered":"Purple300","bold.pressed":"Purple250"},
+  "color.background.information": {".":"Blue1000","hovered":"Blue900","pressed":"Blue850","subtler":"Blue900","subtler.hovered":"Blue850","subtler.pressed":"Blue800","subtle":"Blue800","bold":"Blue400","bold.hovered":"Blue300","bold.pressed":"Blue250"}
+}
