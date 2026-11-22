@@ -2,7 +2,7 @@
 import { cleanup, render } from '@testing-library/react';
 import axe from 'axe-core';
 import { afterEach, describe, expect, it } from 'vitest';
-import { examples } from '../src/generated/registry';
+import { exampleSets, examples } from '../src/generated/registry';
 import { sources } from '../src/generated/sources';
 import { allGuidelines } from '../src/index';
 
@@ -40,6 +40,18 @@ describe('examples render accessibly', () => {
       const Component = ex[kind];
       if (!Component) continue;
       it(`${id} ${kind}`, async () => {
+        const { container } = render(<Component />);
+        const r = await axe.run(container, { rules: { 'color-contrast': { enabled: false }, region: { enabled: false } } });
+        expect(r.violations.map((v) => v.id)).toEqual([]);
+      });
+    }
+  }
+});
+
+describe('component example sets render accessibly', () => {
+  for (const [component, list] of Object.entries(exampleSets)) {
+    for (const { slug, Component } of list) {
+      it(`${component} ${slug}`, async () => {
         const { container } = render(<Component />);
         const r = await axe.run(container, { rules: { 'color-contrast': { enabled: false }, region: { enabled: false } } });
         expect(r.violations.map((v) => v.id)).toEqual([]);

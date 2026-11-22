@@ -1,7 +1,9 @@
 // SPDX-License-Identifier: Apache-2.0
 
 export type Severity = 'must' | 'should' | 'consider';
-export type Topic = 'color' | 'accents' | 'spacing' | 'elevation' | 'border' | 'radius' | 'typography' | 'content' | 'iconography' | 'motion';
+export type Topic =
+  | 'color' | 'accents' | 'spacing' | 'elevation' | 'border' | 'radius' | 'typography' | 'content' | 'iconography' | 'motion'
+  | 'button' | 'lozenge' | 'icon' | 'form' | 'tooltip' | 'tag' | 'badge' | 'link' | 'empty-state' | 'progress-bar';
 
 /**
  * One usage rule. `pair` rules have a good and a bad live example; `do` or `dont` rules have one.
