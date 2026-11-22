@@ -1,0 +1,84 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* Lists, quotes, inline text elements and tables. */
+@layer interlink.reset {
+  ul, ol, dl {
+    padding-inline-start: var(--il-space-500);
+  }
+  dd, dd + dt, li + li {
+    margin-top: var(--il-space-050);
+  }
+  :is(ul, ol) :is(ul, ol):not(:first-child) {
+    margin-top: var(--il-space-050);
+  }
+  blockquote, q {
+    color: inherit;
+  }
+  blockquote {
+    border: none;
+    padding-inline-start: var(--il-space-500);
+  }
+  blockquote::before, q::before {
+    content: '\201C';
+  }
+  blockquote::after, q::after {
+    content: '\201D';
+  }
+  blockquote::before {
+    float: inline-start;
+    margin-inline-start: -1em;
+    text-align: end;
+    width: 1em;
+  }
+  blockquote > :last-child {
+    display: inline-block;
+  }
+  small {
+    font: var(--il-font-body-small);
+  }
+  code, kbd, pre, samp {
+    font-family: var(--il-font-family-code);
+  }
+  var, address, dfn, cite {
+    font-style: italic;
+  }
+  abbr {
+    border-bottom: var(--il-border-width) var(--il-border) dotted;
+    cursor: help;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  thead, tbody, tfoot {
+    border-bottom: var(--il-border-width-selected) solid var(--il-border);
+  }
+  td, th {
+    border: none;
+    padding: var(--il-space-050) var(--il-space-100);
+    text-align: start;
+  }
+  th {
+    vertical-align: top;
+  }
+  :is(td, th):first-child {
+    padding-inline-start: 0;
+  }
+  :is(td, th):last-child {
+    padding-inline-end: 0;
+  }
+  caption {
+    font: var(--il-font-heading-medium);
+    color: var(--il-text);
+    margin-top: var(--il-space-300);
+    margin-bottom: var(--il-space-100);
+    text-align: start;
+  }
+  :root {
+    scrollbar-color: var(--il-background-accent-gray-subtle) transparent;
+  }
+  @media (forced-colors: active) {
+    :root {
+      scrollbar-color: auto;
+    }
+  }
+}
