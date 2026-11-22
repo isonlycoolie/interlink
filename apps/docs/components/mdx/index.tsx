@@ -2,7 +2,9 @@
 import { SectionMessage } from '@interlink/react/section-message';
 import type { MDXComponents } from 'mdx/types';
 import type { ComponentProps, ReactNode } from 'react';
+import { SpacingBands, SpacingScale } from '../specimens/spacing-scale';
 import { DoDont, DoDontGrid, Example } from './do-dont';
+import { Guideline, Guidelines } from './guideline';
 
 function Callout({ appearance = 'information', title, children }: { appearance?: ComponentProps<typeof SectionMessage>['appearance']; title?: string; children: ReactNode }) {
   return (
@@ -32,4 +34,8 @@ export const mdxComponents: MDXComponents = {
   DoDontGrid,
   Example,
   Callout,
+  Guideline,
+  Guidelines,
+  SpacingScale,
+  SpacingBands,
 };
