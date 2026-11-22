@@ -1,49 +1,6 @@
 /* SPDX-License-Identifier: Apache-2.0 */
 /* Layout for the showcase screens. Components bring their own styles; this only arranges them, with tokens. */
 @layer interlink.components {
-  /* Work tracking */
-  .scr-app { display: grid; grid-template-columns: 15rem minmax(0, 1fr); min-height: calc(100vh - 7rem); background: var(--il-surface); }
-  .scr-side-nav { display: flex; flex-direction: column; gap: var(--il-space-200); padding: var(--il-space-200) var(--il-space-100); border-inline-end: var(--il-border-width) solid var(--il-border); background: var(--il-surface); }
-  .scr-main { min-width: 0; padding: var(--il-space-300) var(--il-space-400); }
-  .scr-search { width: 16rem; }
-  .scr-board { display: grid; grid-template-columns: repeat(4, minmax(13rem, 1fr)); gap: var(--il-space-150); width: 100%; padding-block-start: var(--il-space-200); overflow-x: auto; }
-  .scr-column { display: flex; flex-direction: column; gap: var(--il-space-150); padding: var(--il-space-150); border-radius: var(--il-radius-large); background: var(--il-surface-sunken); }
-  .scr-card {
-    display: block;
-    width: 100%;
-    padding: var(--il-space-150);
-    border: 0;
-    border-radius: var(--il-radius-medium);
-    background: var(--il-surface-raised);
-    box-shadow: var(--il-shadow-raised);
-    color: var(--il-text);
-    font: inherit;
-    text-align: start;
-    cursor: pointer;
-  }
-  .scr-card:hover { background: var(--il-surface-raised-hovered); }
-  .scr-card:active { background: var(--il-surface-raised-pressed); }
-  .scr-field-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--il-space-200); }
-
-  /* Dashboards and forms */
-  .scr-page { max-width: 80rem; margin: 0 auto; padding: var(--il-space-400); background: var(--il-surface); }
-  .scr-narrow { max-width: 40rem; }
-  .scr-filter { display: flex; flex-direction: column; gap: var(--il-space-050); width: 11rem; }
-  .scr-metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: var(--il-space-200); }
-  .scr-tile { display: flex; flex-direction: column; gap: var(--il-space-100); padding: var(--il-space-200); border: var(--il-border-width) solid var(--il-border); border-radius: var(--il-radius-large); background: var(--il-surface-raised); }
-  .scr-chart-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr)); gap: var(--il-space-200); }
-  .scr-chart { margin: 0; display: flex; flex-direction: column; gap: var(--il-space-150); }
-  .scr-bars { display: flex; align-items: flex-end; gap: var(--il-space-150); height: 12rem; padding-block-end: var(--il-space-050); border-block-end: var(--il-border-width) solid var(--il-border); }
-  .scr-bar-group { display: flex; flex: 1; flex-direction: column; align-items: center; gap: var(--il-space-050); height: 100%; }
-  .scr-bar-stack { display: flex; flex: 1; align-items: flex-end; gap: var(--il-space-025); width: 100%; }
-  .scr-bar { flex: 1; height: var(--scr-h); border-radius: var(--il-radius-xsmall) var(--il-radius-xsmall) 0 0; background: var(--scr-c); }
-  .scr-swatch { display: inline-block; width: var(--il-space-150); height: var(--il-space-150); border-radius: var(--il-radius-xsmall); }
-  .scr-trend { width: 100%; height: 12rem; overflow: visible; border-block-end: var(--il-border-width) solid var(--il-border); }
-  .scr-trend-line { fill: none; stroke: var(--il-chart-brand); stroke-width: var(--il-border-width-selected); stroke-linejoin: round; }
-  .scr-trend-area { fill: var(--il-chart-brand); opacity: 0.12; stroke: none; }
-  .scr-axis { display: flex; justify-content: space-between; }
-  .scr-danger { padding: var(--il-space-300); border: var(--il-border-width) solid var(--il-border-danger); border-radius: var(--il-radius-large); }
-
   /* Landing pages */
   .scr-landing { background: var(--il-surface); color: var(--il-text); }
   .scr-topbar { display: flex; align-items: center; justify-content: space-between; max-width: 72rem; margin: 0 auto; padding: var(--il-space-200) var(--il-space-400); }
@@ -63,9 +20,4 @@
   .scr-code-card { overflow: hidden; border-radius: var(--il-radius-xlarge); background: var(--il-surface-overlay); box-shadow: var(--il-shadow-overlay); padding: var(--il-space-200) var(--il-space-200) 0; }
   .scr-code { width: 100%; margin: 0; padding: var(--il-space-200) 0; overflow-x: auto; color: var(--il-text); font: var(--il-font-code); white-space: pre; }
 
-  @media (max-width: 48rem) {
-    .scr-app { grid-template-columns: 1fr; }
-    .scr-side-nav { display: none; }
-    .scr-field-row { grid-template-columns: 1fr; }
-  }
 }
