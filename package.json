@@ -1,0 +1,21 @@
+{
+  "name": "interlink",
+  "private": true,
+  "description": "Interlink design system: tokens, primitives, components, icons, guidance and AI tooling.",
+  "license": "Apache-2.0",
+  "packageManager": "pnpm@10.24.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "typecheck": "turbo run typecheck",
+    "dev": "turbo run dev --filter=docs"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.6",
+    "turbo": "2.11.13",
+    "typescript": "7.0.2"
+  }
+}
