@@ -1,0 +1,34 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .il-prompt {
+    display: flex;
+    flex-direction: column;
+    gap: var(--il-space-100);
+    padding: var(--il-space-150) var(--il-space-150) var(--il-space-100);
+    border: var(--il-border-width) solid var(--il-border-input);
+    border-radius: var(--il-radius-xlarge);
+    background: var(--il-background-input);
+    transition: border-color var(--il-duration-short), box-shadow var(--il-duration-short);
+  }
+  .il-prompt:focus-within { border-color: var(--il-border-focused); box-shadow: inset 0 0 0 var(--il-border-width) var(--il-border-focused); }
+  .il-prompt[data-disabled] { background: var(--il-background-disabled); }
+  .il-prompt-text {
+    width: 100%;
+    max-height: 12rem;
+    margin: 0;
+    padding: var(--il-space-050) var(--il-space-050) 0;
+    border: 0;
+    outline: none;
+    background: transparent;
+    color: var(--il-text);
+    font: var(--il-font-body-large);
+    resize: none;
+  }
+  .il-prompt-text::placeholder { color: var(--il-text-subtlest); }
+  .il-prompt-context { display: flex; flex-wrap: wrap; gap: var(--il-space-050); }
+  .il-prompt-toolbar { display: flex; align-items: center; justify-content: space-between; gap: var(--il-space-100); }
+  .il-prompt-tools { display: flex; align-items: center; gap: var(--il-space-050); }
+  @media (prefers-reduced-motion: reduce) {
+    .il-prompt { transition: none; }
+  }
+}
