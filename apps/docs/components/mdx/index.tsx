@@ -9,6 +9,8 @@ import { BorderSpecimen, RadiusScale } from '../specimens/shape';
 import { SpacingBands, SpacingScale } from '../specimens/spacing-scale';
 import { TokenTable } from '../specimens/token-table';
 import { FontFamilies, TypeScale, WeightScale } from '../specimens/type';
+import { IconGallery } from '../specimens/icon-gallery';
+import { ComponentIntro, ExampleSet, PropsTable } from './component-parts';
 import { DoDont, DoDontGrid, Example } from './do-dont';
 import { Guideline, Guidelines } from './guideline';
 
@@ -59,4 +61,8 @@ export const mdxComponents: MDXComponents = {
   WeightScale,
   FontFamilies,
   TokenTable,
+  ExampleSet,
+  PropsTable,
+  ComponentIntro,
+  IconGallery,
 };
