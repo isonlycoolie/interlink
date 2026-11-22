@@ -13,7 +13,8 @@
       "default": "./dist/index.mjs"
     },
     "./tokens.css": "./dist/tokens.css",
-    "./tokens.json": "./dist/tokens.json"
+    "./tokens.json": "./dist/tokens.json",
+    "./palette.json": "./dist/palette.json"
   },
   "files": [
     "dist"

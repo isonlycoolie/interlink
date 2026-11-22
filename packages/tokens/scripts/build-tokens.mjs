@@ -77,6 +77,7 @@ const entries = Object.keys(all).sort().map((n) => ({
     : { all: all[n] },
 }));
 fs.writeFileSync(path.join(dist, 'tokens.json'), `${JSON.stringify(entries, null, 1)}\n`);
+fs.writeFileSync(path.join(dist, 'palette.json'), `${JSON.stringify(readJson(src, 'palette/color.json'), null, 1)}\n`);
 const names = Object.fromEntries(entries.map((e) => [e.name, e.cssVar]));
 fs.writeFileSync(
   path.join(gen, 'token-names.ts'),
