@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 };
 
 const GROUPS = [
-  { title: 'Product screens', text: 'Apps in the shared frame: top bar, side navigation, page and panel.', match: (s: ScreenInfo) => !s.slug.startsWith('landing-') },
-  { title: 'Landing pages', text: 'Marketing sites made from the same tokens and components.', match: (s: ScreenInfo) => s.slug.startsWith('landing-') },
+  { title: 'Dashboards', text: 'Product apps in the shared frame: top bar, side navigation, page and panels.', match: (s: ScreenInfo) => s.kind === 'dashboard' },
+  { title: 'Landing pages', text: 'Marketing sites made from the same tokens and components.', match: (s: ScreenInfo) => s.kind === 'landing' },
 ];
 
 /** Index of the showcase screens, grouped, each with a live preview of the real screen. */
@@ -22,7 +22,7 @@ export default function ScreensPage() {
     <main id="main" className="site-main">
       <PageHead title="Screens" description="Full screens built only from Interlink components and tokens. Open one to use it, or view its code." />
       <div className="site-screens">
-        {GROUPS.map((g) => (
+        {GROUPS.filter((g) => screens.some(g.match)).map((g) => (
           <section key={g.title} className="site-screens-group" aria-labelledby={`group-${g.title}`}>
             <h2 id={`group-${g.title}`}>{g.title}</h2>
             <p>{g.text}</p>
