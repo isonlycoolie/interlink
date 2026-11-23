@@ -18,7 +18,7 @@
   .scr-lane header { display: flex; align-items: center; justify-content: space-between; min-height: var(--il-space-400); padding: 0 var(--il-space-100); }
   .scr-lane h2 { margin: 0; color: var(--il-text-subtle); font: var(--il-font-body); font-weight: var(--il-font-weight-medium); }
   .scr-lane h2 span { margin-inline-start: var(--il-space-050); color: var(--il-text-subtlest); }
-  .scr-card { display: flex; flex-direction: column; border-radius: var(--il-radius-medium); background: var(--il-surface-raised); box-shadow: var(--il-shadow-raised); }
+  .scr-card { display: flex; flex-direction: column; border-radius: var(--il-radius-medium); background: var(--il-surface-raised); box-shadow: var(--il-shadow-overflow); }
   .scr-card-body { display: flex; flex-direction: column; gap: var(--il-space-100); padding: var(--il-space-150); }
   .scr-card h3 { margin: 0; font: var(--il-font-body); }
   .scr-card h3 a { color: var(--il-text); text-decoration: none; }

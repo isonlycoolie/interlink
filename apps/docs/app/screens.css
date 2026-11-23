@@ -15,7 +15,7 @@
   .screen-toolbar-end { display: flex; gap: var(--il-space-100); }
   .screen-stage { position: relative; height: min(46rem, 72vh); overflow: hidden; border: var(--il-border-width) solid var(--il-border); border-radius: var(--il-radius-large); background: var(--il-surface-sunken); }
   .screen-stage-inner { height: var(--stage-h, 100%); margin: 0 auto; overflow: auto; transform: scale(var(--stage-scale, 1)); transform-origin: 0 0; background: var(--il-surface); }
-  .screen-stage:not([data-viewport='desktop']) .screen-stage-inner { box-shadow: var(--il-shadow-overlay); }
+  .screen-stage:not([data-viewport='desktop']) .screen-stage-inner { box-shadow: var(--il-shadow-overflow); }
   .screen-stage .scr-frame { height: var(--stage-h, 100%); min-height: 0; }
   .screen-rail { position: sticky; top: calc(4.375rem + var(--il-space-500)); display: flex; flex-direction: column; gap: var(--il-space-300); align-self: start; min-width: 0; }
   .screen-use { display: flex; flex-direction: column; gap: var(--il-space-400); margin-top: var(--il-space-600); }
