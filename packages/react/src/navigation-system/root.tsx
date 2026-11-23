@@ -43,7 +43,7 @@ export function Root({ children, isSideNavOpen, defaultIsSideNavOpen = true, onS
     if (!el || typeof ResizeObserver === 'undefined') return;
     const rem = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
     const observer = new ResizeObserver(([entry]) => {
-      const isNarrow = (entry?.contentRect.width ?? 0) < NARROW_REM * rem;
+      const isNarrow = (entry?.contentRect.width ?? 0) <= NARROW_REM * rem;
       if (isNarrow === narrow.current) return;
       narrow.current = isNarrow;
       setOwn(isNarrow ? false : defaultIsSideNavOpen);
