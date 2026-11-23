@@ -12,6 +12,7 @@ import '@interlink/guidelines/screens/project/project.css';
 import '@interlink/guidelines/screens/updates/updates.css';
 import '@interlink/guidelines/screens/profile/profile.css';
 import '@interlink/guidelines/screens/video/video.css';
+import '@interlink/guidelines/screens/board/board.css';
 import './shell.css';
 import './content.css';
 import './specimens.css';
