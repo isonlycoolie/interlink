@@ -10,7 +10,7 @@
   "color.assist.border": {"lime":"Lime500","saffron":"Orange400","blue":"Blue600","purple":"Purple500"},
   "color.assist.icon": {"lime":"Lime500","saffron":"Orange400","blue":"Blue600","purple":"Purple500"},
   "color.assist.text.on": {"blue":"Neutral0","purple":"Neutral0","saffron":"Neutral1000","lime":"Neutral1000","ink":"Neutral1000"},
-  "color.background.banner": {"purple":"Purple850"},
+  "color.background.banner": {"purple":"Purple850","blue":"Blue200"},
   "elevation.surface": {".":"DarkNeutral100"},
   "elevation.surface.hovered": {".":"DarkNeutral200"},
   "elevation.surface.pressed": {".":"DarkNeutral250"},

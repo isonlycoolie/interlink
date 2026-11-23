@@ -17,6 +17,7 @@
   "color.assist.text.on.lime": "Text and glyphs on a solid Assist lime fill. Always ink, in every theme.",
   "color.assist.text.on.ink": "Text and glyphs on a solid Assist ink fill. The opposite of the ink fill, so it reads in both themes.",
   "color.background.banner.purple": "A deep purple for welcome banners that carry white text.",
+  "color.background.banner.blue": "A pale blue for profile and cover banners, the same in every theme.",
   "color.assist.icon.lime": "Use for Assist lime icons.",
   "color.assist.icon.saffron": "Use for Assist saffron icons.",
   "color.assist.icon.blue": "Use for Assist blue icons.",

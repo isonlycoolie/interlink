@@ -31,7 +31,7 @@ const value = (name: string, theme: string) => {
 
 describe('token set', () => {
   it('has the full set of names', () => {
-    expect(entries.length).toBe(640);
+    expect(entries.length).toBe(641);
   });
 
   it('gives every colour and elevation token a value in every theme', () => {
@@ -77,7 +77,7 @@ describe('api', () => {
   it('token() returns a CSS var', () => {
     expect(token('color.text')).toBe('var(--il-text)');
     expect(token('space.100', '8px')).toBe('var(--il-space-100, 8px)');
-    expect(Object.keys(tokenNames)).toHaveLength(640);
+    expect(Object.keys(tokenNames)).toHaveLength(641);
   });
 
   it('getThemeHtmlAttrs() leaves auto to the stylesheet', () => {
