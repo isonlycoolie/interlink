@@ -15,7 +15,12 @@
     height: 100%;
     width: 100%;
   }
-  body, [data-color-mode] {
+  /* The root keeps the browser's font size so rem stays 16px; only body and themed islands get the body font. */
+  html[data-color-mode] {
+    background-color: var(--il-surface);
+    color: var(--il-text);
+  }
+  body, [data-color-mode]:not(html) {
     background-color: var(--il-surface);
     color: var(--il-text);
     font: var(--il-font-body);
