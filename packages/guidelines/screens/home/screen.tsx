@@ -23,7 +23,7 @@ export default function HomeScreen() {
   const [view, setView] = useState('viewed');
   const first = people.amara.name.split(' ')[0] ?? 'there';
   return (
-    <AppFrame app={{ name: 'Home', icon: HomeIcon, color: 'ink' }} sideNav={<HomeNav />} canvas="grid">
+    <AppFrame app={{ name: 'Home', icon: HomeIcon, color: 'ink' }} sideNav={<HomeNav />}>
       <div className="scr-page">
         <Banner name={first} />
         <section className="scr-section" aria-labelledby="home-apps">
