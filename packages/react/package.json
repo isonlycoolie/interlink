@@ -256,6 +256,10 @@
     "./segmented-control": {
       "types": "./dist/segmented-control.d.mts",
       "default": "./dist/segmented-control.mjs"
+    },
+    "./agent-session": {
+      "types": "./dist/agent-session.d.mts",
+      "default": "./dist/agent-session.mjs"
     }
   },
   "files": [

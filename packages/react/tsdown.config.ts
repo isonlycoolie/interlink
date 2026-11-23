@@ -66,6 +66,7 @@ export default defineConfig({
     "navigation-system": 'src/navigation-system/index.ts',
     "page-header": 'src/page-header/index.ts',
     "segmented-control": 'src/segmented-control/index.ts',
+    "agent-session": 'src/agent-session/index.ts',
     docs: 'src/docs/index.ts',
   },
   format: 'esm',

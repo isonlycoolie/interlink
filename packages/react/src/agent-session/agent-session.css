@@ -1,0 +1,24 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .il-session { display: flex; align-items: center; gap: var(--il-space-150); color: var(--il-text); text-decoration: none; }
+  .il-session[data-layout='inline'] { padding: var(--il-space-100) var(--il-space-150); border-radius: 0 0 var(--il-radius-medium) var(--il-radius-medium); background: var(--il-surface-sunken); }
+  .il-session[data-layout='row'] { padding: var(--il-space-100); border-radius: var(--il-radius-medium); }
+  a.il-session:hover { background: var(--il-background-neutral-subtle-hovered); color: var(--il-text); }
+  .il-session-avatar { display: inline-flex; flex: none; }
+  .il-session-text { display: flex; flex: 1; flex-direction: column; min-width: 0; }
+  .il-session-title { overflow: hidden; font: var(--il-font-body); text-overflow: ellipsis; white-space: nowrap; }
+  .il-session[data-layout='row'] .il-session-title { font-weight: var(--il-font-weight-medium); }
+  .il-session-meta { overflow: hidden; color: var(--il-text-subtle); font: var(--il-font-body-small); text-overflow: ellipsis; white-space: nowrap; }
+  .il-session-state { display: inline-grid; flex: none; place-items: center; width: var(--il-space-200); height: var(--il-space-200); }
+  .il-session-state::before { width: var(--il-space-075); height: var(--il-space-075); border-radius: var(--il-radius-full); background: var(--il-icon-subtlest); content: ''; }
+  .il-session-state[data-status='needs-input']::before { background: var(--il-icon-brand); }
+  .il-session-state[data-status='working']::before { width: var(--il-space-150); height: var(--il-space-150); border: var(--il-border-width-selected) dotted var(--il-icon-subtle); background: transparent; animation: il-session-spin 2.4s linear infinite; }
+  .il-session-state[data-status='finished']::before { display: none; }
+  .il-session-state svg { width: 100%; height: 100%; }
+  .il-session-state svg circle { fill: var(--il-icon-success); }
+  .il-session-state svg path { fill: none; stroke: var(--il-icon-inverse); stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.8; }
+  @keyframes il-session-spin { to { transform: rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) {
+    .il-session-state[data-status='working']::before { animation: none; }
+  }
+}
