@@ -1,7 +1,7 @@
 /* SPDX-License-Identifier: Apache-2.0 */
 /* One layer order for the whole site, stated in every file so load order can never flip it. */
 @layer interlink.tokens, interlink.reset, interlink.fonts, interlink.base, interlink.components, interlink.utilities, site;
-/* The border foundations specimen: one card per pairing, with a preview and the two tokens it is made of. */
+/* Shape specimens (border pairings and radii): one card each, a preview on a stage, then its tokens and its use. */
 @layer site {
   .spec-borders { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr)); gap: var(--il-space-200); margin-top: var(--il-space-300); }
   .spec-border-card { display: flex; flex-direction: column; overflow: hidden; border: var(--il-border-width) solid var(--il-border); border-radius: var(--il-radius-large); background: var(--il-surface); }
@@ -19,4 +19,5 @@
   .spec-border-body dd span:not(.spec-border-swatch) { color: var(--il-text-subtle); font-variant-numeric: tabular-nums; }
   .spec-border-swatch { flex: none; width: var(--il-space-200); height: var(--il-space-200); border: var(--il-border-width) solid var(--il-border); border-radius: var(--il-radius-xsmall); }
   .spec-border-body p { margin: 0; padding-top: var(--il-space-150); border-top: var(--il-border-width) solid var(--il-border); color: var(--il-text-subtle); font: var(--il-font-body-small); }
+  .spec-radius-sample { display: block; width: 100%; max-width: 8rem; height: var(--il-space-800); border: var(--il-border-width-selected) solid var(--il-border-selected); background: var(--il-background-selected); }
 }

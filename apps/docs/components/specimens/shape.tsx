@@ -12,18 +12,25 @@ const RADIUS_USE: Record<string, string> = {
   'radius.tile': 'Square tiles such as app and object icons.',
 };
 
-/** Every radius token on a sample box, with its value and typical use. */
+/** Every radius token as a card: a sample box drawn with it, then the token, its size and what it is for. */
 export function RadiusScale() {
-  const list = allTokens.filter((t) => t.name.startsWith('radius.'));
+  const order = Object.keys(RADIUS_USE);
+  const list = allTokens.filter((t) => t.name.startsWith('radius.')).sort((a, b) => order.indexOf(a.name) - order.indexOf(b.name));
   return (
-    <div className="spec-radius">
+    <div className="spec-borders">
       {list.map((t) => (
-        <div key={t.name} className="spec-radius-item">
-          <span className="spec-radius-box" style={{ borderRadius: `var(${t.cssVar})` }} />
-          <p className="spec-radius-name"><code>{t.name}</code></p>
-          <p className="spec-radius-value">{remToPx(valueOf(t.name))}</p>
-          <p className="spec-radius-use">{RADIUS_USE[t.name] ?? ''}</p>
-        </div>
+        <section key={t.name} className="spec-border-card" aria-label={t.name}>
+          <div className="spec-border-stage">
+            <span className="spec-radius-sample" style={{ borderRadius: `var(${t.cssVar})` }} />
+          </div>
+          <div className="spec-border-body">
+            <dl>
+              <dt>Token</dt>
+              <dd><code>{t.name}</code><span>{remToPx(valueOf(t.name))}</span></dd>
+            </dl>
+            <p>{RADIUS_USE[t.name] ?? ''}</p>
+          </div>
+        </section>
       ))}
     </div>
   );
