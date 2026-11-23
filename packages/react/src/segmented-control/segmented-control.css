@@ -18,4 +18,7 @@
   .il-segmented[data-shape='pill'] { padding: var(--il-space-075); border-radius: var(--il-radius-full); }
   .il-segmented[data-shape='pill'] .il-segmented-option { height: var(--il-space-600); padding: 0 var(--il-space-400); border-radius: var(--il-radius-full); font: var(--il-font-heading-small); }
   .il-segmented[data-shape='pill'] .il-segmented-option[aria-checked='true'] { background: var(--il-assist-background-brand-bold); box-shadow: none; color: var(--il-assist-text-on-ink); }
+  .il-segmented[data-shape='outline'] { gap: var(--il-space-050); padding: 0; background: transparent; }
+  .il-segmented[data-shape='outline'] .il-segmented-option { padding: 0 var(--il-space-150); border: var(--il-border-width) solid transparent; border-radius: var(--il-radius-full); font: var(--il-font-body-large); }
+  .il-segmented[data-shape='outline'] .il-segmented-option[aria-checked='true'] { border-color: var(--il-border-selected); background: var(--il-background-selected); box-shadow: none; color: var(--il-text-selected); }
 }

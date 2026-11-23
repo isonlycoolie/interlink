@@ -16,7 +16,7 @@ export const segmentedControlDocs = docsFor<SegmentedControlProps>({
     value: { type: 'string', description: 'Controlled value.' },
     defaultValue: { type: 'string', description: 'The first view shown when uncontrolled.', default: 'first option' },
     onChange: { type: '(value: string) => void', description: 'Called with the chosen value.' },
-    shape: { type: "'default' | 'pill'", description: 'Pill shape for marketing pages; default is the compact product shape.', default: "'default'" },
+    shape: { type: "'default' | 'pill' | 'outline'", description: 'Pill for marketing pages, outline for page-level view tabs; default is the compact product shape.', default: "'default'" },
     testId: { type: 'string', description: 'Rendered as data-testid.' },
   },
 });

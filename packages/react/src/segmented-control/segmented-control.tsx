@@ -15,8 +15,8 @@ export interface SegmentedControlProps {
   value?: string;
   defaultValue?: string;
   onChange?: (value: string) => void;
-  /** Pill shape for marketing pages; default is the compact product shape. */
-  shape?: 'default' | 'pill';
+  /** Pill for marketing pages, outline for page-level view tabs; default is the compact product shape. */
+  shape?: 'default' | 'pill' | 'outline';
   testId?: string;
 }
 
