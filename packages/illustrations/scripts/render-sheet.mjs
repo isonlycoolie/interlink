@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0
 // Contact sheets for reviewing illustrations by eye: every piece in light, dark and a recoloured palette.
-// Usage: node scripts/render-sheet.mjs <out-dir> [slug-prefix-filter]
+// Usage: node scripts/render-sheet.mjs <out-dir> [slug-prefix | slug,slug,...]
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -12,7 +12,7 @@ const art = path.join(here, '..', 'art');
 const [out = '.', filter = ''] = process.argv.slice(2);
 const RECOLOR = { P: '#1F845A', S: '#C9372C', T: '#2898BD', Q: '#E06C00' };
 
-const slugs = fs.readdirSync(art).filter((f) => f.endsWith('.svg') && f.startsWith(filter)).map((f) => f.slice(0, -4)).sort();
+const slugs = fs.readdirSync(art).filter((f) => f.endsWith('.svg') && (filter.includes(',') ? filter.split(',').includes(f.slice(0, -4)) : f.startsWith(filter))).map((f) => f.slice(0, -4)).sort();
 const paint = (svg, mode, recolor) => svg.replace(/(fill|stroke)="([PSTQANIW])"/g, (_, attr, k) => `${attr}="${(recolor && RECOLOR[k]) || ROLES[k][mode]}"`);
 
 for (const [mode, recolor] of [['light', false], ['dark', false], ['light', true]]) {
@@ -32,7 +32,7 @@ for (const [mode, recolor] of [['light', false], ['dark', false], ['light', true
   });
   const sheet = `<svg xmlns="http://www.w3.org/2000/svg" width="${cols * cell}" height="${rows * cell}"><rect width="100%" height="100%" fill="${SURFACE[mode]}"/>${tiles.join('')}</svg>`;
   const png = new Resvg(sheet, { font: { loadSystemFonts: true } }).render().asPng();
-  const name = `sheet-${filter || 'all'}-${mode}${recolor ? '-recolor' : ''}.png`;
+  const name = `sheet-${filter.includes(',') ? 'set' : filter || 'all'}-${mode}${recolor ? '-recolor' : ''}.png`;
   fs.writeFileSync(path.join(out, name), png);
   console.log(name, slugs.length);
 }
