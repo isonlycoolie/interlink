@@ -3,30 +3,33 @@
 import { PresenceCursor } from '@interlink/react/presence-cursor';
 import { useEffect, useRef } from 'react';
 
-/** A "You" presence tag that follows the mouse across the home canvas, as if you were in the file with the team. */
+/** Places where the tag would get in the way: live screens, code and anything you type into. */
+const QUIET = '.screen-stage, .screen-full-canvas, .site-screen-preview, pre, input, textarea, select, [contenteditable], [role="dialog"]';
+
+/** A "You" presence tag that rides beside the pointer on every page, as if you were in the file with the team. */
 export function YouCursor() {
   const ref = useRef<HTMLSpanElement>(null);
   useEffect(() => {
     const el = ref.current;
-    const home = el?.closest('.home');
-    if (!el || !home || !matchMedia('(pointer: fine)').matches) return;
+    if (!el || !matchMedia('(pointer: fine)').matches) return;
     let frame = 0;
     const move = (e: PointerEvent) => {
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
+        const target = e.target as Element | null;
         el.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-        el.dataset.on = 'true';
-        const over = (e.target as Element | null)?.closest('[data-c]');
-        el.dataset.tone = over?.getAttribute('data-c') ?? '';
+        if (target?.closest(QUIET)) delete el.dataset.on;
+        else el.dataset.on = 'true';
+        el.dataset.tone = target?.closest('[data-c]')?.getAttribute('data-c') ?? '';
       });
     };
     const leave = () => delete el.dataset.on;
-    home.addEventListener('pointermove', move as EventListener);
-    home.addEventListener('pointerleave', leave);
+    document.addEventListener('pointermove', move);
+    document.documentElement.addEventListener('pointerleave', leave);
     return () => {
       cancelAnimationFrame(frame);
-      home.removeEventListener('pointermove', move as EventListener);
-      home.removeEventListener('pointerleave', leave);
+      document.removeEventListener('pointermove', move);
+      document.documentElement.removeEventListener('pointerleave', leave);
     };
   }, []);
   return (
