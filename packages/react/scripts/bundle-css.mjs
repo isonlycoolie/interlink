@@ -73,5 +73,7 @@ const files = [
 ];
 const css = files.map((f) => fs.readFileSync(path.join(root, f), 'utf8')).join('\n');
 fs.mkdirSync(path.join(root, 'dist'), { recursive: true });
-fs.writeFileSync(path.join(root, 'dist/styles.css'), css);
+// State Interlink's layer order first, so the bundle keeps its cascade even when it loads before interlink.css.
+const ORDER = '@layer interlink.tokens, interlink.reset, interlink.fonts, interlink.base, interlink.components, interlink.utilities;\n';
+fs.writeFileSync(path.join(root, 'dist/styles.css'), css.replace(/^(\/\*[^*]*\*\/\n)?/, (head) => head + ORDER));
 console.log(`styles.css ${(css.length / 1024).toFixed(1)} KB`);

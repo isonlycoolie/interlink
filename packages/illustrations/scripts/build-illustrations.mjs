@@ -48,7 +48,8 @@ fs.writeFileSync(
 const block = (mode) => Object.values(ROLES).map((r) => `  --il-illo-${r.name}: ${r[mode]};`).join('\n');
 fs.writeFileSync(
   path.join(pkg, 'dist', 'styles.css'),
-  `/* SPDX-License-Identifier: Apache-2.0 */\n/* Generated from the token build by scripts/build-illustrations.mjs. */\n@layer interlink.components {\n` +
+  `/* SPDX-License-Identifier: Apache-2.0 */\n/* Generated from the token build by scripts/build-illustrations.mjs. */\n` +
+    `@layer interlink.tokens, interlink.reset, interlink.fonts, interlink.base, interlink.components, interlink.utilities;\n@layer interlink.components {\n` +
     `:root, [data-color-mode="light"] {\n${block('light')}\n}\n[data-color-mode="dark"] {\n${block('dark')}\n}\n` +
     `@media (prefers-color-scheme: dark) {\n  :root:not([data-color-mode]) {\n${block('dark')}\n  }\n}\n` +
     `.il-illustration { display: inline-flex; flex-shrink: 0; line-height: 0; vertical-align: middle; }\n` +
