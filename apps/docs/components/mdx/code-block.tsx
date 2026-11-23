@@ -4,14 +4,11 @@ import { highlight } from 'fumadocs-core/highlight';
 import type { ReactNode } from 'react';
 import { CopyButton } from './copy-button';
 
-const LABEL: Record<string, string> = { tsx: 'TSX', ts: 'TypeScript', bash: 'Terminal', css: 'CSS', json: 'JSON' };
-
-/** The shared frame of every code block: language, copy button, then the highlighted code. */
+/** The shared frame of every code block: the highlighted code with a copy button in its corner. No language label. */
 export function CodeFrame({ lang, children }: { lang?: string; children: ReactNode }) {
   return (
-    <div className="doc-code">
-      <div className="doc-code-head">
-        <span className="doc-code-lang">{lang ? (LABEL[lang] ?? lang) : 'Code'}</span>
+    <div className="doc-code" data-lang={lang}>
+      <div className="doc-code-copy">
         <CopyButton />
       </div>
       {children}

@@ -37,10 +37,9 @@
   :is(.doc-dodont-code, .doc-example-code) .doc-code { margin: 0; border: 0; border-top: var(--il-border-width) solid var(--il-border); border-radius: 0; }
 
   /* Shared code frame: language and copy button above highlighted code. */
-  .doc-code { margin-top: var(--il-space-200); overflow: hidden; border: var(--il-border-width) solid var(--il-border); border-radius: var(--il-radius-large); background: var(--il-surface-sunken); }
-  .doc-code-head { display: flex; align-items: center; justify-content: space-between; min-height: var(--il-space-400); padding-inline: var(--il-space-200) var(--il-space-050); border-bottom: var(--il-border-width) solid var(--il-border); background: var(--il-surface); }
-  .doc-code-lang { color: var(--il-text-subtle); font: var(--il-font-body-small); font-weight: var(--il-font-weight-medium); }
-  .doc-code pre { max-height: 32rem; margin: 0; padding: var(--il-space-200); overflow: auto; border-radius: 0; background: transparent; font: var(--il-font-code); font-size: 0.875rem; line-height: 1.5; }
+  .doc-code { position: relative; margin-top: var(--il-space-200); overflow: hidden; border: var(--il-border-width) solid var(--il-border); border-radius: var(--il-radius-large); background: var(--il-surface-sunken); }
+  .doc-code-copy { position: absolute; top: var(--il-space-100); right: var(--il-space-100); z-index: 1; }
+  .doc-code pre { max-height: 32rem; margin: 0; padding: var(--il-space-200) var(--il-space-600) var(--il-space-200) var(--il-space-200); overflow: auto; border-radius: 0; background: transparent; font: var(--il-font-code); font-size: 0.875rem; line-height: 1.5; }
   .doc-code pre code { font: inherit; background: none; padding: 0; }
 
   /* The one Show code disclosure: animates to auto height where supported, instant elsewhere. */
