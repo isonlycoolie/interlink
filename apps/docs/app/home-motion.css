@@ -1,0 +1,49 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* Home motion and hover: the "You" cursor, entrances, the hero that inverts, and playful hovers. Off under reduced motion. */
+@layer interlink.components {
+  .home-name .home-note { position: relative; z-index: 2; }
+  .home-name .home-hand { position: relative; z-index: 2; }
+  .home-you { position: fixed; top: 0; left: 0; z-index: 30; opacity: 0; pointer-events: none; transition: opacity var(--il-duration-short); }
+  .home-you[data-on] { opacity: 1; }
+  .home-you[data-tone='blue'] .il-cursor, .home-you[data-tone='magenta'] .il-cursor { --cur-bg: var(--il-assist-icon-saffron); --cur-fg: var(--il-assist-text-on-saffron); }
+  .home-you[data-tone='ink'] .il-cursor { --cur-bg: var(--il-assist-icon-blue); --cur-fg: var(--il-assist-text-on-blue); }
+  /* The hero turns to ink while the name is pointed at, like selecting a frame on a canvas. */
+  .home-intro { transition: background-color var(--il-duration-medium), color var(--il-duration-medium); }
+  .home-intro:has(.home-select:hover) { background-color: var(--il-assist-background-brand-bold); color: var(--il-assist-text-on-ink); }
+  .home-intro:has(.home-select:hover) :is(.home-pixel, .home-hand, .home-clock, .home-status, .home-claim, .home-count) { color: var(--il-assist-text-on-ink); fill: var(--il-assist-text-on-ink); }
+  .home-intro:has(.home-select:hover) .home-select { border-color: var(--il-assist-icon-saffron); }
+  .home-intro:has(.home-select:hover) .home-select i { background: var(--il-assist-icon-saffron); }
+  .home-cta, .home-tag-icon, .home-view svg, .home-folder, .home-band-cta { transition: transform var(--il-duration-medium) var(--il-easing-out-practical), background-color var(--il-duration-short), color var(--il-duration-short), box-shadow var(--il-duration-short); }
+  .home-cta:hover { background: var(--il-surface); color: var(--il-text); box-shadow: 0 0 0 var(--il-border-width) var(--il-text); }
+  .home-cta { position: relative; }
+  .home-cta:hover::before, .home-cta:hover::after { position: absolute; width: var(--il-space-100); height: var(--il-space-100); border: var(--il-border-width) solid var(--il-text); background: var(--il-surface); content: ''; }
+  .home-cta:hover::before { top: calc(-1 * var(--il-space-050)); left: calc(-1 * var(--il-space-050)); }
+  .home-cta:hover::after { right: calc(-1 * var(--il-space-050)); bottom: calc(-1 * var(--il-space-050)); }
+  .home-tags li:hover .home-tag-icon { transform: rotate(45deg); }
+  .home-tag { transition: transform var(--il-duration-medium) var(--il-easing-out-practical); }
+  .home-tags li:hover .home-tag { transform: translateY(calc(-1 * var(--il-space-050))) rotate(-2deg); }
+  .home-view:hover svg { transform: rotate(45deg); }
+  .home-view { background: linear-gradient(currentColor, currentColor) left bottom / 100% var(--il-border-width-selected) no-repeat; border: 0; transition: background-size var(--il-duration-medium); }
+  .home-view:hover { background-size: 130% var(--il-border-width-selected); }
+  .home-folder-shot { transition: transform var(--il-duration-medium) var(--il-easing-out-practical); }
+  .home-folder:hover .home-folder-shot { transform: rotate(-1deg) scale(1.01); }
+  .home-polaroid { transition: transform var(--il-duration-medium) var(--il-easing-out-practical); }
+  .home-polaroid:hover { transform: rotate(0) scale(1.05); }
+  .home-band-cta:hover { transform: rotate(-2deg) scale(1.03); }
+  @media (pointer: fine) { .home, .home a, .home button { cursor: none; } }
+  @media (prefers-reduced-motion: no-preference) {
+    .home-name .home-note-lime { animation: home-drop 700ms var(--il-easing-out-practical) 300ms backwards; }
+    .home-name .home-note-saffron { animation: home-drop 700ms var(--il-easing-out-practical) 450ms backwards; }
+    .home-float { animation: home-drift 6s ease-in-out infinite alternate; }
+    .home-float-b { animation-delay: -2s; }
+    .home-float-c { animation-delay: -4s; }
+    .home-claim, .home-cta { animation: home-rise 700ms var(--il-easing-out-practical) 500ms backwards; }
+    @supports (animation-timeline: view()) {
+      .home-statement, .home-tags li, .home-polaroid, .home-featured-title, .home-folder-body, .home-build, .home-band { animation: home-rise linear both; animation-timeline: view(); animation-range: entry 0% cover 25%; }
+    }
+    @keyframes home-drop { from { opacity: 0; translate: 0 calc(-1 * var(--il-space-500)); } }
+    @keyframes home-rise { from { opacity: 0; translate: 0 var(--il-space-500); } }
+    @keyframes home-drift { to { translate: var(--il-space-100) calc(-1 * var(--il-space-150)); } }
+  }
+  @media (prefers-reduced-motion: reduce) { .home-you { display: none; } .home, .home a, .home button { cursor: auto; } }
+}

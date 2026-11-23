@@ -21,6 +21,7 @@ import './screens.css';
 import './home-hero.css';
 import './home-sections.css';
 import './home-closing.css';
+import './home-motion.css';
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { SiteHeader } from '@/components/shell/site-header';
