@@ -3,6 +3,7 @@
 import AngleBracketsIcon from '@interlink/icons/core/angle-brackets';
 import ArrowLeftIcon from '@interlink/icons/core/arrow-left';
 import CheckMarkIcon from '@interlink/icons/core/check-mark';
+import ChevronDownIcon from '@interlink/icons/core/chevron-down';
 import CopyIcon from '@interlink/icons/core/copy';
 import { Button } from '@interlink/react/button';
 import { SegmentedControl } from '@interlink/react/segmented-control';
@@ -43,11 +44,12 @@ export function FullView({ slug, title, others, files, install, children }: Full
         </Link>
         <label className="screen-full-pick">
           <span className="il-visually-hidden">Screen</span>
-          <select value={slug} onChange={(e) => router.push(`/screens/${e.target.value}/full`)}>
+          <select className="il-focusable" value={slug} onChange={(e) => router.push(`/screens/${e.target.value}/full`)}>
             {others.map((o) => <option key={o.slug} value={o.slug}>{o.title}</option>)}
           </select>
+          <span className="screen-full-pick-icon" aria-hidden="true"><ChevronDownIcon label="" color="currentColor" size="small" /></span>
         </label>
-        <span className="screen-full-width">{VIEWPORTS[viewport]}px</span>
+        <span className="screen-full-width">{viewport === 'desktop' ? 'Fits the window' : `${VIEWPORTS[viewport]}px`}</span>
         <SegmentedControl label="Preview width" options={VIEW_OPTIONS} value={viewport} onChange={(v) => setViewport(v as Viewport)} />
         <Button spacing="compact" iconBefore={AngleBracketsIcon} onClick={() => setFile(0)}>View code</Button>
         <Button spacing="compact" appearance="primary" iconBefore={copied ? CheckMarkIcon : CopyIcon} onClick={copy}>{copied ? 'Copied' : 'Copy install'}</Button>

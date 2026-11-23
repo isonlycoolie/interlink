@@ -34,20 +34,20 @@
   .screen-code .doc-code { margin-top: var(--il-space-200); }
   .screen-code .doc-code pre { max-height: none; }
 
-  /* Full screen: the docs header steps aside; one slim bar, then the screen at the chosen width. */
+  /* Full screen: the docs header steps aside; one slim bar, then the screen framed with the site's own gutters. */
   body:has(.screen-full) .site-header { display: none; }
-  .screen-full { --scr-offset: 2.75rem; min-height: 100dvh; background: var(--il-surface-sunken); }
-  .screen-full-bar { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; gap: var(--il-space-100); height: 2.75rem; padding: 0 var(--il-space-150); border-bottom: var(--il-border-width) solid var(--il-border); background: var(--il-surface); }
-  .screen-full-back { display: inline-grid; place-items: center; width: var(--il-space-400); height: var(--il-space-400); border-radius: var(--il-radius-small); color: var(--il-text); }
+  .screen-full { --gutter: var(--il-space-500); --bar: 3.5rem; --scr-offset: calc(var(--bar) + var(--il-space-300) + var(--gutter)); min-height: 100dvh; background: var(--il-surface-sunken); }
+  .screen-full-bar { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; gap: var(--il-space-100); height: var(--bar); padding: 0 var(--gutter); border-bottom: var(--il-border-width) solid var(--il-border); background: var(--il-surface); }
+  .screen-full-back { display: inline-grid; flex: none; place-items: center; width: var(--il-space-400); height: var(--il-space-400); border: var(--il-border-width) solid var(--il-border-bold); border-radius: var(--il-radius-medium); color: var(--il-text); }
   .screen-full-back:hover { background: var(--il-background-neutral-subtle-hovered); color: var(--il-text); }
-  .screen-full-pick { flex: 1; display: flex; justify-content: center; }
-  .screen-full-pick select { height: var(--il-space-400); padding: 0 var(--il-space-100); border: 0; border-radius: var(--il-radius-small); background: transparent; color: var(--il-text); font: var(--il-font-body); font-weight: var(--il-font-weight-semibold); cursor: pointer; }
+  .screen-full-pick { position: relative; display: inline-flex; align-items: center; }
+  .screen-full-pick select { height: var(--il-space-400); padding: 0 var(--il-space-400) 0 var(--il-space-150); border: var(--il-border-width) solid var(--il-border-bold); border-radius: var(--il-radius-medium); background: var(--il-surface); color: var(--il-text); font: var(--il-font-body); font-weight: var(--il-font-weight-semibold); cursor: pointer; appearance: none; }
   .screen-full-pick select:hover { background: var(--il-background-neutral-subtle-hovered); }
-  .screen-full-width { color: var(--il-text-subtle); font: normal 500 1.25rem/1.25 var(--il-font-family-hand); }
-  .screen-full-stage { display: flex; justify-content: center; }
-  .screen-full-canvas { min-height: calc(100dvh - 2.75rem); background: var(--il-surface); }
-  .screen-full:not([data-viewport='desktop']) .screen-full-canvas { margin: var(--il-space-300) 0; min-height: calc(100dvh - 2.75rem - var(--il-space-600)); box-shadow: var(--il-shadow-overlay); }
-  .screen-full:not([data-viewport='desktop']) .scr-frame { height: calc(100dvh - 2.75rem - var(--il-space-600)); }
+  .screen-full-pick-icon { position: absolute; right: var(--il-space-100); display: inline-flex; color: var(--il-icon-subtle); pointer-events: none; }
+  .screen-full-width { margin-inline-start: auto; color: var(--il-text-subtle); font: normal 500 1.25rem/1.25 var(--il-font-family-hand); }
+  .screen-full-stage { display: flex; justify-content: center; padding: var(--il-space-300) var(--gutter) var(--gutter); }
+  .screen-full-canvas { height: calc(100dvh - var(--scr-offset)); overflow: auto; border: var(--il-border-width) solid var(--il-border); border-radius: var(--il-radius-large); background: var(--il-surface); box-shadow: var(--il-shadow-raised); }
+  .screen-full-canvas .scr-frame { height: 100%; min-height: 0; }
   @media (max-width: 72rem) { .screen-doc, .screen-use { grid-template-columns: minmax(0, 1fr); } .screen-rail { position: static; } }
-  @media (max-width: 48rem) { .screen-full-width { display: none; } }
+  @media (max-width: 48rem) { .screen-full { --gutter: var(--il-space-200); } .screen-full-width { display: none; } }
 }
