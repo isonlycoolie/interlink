@@ -1,4 +1,5 @@
 /* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.tokens, interlink.reset, interlink.fonts, interlink.base, interlink.components, interlink.utilities;
 /* Parts several dashboards share: spotlight card, title row, filter row, count row, date chip and coach notes. */
 @layer interlink.components {
   .scr-spotlight { display: flex; align-items: center; gap: var(--il-space-150); margin-bottom: var(--il-space-400); padding: var(--il-space-200) var(--il-space-250); border-radius: var(--il-radius-medium); background: var(--il-surface-overlay); box-shadow: var(--il-shadow-overlay); }
@@ -20,4 +21,13 @@
   .scr-note[data-tone='red'] .scr-note-arrow { stroke: var(--il-background-danger-bold); }
   .scr-note[data-arrow='left'] .scr-note-arrow { top: calc(-1 * var(--il-space-150)); right: 100%; }
   .scr-note[data-arrow='up-right'] .scr-note-arrow { right: calc(-1 * var(--il-space-800)); bottom: 60%; }
+  /* Phones: parts stack, rows wrap, tables scroll sideways instead of squeezing. */
+  @container (max-width: 36rem) {
+    .scr-spotlight { flex-wrap: wrap; }
+    .scr-spotlight p { flex-basis: calc(100% - var(--il-space-600)); }
+    .scr-title-row, .scr-count-row { flex-wrap: wrap; }
+    .scr-table-wrap, .scr-table-card { overflow-x: auto; }
+    .scr-table-wrap > *, .scr-table-card > * { min-width: 40rem; }
+    .scr-note { display: none; }
+  }
 }

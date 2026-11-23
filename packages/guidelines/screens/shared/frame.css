@@ -1,4 +1,5 @@
 /* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.tokens, interlink.reset, interlink.fonts, interlink.base, interlink.components, interlink.utilities;
 /* The shared product frame and the small parts every dashboard uses. Measured from the reference frame. */
 @layer interlink.components {
   /* Fills the window; a host page with its own bar above sets --scr-offset to that bar's height. */
@@ -22,4 +23,7 @@
   .scr-section { display: flex; flex-direction: column; gap: var(--il-space-200); margin-top: var(--il-space-500); }
   .scr-section-head { display: flex; align-items: center; justify-content: space-between; gap: var(--il-space-200); }
   .scr-muted { color: var(--il-text-subtle); font: var(--il-font-body-small); }
+  @container (max-width: 36rem) {
+    .scr-page { padding: var(--il-space-150) var(--il-space-200) var(--il-space-600); }
+  }
 }
