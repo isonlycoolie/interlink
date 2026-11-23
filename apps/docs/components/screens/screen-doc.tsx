@@ -34,7 +34,11 @@ export function ScreenDoc({ slug, title, description, files, builtWith, install,
     <div className="screen-doc">
       <div className="screen-doc-main">
         <header className="screen-doc-head">
-          <h1>{title}</h1>
+          <p className="canvas-eyebrow">screens · {slug}.tsx</p>
+          <h1 className="canvas-title">
+            {title}
+            <i aria-hidden="true" /><i aria-hidden="true" /><i aria-hidden="true" /><i aria-hidden="true" />
+          </h1>
           <p>{description}</p>
         </header>
         <div className="screen-toolbar">
