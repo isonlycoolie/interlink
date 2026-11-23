@@ -11,8 +11,13 @@
   *, *::before, *::after {
     box-sizing: border-box;
   }
-  body, html {
+  /* body grows with its content (min-height, not height) so sticky headers stay stuck the whole way down. */
+  html {
     height: 100%;
+    width: 100%;
+  }
+  body {
+    min-height: 100%;
     width: 100%;
   }
   /* The root keeps the browser's font size so rem stays 16px; only body and themed islands get the body font. */
