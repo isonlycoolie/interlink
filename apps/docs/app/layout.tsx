@@ -4,6 +4,8 @@ import '@interlink/icons/styles.css';
 import '@interlink/illustrations/styles.css';
 import '@interlink/react/styles.css';
 import '@interlink/guidelines/kit.css';
+import '@interlink/guidelines/screens/shared/frame.css';
+import '@interlink/guidelines/screens/home/home.css';
 import './shell.css';
 import './content.css';
 import './specimens.css';

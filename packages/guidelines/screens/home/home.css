@@ -1,0 +1,32 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* Home: banner, apps, places and work. Sizes measured from the reference home page. */
+@layer interlink.components {
+  .scr-banner { position: relative; display: flex; align-items: flex-start; height: 8rem; overflow: hidden; border-radius: var(--il-radius-large); background: var(--il-background-banner-purple); color: var(--il-assist-text-on-purple); }
+  .scr-banner-text { position: relative; z-index: 1; padding: var(--il-space-250) var(--il-space-200); }
+  .scr-banner-date { margin: 0 0 var(--il-space-050); font: var(--il-font-body); font-weight: var(--il-font-weight-medium); }
+  .scr-banner-title { margin: 0; font: var(--il-font-heading-large); }
+  .scr-banner-art { position: absolute; inset: 0 0 0 auto; width: min(30rem, 45%); }
+  .scr-banner-shapes { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .scr-banner-band { fill: var(--il-assist-icon-purple); }
+  .scr-banner-cut { fill: var(--il-background-banner-purple); }
+  .scr-banner-line { fill: none; stroke: var(--il-assist-text-on-purple); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2.5; }
+  .scr-banner-launch { position: absolute; top: calc(-1 * var(--il-space-150)); right: var(--il-space-400); }
+  .scr-banner-chip { position: absolute; right: var(--il-space-200); bottom: var(--il-space-200); z-index: 1; display: inline-flex; align-items: center; gap: var(--il-space-075); padding: var(--il-space-050) var(--il-space-100); border-radius: var(--il-radius-small); background: var(--il-assist-text-on-saffron); color: var(--il-assist-text-on-purple); font: var(--il-font-body); font-weight: var(--il-font-weight-medium); text-decoration: none; }
+  .scr-banner-chip:hover { color: var(--il-assist-text-on-purple); text-decoration: underline; }
+  .scr-link-arrow { display: inline-flex; align-items: center; gap: var(--il-space-100); color: var(--il-text); font: var(--il-font-body); font-weight: var(--il-font-weight-medium); text-decoration: none; }
+  .scr-link-arrow-box { display: inline-grid; place-items: center; width: var(--il-space-300); height: var(--il-space-300); border: var(--il-border-width) solid var(--il-border); border-radius: var(--il-radius-small); }
+  .scr-apps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--il-space-200); margin: 0; padding: 0; list-style: none; }
+  .scr-app-card { display: flex; align-items: center; gap: var(--il-space-150); padding: var(--il-space-150) var(--il-space-200); border: var(--il-border-width) solid var(--il-border); border-radius: var(--il-radius-medium); background: var(--il-surface-raised); color: var(--il-text); text-decoration: none; }
+  .scr-app-card:hover { background: var(--il-surface-hovered); color: var(--il-text); }
+  .scr-app-card > span:last-child { display: flex; flex-direction: column; }
+  .scr-app-name { font: var(--il-font-heading-xsmall); }
+  .scr-frequent { display: flex; align-items: center; justify-content: center; gap: var(--il-space-100); margin: 0; padding: var(--il-space-150); border: var(--il-border-width) solid var(--il-border); border-radius: var(--il-radius-medium); background: var(--il-surface-raised); font: var(--il-font-body); }
+  .scr-empty { display: flex; flex-direction: column; align-items: center; gap: var(--il-space-050); padding: var(--il-space-500) 0; text-align: center; }
+  .scr-empty h3 { margin: var(--il-space-150) 0 0; font: var(--il-font-heading-medium); }
+  .scr-empty p { margin: 0; color: var(--il-text-subtle); font: var(--il-font-body-small); }
+  .scr-row-after { display: inline-flex; align-items: center; gap: var(--il-space-050); }
+  @media (max-width: 64rem) {
+    .scr-apps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .scr-banner-art { display: none; }
+  }
+}
