@@ -6,7 +6,7 @@ import { Tag } from '@interlink/react/tag';
 /** Title: Recommendation */
 export default function Example() {
   return (
-    <div style={{ maxWidth: '26rem' }}>
+    <div>
       <SuggestionCard
         title="Move PAY-112 to In review"
         reason="Its pull request merged an hour ago and checks passed."

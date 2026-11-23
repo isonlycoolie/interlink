@@ -37,7 +37,7 @@ export default function Example() {
     </Stack>
   );
   return (
-    <div style={{ height: 480, maxWidth: '26rem' }}>
+    <div style={{ height: 480 }}>
       <ChatPanel label="Chat with Planner">
         <ChatHeader onNewChat={() => setMessages([])} onClose={() => {}}>
           {avatar}

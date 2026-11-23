@@ -6,7 +6,7 @@ import { useState } from 'react';
 export default function Example() {
   const [done, setDone] = useState(false);
   return (
-    <div style={{ maxWidth: '26rem' }}>
+    <div>
       <SuggestionCard
         title="Invite Kwame to the launch space"
         reason="He owns three of the open work items."

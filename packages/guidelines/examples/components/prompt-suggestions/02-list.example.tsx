@@ -7,7 +7,7 @@ import { PromptSuggestions, PromptSuggestion } from '@interlink/react/prompt-sug
 /** Title: List */
 export default function Example() {
   return (
-    <div style={{ maxWidth: '24rem' }}>
+    <div>
       <PromptSuggestions label="Try asking" layout="list">
         <PromptSuggestion title="What changed on this page this week?" icon={PageIcon} />
         <PromptSuggestion title="Draft a reply to the latest comment" icon={EmailIcon} />

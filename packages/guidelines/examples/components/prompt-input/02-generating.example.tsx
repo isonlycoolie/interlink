@@ -5,7 +5,7 @@ import { PromptInput } from '@interlink/react/prompt-input';
 /** Title: While an answer is written */
 export default function Example() {
   return (
-    <div style={{ maxWidth: '36rem' }}>
+    <div>
       <GenerativeBorder isGenerating radius="xlarge">
         <PromptInput label="Message Planner" defaultValue="Plan the Q3 launch" isGenerating />
       </GenerativeBorder>

@@ -5,7 +5,7 @@ import { Button } from '@interlink/react/button';
 /** Title: Running plan */
 export default function Example() {
   return (
-    <div style={{ maxWidth: '28rem' }}>
+    <div>
       <ActionPlan
         title="Plan to close the sprint"
         steps={[

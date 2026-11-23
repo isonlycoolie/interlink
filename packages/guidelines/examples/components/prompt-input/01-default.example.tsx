@@ -7,7 +7,7 @@ import { Tag } from '@interlink/react/tag';
 /** Title: With context and tools */
 export default function Example() {
   return (
-    <div style={{ maxWidth: '36rem' }}>
+    <div>
       <PromptInput
         label="Message Planner"
         onAdd={() => {}}
