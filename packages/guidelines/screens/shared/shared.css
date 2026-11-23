@@ -1,7 +1,8 @@
 /* SPDX-License-Identifier: Apache-2.0 */
 /* Shared layout for the product screens. Components bring their own styles; these only arrange them, with tokens. */
 @layer interlink.components {
-  .scr-shell { height: calc(100dvh - 7.5rem); min-height: 40rem; }
+  /* Fills the window; a host page with its own bar above sets --scr-offset to that bar's height. */
+  .scr-shell { height: calc(100dvh - var(--scr-offset, 0rem)); min-height: 32rem; }
   .scr-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--il-space-100); }
   .scr-spread { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--il-space-200); }
   .scr-muted { color: var(--il-text-subtle); font: var(--il-font-body-small); }

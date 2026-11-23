@@ -1,0 +1,33 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* The screens showcase: an index of live previews, and each screen on its own below one slim bar. */
+@layer interlink.components {
+  /* A screen is a product, not a docs page: the docs header steps aside and the app fills the window. */
+  body:has(.site-screen) .site-header { display: none; }
+  .site-screen { --scr-offset: 3rem; }
+  .site-screen-bar { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; gap: var(--il-space-200); height: 3rem; padding: 0 var(--il-space-200); background: var(--il-assist-background-brand-bold); color: var(--il-text-inverse); }
+  .site-screen-back { display: inline-flex; align-items: center; gap: var(--il-space-050); padding: var(--il-space-050) var(--il-space-100); border-radius: var(--il-radius-small); color: inherit; font: var(--il-font-body); text-decoration: none; }
+  .site-screen-back:hover { color: inherit; background: var(--il-background-inverse-subtle); }
+  .site-screen-title { flex: 1; margin: 0; font: var(--il-font-heading-xsmall); text-align: center; }
+  .site-screen-code .doc-code { margin-top: var(--il-space-200); }
+  .site-screen-code .doc-code pre { max-height: none; }
+
+  /* Index: two groups of equal cards, each led by a live, scaled-down preview of the real screen. */
+  .site-screens { display: flex; flex-direction: column; gap: var(--il-space-600); max-width: 76rem; padding: var(--il-space-500); }
+  .site-screens-group h2 { margin: 0 0 var(--il-space-050); font: var(--il-font-heading-medium); }
+  .site-screens-group > p { margin: 0 0 var(--il-space-250); color: var(--il-text-subtle); font: var(--il-font-body); }
+  .site-screens-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr)); gap: var(--il-space-300); margin: 0; padding: 0; list-style: none; }
+  .site-screen-card { position: relative; display: flex; flex-direction: column; overflow: hidden; border: var(--il-border-width) solid var(--il-border); border-radius: var(--il-radius-large); background: var(--il-surface-raised); transition: box-shadow var(--il-duration-short), border-color var(--il-duration-short); }
+  .site-screen-card:hover { border-color: var(--il-border-bold); box-shadow: var(--il-shadow-overlay); }
+  .site-screen-card-link { color: var(--il-text); text-decoration: none; }
+  .site-screen-card-link:hover { color: var(--il-text); text-decoration: none; }
+  /* The title link covers the whole card, so the preview and text are one target without nesting links. */
+  .site-screen-card-link::after { content: ''; position: absolute; inset: 0; z-index: 1; border-radius: inherit; }
+  .site-screen-card:has(.site-screen-card-link:focus-visible) { outline: var(--il-border-width-focused) solid var(--il-border-focused); outline-offset: var(--il-space-025); }
+  .site-screen-preview { position: relative; aspect-ratio: 16 / 10; overflow: hidden; border-bottom: var(--il-border-width) solid var(--il-border); background: var(--il-surface); }
+  .site-screen-preview-stage { position: absolute; top: 0; left: 0; width: 80rem; height: 50rem; transform: scale(var(--preview-scale, 0.3)); transform-origin: 0 0; pointer-events: none; }
+  .site-screen-preview-stage .scr-shell { height: 50rem; min-height: 0; }
+  .site-screen-card-body { display: flex; flex: 1; flex-direction: column; gap: var(--il-space-075); padding: var(--il-space-250) var(--il-space-300) var(--il-space-300); }
+  .site-screen-card-title { margin: 0; font: var(--il-font-heading-small); }
+  .site-screen-card-text { display: -webkit-box; margin: 0; overflow: hidden; color: var(--il-text-subtle); font: var(--il-font-body); -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+  .site-screen-card-foot { display: flex; align-items: center; justify-content: space-between; margin: auto 0 0; padding-top: var(--il-space-150); color: var(--il-text-subtlest); font: var(--il-font-body-small); }
+}

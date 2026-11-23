@@ -18,6 +18,7 @@ import '@interlink/guidelines/screens/landing-fieldline/fieldline.css';
 import './shell.css';
 import './content.css';
 import './specimens.css';
+import './screens.css';
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { SiteHeader } from '@/components/shell/site-header';
