@@ -3,6 +3,7 @@ import { About } from '@/components/home/about';
 import { Closing } from '@/components/home/closing';
 import { Featured } from '@/components/home/featured';
 import { Intro } from '@/components/home/intro';
+import { YouCursor } from '@/components/home/you-cursor';
 
 /** The home of the design system: a canvas with a ruler, the wordmark, what it is, featured screens and an invitation. */
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <About />
       <Featured />
       <Closing />
+      <YouCursor />
     </main>
   );
 }
