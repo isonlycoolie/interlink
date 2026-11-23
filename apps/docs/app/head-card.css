@@ -1,33 +1,43 @@
 /* SPDX-License-Identifier: Apache-2.0 */
-/* Page heads as a card: soft colour light from three corners, with a fine grain over it, like printed paper. */
+/* One layer order for the whole site, stated in every file so load order can never flip it. */
+@layer interlink.tokens, interlink.reset, interlink.fonts, interlink.base, interlink.components, interlink.utilities, site;
+/* Page heads as a card: a pure gradient, soft colour light from three corners. */
 @layer site {
   .site-page-head { padding: var(--il-space-400) var(--il-space-500) 0; }
+  /* Colours per theme: soft tints in light; in dark, the assist colours mixed down so they glow, not muddy. */
+  :root {
+    --head-a: var(--il-background-accent-blue-subtler);
+    --head-b: var(--il-background-accent-purple-subtler);
+    --head-c: var(--il-background-accent-orange-subtler);
+  }
+  [data-color-mode='dark'] {
+    --head-a: color-mix(in srgb, var(--il-assist-icon-blue) 26%, transparent);
+    --head-b: color-mix(in srgb, var(--il-assist-icon-purple) 30%, transparent);
+    --head-c: color-mix(in srgb, var(--il-assist-icon-saffron) 14%, transparent);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-color-mode]) {
+      --head-a: color-mix(in srgb, var(--il-assist-icon-blue) 26%, transparent);
+      --head-b: color-mix(in srgb, var(--il-assist-icon-purple) 30%, transparent);
+      --head-c: color-mix(in srgb, var(--il-assist-icon-saffron) 14%, transparent);
+      }
+  }
   .site-page-head-inner, .screen-doc-head {
     position: relative;
     isolation: isolate;
     max-width: none;
     overflow: hidden;
-    border: var(--il-border-width) solid var(--il-border);
+    border: 0;
     border-radius: var(--il-radius-xlarge);
-    background-color: var(--il-surface);
-    background-image:
-      radial-gradient(75% 110% at 0% 0%, var(--il-background-accent-blue-subtler), transparent 70%),
-      radial-gradient(70% 100% at 100% 10%, var(--il-background-accent-purple-subtler), transparent 70%),
-      radial-gradient(65% 90% at 70% 110%, var(--il-background-accent-orange-subtler), transparent 70%);
+    /* Light from three corners, on the surface. No border: the colour itself marks the card. */
+    background:
+      radial-gradient(75% 110% at 0% 0%, var(--head-a), transparent 70%) padding-box,
+      radial-gradient(70% 100% at 100% 10%, var(--head-b), transparent 70%) padding-box,
+      radial-gradient(65% 90% at 70% 110%, var(--head-c), transparent 70%) padding-box,
+      linear-gradient(var(--il-surface), var(--il-surface)) padding-box;
   }
   .site-page-head-inner { min-height: 18rem; padding: var(--il-space-600) var(--il-space-500); }
   .screen-doc-head { margin-bottom: var(--il-space-300); padding: var(--il-space-500); }
-  /* The grain: fractal noise, blended so it reads in light and dark. */
-  :is(.site-page-head-inner, .screen-doc-head)::after {
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    border-radius: inherit;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
-    opacity: 0.16;
-    content: '';
-    pointer-events: none;
-  }
   /* On the card the title box shows the colour through it. */
   :is(.site-page-head-inner, .screen-doc-head) .canvas-title { background: transparent; }
   .screen-doc-head > p:last-child { margin-bottom: 0; }
