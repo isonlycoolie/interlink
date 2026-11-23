@@ -2,18 +2,18 @@
 @layer interlink.components {
   .il-cursor {
     --cur-bg: var(--il-assist-icon-blue);
-    --cur-fg: var(--il-text-inverse);
+    --cur-fg: var(--il-assist-text-on-blue);
     display: inline-flex;
     flex-direction: column;
     align-items: flex-start;
     pointer-events: none;
   }
   .il-cursor[data-pointer='top-right'] { align-items: flex-end; }
-  .il-cursor[data-color='purple'] { --cur-bg: var(--il-assist-icon-purple); }
-  .il-cursor[data-color='saffron'] { --cur-bg: var(--il-assist-icon-saffron); --cur-fg: var(--il-text); }
-  .il-cursor[data-color='lime'] { --cur-bg: var(--il-assist-icon-lime); }
+  .il-cursor[data-color='purple'] { --cur-bg: var(--il-assist-icon-purple); --cur-fg: var(--il-assist-text-on-purple); }
+  .il-cursor[data-color='saffron'] { --cur-bg: var(--il-assist-icon-saffron); --cur-fg: var(--il-assist-text-on-saffron); }
+  .il-cursor[data-color='lime'] { --cur-bg: var(--il-assist-icon-lime); --cur-fg: var(--il-assist-text-on-lime); }
   .il-cursor[data-color='brand'] { --cur-bg: var(--il-background-brand-bold); }
-  .il-cursor[data-color='agent'] { --cur-bg: var(--il-assist-background-brand-bold); --cur-fg: var(--il-assist-surface-overlay); }
+  .il-cursor[data-color='agent'] { --cur-bg: var(--il-assist-background-brand-bold); --cur-fg: var(--il-assist-text-on-ink); }
   .il-cursor-arrow { width: var(--il-space-200); height: var(--il-space-200); fill: var(--cur-bg); }
   .il-cursor[data-pointer='top-right'] .il-cursor-arrow { transform: scaleX(-1); }
   .il-cursor-pill {

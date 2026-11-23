@@ -30,7 +30,7 @@ export function AgentAvatar({ name, icon: Icon, src, color = 'brand', size = 'me
   return (
     <span className="il-agent-avatar" data-size={size} data-color={color} role={a11y ? 'img' : undefined} aria-label={a11y || undefined} aria-hidden={a11y ? undefined : true} data-testid={testId}>
       <span className="il-agent-avatar-hex">
-        {src ? <img src={src} alt="" /> : Icon ? <Icon label="" color="color.icon.inverse" shouldScale /> : <span className="il-agent-avatar-initial">{name.slice(0, 1)}</span>}
+        {src ? <img src={src} alt="" /> : Icon ? <Icon label="" color="currentColor" shouldScale /> : <span className="il-agent-avatar-initial">{name.slice(0, 1)}</span>}
       </span>
       {onBehalfOf ? <span className="il-agent-avatar-delegate">{onBehalfOf}</span> : null}
     </span>

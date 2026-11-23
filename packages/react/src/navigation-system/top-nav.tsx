@@ -60,7 +60,7 @@ export function AppLogo({ name, icon: Icon, href, color = 'brand' }: AppLogoProp
   return (
     <a className="il-ns-logo" href={href} data-color={color}>
       <span className="il-ns-logo-tile" aria-hidden="true">
-        <Icon label="" color="color.icon.inverse" />
+        <Icon label="" color="currentColor" />
       </span>
       <span className="il-ns-logo-name">{name}</span>
     </a>
