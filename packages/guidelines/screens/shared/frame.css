@@ -1,0 +1,25 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* The shared product frame and the small parts every dashboard uses. Measured from the reference frame. */
+@layer interlink.components {
+  /* Fills the window; a host page with its own bar above sets --scr-offset to that bar's height. */
+  .scr-frame { height: calc(100dvh - var(--scr-offset, 0rem)); min-height: 36rem; }
+  .scr-frame[data-canvas='grid'] .il-ns-main {
+    background-color: var(--il-surface);
+    background-image: linear-gradient(var(--il-surface-hovered) var(--il-border-width), transparent var(--il-border-width)), linear-gradient(90deg, var(--il-surface-hovered) var(--il-border-width), transparent var(--il-border-width));
+    background-size: var(--il-space-300) var(--il-space-300);
+  }
+  .scr-tool[data-open] .il-button, .scr-me[data-open] .il-avatar { border-radius: var(--il-radius-small); box-shadow: 0 0 0 var(--il-border-width-focused) var(--il-border-selected); }
+  .scr-tile { display: inline-grid; flex: none; place-items: center; width: var(--il-space-250); height: var(--il-space-250); border-radius: var(--il-radius-small); background: var(--il-assist-background-brand-bold); color: var(--il-assist-text-on-ink); }
+  .scr-tile[data-size='medium'] { width: var(--il-space-300); height: var(--il-space-300); }
+  .scr-tile[data-size='large'] { width: var(--il-space-400); height: var(--il-space-400); border-radius: var(--il-radius-medium); }
+  .scr-tile[data-color='blue'] { background: var(--il-assist-icon-blue); color: var(--il-assist-text-on-blue); }
+  .scr-tile[data-color='purple'] { background: var(--il-assist-icon-purple); color: var(--il-assist-text-on-purple); }
+  .scr-tile[data-color='saffron'] { background: var(--il-assist-icon-saffron); color: var(--il-assist-text-on-saffron); }
+  .scr-tile[data-color='lime'] { background: var(--il-assist-icon-lime); color: var(--il-assist-text-on-lime); }
+  /* A page column with air on both sides, as in the reference apps. */
+  .scr-page { max-width: 78rem; margin: 0 auto; padding: var(--il-space-050) var(--il-space-400) var(--il-space-800); }
+  .scr-h2 { margin: 0; font: var(--il-font-heading-small); }
+  .scr-section { display: flex; flex-direction: column; gap: var(--il-space-200); margin-top: var(--il-space-500); }
+  .scr-section-head { display: flex; align-items: center; justify-content: space-between; gap: var(--il-space-200); }
+  .scr-muted { color: var(--il-text-subtle); font: var(--il-font-body-small); }
+}
