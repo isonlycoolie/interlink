@@ -9,6 +9,8 @@
   "color.assist.background": {"brand.bold":"Neutral1200","brand.bold.hovered":"Neutral1100","brand.bold.pressed":"Neutral1000"},
   "color.assist.border": {"lime":"Lime600","saffron":"Orange400","blue":"Blue700","purple":"Purple600"},
   "color.assist.icon": {"lime":"Lime600","saffron":"Orange400","blue":"Blue700","purple":"Purple600"},
+  "color.assist.text.on": {"blue":"Neutral0","purple":"Neutral0","saffron":"Neutral1000","lime":"Neutral1000","ink":"Neutral0"},
+  "color.background.banner": {"purple":"Purple800"},
   "elevation.surface": {".":"Neutral0"},
   "elevation.surface.hovered": {".":"Neutral200"},
   "elevation.surface.pressed": {".":"Neutral300"},
