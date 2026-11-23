@@ -26,7 +26,7 @@ import './home-sell.css';
 import './home-motion.css';
 import './canvas.css';
 import './mobile.css';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 import { screensTree } from '@/components/screens/screen-data';
 import { SiteHeader } from '@/components/shell/site-header';
@@ -34,9 +34,19 @@ import type { NavNode } from '@/components/shell/side-nav';
 import { source } from '@/lib/source';
 import { themeScript } from '@/components/shell/theme-script';
 
+const DESCRIPTION = 'An enterprise design system with guidance an AI can read and run.';
+
 export const metadata: Metadata = {
+  metadataBase: new URL('https://interlink.denisivalence.tech'),
   title: { default: 'Interlink Design', template: '%s · Interlink Design' },
-  description: 'An enterprise design system with guidance an AI can read and run.',
+  description: DESCRIPTION,
+  applicationName: 'Interlink Design',
+  openGraph: { type: 'website', siteName: 'Interlink Design', title: 'Interlink Design', description: DESCRIPTION, url: '/', images: [{ url: '/og.png', width: 1200, height: 630, alt: 'Interlink Design' }] },
+  twitter: { card: 'summary_large_image', title: 'Interlink Design', description: DESCRIPTION, images: ['/og.png'] },
+};
+
+export const viewport: Viewport = {
+  themeColor: [{ media: '(prefers-color-scheme: light)', color: '#FFFFFF' }, { media: '(prefers-color-scheme: dark)', color: '#1F1F21' }],
 };
 
 /** The trees the phone menu shows: the docs navigation and the screens list. */
