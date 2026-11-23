@@ -17,7 +17,7 @@ export function StatusMenu({ defaultStatus = 'On track' }: { defaultStatus?: str
     </DropdownItem>
   );
   return (
-    <DropdownMenu trigger={status} label="Project status" placement="bottom-end">
+    <DropdownMenu trigger={status} label="Project status" placement="bottom-start">
       <DropdownItemGroup>{ACTIVE.map(item)}</DropdownItemGroup>
       <DropdownItemGroup hasSeparator>{CLOSED.map(item)}</DropdownItemGroup>
     </DropdownMenu>
