@@ -24,7 +24,7 @@ export function Closing() {
         </Link>
       </div>
       <footer className="home-sign">
-        <p>Made by isonlycoolie</p>
+        <p>Made by <a href="https://github.com/isonlycoolie" target="_blank" rel="noreferrer">isonlycoolie</a></p>
         <svg className="home-signature" viewBox="0 0 260 70" role="img" aria-label="Signature of isonlycoolie">
           <path d="M8 46 C 18 20, 30 14, 30 30 S 20 58, 34 54 C 46 50, 52 30, 62 34 C 70 38, 58 54, 70 52 C 82 50, 86 30, 98 34 C 108 38, 96 56, 110 52 C 124 48, 126 28, 140 32 C 152 36, 142 54, 156 50 C 172 46, 178 26, 192 30 C 204 34, 196 52, 210 48 C 226 44, 236 30, 252 24" />
           <path d="M40 62 C 100 56, 170 58, 236 52" />
