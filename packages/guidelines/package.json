@@ -15,6 +15,7 @@
     "./kit.css": "./src/kit/kit.css",
     "./sources": "./src/generated/sources.ts",
     "./screens": "./screens/index.ts",
+    "./screen/*": "./screens/*/screen.tsx",
     "./people": "./src/people.ts",
     "./screens/*.css": "./screens/*.css"
   },
