@@ -11,7 +11,8 @@
   .doc-list { margin: var(--il-space-100) 0 0; padding-inline-start: var(--il-space-300); font: var(--il-font-body-large); }
   .doc-list li + li { margin-top: var(--il-space-050); }
   .doc-link { color: var(--il-link); text-decoration: underline; text-underline-offset: 2px; }
-  .doc-article :not(pre) > code { padding: 0 var(--il-space-050); border-radius: var(--il-radius-small); background: var(--il-background-neutral); font: var(--il-font-code); color: var(--il-text); }
+  /* Token and code names read as syntax everywhere: one quiet code colour on a neutral chip. */
+  .site-main :not(pre) > code { padding: 0 var(--il-space-050); border-radius: var(--il-radius-small); background: var(--il-background-neutral); font: var(--il-font-code); color: var(--il-text-accent-purple); }
   .doc-article pre { margin: var(--il-space-200) 0 0; padding: var(--il-space-200); overflow-x: auto; border-radius: var(--il-radius-large); background: var(--il-background-neutral); font: var(--il-font-code); font-size: 0.875rem; line-height: 1.5; }
   .doc-article pre code { font: inherit; background: none; padding: 0; }
   .shiki span { color: var(--shiki-light); }
