@@ -24,16 +24,26 @@ import './home-closing.css';
 import './home-motion.css';
 import './canvas.css';
 import './head-card.css';
+import './mobile.css';
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { Ruler } from '@/components/shell/ruler';
+import { screensTree } from '@/components/screens/screen-data';
 import { SiteHeader } from '@/components/shell/site-header';
+import type { NavNode } from '@/components/shell/side-nav';
+import { source } from '@/lib/source';
 import { themeScript } from '@/components/shell/theme-script';
 
 export const metadata: Metadata = {
   title: { default: 'Interlink Design', template: '%s · Interlink Design' },
   description: 'An enterprise design system with guidance an AI can read and run.',
 };
+
+/** The trees the phone menu shows: the docs navigation and the screens list. */
+function menuTrees() {
+  const status = Object.fromEntries(source.getPages().filter((p) => p.data.status).map((p) => [p.url, p.data.status as string]));
+  return { docs: source.pageTree.children as unknown as NavNode[], screens: screensTree(), status };
+}
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
@@ -42,7 +52,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body>
-        <SiteHeader />
+        <SiteHeader menu={menuTrees()} />
         <Ruler />
         {children}
       </body>

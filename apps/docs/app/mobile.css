@@ -1,0 +1,36 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* One layer order for the whole site, stated in every file so load order can never flip it. */
+@layer interlink.tokens, interlink.reset, interlink.fonts, interlink.base, interlink.components, interlink.utilities, site;
+/* Phones and small tablets: one header row with a Menu, the sidebar in a drawer, and content that fits the width. */
+@layer site {
+  .site-mobile-trigger { display: none; }
+  .site-mobile-menu { display: flex; flex-direction: column; gap: var(--il-space-200); padding-bottom: var(--il-space-400); }
+  .site-mobile-places { display: flex; flex-direction: column; }
+  .site-mobile-places .site-header-link { justify-content: flex-start; width: 100%; height: var(--il-space-500); border-radius: var(--il-radius-small); box-shadow: none; }
+  .site-mobile-places .site-header-link[data-active] { background: var(--il-background-selected); color: var(--il-text-selected); }
+  /* The section's sidebar inside the drawer: a plain list, not a sticky column. */
+  .site-mobile-menu .site-nav { position: static; display: block; height: auto; padding: var(--il-space-100) 0 0; overflow: visible; border: 0; border-top: var(--il-border-width) solid var(--il-border); background: transparent; }
+
+  @media (max-width: 48rem) {
+    .site-header { gap: var(--il-space-100); padding-inline: var(--il-space-200); }
+    .site-header-nav { gap: var(--il-space-050); }
+    .site-header-nav > .site-header-link:not(.site-search-button), .site-header-theme { display: none; }
+    .site-search-text { display: none; }
+    .site-mobile-trigger { display: inline-flex; }
+    .site-logo-text { white-space: nowrap; }
+    .site-body { grid-template-columns: minmax(0, 1fr); }
+    .site-body > .site-nav { display: none; }
+    .canvas-ruler span { width: calc(var(--grid) * 0.6); }
+    .site-page-body, .site-tabs { padding-inline: var(--il-space-200); }
+    .site-tabs { overflow-x: auto; }
+    .screen-doc { padding: var(--il-space-200) var(--il-space-200) var(--il-space-600); }
+    .screen-doc-head h1 { font-size: 1.5rem; }
+    .screen-toolbar { flex-direction: column; align-items: stretch; }
+    .screen-toolbar-end { justify-content: space-between; }
+    .screen-stage { height: min(40rem, 75vh); }
+    /* The full-screen bar keeps back, the picker and copy; widths and code live on bigger screens. */
+    .screen-full-bar { gap: var(--il-space-075); }
+    .screen-full-bar .il-segmented, .screen-full-width, .screen-full-code { display: none; }
+    .screen-full-pick { min-width: 0; flex: 1; }
+  }
+}
