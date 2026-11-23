@@ -6,8 +6,6 @@ import PagesIcon from '@interlink/icons/core/pages';
 import { AvatarGroup } from '@interlink/react/avatar';
 import { Breadcrumbs, BreadcrumbsItem } from '@interlink/react/breadcrumbs';
 import { Button, IconButton } from '@interlink/react/button';
-import { PresenceCursor } from '@interlink/react/presence-cursor';
-import RoadmapIcon from '@interlink/icons/core/roadmap';
 import { people } from '../../src/people';
 import { AppChrome, avatars } from '../shared/chrome';
 import { Goals, Timeline } from './plan';
@@ -52,12 +50,6 @@ export default function TeamSpaceScreen() {
         <Timeline />
         <MeetTheTeam />
         <KeyPages />
-        <span className="scr-cursor" style={{ top: '19rem', left: '62%' }}>
-          <PresenceCursor name="Zawadi" color="purple" />
-        </span>
-        <span className="scr-cursor" style={{ top: '35rem', left: '38%' }}>
-          <PresenceCursor name="Planner" color="agent" agentIcon={RoadmapIcon} />
-        </span>
       </article>
     </AppChrome>
   );

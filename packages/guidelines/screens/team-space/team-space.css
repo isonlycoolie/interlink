@@ -30,5 +30,4 @@
   .scr-key-page { display: flex; align-items: center; gap: var(--il-space-150); padding: var(--il-space-150); border: var(--il-border-width) solid var(--il-border); border-radius: var(--il-radius-medium); color: var(--il-text); text-decoration: none; }
   .scr-key-page:hover { background: var(--il-surface-hovered); }
   .scr-key-page-icon { display: inline-grid; place-items: center; width: var(--il-space-400); height: var(--il-space-400); border-radius: var(--il-radius-medium); background: var(--il-background-accent-blue-subtlest); color: var(--il-icon-accent-blue); }
-  .scr-cursor { position: absolute; z-index: 1; pointer-events: none; }
 }
