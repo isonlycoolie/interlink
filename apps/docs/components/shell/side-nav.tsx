@@ -28,6 +28,8 @@ const contains = (node: NavNode, path: string): boolean =>
 
 function Item({ node, path, status, depth }: { node: NavNode; path: string; status: Record<string, string>; depth: number }) {
   if (node.type === 'separator') return <li className="site-nav-group">{node.name}</li>;
+  const only = node.type === 'folder' ? lone(node) : undefined;
+  if (only) return <Item node={{ type: 'page', name: node.name, url: only }} path={path} status={status} depth={depth} />;
   const url = node.type === 'folder' ? node.index?.url : node.url;
   const active = matches(url, path);
   const badge = url && status[url] ? STATUS_LABEL[status[url]] : undefined;
@@ -47,6 +49,15 @@ function Item({ node, path, status, depth }: { node: NavNode; path: string; stat
   const kids = (node.children ?? []).filter((c) => !(c.type === 'page' && c.url === url));
   if (node.type !== 'folder' || kids.length === 0) return <li style={{ ['--depth' as string]: depth }}>{link}</li>;
   return <Folder node={node} url={url} path={path} status={status} depth={depth} link={link} />;
+}
+
+/** A folder whose only entry is one page is just that page: no parent, no chevron. */
+function lone(node: NavNode): string | undefined {
+  const own = node.index?.url;
+  const kids = (node.children ?? []).filter((c) => !(c.type === 'page' && c.url === own));
+  if (kids.length === 0) return own;
+  if (kids.length === 1 && kids[0]?.type === 'page' && !own) return kids[0].url;
+  return undefined;
 }
 
 function Folder({ node, url, path, status, depth, link }: { node: NavNode; url?: string; path: string; status: Record<string, string>; depth: number; link: ReactNode }) {
