@@ -5,7 +5,6 @@ import { mdxComponents } from '@/components/mdx';
 import { PageHead, PageTabs, Toc, type TocItem } from '@/components/shell/page-parts';
 import { PageTransition } from '@/components/shell/page-transition';
 import { SideNav, type NavNode } from '@/components/shell/side-nav';
-import { componentDocs } from '@interlink/react/docs';
 import { source } from '@/lib/source';
 
 interface Props {
@@ -31,15 +30,6 @@ function tabsFor(slug: string[]) {
     .map((t) => ({ url: t.page!.url, label: t.label }));
 }
 
-/** Where the page sits: the section, and for components their category. Top-level pages need none. */
-function eyebrowFor(slug: string[]) {
-  if (slug.length < 2) return undefined;
-  const raw = (slug[0] ?? '').replace(/-/g, ' ');
-  const section = raw.charAt(0).toUpperCase() + raw.slice(1);
-  const category = slug[0] === 'components' && slug[1] ? componentDocs[slug[1]]?.category : undefined;
-  return category ? `${section} · ${category}` : section;
-}
-
 export default async function DocPage({ params }: Props) {
   const { slug } = await params;
   const page = source.getPage(slug);
@@ -55,7 +45,7 @@ export default async function DocPage({ params }: Props) {
       <SideNav tree={source.pageTree.children as unknown as NavNode[]} status={status} />
       <main id="main" className="site-main">
         <PageTransition>
-          <PageHead eyebrow={eyebrowFor(slug)} title={head.data.title} description={head.data.description} notice={head.data.notice} />
+          <PageHead title={head.data.title} description={head.data.description} notice={head.data.notice} />
           <PageTabs tabs={tabsFor(slug)} current={page.url} />
           <div className="site-page-body">
             <article className="doc-article">

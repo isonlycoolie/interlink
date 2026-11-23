@@ -16,46 +16,15 @@
   body:has(.screen-full) .canvas-ruler { display: none; }
 
   /* Labels are handwritten, like notes on a canvas. Header links keep the body font. */
-  .site-nav-group, .site-tab, .site-toc-title, .canvas-eyebrow, .canvas-ruler span { font: normal 500 1.25rem/1.25 var(--il-font-family-hand); letter-spacing: 0; text-transform: none; }
+  .site-nav-group, .site-toc-title, .canvas-ruler span { font: normal 500 1.25rem/1.25 var(--il-font-family-hand); letter-spacing: 0; text-transform: none; }
   .site-nav { background: var(--il-surface); }
   .site-nav-group { padding-top: var(--il-space-300); color: var(--il-text-subtle); font-size: 1.125rem; }
   .site-toc { background: var(--il-surface); }
 
-  /* Page head: an eyebrow, the title in a selection box with handles, and the description, on the canvas. */
-  .site-page-head { background: transparent; }
-  .site-page-head-inner { min-height: 20rem; padding-top: var(--il-space-800); }
-  .canvas-eyebrow { display: flex; align-items: center; gap: var(--il-space-100); margin: 0 0 var(--il-space-200); color: var(--il-text-subtle); }
-  .canvas-eyebrow::before { width: var(--il-space-150); height: var(--il-space-150); border-radius: var(--il-radius-full); background: var(--il-assist-icon-blue); content: ''; }
-  .canvas-title { position: relative; align-self: flex-start; margin: var(--il-space-050) 0; padding: var(--il-space-150) var(--il-space-300); border: 1.5px solid var(--il-assist-icon-blue); background: var(--il-surface); }
-  /* Handles like a design tool's selection: a small surface square with a blue edge, the same in both themes. */
-  .canvas-title i { position: absolute; width: var(--il-space-100); height: var(--il-space-100); border: 1.5px solid var(--il-assist-icon-blue); border-radius: 1px; background: var(--il-surface); }
-  .canvas-title i:nth-of-type(1) { top: -5px; left: -5px; }
-  .canvas-title i:nth-of-type(2) { top: -5px; right: -5px; }
-  .canvas-title i:nth-of-type(3) { bottom: -5px; left: -5px; }
-  .canvas-title i:nth-of-type(4) { right: -5px; bottom: -5px; }
-  .site-page-title { letter-spacing: -0.03em; }
-  .site-page-description { max-width: 44rem; margin-top: var(--il-space-250); }
-  .canvas-note { align-self: flex-start; margin-top: var(--il-space-250); padding: var(--il-space-075) var(--il-space-150); background: var(--il-background-accent-orange-subtler); color: var(--il-text); font: var(--il-font-body); transform: rotate(-2deg); }
 
-  /* Tabs sit on the canvas as mono labels; the open one is an ink tab like the home's folders. */
-  .site-tabs { gap: var(--il-space-050); background: transparent; box-shadow: inset 0 -2px 0 var(--il-assist-background-brand-bold); }
-  .site-tab { padding: var(--il-space-100) var(--il-space-200); box-shadow: none; background: var(--il-surface); }
-  .site-tab[aria-current='page'] { box-shadow: none; background: var(--il-assist-background-brand-bold); color: var(--il-assist-text-on-ink); clip-path: polygon(0 0, 85% 0, 100% 100%, 0 100%); padding-inline-end: var(--il-space-400); }
   .site-page-body > article { min-width: 0; }
 
   /* Main actions are ink, like the home's Get started. */
   :is(.screen-toolbar, .screen-full-bar) .il-button[data-appearance='primary'] { background: var(--il-assist-background-brand-bold); color: var(--il-assist-text-on-ink); }
   :is(.screen-toolbar, .screen-full-bar) .il-button[data-appearance='primary']:hover { background: var(--il-assist-background-brand-bold-hovered); }
-
-  /* Screens use the same head. */
-  .screen-doc-head { display: flex; flex-direction: column; }
-  .screen-doc-head .canvas-eyebrow { margin: 0 0 var(--il-space-200); color: var(--il-text-subtle); }
-  .screen-doc-head > p:last-child { margin-top: var(--il-space-250); }
-  .screen-doc-head h1 { letter-spacing: -0.03em; }
-  @media (prefers-reduced-motion: no-preference) {
-    .canvas-title { animation: canvas-select var(--il-duration-long) var(--il-easing-out-practical) both; }
-    .canvas-title i { animation: canvas-pop var(--il-duration-long) var(--il-easing-out-practical) both; animation-delay: var(--il-duration-short); }
-    @keyframes canvas-select { from { border-color: transparent; } }
-    @keyframes canvas-pop { from { opacity: 0; scale: 0.3; } }
-  }
 }

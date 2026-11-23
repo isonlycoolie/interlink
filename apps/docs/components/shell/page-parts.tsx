@@ -3,16 +3,12 @@ import { SectionMessage } from '@interlink/react/section-message';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 
-/** The page head on the canvas: an eyebrow, the title held in a selection box, its description and an optional notice. */
-export function PageHead({ title, description, notice, eyebrow }: { title: ReactNode; description?: ReactNode; notice?: string; eyebrow?: string }) {
+/** Grey band with the page title, its one-line description and an optional notice. */
+export function PageHead({ title, description, notice }: { title: ReactNode; description?: ReactNode; notice?: string }) {
   return (
     <div className="site-page-head">
       <div className="site-page-head-inner">
-        {eyebrow ? <p className="canvas-eyebrow">{eyebrow}</p> : null}
-        <h1 className="site-page-title canvas-title">
-          {title}
-          <i aria-hidden="true" /><i aria-hidden="true" /><i aria-hidden="true" /><i aria-hidden="true" />
-        </h1>
+        <h1 className="site-page-title">{title}</h1>
         {description ? <p className="site-page-description">{description}</p> : null}
         {notice ? (
           <div className="site-page-notice">
