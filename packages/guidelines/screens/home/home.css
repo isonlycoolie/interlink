@@ -3,8 +3,8 @@
 @layer interlink.components {
   .scr-banner { position: relative; display: flex; align-items: flex-start; height: 8rem; overflow: hidden; border-radius: var(--il-radius-large); background: var(--il-background-banner-purple); color: var(--il-assist-text-on-purple); }
   .scr-banner-text { position: relative; z-index: 1; padding: var(--il-space-250) var(--il-space-200); }
-  .scr-banner-date { margin: 0 0 var(--il-space-050); font: var(--il-font-body); font-weight: var(--il-font-weight-medium); }
-  .scr-banner-title { margin: 0; font: var(--il-font-heading-large); }
+  .scr-banner-date { margin: 0 0 var(--il-space-050); color: inherit; font: var(--il-font-body); font-weight: var(--il-font-weight-medium); }
+  .scr-banner-title { margin: 0; color: inherit; font: var(--il-font-heading-large); }
   .scr-banner-art { position: absolute; inset: 0 0 0 auto; width: min(30rem, 45%); }
   .scr-banner-shapes { position: absolute; inset: 0; width: 100%; height: 100%; }
   .scr-banner-band { fill: var(--il-assist-icon-purple); }

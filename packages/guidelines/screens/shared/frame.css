@@ -5,7 +5,7 @@
   .scr-frame { height: calc(100dvh - var(--scr-offset, 0rem)); min-height: 36rem; }
   .scr-frame[data-canvas='grid'] .il-ns-main {
     background-color: var(--il-surface);
-    background-image: linear-gradient(var(--il-surface-hovered) var(--il-border-width), transparent var(--il-border-width)), linear-gradient(90deg, var(--il-surface-hovered) var(--il-border-width), transparent var(--il-border-width));
+    background-image: linear-gradient(var(--il-surface-sunken) var(--il-border-width), transparent var(--il-border-width)), linear-gradient(90deg, var(--il-surface-sunken) var(--il-border-width), transparent var(--il-border-width));
     background-size: var(--il-space-300) var(--il-space-300);
   }
   .scr-tool[data-open] .il-button, .scr-me[data-open] .il-avatar { border-radius: var(--il-radius-small); box-shadow: 0 0 0 var(--il-border-width-focused) var(--il-border-selected); }
