@@ -14,13 +14,6 @@
   .scr-table-wrap { position: relative; }
   .scr-date-chip { display: inline-flex; align-items: center; gap: var(--il-space-050); padding: 0 var(--il-space-075); border-radius: var(--il-radius-small); background: var(--il-background-neutral); color: var(--il-text-subtle); font: var(--il-font-body-small); }
   .scr-muted-body { color: var(--il-text-subtle); font: var(--il-font-body); }
-  .scr-note { position: absolute; z-index: 2; width: 15rem; padding: var(--il-space-150) var(--il-space-200); border-radius: var(--il-radius-small); background: var(--il-assist-icon-blue); color: var(--il-assist-text-on-blue); pointer-events: none; }
-  .scr-note[data-tone='red'] { background: var(--il-background-danger-bold); color: var(--il-text-inverse); }
-  .scr-note p { margin: 0; font: normal 500 1.375rem/1.2 var(--il-font-family-hand); }
-  .scr-note-arrow { position: absolute; width: 5.5rem; height: 2.75rem; fill: none; stroke: var(--il-assist-icon-blue); stroke-linecap: round; stroke-linejoin: round; stroke-width: 3; }
-  .scr-note[data-tone='red'] .scr-note-arrow { stroke: var(--il-background-danger-bold); }
-  .scr-note[data-arrow='left'] .scr-note-arrow { top: calc(-1 * var(--il-space-150)); right: 100%; }
-  .scr-note[data-arrow='up-right'] .scr-note-arrow { right: calc(-1 * var(--il-space-800)); bottom: 60%; }
   /* Phones: parts stack, rows wrap, tables scroll sideways instead of squeezing. */
   @container (max-width: 36rem) {
     .scr-spotlight { flex-wrap: wrap; }
@@ -28,6 +21,9 @@
     .scr-title-row, .scr-count-row { flex-wrap: wrap; }
     .scr-table-wrap, .scr-table-card { overflow-x: auto; }
     .scr-table-wrap > *, .scr-table-card > * { min-width: 40rem; }
-    .scr-note { display: none; }
+  }
+  /* Tour notes need room beside what they point at; narrower frames hide them rather than cover controls. */
+  @container (max-width: 72rem) {
+    .scr-page .il-tour-note { display: none; }
   }
 }

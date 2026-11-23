@@ -15,8 +15,8 @@ import { Button, IconButton } from '@interlink/react/button';
 import { Link } from '@interlink/react/link';
 import { SegmentedControl } from '@interlink/react/segmented-control';
 import { TextField } from '@interlink/react/textfield';
+import { TourNote } from '@interlink/react/tour-note';
 import { AppFrame } from '../shared/frame';
-import { TourNote } from '../shared/tour-note';
 import { GOALS } from './data';
 import { GoalsNav } from './side-nav';
 import { GoalTable } from './table';
@@ -50,8 +50,9 @@ export default function GoalsScreen() {
           {FILTERS.map((f) => (
             <Button key={f.label} iconBefore={f.icon}>{f.label}</Button>
           ))}
-          <IconButton icon={MoreIcon} label="More filters" />
-          <TourNote tone="blue" arrow="left" style={{ left: '31rem', top: 'calc(-1 * var(--il-space-100))' }}>Make filtered views to stay on top of the goals that matter to you</TourNote>
+          <TourNote placement="right" font="hand" content="Make filtered views to stay on top of the goals that matter to you">
+            <IconButton icon={MoreIcon} label="More filters" />
+          </TourNote>
         </div>
         <div className="scr-count-row">
           <h2 className="scr-h2">{GOALS.length} goals</h2>
@@ -62,8 +63,9 @@ export default function GoalsScreen() {
           </div>
         </div>
         <div className="scr-table-wrap">
-          <GoalTable />
-          <TourNote tone="red" arrow="up-right" style={{ left: '16rem', top: 'calc(100% + var(--il-space-300))' }}>See the status of team and company goals at a glance</TourNote>
+          <TourNote placement="bottom" tone="red" font="hand" isBlock content="See the status of team and company goals at a glance">
+            <GoalTable />
+          </TourNote>
         </div>
       </div>
     </AppFrame>

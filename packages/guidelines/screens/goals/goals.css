@@ -13,4 +13,9 @@
   .scr-goal-icon[data-status='off-track'] { color: var(--il-icon-danger); }
   .scr-goal-icon[data-status='pending'] { color: var(--il-icon-subtle); }
   .scr-goal-icon[data-status='completed'] { color: var(--il-icon-information); }
+  /* Room under the filters for the tour note beside them, only where the notes show. */
+  @container (min-width: 72rem) {
+    .scr-goals { padding-bottom: 12rem; }
+    .scr-goals .scr-filters { margin-bottom: var(--il-space-800); }
+  }
 }
