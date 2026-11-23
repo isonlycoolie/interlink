@@ -56,7 +56,7 @@ export function VideoNav() {
         ) : null}
       </SideNavContent>
       <SideNavFooter>
-        <span className="scr-record"><Button appearance="primary" iconBefore={CameraIcon}>Record a video</Button></span>
+        <li className="scr-record"><Button appearance="primary" iconBefore={CameraIcon}>Record a video</Button></li>
       </SideNavFooter>
     </SideNav>
   );

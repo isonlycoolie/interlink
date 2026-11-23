@@ -30,8 +30,8 @@
   .scr-clip-by { display: flex; align-items: center; gap: var(--il-space-100); font: var(--il-font-body-small); }
   .scr-clip-by > span { display: flex; flex-direction: column; }
   .scr-clip-share { display: inline-flex; align-items: center; gap: var(--il-space-025); padding: 0; border: 0; background: none; color: var(--il-text-subtle); font: var(--il-font-body-small); cursor: pointer; }
-  .scr-clip h3 { margin: 0; font: var(--il-font-body-large); }
-  .scr-clip h3 a { color: var(--il-text); text-decoration: none; }
+  .scr-clip h2 { margin: 0; font: var(--il-font-body-large); }
+  .scr-clip h2 a { color: var(--il-text); text-decoration: none; }
   .scr-clip-stats { display: flex; gap: var(--il-space-200); margin: var(--il-space-100) 0 0; color: var(--il-text-subtle); font: var(--il-font-body-small); }
   .scr-clip-stats span { display: inline-flex; align-items: center; gap: var(--il-space-050); }
 }

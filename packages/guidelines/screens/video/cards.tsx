@@ -44,7 +44,7 @@ export function VideoCard({ clip, selected, onSelect }: { clip: Clip; selected: 
             <button type="button" className="scr-clip-share">Share to spaces <ChevronDownIcon label="" color="currentColor" size="small" /></button>
           </span>
         </div>
-        <h3><a href={`#${clip.id}`}>{clip.title}</a></h3>
+        <h2><a href={`#${clip.id}`}>{clip.title}</a></h2>
         <p className="scr-clip-stats">
           <span><EyeIcon label="Views" color="currentColor" size="small" />{clip.stats[0]}</span>
           <span><CommentIcon label="Comments" color="currentColor" size="small" />{clip.stats[1]}</span>

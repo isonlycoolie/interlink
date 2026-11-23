@@ -14,7 +14,7 @@ export interface TourNoteProps {
 /** A coach mark: a handwritten note on a solid card with a marker arrow pointing at the control it explains. */
 export function TourNote({ children, tone, arrow, style }: TourNoteProps) {
   return (
-    <aside className="scr-note" data-tone={tone} data-arrow={arrow} style={style}>
+    <div role="note" className="scr-note" data-tone={tone} data-arrow={arrow} style={style}>
       <svg className="scr-note-arrow" viewBox="0 0 120 60" aria-hidden="true">
         {arrow === 'left' ? (
           <>
@@ -30,6 +30,6 @@ export function TourNote({ children, tone, arrow, style }: TourNoteProps) {
         )}
       </svg>
       <p>{children}</p>
-    </aside>
+    </div>
   );
 }
