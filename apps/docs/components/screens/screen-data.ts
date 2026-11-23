@@ -25,13 +25,6 @@ export async function screenSources(s: ScreenInfo) {
   return Promise.all(s.files.map(async (name) => ({ name, code: await readFile(path.join(ROOT, s.slug, name), 'utf8') })));
 }
 
-/** The Interlink components a screen imports, read from its own source so the list never goes stale. */
-export function builtWith(sources: { code: string }[]): string[] {
-  const found = new Set<string>();
-  for (const { code } of sources) for (const m of code.matchAll(/@interlink\/react\/([a-z-]+)/g)) if (m[1]) found.add(m[1]);
-  return [...found].sort();
-}
-
 /** What to install and import to use the screen in an app, including its styles. */
 export async function installLines(s: ScreenInfo) {
   const own = (await readdir(path.join(ROOT, s.slug))).filter((f) => f.endsWith('.css')).map((f) => `${s.slug}/${f}`);

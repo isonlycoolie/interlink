@@ -4,11 +4,11 @@ import { CodeBlock } from '@/components/mdx/code-block';
 import { SideNav } from '@/components/shell/side-nav';
 import { FullView } from './full-view';
 import { ScreenDoc } from './screen-doc';
-import { builtWith, installLines, screenSources, screensTree } from './screen-data';
+import { installLines, screenSources, screensTree } from './screen-data';
 
 const lang = (name: string) => (name.endsWith('.ts') ? 'ts' : 'tsx');
 
-/** A screen's docs page: the screens list on the left, the live preview in the middle, how to use it on the right. */
+/** A screen's docs page: the screens list on the left, the live preview filling the rest, install and use below. */
 export async function ScreenLayout({ screen }: { screen: ScreenInfo }) {
   const sources = await screenSources(screen);
   const { install, usage } = await installLines(screen);
@@ -22,7 +22,6 @@ export async function ScreenLayout({ screen }: { screen: ScreenInfo }) {
           title={screen.title}
           description={screen.description}
           files={sources.map((s) => ({ name: s.name, code: <CodeBlock code={s.code} lang={lang(s.name)} /> }))}
-          builtWith={builtWith(sources)}
           install={<CodeBlock code={install} lang="bash" />}
           usage={<CodeBlock code={usage} lang="tsx" />}
         >
