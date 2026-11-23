@@ -23,6 +23,7 @@ import './home-sections.css';
 import './home-closing.css';
 import './home-motion.css';
 import './canvas.css';
+import './head-card.css';
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { Ruler } from '@/components/shell/ruler';

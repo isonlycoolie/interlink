@@ -1,0 +1,36 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* Page heads as a card: soft colour light from three corners, with a fine grain over it, like printed paper. */
+@layer site {
+  .site-page-head { padding: var(--il-space-400) var(--il-space-500) 0; }
+  .site-page-head-inner, .screen-doc-head {
+    position: relative;
+    isolation: isolate;
+    max-width: none;
+    overflow: hidden;
+    border: var(--il-border-width) solid var(--il-border);
+    border-radius: var(--il-radius-xlarge);
+    background-color: var(--il-surface);
+    background-image:
+      radial-gradient(75% 110% at 0% 0%, var(--il-background-accent-blue-subtler), transparent 70%),
+      radial-gradient(70% 100% at 100% 10%, var(--il-background-accent-purple-subtler), transparent 70%),
+      radial-gradient(65% 90% at 70% 110%, var(--il-background-accent-orange-subtler), transparent 70%);
+  }
+  .site-page-head-inner { min-height: 18rem; padding: var(--il-space-600) var(--il-space-500); }
+  .screen-doc-head { margin-bottom: var(--il-space-300); padding: var(--il-space-500); }
+  /* The grain: fractal noise, blended so it reads in light and dark. */
+  :is(.site-page-head-inner, .screen-doc-head)::after {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+    opacity: 0.16;
+    content: '';
+    pointer-events: none;
+  }
+  /* On the card the title box shows the colour through it. */
+  :is(.site-page-head-inner, .screen-doc-head) .canvas-title { background: transparent; }
+  .screen-doc-head > p:last-child { margin-bottom: 0; }
+  .site-tabs { margin-top: var(--il-space-300); }
+  @media (max-width: 48rem) { .site-page-head { padding: var(--il-space-200) var(--il-space-200) 0; } .site-page-head-inner, .screen-doc-head { padding: var(--il-space-300); } }
+}
