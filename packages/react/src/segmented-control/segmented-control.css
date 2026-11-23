@@ -1,0 +1,21 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.components {
+  .il-segmented { display: inline-flex; gap: var(--il-space-025); padding: var(--il-space-025); border-radius: var(--il-radius-medium); background: var(--il-background-neutral); }
+  .il-segmented-option {
+    height: calc(var(--il-space-300) + var(--il-space-050));
+    padding: 0 var(--il-space-150);
+    border: 0;
+    border-radius: var(--il-radius-small);
+    background: transparent;
+    color: var(--il-text-subtle);
+    font: var(--il-font-body);
+    font-weight: var(--il-font-weight-medium);
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  .il-segmented-option:hover { color: var(--il-text); }
+  .il-segmented-option[aria-checked='true'] { background: var(--il-surface); box-shadow: var(--il-shadow-raised); color: var(--il-text); }
+  .il-segmented[data-shape='pill'] { padding: var(--il-space-075); border-radius: var(--il-radius-full); }
+  .il-segmented[data-shape='pill'] .il-segmented-option { height: var(--il-space-600); padding: 0 var(--il-space-400); border-radius: var(--il-radius-full); font: var(--il-font-heading-small); }
+  .il-segmented[data-shape='pill'] .il-segmented-option[aria-checked='true'] { background: var(--il-assist-background-brand-bold); box-shadow: none; color: var(--il-assist-text-on-ink); }
+}

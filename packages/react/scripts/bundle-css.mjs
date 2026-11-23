@@ -68,6 +68,7 @@ const files = [
   'src/navigation-system/side-nav.css',
   'src/page-header/page-header.css',
   'src/generated/xcss.css',
+  'src/segmented-control/segmented-control.css',
 ];
 const css = files.map((f) => fs.readFileSync(path.join(root, f), 'utf8')).join('\n');
 fs.mkdirSync(path.join(root, 'dist'), { recursive: true });

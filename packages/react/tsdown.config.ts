@@ -65,6 +65,7 @@ export default defineConfig({
     "agent-card": 'src/agent-card/index.ts',
     "navigation-system": 'src/navigation-system/index.ts',
     "page-header": 'src/page-header/index.ts',
+    "segmented-control": 'src/segmented-control/index.ts',
     docs: 'src/docs/index.ts',
   },
   format: 'esm',
