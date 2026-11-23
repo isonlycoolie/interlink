@@ -20,7 +20,6 @@
     .site-logo-text { white-space: nowrap; }
     .site-body { grid-template-columns: minmax(0, 1fr); }
     .site-body > .site-nav { display: none; }
-    .canvas-ruler span { width: calc(var(--grid) * 0.6); }
     .site-page-body, .site-tabs { padding-inline: var(--il-space-200); }
     .site-tabs { overflow-x: auto; }
     .screen-doc { padding: var(--il-space-200) var(--il-space-200) var(--il-space-600); }

@@ -27,7 +27,6 @@ import './canvas.css';
 import './mobile.css';
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
-import { Ruler } from '@/components/shell/ruler';
 import { screensTree } from '@/components/screens/screen-data';
 import { SiteHeader } from '@/components/shell/site-header';
 import type { NavNode } from '@/components/shell/side-nav';
@@ -53,7 +52,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body>
         <SiteHeader menu={menuTrees()} />
-        <Ruler />
         {children}
       </body>
     </html>
