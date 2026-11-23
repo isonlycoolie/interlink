@@ -1,0 +1,56 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* One layer order for the whole site, stated in every file so load order can never flip it. */
+@layer interlink.tokens, interlink.reset, interlink.fonts, interlink.base, interlink.components, interlink.utilities, site;
+/* Home selling sections: what's inside (bento), guidance an agent can run, and every theme side by side. */
+@layer site {
+  .home-sell { display: flex; flex-direction: column; align-items: center; max-width: 76rem; margin: 0 auto; padding: var(--il-space-1000) var(--il-space-400); }
+  .home-sell-title { width: min(36rem, 100%); margin: var(--il-space-150) 0 var(--il-space-250); }
+  .home-sell-lead { max-width: 38rem; margin: 0 0 var(--il-space-600); color: var(--il-text-subtle); font: var(--il-font-body-large); font-size: 1.25rem; line-height: 1.5; text-align: center; }
+
+  /* Bento: solid colour tiles; text and glyph take the colour that reads on each. */
+  .home-bento { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--il-space-200); width: 100%; margin: 0; padding: 0; list-style: none; }
+  .home-bento li { --bg: var(--il-assist-icon-blue); --fg: var(--il-assist-text-on-blue); }
+  .home-bento li[data-span='2'] { grid-column: span 2; }
+  .home-bento li[data-span='3'] { grid-column: span 3; }
+  .home-bento li[data-c='ink'] { --bg: var(--il-assist-background-brand-bold); --fg: var(--il-assist-text-on-ink); }
+  .home-bento li[data-c='saffron'] { --bg: var(--il-assist-icon-saffron); --fg: var(--il-assist-text-on-saffron); }
+  .home-bento li[data-c='lime'] { --bg: var(--il-assist-icon-lime); --fg: var(--il-assist-text-on-lime); }
+  .home-bento li[data-c='purple'] { --bg: var(--il-assist-icon-purple); --fg: var(--il-assist-text-on-purple); }
+  .home-bento-tile { position: relative; display: flex; flex-direction: column; gap: var(--il-space-100); height: 100%; min-height: 14rem; padding: var(--il-space-300); border-radius: var(--il-radius-xlarge); background: var(--bg); color: var(--fg); text-decoration: none; transition: transform var(--il-duration-medium) var(--il-easing-out-practical); }
+  .home-bento-tile:hover { color: var(--fg); transform: translateY(calc(-1 * var(--il-space-050))); }
+  .home-bento-tile strong { font: var(--il-font-heading-xxlarge); font-size: 4rem; line-height: 1; letter-spacing: -0.03em; }
+  .home-bento-label { font: var(--il-font-heading-medium); }
+  .home-bento-text { max-width: 24rem; margin-top: auto; font: var(--il-font-body); }
+  .home-bento-tile > .il-icon { position: absolute; top: var(--il-space-300); right: var(--il-space-300); }
+
+  /* A real rule: the instruction on the left, a live Do and Don't on the right. */
+  .home-rule { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) minmax(0, 1fr); gap: var(--il-space-200); width: 100%; text-align: start; }
+  .home-rule-text { display: flex; flex-direction: column; align-items: flex-start; gap: var(--il-space-150); padding: var(--il-space-300); border-radius: var(--il-radius-xlarge); background: var(--il-assist-background-brand-bold); color: var(--il-assist-text-on-ink); }
+  .home-rule-text h3 { margin: 0; color: inherit; font: var(--il-font-heading-large); }
+  .home-rule-text p { margin: 0; font: var(--il-font-body); opacity: 0.85; }
+  .home-rule-severity { padding: 0 var(--il-space-100); border-radius: var(--il-radius-small); background: var(--il-assist-icon-saffron); color: var(--il-assist-text-on-saffron); font: var(--il-font-body-small); font-weight: var(--il-font-weight-semibold); }
+  .home-view { display: inline-flex; align-items: center; gap: var(--il-space-050); padding-bottom: var(--il-space-050); color: inherit; text-decoration: none; }
+  .home-view:hover { color: inherit; }
+  .home-rule-text .home-view { color: inherit; margin-top: auto; }
+  .home-rule-case { display: flex; flex-direction: column; margin: 0; overflow: hidden; border: var(--il-border-width) solid var(--il-border); border-radius: var(--il-radius-xlarge); background: var(--il-surface); }
+  .home-rule-stage { display: flex; flex: 1; align-items: center; justify-content: center; gap: var(--il-space-100); min-height: 10rem; background: var(--il-surface-sunken); }
+  .home-rule-case figcaption { display: flex; gap: var(--il-space-100); padding: var(--il-space-200); border-top: var(--il-space-050) solid var(--il-background-success-bold); font: var(--il-font-body-small); }
+  .home-rule-case[data-kind='dont'] figcaption { border-top-color: var(--il-background-danger-bold); }
+  .home-rule-case figcaption > span { display: inline-grid; flex: none; place-items: center; width: var(--il-space-300); height: var(--il-space-300); border-radius: var(--il-radius-full); background: var(--il-background-success-bold); color: var(--il-text-inverse); }
+  .home-rule-case[data-kind='dont'] figcaption > span { background: var(--il-background-danger-bold); }
+
+  /* Themes: three live islands, each its own colour mode. */
+  .home-themes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--il-space-200); width: 100%; margin: 0; padding: 0; list-style: none; }
+  .home-theme { padding: var(--il-space-250); border: var(--il-border-width) solid var(--il-border); border-radius: var(--il-radius-xlarge); background: var(--il-surface-sunken); color: var(--il-text); }
+  .home-theme-name { margin: 0 0 var(--il-space-150); color: var(--il-text-subtle); font: normal 500 1.375rem/1.2 var(--il-font-family-hand); }
+  .home-theme-card { display: flex; flex-direction: column; gap: var(--il-space-150); padding: var(--il-space-200); border-radius: var(--il-radius-large); background: var(--il-surface-raised); box-shadow: var(--il-shadow-raised); }
+  .home-theme-card p { margin: 0; color: var(--il-text-subtle); font: var(--il-font-body); }
+  .home-theme-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--il-space-100); }
+  .home-theme-row strong { flex: 1; font: var(--il-font-heading-xsmall); }
+  @media (max-width: 64rem) {
+    .home-bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .home-bento li[data-span='3'] { grid-column: span 2; }
+    .home-rule, .home-themes { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (max-width: 40rem) { .home-bento { grid-template-columns: minmax(0, 1fr); } .home-bento li[data-span] { grid-column: auto; } .home-sell { padding-inline: var(--il-space-200); } }
+}
