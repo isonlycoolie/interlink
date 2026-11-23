@@ -26,4 +26,13 @@
   .scr-prop-goal .il-lozenge { grid-column: 2; justify-self: start; }
   .scr-prop-link { color: var(--il-link); font: var(--il-font-body); }
   .scr-project-empty { padding: var(--il-space-400) 0; }
+  /* Phones (by the app frame's width): one column, rows wrap, nothing overlaps. */
+  @container (max-width: 40rem) {
+    .scr-project-head { flex-direction: column; gap: var(--il-space-150); }
+    .scr-project-title { font: var(--il-font-heading-medium); }
+    .scr-project .il-tab-list { overflow-x: auto; }
+    .scr-project-body { grid-template-columns: minmax(0, 1fr); margin-inline-end: 0; }
+    .scr-project-main { padding: var(--il-space-300) 0; }
+    .scr-rail { padding: var(--il-space-300) 0; border-inline-start: 0; border-top: var(--il-border-width) solid var(--il-border); }
+  }
 }
