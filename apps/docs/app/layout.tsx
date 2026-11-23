@@ -9,6 +9,7 @@ import '@interlink/guidelines/screens/shared/parts.css';
 import '@interlink/guidelines/screens/home/home.css';
 import '@interlink/guidelines/screens/goals/goals.css';
 import '@interlink/guidelines/screens/project/project.css';
+import '@interlink/guidelines/screens/updates/updates.css';
 import './shell.css';
 import './content.css';
 import './specimens.css';

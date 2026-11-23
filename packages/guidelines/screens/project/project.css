@@ -5,7 +5,7 @@
   .scr-project .il-ns-main-inner, .scr-project { min-width: 0; }
   .scr-project-head { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--il-space-300); }
   .scr-project-title { display: flex; align-items: center; gap: var(--il-space-150); margin: var(--il-space-100) 0 var(--il-space-150); font: var(--il-font-heading-large); }
-  .scr-project-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(18rem, 32rem); min-height: 32rem; margin-inline-end: calc(-1 * var(--il-space-400)); }
+  .scr-project-body { display: grid; flex: 1; min-width: 0; grid-template-columns: minmax(0, 1fr) minmax(18rem, 32rem); min-height: 32rem; margin-inline-end: calc(-1 * var(--il-space-400)); }
   .scr-project-main { max-width: 56rem; padding: var(--il-space-400) var(--il-space-500) var(--il-space-400) var(--il-space-500); }
   .scr-hint { display: flex; align-items: center; gap: var(--il-space-100); margin: 0 0 var(--il-space-300); padding: var(--il-space-150) var(--il-space-150) var(--il-space-150) var(--il-space-250); border-radius: var(--il-radius-medium); background: var(--il-background-discovery); color: var(--il-text-discovery); font: var(--il-font-body); }
   .scr-hint a { color: inherit; text-decoration: underline; }
