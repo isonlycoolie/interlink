@@ -4,6 +4,7 @@ import AngleBracketsIcon from '@interlink/icons/core/angle-brackets';
 import FullscreenIcon from '@interlink/icons/core/fullscreen-enter';
 import { Button, LinkButton } from '@interlink/react/button';
 import { SegmentedControl } from '@interlink/react/segmented-control';
+import Link from 'next/link';
 import { useState, type ReactNode } from 'react';
 import { CodeDrawer, type ScreenFile } from './code-drawer';
 import { Stage, type Viewport } from './stage';
@@ -19,13 +20,14 @@ export interface ScreenDocProps {
   title: string;
   description: string;
   files: ScreenFile[];
+  builtWith: string[];
   install: ReactNode;
   usage: ReactNode;
   children: ReactNode;
 }
 
 /** A screen as a docs page: a live, scaled preview with device widths in the middle, and how to use it on the right. */
-export function ScreenDoc({ slug, title, description, files, install, usage, children }: ScreenDocProps) {
+export function ScreenDoc({ slug, title, description, files, builtWith, install, usage, children }: ScreenDocProps) {
   const [viewport, setViewport] = useState<Viewport>('desktop');
   const [file, setFile] = useState<number | null>(null);
   return (
@@ -60,6 +62,24 @@ export function ScreenDoc({ slug, title, description, files, install, usage, chi
           </section>
         </div>
       </div>
+      <aside className="screen-rail" aria-label="About this screen">
+        <section>
+          <h2>Built with</h2>
+          <ul className="screen-chips">
+            {builtWith.map((c) => (
+              <li key={c}><Link href={`/components/${c}`}>{c.replace(/-/g, ' ')}</Link></li>
+            ))}
+          </ul>
+        </section>
+        <section>
+          <h2>Files</h2>
+          <ul className="screen-files">
+            {files.map((f, i) => (
+              <li key={f.name}><button type="button" className="il-focusable" onClick={() => setFile(i)}>{f.name}</button></li>
+            ))}
+          </ul>
+        </section>
+      </aside>
       <CodeDrawer key={file ?? -1} title={title} files={files} file={file} onClose={() => setFile(null)} />
     </div>
   );
