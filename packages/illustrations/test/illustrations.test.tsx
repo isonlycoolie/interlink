@@ -4,7 +4,7 @@ import path from 'node:path';
 import { cleanup, render, screen } from '@testing-library/react';
 import { afterEach, describe, expect, it } from 'vitest';
 import { artDir, checkSvg } from '../scripts/check-illustrations.mjs';
-import { catalog } from '../src/catalog';
+import { catalog, groups } from '../src/catalog';
 import { illustrations } from '../src/generated/all';
 
 afterEach(cleanup);
@@ -17,6 +17,10 @@ describe('illustration artwork', () => {
   it('every piece has a planned meaning in the catalog, and nothing is listed twice', () => {
     expect(catalog.map((c) => c.slug).sort()).toEqual(files);
     expect(new Set(catalog.map((c) => c.slug)).size).toBe(catalog.length);
+  });
+  it('every group has enough pieces to choose from, and every piece can be found by keyword', () => {
+    for (const g of groups) expect(catalog.filter((c) => c.group === g).length, g).toBeGreaterThanOrEqual(8);
+    for (const c of catalog) expect(c.keywords.length, c.slug).toBeGreaterThan(0);
   });
   it('hero pieces are 2:1 and spot pieces are square', () => {
     for (const c of catalog) {
