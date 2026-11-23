@@ -3,6 +3,7 @@
 import * as Icons from '@interlink/icons/core';
 import metadata from '@interlink/icons/metadata.json';
 import type { ComponentType } from 'react';
+import { ImportLine } from './import-line';
 import type { IconProps } from '@interlink/icons';
 import { useMemo, useState } from 'react';
 
@@ -23,7 +24,7 @@ export function IconGallery() {
     <div className="spec-icons">
       <input type="search" className="spec-token-search" placeholder="Search icons" aria-label="Search icons" value={query} onChange={(e) => setQuery(e.target.value)} />
       <p className="spec-token-count" aria-live="polite">{`${list.length} icons`}</p>
-      {chosen ? <pre className="spec-icon-import"><code>{`import ${chosen.component} from '${chosen.import}';`}</code></pre> : null}
+      {chosen ? <ImportLine name={chosen.component} from={chosen.import} /> : null}
       <div className="spec-icon-grid">
         {list.map(([name, m]) => {
           const Icon = registry[m.component];

@@ -4,6 +4,7 @@ import { catalog, groups, pascal, type IllustrationGroup } from '@interlink/illu
 import { illustrations } from '@interlink/illustrations/all';
 import { DropdownItemRadio, DropdownItemRadioGroup, DropdownMenu } from '@interlink/react/dropdown-menu';
 import { useMemo, useState } from 'react';
+import { ImportLine } from './import-line';
 
 const GROUPS: (IllustrationGroup | 'All')[] = ['All', ...groups];
 const count = (g: IllustrationGroup | 'All') => (g === 'All' ? catalog.length : catalog.filter((c) => c.group === g).length);
@@ -49,7 +50,7 @@ export function IllustrationGallery() {
         </DropdownMenu>
         <p className="spec-token-count" aria-live="polite">{`${list.length} illustrations`}</p>
       </div>
-      {picked ? <pre className="spec-icon-import"><code>{`import ${pascal(picked)} from '@interlink/illustrations/art/${picked}';`}</code></pre> : null}
+      {picked ? <ImportLine name={pascal(picked)} from={`@interlink/illustrations/art/${picked}`} /> : null}
       <div className="spec-illo-grid">
         {list.map((c) => {
           const Art = illustrations[c.slug];
