@@ -188,6 +188,10 @@
       "types": "./dist/spotlight.d.mts",
       "default": "./dist/spotlight.mjs"
     },
+    "./tour-note": {
+      "types": "./dist/tour-note.d.mts",
+      "default": "./dist/tour-note.mjs"
+    },
     "./dynamic-table": {
       "types": "./dist/dynamic-table.d.mts",
       "default": "./dist/dynamic-table.mjs"

@@ -50,6 +50,7 @@ export default defineConfig({
     calendar: 'src/calendar/index.ts',
     "datetime-picker": 'src/datetime-picker/index.ts',
     spotlight: 'src/spotlight/index.ts',
+    "tour-note": 'src/tour-note/index.ts',
     "dynamic-table": 'src/dynamic-table/index.ts',
     "agent-avatar": 'src/agent-avatar/index.ts',
     "presence-cursor": 'src/presence-cursor/index.ts',

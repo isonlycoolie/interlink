@@ -42,6 +42,7 @@ import { commentDocs } from '../comment/comment.docs';
 import { calendarDocs } from '../calendar/calendar.docs';
 import { datetimePickerDocs } from '../datetime-picker/datetime-picker.docs';
 import { spotlightDocs } from '../spotlight/spotlight.docs';
+import { tourNoteDocs } from '../tour-note/tour-note.docs';
 import { dynamicTableDocs } from '../dynamic-table/dynamic-table.docs';
 import { agentAvatarDocs } from '../agent-avatar/agent-avatar.docs';
 import { presenceCursorDocs } from '../presence-cursor/presence-cursor.docs';
@@ -110,6 +111,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
   calendar: calendarDocs,
   "datetime-picker": datetimePickerDocs,
   spotlight: spotlightDocs,
+  "tour-note": tourNoteDocs,
   "dynamic-table": dynamicTableDocs,
   "agent-avatar": agentAvatarDocs,
   "presence-cursor": presenceCursorDocs,

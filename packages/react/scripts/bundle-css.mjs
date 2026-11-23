@@ -51,6 +51,7 @@ const files = [
   'src/progress-tracker/progress-tracker.css',
   'src/range/range.css',
   'src/spotlight/spotlight.css',
+  'src/tour-note/tour-note.css',
   'src/tile/tile.css',
   'src/action-plan/action-plan.css',
   'src/agent-avatar/agent-avatar.css',
