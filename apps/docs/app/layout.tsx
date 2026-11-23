@@ -22,6 +22,7 @@ import './screens.css';
 import './home-hero.css';
 import './home-sections.css';
 import './home-closing.css';
+import './home-sell.css';
 import './home-motion.css';
 import './canvas.css';
 import './mobile.css';
