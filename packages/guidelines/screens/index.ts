@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0
 import type { ComponentType } from 'react';
+import BoardScreen from './board/screen';
 import GoalsScreen from './goals/screen';
 import HomeScreen from './home/screen';
 import ProfileScreen from './profile/screen';
@@ -26,4 +27,5 @@ export const screens: ScreenInfo[] = [
   { slug: 'updates', title: 'Status updates', description: 'The weekly catch-up: six status tiles with their change, each project’s latest update, and your projects beside them.', kind: 'dashboard', files: ['screen.tsx', 'feed.tsx'], Component: UpdatesScreen },
   { slug: 'profile', title: 'Profile', description: 'A person’s profile: a scribble banner, how to work with them, recent work, their reporting line and teams.', kind: 'dashboard', files: ['screen.tsx', 'sections.tsx'], Component: ProfileScreen },
   { slug: 'video', title: 'Video library', description: 'Recordings as cards behind filters, with bulk select, a workspace card, an invite nudge and a record button.', kind: 'dashboard', files: ['screen.tsx', 'cards.tsx', 'side-nav.tsx'], Component: VideoScreen },
+  { slug: 'board', title: 'Board with agents', description: 'A sprint board people and agents share: agent runs on their cards, unlinked runs in their own lane, and a filter for both.', kind: 'dashboard', files: ['screen.tsx', 'card.tsx', 'data.ts', 'side-nav.tsx'], Component: BoardScreen },
 ];
