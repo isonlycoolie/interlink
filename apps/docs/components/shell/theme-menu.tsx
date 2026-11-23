@@ -14,19 +14,18 @@ const OPTIONS: { value: ColorMode; label: string }[] = [
 
 /** Theme picker in the site header, built from Interlink's own DropdownMenu. */
 export function ThemeMenu() {
-  const [mode, setMode] = useState<ColorMode>('auto');
+  const [mode, setMode] = useState<ColorMode>('light');
   useEffect(() => {
     try {
       const saved = localStorage.getItem(KEY);
-      if (saved === 'light' || saved === 'dark') setMode(saved);
+      if (saved === 'dark' || saved === 'auto') setMode(saved);
     } catch {}
   }, []);
   const choose = (value: ColorMode) => {
     setMode(value);
     setGlobalTheme({ colorMode: value });
     try {
-      if (value === 'auto') localStorage.removeItem(KEY);
-      else localStorage.setItem(KEY, value);
+      localStorage.setItem(KEY, value);
     } catch {}
   };
   return (
