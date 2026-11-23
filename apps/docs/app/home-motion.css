@@ -3,11 +3,6 @@
 @layer interlink.components {
   .home-name .home-note { position: relative; z-index: 2; }
   .home-name .home-hand { position: relative; z-index: 2; }
-  /* The tag rides beside the real pointer, offset so it never hides what you point at. */
-  .home-you { position: fixed; top: var(--il-space-150); left: var(--il-space-150); z-index: 30; opacity: 0; pointer-events: none; transition: opacity var(--il-duration-short); }
-  .home-you[data-on] { opacity: 1; }
-  .home-you[data-tone='blue'] .il-cursor, .home-you[data-tone='magenta'] .il-cursor { --cur-bg: var(--il-assist-icon-saffron); --cur-fg: var(--il-assist-text-on-saffron); }
-  .home-you[data-tone='ink'] .il-cursor { --cur-bg: var(--il-assist-icon-blue); --cur-fg: var(--il-assist-text-on-blue); }
   /* The hero turns to ink while the name is pointed at, like selecting a frame on a canvas. */
   .home-intro { transition: background-color var(--il-duration-medium), color var(--il-duration-medium); }
   .home-intro:has(.home-select:hover) { background-color: var(--il-assist-background-brand-bold); color: var(--il-assist-text-on-ink); }
@@ -45,5 +40,4 @@
     @keyframes home-rise { from { opacity: 0; translate: 0 var(--il-space-500); } }
     @keyframes home-drift { to { translate: var(--il-space-100) calc(-1 * var(--il-space-150)); } }
   }
-  @media (prefers-reduced-motion: reduce) { .home-you { display: none; } }
 }

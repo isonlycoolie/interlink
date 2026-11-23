@@ -25,7 +25,6 @@ import './home-motion.css';
 import './canvas.css';
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
-import { YouCursor } from '@/components/home/you-cursor';
 import { Ruler } from '@/components/shell/ruler';
 import { SiteHeader } from '@/components/shell/site-header';
 import { themeScript } from '@/components/shell/theme-script';
@@ -45,7 +44,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <SiteHeader />
         <Ruler />
         {children}
-        <YouCursor />
       </body>
     </html>
   );
