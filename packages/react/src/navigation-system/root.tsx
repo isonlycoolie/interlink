@@ -1,6 +1,9 @@
 // SPDX-License-Identifier: Apache-2.0
 'use client';
-import { createContext, useCallback, useContext, useMemo, useState, type ReactNode } from 'react';
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
+
+/** Below this frame width (in rem) the side navigation and panel open over the page and start closed. */
+const NARROW_REM = 48;
 
 interface NavState {
   isSideNavOpen: boolean;
@@ -27,11 +30,27 @@ export interface RootProps {
 
 /**
  * The frame of an app: a top bar across the page, side navigation on the left, the page in the middle, and an
- * optional panel on the right. Below 48rem the side navigation and panel open over the page.
+ * optional panel on the right. Under 64rem the side navigation slims down; below 48rem it and the panel open over the
+ * page, and the side navigation starts closed so the page is what people see first.
  */
 export function Root({ children, isSideNavOpen, defaultIsSideNavOpen = true, onSideNavToggle, skipLinkLabel = 'Skip to main content', testId }: RootProps) {
   const [own, setOwn] = useState(defaultIsSideNavOpen);
   const open = isSideNavOpen ?? own;
+  const frame = useRef<HTMLDivElement>(null);
+  const narrow = useRef<boolean | null>(null);
+  useEffect(() => {
+    const el = frame.current;
+    if (!el || typeof ResizeObserver === 'undefined') return;
+    const rem = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+    const observer = new ResizeObserver(([entry]) => {
+      const isNarrow = (entry?.contentRect.width ?? 0) < NARROW_REM * rem;
+      if (isNarrow === narrow.current) return;
+      narrow.current = isNarrow;
+      setOwn(isNarrow ? false : defaultIsSideNavOpen);
+    });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [defaultIsSideNavOpen]);
   const toggleSideNav = useCallback(() => {
     setOwn(!open);
     onSideNavToggle?.(!open);
@@ -39,7 +58,7 @@ export function Root({ children, isSideNavOpen, defaultIsSideNavOpen = true, onS
   const value = useMemo(() => ({ isSideNavOpen: open, toggleSideNav }), [open, toggleSideNav]);
   return (
     <NavContext.Provider value={value}>
-      <div className="il-ns-frame" data-testid={testId}>
+      <div ref={frame} className="il-ns-frame" data-testid={testId}>
         <a className="il-ns-skip" href="#il-main">
           {skipLinkLabel}
         </a>

@@ -36,6 +36,10 @@
   .il-ns-panel-actions { display: flex; gap: var(--il-space-025); }
   .il-ns-panel-body { flex: 1; min-height: 0; padding: var(--il-space-100) var(--il-space-300) var(--il-space-300); overflow: auto; }
   .il-ns-panel-footer { display: flex; justify-content: flex-end; gap: var(--il-space-100); padding: var(--il-space-200) var(--il-space-300); border-top: var(--il-border-width) solid var(--il-border); }
+  /* Tablets: the side navigation slims so the page keeps its room. */
+  @container (max-width: 64rem) {
+    .il-ns-side { width: 15rem; }
+  }
   @container (max-width: 48rem) {
     .il-ns { grid-template: 'top' 3rem 'main' minmax(0, 1fr) / minmax(0, 1fr); }
     .il-ns-top-middle .il-ns-search { display: none; }
@@ -43,5 +47,12 @@
     .il-ns-side, .il-ns-panel { position: absolute; top: 3rem; bottom: 0; z-index: 2; box-shadow: var(--il-shadow-overlay); }
     .il-ns-side { left: 0; }
     .il-ns-panel { right: 0; width: min(25rem, 100%); }
+  }
+  /* Phones: the top bar keeps the menu, the product tile, create and you. */
+  @container (max-width: 36rem) {
+    .il-ns-top { gap: var(--il-space-050); padding-inline-end: var(--il-space-100); }
+    .il-ns-top-start > :nth-child(2), .il-ns-logo-name, .il-ns-top-end > :not(:last-child) { display: none; }
+    .il-ns-top-middle { flex: 0 0 auto; margin-inline-start: auto; }
+    .il-ns-side { width: min(20rem, 85%); }
   }
 }
