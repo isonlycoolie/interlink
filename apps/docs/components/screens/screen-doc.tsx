@@ -34,7 +34,7 @@ export function ScreenDoc({ slug, title, description, files, builtWith, install,
     <div className="screen-doc">
       <div className="screen-doc-main">
         <header className="screen-doc-head">
-          <p className="canvas-eyebrow">screens · {slug}.tsx</p>
+          <p className="canvas-eyebrow">Screens · {slug}.tsx</p>
           <h1 className="canvas-title">
             {title}
             <i aria-hidden="true" /><i aria-hidden="true" /><i aria-hidden="true" /><i aria-hidden="true" />
@@ -49,16 +49,18 @@ export function ScreenDoc({ slug, title, description, files, builtWith, install,
           </span>
         </div>
         <Stage viewport={viewport}>{children}</Stage>
+        <div className="screen-use">
+          <section>
+            <h2>Install</h2>
+            {install}
+          </section>
+          <section>
+            <h2>Use it</h2>
+            {usage}
+          </section>
+        </div>
       </div>
-      <aside className="screen-rail" aria-label="Use this screen">
-        <section>
-          <h2>Install</h2>
-          {install}
-        </section>
-        <section>
-          <h2>Use it</h2>
-          {usage}
-        </section>
+      <aside className="screen-rail" aria-label="About this screen">
         <section>
           <h2>Built with</h2>
           <ul className="screen-chips">
