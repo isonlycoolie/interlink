@@ -33,7 +33,8 @@ function tabsFor(slug: string[]) {
 
 /** Where the page sits: the section, and for components their category. */
 function eyebrowFor(slug: string[]) {
-  const section = (slug[0] ?? '').replace(/-/g, ' ');
+  const raw = (slug[0] ?? '').replace(/-/g, ' ');
+  const section = raw.charAt(0).toUpperCase() + raw.slice(1);
   const category = slug[0] === 'components' && slug[1] ? componentDocs[slug[1]]?.category : undefined;
   return category ? `${section} · ${category}` : section;
 }

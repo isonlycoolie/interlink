@@ -2,8 +2,9 @@
 /* Home, top half: grid canvas, ruler, wordmark in a selection box, sticky notes and cursors. */
 @layer interlink.components {
   .home { overflow-x: clip; }
-  .home-mono, .home-clock, .home-status, .home-count, .home-folder-tab, .home-view, .home-file, .home-cta, .home-folder-tags span { font: var(--il-font-code); font-size: 0.875rem; letter-spacing: 0.04em; text-transform: uppercase; }
-  .home-hand { margin: 0; color: var(--il-text); font: var(--il-font-heading-small); font-style: italic; font-weight: var(--il-font-weight-regular); }
+  /* Small labels are handwritten notes on the canvas. */
+  .home-mono, .home-clock, .home-status, .home-count, .home-folder-tab, .home-view, .home-file, .home-cta, .home-folder-tags span { font: normal 500 1.25rem/1.25 var(--il-font-family-hand); letter-spacing: 0; text-transform: none; }
+  .home-hand { margin: 0; color: var(--il-text); font: normal 600 1.75rem/1.1 var(--il-font-family-hand); }
   .home-intro { position: relative; display: flex; flex-direction: column; align-items: center; min-height: 52rem; padding: var(--il-space-300) var(--il-space-400) var(--il-space-800); }
   .home-clock { margin: 0 0 var(--il-space-1000); text-transform: none; }
   .home-name { position: relative; display: grid; grid-template-columns: 1fr auto 1fr; align-items: end; justify-items: center; row-gap: var(--il-space-100); width: min(38rem, 100%); }
@@ -25,6 +26,7 @@
   .home-float-a { bottom: 9rem; left: 7%; transform: rotate(8deg); }
   .home-float-b { right: 22%; bottom: 13rem; transform: rotate(-3deg); }
   .home-float-c { top: 18rem; right: 8%; }
+  .home-status { font-size: 1.5rem; }
   .home-claim { max-width: 26rem; margin: var(--il-space-1000) 0 var(--il-space-300); font: var(--il-font-heading-xlarge); font-size: 2.5rem; font-weight: var(--il-font-weight-medium); letter-spacing: -0.03em; line-height: 1.12; text-align: center; }
   .home-chip { display: inline-block; width: 0.8em; height: 0.8em; margin: 0 0.12em; vertical-align: -0.06em; border-radius: var(--il-radius-small); background: var(--il-assist-icon-lime); }
   .home-chip[data-c='purple'] { background: var(--il-assist-icon-purple); }

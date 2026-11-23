@@ -10,15 +10,13 @@
     background-position: -1px 0;
   }
   .canvas-ruler { display: flex; height: var(--il-space-500); overflow: hidden; border-bottom: var(--il-border-width) solid var(--il-border); background: var(--il-surface); }
-  .canvas-ruler span { flex: none; width: var(--grid); padding: var(--il-space-150) 0 0; border-left: var(--il-border-width) solid var(--il-border-bold); color: var(--il-text-subtlest); font: var(--il-font-code); font-size: 0.625rem; text-indent: -1em; }
+  .canvas-ruler span { flex: none; width: var(--grid); padding: var(--il-space-150) 0 0; border-left: var(--il-border-width) solid var(--il-border-bold); color: var(--il-text-subtlest); text-indent: -0.6em; }
   body:has(.screen-full) .canvas-ruler { display: none; }
 
-  /* Monospace labels: header links, nav groups, tabs, contents and eyebrows. */
-  .site-header-link, .site-nav-group, .site-tab, .site-toc-title, .canvas-eyebrow { font: var(--il-font-code); font-size: 0.8125rem; letter-spacing: 0.04em; text-transform: uppercase; }
-  .site-header-link[data-active] { box-shadow: none; background: var(--il-assist-background-brand-bold); color: var(--il-assist-text-on-ink); }
-  .site-header-link[data-active]:hover { background: var(--il-assist-background-brand-bold-hovered); color: var(--il-assist-text-on-ink); }
+  /* Labels are handwritten, like notes on a canvas. Header links keep the body font. */
+  .site-nav-group, .site-tab, .site-toc-title, .canvas-eyebrow, .canvas-ruler span { font: normal 500 1.25rem/1.25 var(--il-font-family-hand); letter-spacing: 0; text-transform: none; }
   .site-nav { background: var(--il-surface); }
-  .site-nav-group { padding-top: var(--il-space-300); color: var(--il-text-subtle); font-size: 0.6875rem; }
+  .site-nav-group { padding-top: var(--il-space-300); color: var(--il-text-subtle); font-size: 1.125rem; }
   .site-toc { background: var(--il-surface); }
 
   /* Page head: an eyebrow, the title in a selection box with handles, and the description, on the canvas. */
