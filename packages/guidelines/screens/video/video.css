@@ -1,0 +1,37 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* The video library: workspace card and invite nudge in the nav, a big page title, filters and a grid of clips. */
+@layer interlink.components {
+  .scr-workspace { margin-bottom: var(--il-space-100); border: var(--il-border-width) solid var(--il-border); border-radius: var(--il-radius-medium); }
+  .scr-workspace-switch { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: var(--il-space-150); border: 0; border-bottom: var(--il-border-width) solid var(--il-border); background: transparent; color: var(--il-text); text-align: start; cursor: pointer; }
+  .scr-workspace-switch > span { display: flex; flex-direction: column; gap: var(--il-space-050); font: var(--il-font-body); }
+  .scr-workspace-invite { display: flex; align-items: center; gap: var(--il-space-100); padding: var(--il-space-150); color: var(--il-text); font: var(--il-font-body-small); text-decoration: none; }
+  .scr-invite-card { position: relative; display: flex; flex-direction: column; align-items: center; gap: var(--il-space-150); margin-top: var(--il-space-200); padding: var(--il-space-300) var(--il-space-200) var(--il-space-200); border-radius: var(--il-radius-medium); background: var(--il-background-accent-blue-subtlest); text-align: center; }
+  .scr-invite-card > .il-button:first-child { position: absolute; top: var(--il-space-100); right: var(--il-space-100); }
+  .scr-invite-card strong { font: var(--il-font-heading-xsmall); }
+  .scr-record .il-button { border-radius: var(--il-radius-full); }
+  .scr-library { padding-top: var(--il-space-200); }
+  .scr-library-head { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: var(--il-space-300); }
+  .scr-eyebrow { margin: 0; color: var(--il-text-subtle); font: var(--il-font-heading-xsmall); }
+  .scr-display { margin: var(--il-space-050) 0 0; font: var(--il-font-heading-xlarge); }
+  .scr-library-tabs { display: flex; align-items: flex-end; justify-content: space-between; border-bottom: var(--il-border-width) solid var(--il-border); }
+  .scr-library-tabs .il-tab-list::before { display: none; }
+  .scr-library-body { flex: 1; min-width: 0; padding-top: var(--il-space-400); }
+  .scr-library-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--il-space-200); margin-bottom: var(--il-space-250); }
+  .scr-clips { display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 19rem)); gap: var(--il-space-250); }
+  .scr-clip { overflow: hidden; border: var(--il-border-width) solid var(--il-border); border-radius: var(--il-radius-large); background: var(--il-surface-raised); }
+  .scr-clip[data-selected] { border-color: var(--il-border-selected); box-shadow: 0 0 0 var(--il-border-width) var(--il-border-selected); }
+  .scr-clip-thumb { position: relative; aspect-ratio: 3 / 2; overflow: hidden; background: var(--il-background-neutral); }
+  .scr-clip-thumb img { position: absolute; inset: 0; width: 36%; height: 100%; margin: 0 auto; object-fit: cover; }
+  .scr-clip-thumb[data-wide] img { width: 100%; }
+  .scr-clip-length { position: absolute; right: var(--il-space-100); bottom: var(--il-space-100); padding: var(--il-space-025) var(--il-space-075); border-radius: var(--il-radius-small); background: var(--il-assist-text-on-saffron); color: var(--il-assist-text-on-blue); font: var(--il-font-body-small); font-weight: var(--il-font-weight-medium); }
+  .scr-clip-check { position: absolute; top: var(--il-space-100); left: var(--il-space-100); opacity: 0; }
+  .scr-clip:hover .scr-clip-check, .scr-clip[data-selected] .scr-clip-check, .scr-clip-check:focus-within { opacity: 1; }
+  .scr-clip-body { display: flex; flex-direction: column; gap: var(--il-space-150); padding: var(--il-space-200); }
+  .scr-clip-by { display: flex; align-items: center; gap: var(--il-space-100); font: var(--il-font-body-small); }
+  .scr-clip-by > span { display: flex; flex-direction: column; }
+  .scr-clip-share { display: inline-flex; align-items: center; gap: var(--il-space-025); padding: 0; border: 0; background: none; color: var(--il-text-subtle); font: var(--il-font-body-small); cursor: pointer; }
+  .scr-clip h3 { margin: 0; font: var(--il-font-body-large); }
+  .scr-clip h3 a { color: var(--il-text); text-decoration: none; }
+  .scr-clip-stats { display: flex; gap: var(--il-space-200); margin: var(--il-space-100) 0 0; color: var(--il-text-subtle); font: var(--il-font-body-small); }
+  .scr-clip-stats span { display: inline-flex; align-items: center; gap: var(--il-space-050); }
+}
