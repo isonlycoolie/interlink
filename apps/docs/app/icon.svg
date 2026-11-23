@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 28 28">
+  <style>.o{stroke:#1F1F21}@media (prefers-color-scheme:dark){.o{stroke:#F2F2F3}}</style>
+  <rect class="o" x="2" y="2" width="15" height="15" rx="4" fill="none" stroke-width="3"/>
+  <rect x="11" y="11" width="15" height="15" rx="4" fill="#5A5DDD"/>
+  <path class="o" d="M11 17h6v-6" fill="none" stroke-width="3" stroke-linejoin="round"/>
+</svg>
