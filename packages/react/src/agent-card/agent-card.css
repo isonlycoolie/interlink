@@ -10,12 +10,16 @@
     transition: box-shadow var(--il-duration-short);
   }
   .il-agent-card:hover { box-shadow: var(--il-shadow-raised); }
-  .il-agent-card-tile { display: grid; place-items: center; height: 7.5rem; background: var(--il-background-accent-purple-subtler); }
-  .il-agent-card[data-color='blue'] .il-agent-card-tile { background: var(--il-background-accent-blue-subtler); }
-  .il-agent-card[data-color='saffron'] .il-agent-card-tile { background: var(--il-background-accent-orange-subtler); }
-  .il-agent-card[data-color='lime'] .il-agent-card-tile { background: var(--il-background-accent-lime-subtler); }
-  .il-agent-card[data-color='brand'] .il-agent-card-tile { background: var(--il-background-brand-subtlest); }
-  .il-agent-card[data-color='ink'] .il-agent-card-tile { background: var(--il-background-neutral); }
+  /* A neutral tile with a fine grid: the agent's solid hexagon is the only colour, never a tint behind it. */
+  .il-agent-card-tile {
+    display: grid;
+    place-items: center;
+    height: 7.5rem;
+    background-color: var(--il-surface-sunken);
+    background-image: linear-gradient(var(--il-border) var(--il-border-width), transparent var(--il-border-width)), linear-gradient(90deg, var(--il-border) var(--il-border-width), transparent var(--il-border-width));
+    background-size: var(--il-space-200) var(--il-space-200);
+    background-position: center;
+  }
   .il-agent-card-body { display: flex; flex: 1; flex-direction: column; gap: var(--il-space-050); padding: var(--il-space-200) var(--il-space-200) var(--il-space-100); }
   .il-agent-card-name { margin: 0; font: var(--il-font-heading-small); }
   .il-agent-card-name a { color: inherit; text-decoration: none; }
