@@ -1,4 +1,6 @@
 /* SPDX-License-Identifier: Apache-2.0 */
+/* One layer order for the whole site, stated in every file so load order can never flip it. */
+@layer interlink.tokens, interlink.reset, interlink.fonts, interlink.base, interlink.components, interlink.utilities, site;
 /* Home, lower half: about with polaroids and tags, stacked folder cards, and the closing band. */
 @layer interlink.components {
   .home-about { position: relative; display: grid; grid-template-columns: 1fr minmax(0, 50rem) 1fr; justify-items: center; row-gap: var(--il-space-300); padding: var(--il-space-800) var(--il-space-400) var(--il-space-1000); }

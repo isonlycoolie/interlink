@@ -1,4 +1,6 @@
 /* SPDX-License-Identifier: Apache-2.0 */
+/* One layer order for the whole site, stated in every file so load order can never flip it. */
+@layer interlink.tokens, interlink.reset, interlink.fonts, interlink.base, interlink.components, interlink.utilities, site;
 @layer site {
   .doc-article { font: var(--il-font-body-large); color: var(--il-text); }
   .doc-article > :first-child { margin-top: 0; }

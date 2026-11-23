@@ -1,4 +1,6 @@
 /* SPDX-License-Identifier: Apache-2.0 */
+/* One layer order for the whole site, stated in every file so load order can never flip it. */
+@layer interlink.tokens, interlink.reset, interlink.fonts, interlink.base, interlink.components, interlink.utilities, site;
 /* Home, top half: grid canvas, ruler, wordmark in a selection box, sticky notes and cursors. */
 @layer interlink.components {
   .home { overflow-x: clip; }

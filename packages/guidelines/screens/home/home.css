@@ -1,4 +1,5 @@
 /* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.tokens, interlink.reset, interlink.fonts, interlink.base, interlink.components, interlink.utilities;
 /* Home: banner, apps, places and work. Sizes measured from the reference home page. */
 @layer interlink.components {
   .scr-banner { position: relative; display: flex; align-items: flex-start; height: 8rem; overflow: hidden; border-radius: var(--il-radius-large); background: var(--il-background-banner-purple); color: var(--il-assist-text-on-purple); }

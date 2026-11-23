@@ -1,4 +1,6 @@
 /* SPDX-License-Identifier: Apache-2.0 */
+/* One layer order for the whole site, stated in every file so load order can never flip it. */
+@layer interlink.tokens, interlink.reset, interlink.fonts, interlink.base, interlink.components, interlink.utilities, site;
 /* Home motion and hover: the "You" cursor, entrances, the hero that inverts, and playful hovers. Off under reduced motion. */
 @layer interlink.components {
   .home-name .home-note { position: relative; z-index: 2; }

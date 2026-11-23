@@ -1,4 +1,5 @@
 /* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.tokens, interlink.reset, interlink.fonts, interlink.base, interlink.components, interlink.utilities;
 /* The board: view tabs with icons, a toolbar with a people-and-agents filter, and sunken lanes of cards. */
 @layer interlink.components {
   .scr-board { padding-top: var(--il-space-150); }

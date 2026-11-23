@@ -1,4 +1,6 @@
 /* SPDX-License-Identifier: Apache-2.0 */
+/* One layer order for the whole site, stated in every file so load order can never flip it. */
+@layer interlink.tokens, interlink.reset, interlink.fonts, interlink.base, interlink.components, interlink.utilities, site;
 @layer site {
   .site-header { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; height: 4.375rem; padding-inline: var(--il-space-500); background: var(--il-surface); border-bottom: var(--il-border-width) solid var(--il-border); }
   .site-skip { position: absolute; left: var(--il-space-200); top: -100px; padding: var(--il-space-100) var(--il-space-200); background: var(--il-surface-overlay); box-shadow: var(--il-shadow-overlay); border-radius: var(--il-radius-small); }

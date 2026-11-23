@@ -1,4 +1,6 @@
 /* SPDX-License-Identifier: Apache-2.0 */
+/* One layer order for the whole site, stated in every file so load order can never flip it. */
+@layer interlink.tokens, interlink.reset, interlink.fonts, interlink.base, interlink.components, interlink.utilities, site;
 /* Home close: blob mascot, the invitation, a team comment and the striped start band. */
 @layer interlink.components {
   .home-closing { position: relative; display: grid; grid-template-columns: 20rem 1fr; gap: var(--il-space-300) var(--il-space-600); padding: var(--il-space-800) var(--grid) var(--il-space-1000); }

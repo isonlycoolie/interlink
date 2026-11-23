@@ -1,4 +1,5 @@
 /* SPDX-License-Identifier: Apache-2.0 */
+@layer interlink.tokens, interlink.reset, interlink.fonts, interlink.base, interlink.components, interlink.utilities;
 @layer interlink.components {
   .ilk-skeleton { display: block; flex-shrink: 0; border-radius: var(--il-radius-full); background: var(--il-skeleton); }
   .ilk-skeleton[data-tone='strong'] { background: var(--il-background-neutral-bold); opacity: 0.45; }
