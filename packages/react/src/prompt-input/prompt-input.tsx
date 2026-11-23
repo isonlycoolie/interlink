@@ -62,9 +62,11 @@ export function PromptInput({ label, placeholder = 'Ask anything, or type / for 
         {label}
       </label>
       <textarea ref={area} id={id} className="il-prompt-text" rows={1} placeholder={placeholder} value={text} disabled={isDisabled} onChange={(e) => set(e.target.value)} onKeyDown={onKeyDown} />
-      {context ? <div className="il-prompt-context">{context}</div> : null}
       <div className="il-prompt-toolbar">
-        {onAdd ? <IconButton appearance="subtle" spacing="compact" icon={AddIcon} label="Add context" onClick={onAdd} isDisabled={isDisabled} /> : <span />}
+        <div className="il-prompt-start">
+          {onAdd ? <IconButton appearance="subtle" spacing="compact" icon={AddIcon} label="Add context" onClick={onAdd} isDisabled={isDisabled} /> : null}
+          {context ? <div className="il-prompt-context">{context}</div> : null}
+        </div>
         <div className="il-prompt-tools">
           {tools}
           {onVoice ? <IconButton appearance="subtle" spacing="compact" icon={MicrophoneIcon} label="Speak" onClick={onVoice} isDisabled={isDisabled} /> : null}

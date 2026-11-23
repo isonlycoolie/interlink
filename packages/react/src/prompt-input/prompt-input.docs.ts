@@ -19,7 +19,7 @@ export const promptInputDocs = docsFor<PromptInputProps>({
     onSubmit: {"type": "(value) => void", "description": "Enter or the send button. Shift+Enter adds a line."},
     onAdd: {"type": "() => void", "description": "Shows the add button, for attachments and mentions."},
     onVoice: {"type": "() => void", "description": "Shows the microphone button."},
-    context: {"type": "ReactNode", "description": "Chips for attached pages or people."},
+    context: {"type": "ReactNode", "description": "Chips for attached pages or people, shown next to the add button."},
     tools: {"type": "ReactNode", "description": "Controls before send, such as a mode menu."},
     isDisabled: {"type": "boolean", "description": "Prevents typing and sending.", "default": "false"},
     isGenerating: {"type": "boolean", "description": "Disables send while an answer is written.", "default": "false"},

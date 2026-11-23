@@ -25,7 +25,9 @@
     resize: none;
   }
   .il-prompt-text::placeholder { color: var(--il-text-subtlest); }
-  .il-prompt-context { display: flex; flex-wrap: wrap; gap: var(--il-space-050); }
+  /* Add, then the attached context, on the left of the toolbar; tools and send on the right. */
+  .il-prompt-start { display: flex; flex: 1; align-items: center; gap: var(--il-space-075); min-width: 0; }
+  .il-prompt-context { display: flex; flex-wrap: wrap; gap: var(--il-space-050); min-width: 0; }
   .il-prompt-toolbar { display: flex; align-items: center; justify-content: space-between; gap: var(--il-space-100); }
   .il-prompt-tools { display: flex; align-items: center; gap: var(--il-space-050); }
   @media (prefers-reduced-motion: reduce) {
