@@ -73,12 +73,4 @@
     margin-bottom: var(--il-space-100);
     text-align: start;
   }
-  :root {
-    scrollbar-color: var(--il-background-accent-gray-subtle) transparent;
-  }
-  @media (forced-colors: active) {
-    :root {
-      scrollbar-color: auto;
-    }
-  }
 }

@@ -9,7 +9,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const require = createRequire(import.meta.url);
 const read = (f) => fs.readFileSync(path.join(root, f), 'utf8');
 const tokens = fs.readFileSync(require.resolve('@interlink/tokens/tokens.css'), 'utf8');
-const reset = [read('src/reset/base.css'), read('src/reset/content.css')].join('\n');
+const reset = [read('src/reset/base.css'), read('src/reset/content.css'), read('src/reset/scrollbar.css')].join('\n');
 const fonts = read('src/fonts.css');
 const dist = path.join(root, 'dist');
 fs.mkdirSync(dist, { recursive: true });

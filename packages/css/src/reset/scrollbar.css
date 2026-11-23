@@ -1,0 +1,45 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* The one shared scrollbar: a thin rounded thumb on a clear track, the same for the page and every scroll area. */
+@layer interlink.reset {
+  :root {
+    --il-scrollbar-thumb: var(--il-background-accent-gray-subtle);
+    --il-scrollbar-thumb-hovered: var(--il-border-bold);
+    --il-scrollbar-size: calc(var(--il-space-100) + var(--il-space-025));
+  }
+  /* Standard properties (Chrome, Edge, Firefox). scrollbar-width is not inherited, so it is set on every element. */
+  *,
+  :root {
+    scrollbar-width: thin;
+    scrollbar-color: var(--il-scrollbar-thumb) transparent;
+  }
+  *:hover {
+    scrollbar-color: var(--il-scrollbar-thumb-hovered) transparent;
+  }
+  /* Safari and older Chromium read these instead. */
+  ::-webkit-scrollbar {
+    width: var(--il-scrollbar-size);
+    height: var(--il-scrollbar-size);
+  }
+  ::-webkit-scrollbar-track,
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    border: var(--il-border-width-selected) solid transparent;
+    border-radius: var(--il-radius-full);
+    background: var(--il-scrollbar-thumb);
+    background-clip: padding-box;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--il-scrollbar-thumb-hovered);
+    background-clip: padding-box;
+  }
+  /* High contrast keeps the system scrollbar, which follows the user's colours. */
+  @media (forced-colors: active) {
+    *,
+    :root,
+    *:hover {
+      scrollbar-color: auto;
+    }
+  }
+}
