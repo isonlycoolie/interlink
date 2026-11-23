@@ -5,7 +5,7 @@ import FullscreenIcon from '@interlink/icons/core/fullscreen-enter';
 import { Button, LinkButton } from '@interlink/react/button';
 import { SegmentedControl } from '@interlink/react/segmented-control';
 import Link from 'next/link';
-import { useState, type ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import { CodeDrawer, type ScreenFile } from './code-drawer';
 import { Stage, type Viewport } from './stage';
 
@@ -30,6 +30,10 @@ export interface ScreenDocProps {
 export function ScreenDoc({ slug, title, description, files, builtWith, install, usage, children }: ScreenDocProps) {
   const [viewport, setViewport] = useState<Viewport>('desktop');
   const [file, setFile] = useState<number | null>(null);
+  useEffect(() => {
+    if (window.innerWidth < 720) setViewport('mobile');
+    else if (window.innerWidth < 1100) setViewport('tablet');
+  }, []);
   return (
     <div className="screen-doc">
       <div className="screen-doc-main">

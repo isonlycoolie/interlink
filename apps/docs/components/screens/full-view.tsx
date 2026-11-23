@@ -3,9 +3,9 @@
 import AngleBracketsIcon from '@interlink/icons/core/angle-brackets';
 import ArrowLeftIcon from '@interlink/icons/core/arrow-left';
 import CheckMarkIcon from '@interlink/icons/core/check-mark';
-import ChevronDownIcon from '@interlink/icons/core/chevron-down';
 import CopyIcon from '@interlink/icons/core/copy';
 import { Button } from '@interlink/react/button';
+import { DropdownItem, DropdownItemGroup, DropdownMenu } from '@interlink/react/dropdown-menu';
 import { SegmentedControl } from '@interlink/react/segmented-control';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -42,16 +42,20 @@ export function FullView({ slug, title, others, files, install, children }: Full
         <Link href={`/screens/${slug}`} className="screen-full-back il-focusable" aria-label="Back to the screen page">
           <ArrowLeftIcon label="" color="currentColor" size="small" />
         </Link>
-        <label className="screen-full-pick">
-          <span className="il-visually-hidden">Screen</span>
-          <select className="il-focusable" value={slug} onChange={(e) => router.push(`/screens/${e.target.value}/full`)}>
-            {others.map((o) => <option key={o.slug} value={o.slug}>{o.title}</option>)}
-          </select>
-          <span className="screen-full-pick-icon" aria-hidden="true"><ChevronDownIcon label="" color="currentColor" size="small" /></span>
-        </label>
+        <span className="screen-full-pick">
+          <DropdownMenu trigger={title} label="Switch screen" placement="bottom-start">
+            <DropdownItemGroup title="Screens">
+              {others.map((o) => (
+                <DropdownItem key={o.slug} isSelected={o.slug === slug} onClick={() => router.push(`/screens/${o.slug}/full`)}>
+                  {o.title}
+                </DropdownItem>
+              ))}
+            </DropdownItemGroup>
+          </DropdownMenu>
+        </span>
         <span className="screen-full-width">{viewport === 'desktop' ? 'Fits the window' : `${VIEWPORTS[viewport]}px`}</span>
         <SegmentedControl label="Preview width" options={VIEW_OPTIONS} value={viewport} onChange={(v) => setViewport(v as Viewport)} />
-        <Button spacing="compact" iconBefore={AngleBracketsIcon} onClick={() => setFile(0)}>View code</Button>
+        <span className="screen-full-code"><Button spacing="compact" iconBefore={AngleBracketsIcon} onClick={() => setFile(0)}>View code</Button></span>
         <Button spacing="compact" appearance="primary" iconBefore={copied ? CheckMarkIcon : CopyIcon} onClick={copy}>{copied ? 'Copied' : 'Copy install'}</Button>
       </div>
       <div className="screen-full-stage">
