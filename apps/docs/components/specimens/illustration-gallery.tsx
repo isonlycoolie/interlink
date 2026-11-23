@@ -1,10 +1,11 @@
 // SPDX-License-Identifier: Apache-2.0
 'use client';
-import { catalog, pascal, type IllustrationGroup } from '@interlink/illustrations';
+import { catalog, groups, pascal, type IllustrationGroup } from '@interlink/illustrations';
 import { illustrations } from '@interlink/illustrations/all';
 import { useMemo, useState } from 'react';
 
-const GROUPS: (IllustrationGroup | 'All')[] = ['All', 'Empty states', 'Status', 'Onboarding', 'Finance', 'AI and collaboration'];
+const GROUPS: (IllustrationGroup | 'All')[] = ['All', ...groups];
+const count = (g: IllustrationGroup | 'All') => (g === 'All' ? catalog.length : catalog.filter((c) => c.group === g).length);
 /** Palettes to try: the default, and three recolours a product might pass in. */
 const PALETTES = {
   Interlink: undefined,
@@ -30,7 +31,7 @@ export function IllustrationGallery() {
         <div className="spec-token-groups" role="group" aria-label="Group">
           {GROUPS.map((g) => (
             <button key={g} type="button" className="spec-token-group il-focusable" aria-pressed={group === g} onClick={() => setGroup(g)}>
-              {g}
+              {g} <span className="spec-group-count">{count(g)}</span>
             </button>
           ))}
         </div>
