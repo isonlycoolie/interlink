@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96">
+  <circle cx="48" cy="48" r="32" fill="P"/>
+  <circle cx="48" cy="48" r="16" fill="W"/>
+  <path d="M48 16 L58 17.6 L53 33 L48 32 Z" fill="W"/>
+  <path d="M80 48 L78.4 58 L63 53 L64 48 Z" fill="W"/>
+  <path d="M48 80 L38 78.4 L43 63 L48 64 Z" fill="W"/>
+  <path d="M16 48 L17.6 38 L33 43 L32 48 Z" fill="W"/>
+  <polygon points="84,9 85.5,12.5 89,14 85.5,15.5 84,19 82.5,15.5 79,14 82.5,12.5" fill="T"/>
+</svg>
