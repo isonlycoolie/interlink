@@ -18,7 +18,7 @@
   .screen-stage:not([data-viewport='desktop']) .screen-stage-inner { box-shadow: var(--il-shadow-overlay); }
   .screen-stage .scr-frame { height: var(--stage-h, 100%); min-height: 0; }
   .screen-rail { position: sticky; top: calc(4.375rem + var(--il-space-500)); display: flex; flex-direction: column; gap: var(--il-space-300); align-self: start; min-width: 0; }
-  .screen-use { display: flex; flex-direction: column; gap: var(--il-space-400); max-width: 52rem; margin-top: var(--il-space-600); }
+  .screen-use { display: flex; flex-direction: column; gap: var(--il-space-400); margin-top: var(--il-space-600); }
   .screen-use h2 { margin: 0 0 var(--il-space-050); font: var(--il-font-heading-medium); }
   .screen-use p { margin: 0 0 var(--il-space-150); color: var(--il-text-subtle); font: var(--il-font-body); }
   .screen-use .doc-code { margin: 0; }
