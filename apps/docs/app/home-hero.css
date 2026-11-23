@@ -1,9 +1,7 @@
 /* SPDX-License-Identifier: Apache-2.0 */
 /* Home, top half: grid canvas, ruler, wordmark in a selection box, sticky notes and cursors. */
 @layer interlink.components {
-  .home { --grid: 6.25rem; overflow-x: clip; background-color: var(--il-surface); background-image: linear-gradient(var(--il-surface-sunken) var(--il-border-width), transparent var(--il-border-width)), linear-gradient(90deg, var(--il-surface-sunken) var(--il-border-width), transparent var(--il-border-width)); background-size: var(--grid) var(--grid); background-position: -1px 0; }
-  .home-ruler { display: flex; height: var(--il-space-500); border-bottom: var(--il-border-width) solid var(--il-border); background: var(--il-surface); }
-  .home-ruler span { flex: none; width: var(--grid); padding: var(--il-space-150) 0 0; border-left: var(--il-border-width) solid var(--il-border-bold); color: var(--il-text-subtlest); font: var(--il-font-code); font-size: 0.625rem; text-indent: -1em; }
+  .home { overflow-x: clip; }
   .home-mono, .home-clock, .home-status, .home-count, .home-folder-tab, .home-view, .home-file, .home-cta, .home-folder-tags span { font: var(--il-font-code); font-size: 0.875rem; letter-spacing: 0.04em; text-transform: uppercase; }
   .home-hand { margin: 0; color: var(--il-text); font: var(--il-font-heading-small); font-style: italic; font-weight: var(--il-font-weight-regular); }
   .home-intro { position: relative; display: flex; flex-direction: column; align-items: center; min-height: 52rem; padding: var(--il-space-300) var(--il-space-400) var(--il-space-800); }
@@ -42,7 +40,7 @@
     @keyframes home-pop { from { opacity: 0; transform: translateY(-0.4px); } }
   }
   @media (max-width: 48rem) {
-    .home-float, .home-ruler { display: none; }
+    .home-float { display: none; }
     .home-name { grid-template-columns: 1fr; }
     .home-name .home-note-lime, .home-name .home-note-saffron, .home-name .home-hand { grid-column: 1; justify-self: center; transform: none; }
   }

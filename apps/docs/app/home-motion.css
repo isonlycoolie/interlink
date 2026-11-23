@@ -3,7 +3,8 @@
 @layer interlink.components {
   .home-name .home-note { position: relative; z-index: 2; }
   .home-name .home-hand { position: relative; z-index: 2; }
-  .home-you { position: fixed; top: 0; left: 0; z-index: 30; opacity: 0; pointer-events: none; transition: opacity var(--il-duration-short); }
+  /* The tag rides beside the real pointer, offset so it never hides what you point at. */
+  .home-you { position: fixed; top: var(--il-space-150); left: var(--il-space-150); z-index: 30; opacity: 0; pointer-events: none; transition: opacity var(--il-duration-short); }
   .home-you[data-on] { opacity: 1; }
   .home-you[data-tone='blue'] .il-cursor, .home-you[data-tone='magenta'] .il-cursor { --cur-bg: var(--il-assist-icon-saffron); --cur-fg: var(--il-assist-text-on-saffron); }
   .home-you[data-tone='ink'] .il-cursor { --cur-bg: var(--il-assist-icon-blue); --cur-fg: var(--il-assist-text-on-blue); }
@@ -30,7 +31,6 @@
   .home-polaroid { transition: transform var(--il-duration-medium) var(--il-easing-out-practical); }
   .home-polaroid:hover { transform: rotate(0) scale(1.05); }
   .home-band-cta:hover { transform: rotate(-2deg) scale(1.03); }
-  @media (pointer: fine) { .home, .home a, .home button { cursor: none; } }
   @media (prefers-reduced-motion: no-preference) {
     .home-name .home-note-lime { animation: home-drop 700ms var(--il-easing-out-practical) 300ms backwards; }
     .home-name .home-note-saffron { animation: home-drop 700ms var(--il-easing-out-practical) 450ms backwards; }
@@ -45,5 +45,5 @@
     @keyframes home-rise { from { opacity: 0; translate: 0 var(--il-space-500); } }
     @keyframes home-drift { to { translate: var(--il-space-100) calc(-1 * var(--il-space-150)); } }
   }
-  @media (prefers-reduced-motion: reduce) { .home-you { display: none; } .home, .home a, .home button { cursor: auto; } }
+  @media (prefers-reduced-motion: reduce) { .home-you { display: none; } }
 }
