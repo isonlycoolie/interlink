@@ -17,8 +17,6 @@ export function Guidance() {
       <p className="home-sell-lead">Every Do and Don’t is live code with a stable id, so a person, a linter and an agent all read the same rule.</p>
       <div className="home-rule">
         <div className="home-rule-text">
-          <code>{rule.id}</code>
-          <span className="home-rule-severity">{rule.severity}</span>
           <h3>{rule.rule}</h3>
           <p>{rule.why}</p>
           <Link href="/components/button/usage" className="home-view">See every button rule</Link>

@@ -14,7 +14,7 @@
   .home-bento li[data-span='3'] { grid-column: span 3; }
   .home-bento li[data-c='ink'] { --bg: var(--il-assist-background-brand-bold); --fg: var(--il-assist-text-on-ink); }
   .home-bento li[data-c='saffron'] { --bg: var(--il-assist-icon-saffron); --fg: var(--il-assist-text-on-saffron); }
-  .home-bento li[data-c='lime'] { --bg: var(--il-assist-icon-lime); --fg: var(--il-assist-text-on-lime); }
+  .home-bento li[data-c='teal'] { --bg: var(--il-background-accent-teal-bolder); --fg: var(--il-text-inverse); }
   .home-bento li[data-c='purple'] { --bg: var(--il-assist-icon-purple); --fg: var(--il-assist-text-on-purple); }
   .home-bento-tile { position: relative; display: flex; flex-direction: column; gap: var(--il-space-100); height: 100%; min-height: 14rem; padding: var(--il-space-300); border-radius: var(--il-radius-xlarge); background: var(--bg); color: var(--fg); text-decoration: none; transition: transform var(--il-duration-medium) var(--il-easing-out-practical); }
   .home-bento-tile:hover { color: var(--fg); transform: translateY(calc(-1 * var(--il-space-050))); }
@@ -28,7 +28,6 @@
   .home-rule-text { display: flex; flex-direction: column; align-items: flex-start; gap: var(--il-space-150); padding: var(--il-space-300); border-radius: var(--il-radius-xlarge); background: var(--il-assist-background-brand-bold); color: var(--il-assist-text-on-ink); }
   .home-rule-text h3 { margin: 0; color: inherit; font: var(--il-font-heading-large); }
   .home-rule-text p { margin: 0; font: var(--il-font-body); opacity: 0.85; }
-  .home-rule-severity { padding: 0 var(--il-space-100); border-radius: var(--il-radius-small); background: var(--il-assist-icon-saffron); color: var(--il-assist-text-on-saffron); font: var(--il-font-body-small); font-weight: var(--il-font-weight-semibold); }
   .home-view { display: inline-flex; align-items: center; gap: var(--il-space-050); padding-bottom: var(--il-space-050); color: inherit; text-decoration: none; }
   .home-view:hover { color: inherit; }
   .home-rule-text .home-view { color: inherit; margin-top: auto; }
