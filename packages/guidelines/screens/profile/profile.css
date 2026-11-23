@@ -47,6 +47,5 @@
     .scr-profile-main { padding: var(--il-space-300) 0; }
     .scr-profile .scr-rail { padding: var(--il-space-300) 0; border-inline-start: 0; border-top: var(--il-border-width) solid var(--il-border); }
     .scr-tree { margin-inline-start: 0; }
-    .scr-tree-name { left: auto; right: calc(100% + var(--il-space-150)); text-align: end; }
   }
 }
