@@ -30,4 +30,13 @@
     .scr-apps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .scr-banner-art { display: none; }
   }
+  /* Phones (by the app frame's width): one column, rows wrap, nothing overlaps. */
+  @container (max-width: 40rem) {
+    .scr-banner { flex-direction: column; height: auto; padding-bottom: var(--il-space-200); }
+    .scr-banner-art { display: none; }
+    .scr-banner-chip { position: static; margin: 0 var(--il-space-200); align-self: flex-start; }
+    .scr-apps { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+    .scr-section-head { flex-wrap: wrap; }
+    .scr-section-head .il-segmented { max-width: 100%; overflow-x: auto; }
+  }
 }
