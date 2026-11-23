@@ -2,6 +2,7 @@
 'use client';
 import { catalog, groups, pascal, type IllustrationGroup } from '@interlink/illustrations';
 import { illustrations } from '@interlink/illustrations/all';
+import { DropdownItemRadio, DropdownItemRadioGroup, DropdownMenu } from '@interlink/react/dropdown-menu';
 import { useMemo, useState } from 'react';
 
 const GROUPS: (IllustrationGroup | 'All')[] = ['All', ...groups];
@@ -28,20 +29,24 @@ export function IllustrationGallery() {
     <div className="spec-illos">
       <div className="spec-token-tools">
         <input type="search" className="spec-token-search" placeholder="Search illustrations" aria-label="Search illustrations" value={query} onChange={(e) => setQuery(e.target.value)} />
-        <div className="spec-token-groups" role="group" aria-label="Group">
-          {GROUPS.map((g) => (
-            <button key={g} type="button" className="spec-token-group il-focusable" aria-pressed={group === g} onClick={() => setGroup(g)}>
-              {g} <span className="spec-group-count">{count(g)}</span>
-            </button>
-          ))}
-        </div>
-        <div className="spec-token-groups" role="group" aria-label="Palette">
-          {(Object.keys(PALETTES) as (keyof typeof PALETTES)[]).map((p) => (
-            <button key={p} type="button" className="spec-token-group il-focusable" aria-pressed={palette === p} onClick={() => setPalette(p)}>
-              {p}
-            </button>
-          ))}
-        </div>
+        <DropdownMenu trigger={`${group} (${count(group)})`} label="Group" placement="bottom-end">
+          <DropdownItemRadioGroup id="illustration-group" title="Group">
+            {GROUPS.map((g) => (
+              <DropdownItemRadio key={g} id={`group-${g}`} isSelected={group === g} onClick={() => setGroup(g)}>
+                {`${g} (${count(g)})`}
+              </DropdownItemRadio>
+            ))}
+          </DropdownItemRadioGroup>
+        </DropdownMenu>
+        <DropdownMenu trigger={`Palette: ${palette}`} label="Palette" placement="bottom-end">
+          <DropdownItemRadioGroup id="illustration-palette" title="Palette">
+            {(Object.keys(PALETTES) as (keyof typeof PALETTES)[]).map((p) => (
+              <DropdownItemRadio key={p} id={`palette-${p}`} isSelected={palette === p} onClick={() => setPalette(p)}>
+                {p}
+              </DropdownItemRadio>
+            ))}
+          </DropdownItemRadioGroup>
+        </DropdownMenu>
         <p className="spec-token-count" aria-live="polite">{`${list.length} illustrations`}</p>
       </div>
       {picked ? <pre className="spec-icon-import"><code>{`import ${pascal(picked)} from '@interlink/illustrations/art/${picked}';`}</code></pre> : null}
