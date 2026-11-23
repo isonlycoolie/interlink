@@ -19,9 +19,9 @@ export function AvatarGroup({ data, appearance = 'stack', size = 'medium', maxCo
   const hidden = data.slice(shown.length);
   return (
     <ul className="il-avatar-group" data-appearance={appearance} aria-label={label} data-testid={testId}>
-      {shown.map((d, i) => (
-        <li key={d.key ?? `${d.name}-${i}`}>
-          <Avatar {...d} size={size} borderColor="var(--il-surface)" />
+      {shown.map(({ key, ...person }, i) => (
+        <li key={key ?? `${person.name}-${i}`}>
+          <Avatar {...person} size={size} borderColor="var(--il-surface)" />
         </li>
       ))}
       {hidden.length ? (
