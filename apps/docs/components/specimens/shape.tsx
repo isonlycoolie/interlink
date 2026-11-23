@@ -29,12 +29,12 @@ export function RadiusScale() {
   );
 }
 
-/** Border widths and the colors they pair with. */
+/** Each border pairing as a card: a preview, then its width and colour tokens and what it is for. */
 export function BorderSpecimen() {
   const rows = [
     { width: 'border.width', color: 'color.border', label: 'Default', use: 'Inputs, dividers and outlined containers.' },
-    { width: 'border.width.selected', color: 'color.border.selected', label: 'Selected', use: 'The chosen item in a group, with a selected background.' },
-    { width: 'border.width.focused', color: 'color.border.focused', label: 'Focused', use: 'Keyboard focus ring, drawn outside the element.' },
+    { width: 'border.width.selected', color: 'color.border.selected', label: 'Selected', use: 'The chosen item in a group, always with a selected background.' },
+    { width: 'border.width.focused', color: 'color.border.focused', label: 'Focused', use: 'The keyboard focus ring, drawn outside the element.' },
   ];
   return (
     <div className="spec-borders">
@@ -42,13 +42,23 @@ export function BorderSpecimen() {
         const w = allTokens.find((t) => t.name === r.width)!;
         const c = allTokens.find((t) => t.name === r.color)!;
         return (
-          <div key={r.label} className="spec-border-item">
-            <span className="spec-border-box" data-kind={r.label} style={{ borderWidth: `var(${w.cssVar})`, borderColor: `var(${c.cssVar})` }}>
-              {r.label}
-            </span>
-            <p><code>{r.width}</code> {remToPx(valueOf(r.width))} + <code>{r.color}</code></p>
-            <p className="spec-radius-use">{r.use}</p>
-          </div>
+          <section key={r.label} className="spec-border-card" aria-label={`${r.label} border`}>
+            <div className="spec-border-stage">
+              <span className="spec-border-box" data-kind={r.label} style={{ borderWidth: `var(${w.cssVar})`, borderColor: `var(${c.cssVar})` }}>
+                {r.label}
+              </span>
+            </div>
+            <div className="spec-border-body">
+              <h3>{r.label}</h3>
+              <dl>
+                <dt>Width</dt>
+                <dd><code>{r.width}</code><span>{remToPx(valueOf(r.width))}</span></dd>
+                <dt>Colour</dt>
+                <dd><code>{r.color}</code><span className="spec-border-swatch" style={{ background: `var(${c.cssVar})` }} aria-hidden="true" /></dd>
+              </dl>
+              <p>{r.use}</p>
+            </div>
+          </section>
         );
       })}
     </div>

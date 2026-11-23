@@ -17,6 +17,7 @@ import '@interlink/guidelines/screens/admin/admin.css';
 import './shell.css';
 import './content.css';
 import './specimens.css';
+import './spec-border.css';
 import './screens.css';
 import './home-hero.css';
 import './home-sections.css';

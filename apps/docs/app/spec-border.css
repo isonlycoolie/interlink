@@ -1,0 +1,22 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* One layer order for the whole site, stated in every file so load order can never flip it. */
+@layer interlink.tokens, interlink.reset, interlink.fonts, interlink.base, interlink.components, interlink.utilities, site;
+/* The border foundations specimen: one card per pairing, with a preview and the two tokens it is made of. */
+@layer site {
+  .spec-borders { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr)); gap: var(--il-space-200); margin-top: var(--il-space-300); }
+  .spec-border-card { display: flex; flex-direction: column; overflow: hidden; border: var(--il-border-width) solid var(--il-border); border-radius: var(--il-radius-large); background: var(--il-surface); }
+  .spec-border-stage { display: grid; place-items: center; padding: var(--il-space-400) var(--il-space-300); background: var(--il-surface-sunken); }
+  .spec-border-box { display: flex; align-items: center; justify-content: center; width: 100%; max-width: 10rem; height: var(--il-space-600); border-style: solid; border-radius: var(--il-radius-medium); background: var(--il-surface); color: var(--il-text); font: var(--il-font-body); font-weight: var(--il-font-weight-medium); }
+  .spec-border-box[data-kind='Selected'] { background: var(--il-background-selected); color: var(--il-text-selected); }
+  .spec-border-box[data-kind='Focused'] { border-color: var(--il-border) !important; border-width: var(--il-border-width) !important; outline: var(--il-border-width-focused) solid var(--il-border-focused); outline-offset: var(--il-border-width-focused); }
+  .spec-border-body { display: flex; flex-direction: column; gap: var(--il-space-150); padding: var(--il-space-200) var(--il-space-250) var(--il-space-250); }
+  .spec-border-body h3 { margin: 0; font: var(--il-font-heading-small); }
+  .spec-border-body dl { display: flex; flex-direction: column; margin: 0; padding: 0; font: var(--il-font-body-small); }
+  .spec-border-body dt { margin: var(--il-space-100) 0 var(--il-space-025); padding: 0; color: var(--il-text-subtle); }
+  .spec-border-body dt:first-child { margin-top: 0; }
+  .spec-border-body dd { display: flex; align-items: center; justify-content: space-between; gap: var(--il-space-100); min-width: 0; margin: 0; padding: 0; }
+  .spec-border-body dd code { min-width: 0; overflow-wrap: anywhere; }
+  .spec-border-body dd span:not(.spec-border-swatch) { color: var(--il-text-subtle); font-variant-numeric: tabular-nums; }
+  .spec-border-swatch { flex: none; width: var(--il-space-200); height: var(--il-space-200); border: var(--il-border-width) solid var(--il-border); border-radius: var(--il-radius-xsmall); }
+  .spec-border-body p { margin: 0; padding-top: var(--il-space-150); border-top: var(--il-border-width) solid var(--il-border); color: var(--il-text-subtle); font: var(--il-font-body-small); }
+}
