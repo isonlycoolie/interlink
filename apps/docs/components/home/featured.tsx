@@ -6,11 +6,11 @@ import type { CSSProperties } from 'react';
 import { ScreenPreview } from '@/components/shell/screen-preview';
 import { PixelWord } from './pixel';
 
-const PICKS: [string, 'blue' | 'ink' | 'saffron' | 'magenta', string, string[]][] = [
-  ['board', 'blue', 'Nov 23, 2026', ['Assist', 'Tracker']],
-  ['admin', 'ink', 'Nov 23, 2026', ['Governance', 'Enterprise']],
-  ['goals', 'saffron', 'Nov 22, 2026', ['Strategy', 'Tables']],
-  ['profile', 'magenta', 'Nov 22, 2026', ['People', 'Teams']],
+const PICKS: [string, 'blue' | 'ink' | 'saffron' | 'magenta', string][] = [
+  ['board', 'blue', 'Nov 23, 2026'],
+  ['admin', 'ink', 'Nov 23, 2026'],
+  ['goals', 'saffron', 'Nov 22, 2026'],
+  ['profile', 'magenta', 'Nov 22, 2026'],
 ];
 
 /** Featured screens as folder cards that stack as you scroll, each with a live preview of the real screen. */
@@ -21,7 +21,7 @@ export function Featured() {
       <h2 id="home-featured-title" className="home-featured-title"><PixelWord text="Featured" /><PixelWord text="screens" /></h2>
       <p className="home-note home-note-saffron home-note-center">Real products built only from Interlink, live in your browser.</p>
       <ol className="home-stack">
-        {PICKS.map(([slug, color, date, tags], i) => {
+        {PICKS.map(([slug, color, date], i) => {
           const s = screens.find((x) => x.slug === slug);
           if (!s) return null;
           const Component = s.Component;
@@ -34,9 +34,8 @@ export function Featured() {
                   <h3>{s.title}</h3>
                   <p>{s.description}</p>
                   <Link href={`/screens/${slug}`} className="home-view">View screen <ArrowUpRightIcon label="" color="currentColor" size="small" /></Link>
-                  <span className="home-folder-tags">{tags.map((t) => <span key={t}>{t}</span>)}</span>
                 </div>
-                <div className="home-folder-shot"><ScreenPreview><Component /></ScreenPreview><span className="home-file">{slug}.tsx</span></div>
+                <div className="home-folder-shot"><ScreenPreview><Component /></ScreenPreview></div>
               </div>
             </li>
           );

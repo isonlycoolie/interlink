@@ -38,10 +38,7 @@
   .home-folder-text > p:not(.home-mono) { max-width: 22rem; margin: 0; font: var(--il-font-body-large); }
   .home-view { align-self: flex-start; padding-bottom: var(--il-space-050); border-bottom: var(--il-border-width-selected) solid currentColor; color: inherit; text-decoration: none; }
   .home-view:hover { color: inherit; }
-  .home-folder-tags { display: flex; gap: var(--il-space-100); margin-top: auto; }
-  .home-folder-tags span { padding: var(--il-space-050) var(--il-space-100); background: var(--fg); color: var(--bg); font-size: 0.75rem; }
   .home-folder-shot { position: relative; outline: var(--il-border-width-selected) solid var(--fg); }
   .home-folder-shot .site-screen-preview { border: 0; }
-  .home-file { position: absolute; top: var(--il-space-200); right: var(--il-space-200); padding: var(--il-space-075) var(--il-space-150); background: var(--il-assist-background-brand-bold); color: var(--il-assist-text-on-ink); text-transform: none; }
   @media (max-width: 64rem) { .home-folder-body { grid-template-columns: 1fr; } .home-folder-shot { min-height: 18rem; } .home-folder-tab { margin-left: 0; } }
 }

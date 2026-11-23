@@ -3,7 +3,7 @@
 @layer interlink.components {
   .home { overflow-x: clip; }
   /* Small labels are handwritten notes on the canvas. */
-  .home-mono, .home-clock, .home-status, .home-count, .home-folder-tab, .home-view, .home-file, .home-cta, .home-folder-tags span { font: normal 500 1.25rem/1.25 var(--il-font-family-hand); letter-spacing: 0; text-transform: none; }
+  .home-mono, .home-clock, .home-status, .home-count, .home-folder-tab, .home-view, .home-cta { font: normal 500 1.25rem/1.25 var(--il-font-family-hand); letter-spacing: 0; text-transform: none; }
   .home-hand { margin: 0; color: var(--il-text); font: normal 600 1.75rem/1.1 var(--il-font-family-hand); }
   .home-intro { position: relative; display: flex; flex-direction: column; align-items: center; min-height: 52rem; padding: var(--il-space-300) var(--il-space-400) var(--il-space-800); }
   .home-clock { margin: 0 0 var(--il-space-1000); text-transform: none; }
