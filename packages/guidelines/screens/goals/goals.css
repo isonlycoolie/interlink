@@ -1,0 +1,15 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* The goal directory: name cell with its status-coloured goal mark. */
+@layer interlink.components {
+  .scr-goals { max-width: 68rem; padding-top: var(--il-space-500); }
+  .scr-goals .il-textfield { min-height: var(--il-space-600); }
+  .scr-goal-name { display: flex; align-items: center; gap: var(--il-space-100); min-width: 0; }
+  .scr-goal-name a { overflow: hidden; color: var(--il-text); font: var(--il-font-body); text-decoration: none; text-overflow: ellipsis; white-space: nowrap; }
+  .scr-goal-name a:hover { text-decoration: underline; }
+  .scr-goal-indent { flex: none; width: var(--il-space-300); }
+  .scr-goal-icon { display: inline-flex; flex: none; color: var(--il-icon-success); }
+  .scr-goal-icon[data-status='at-risk'] { color: var(--il-icon-warning); }
+  .scr-goal-icon[data-status='off-track'] { color: var(--il-icon-danger); }
+  .scr-goal-icon[data-status='pending'] { color: var(--il-icon-subtle); }
+  .scr-goal-icon[data-status='completed'] { color: var(--il-icon-information); }
+}
