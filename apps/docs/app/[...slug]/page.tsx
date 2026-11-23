@@ -31,8 +31,9 @@ function tabsFor(slug: string[]) {
     .map((t) => ({ url: t.page!.url, label: t.label }));
 }
 
-/** Where the page sits: the section, and for components their category. */
+/** Where the page sits: the section, and for components their category. Top-level pages need none. */
 function eyebrowFor(slug: string[]) {
+  if (slug.length < 2) return undefined;
   const raw = (slug[0] ?? '').replace(/-/g, ' ');
   const section = raw.charAt(0).toUpperCase() + raw.slice(1);
   const category = slug[0] === 'components' && slug[1] ? componentDocs[slug[1]]?.category : undefined;
