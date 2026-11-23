@@ -11,8 +11,6 @@
   /* The screen page: centre column with the preview, right rail with install and parts. */
   .screen-doc { display: grid; grid-template-columns: minmax(0, 1fr) 14rem; gap: var(--il-space-400); padding: var(--il-space-500) var(--il-space-500) var(--il-space-800); }
   .screen-doc-main { min-width: 0; }
-  .screen-doc-head h1 { margin: 0; font: var(--il-font-heading-xlarge); }
-  .screen-doc-head p { max-width: 44rem; margin: var(--il-space-100) 0 var(--il-space-300); color: var(--il-text-subtle); font: var(--il-font-body-large); }
   .screen-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--il-space-150); margin-bottom: var(--il-space-150); }
   .screen-toolbar-end { display: flex; gap: var(--il-space-100); }
   .screen-stage { position: relative; height: min(46rem, 72vh); overflow: hidden; border: var(--il-border-width) solid var(--il-border); border-radius: var(--il-radius-large); background: var(--il-surface-sunken); }

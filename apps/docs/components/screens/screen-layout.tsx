@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
 import { screens, type ScreenInfo } from '@interlink/guidelines/screens';
 import { CodeBlock } from '@/components/mdx/code-block';
+import { PageHead } from '@/components/shell/page-parts';
 import { SideNav } from '@/components/shell/side-nav';
 import { FullView } from './full-view';
 import { ScreenDoc } from './screen-doc';
@@ -17,10 +18,10 @@ export async function ScreenLayout({ screen }: { screen: ScreenInfo }) {
     <div className="site-body">
       <SideNav tree={screensTree()} status={{}} />
       <main id="main" className="site-main">
+        <PageHead title={screen.title} description={screen.description} />
         <ScreenDoc
           slug={screen.slug}
           title={screen.title}
-          description={screen.description}
           files={sources.map((s) => ({ name: s.name, code: <CodeBlock code={s.code} lang={lang(s.name)} /> }))}
           builtWith={builtWith(sources)}
           install={<CodeBlock code={install} lang="bash" />}

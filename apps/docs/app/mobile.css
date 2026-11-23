@@ -24,7 +24,6 @@
     .site-page-body, .site-tabs { padding-inline: var(--il-space-200); }
     .site-tabs { overflow-x: auto; }
     .screen-doc { padding: var(--il-space-200) var(--il-space-200) var(--il-space-600); }
-    .screen-doc-head h1 { font-size: 1.5rem; }
     .screen-toolbar { flex-direction: column; align-items: stretch; }
     .screen-toolbar-end { justify-content: space-between; }
     .screen-stage { height: min(40rem, 75vh); }

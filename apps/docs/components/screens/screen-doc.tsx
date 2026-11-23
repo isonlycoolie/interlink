@@ -18,7 +18,6 @@ export const VIEW_OPTIONS = [
 export interface ScreenDocProps {
   slug: string;
   title: string;
-  description: string;
   files: ScreenFile[];
   builtWith: string[];
   install: ReactNode;
@@ -27,7 +26,7 @@ export interface ScreenDocProps {
 }
 
 /** A screen as a docs page: a live, scaled preview with device widths in the middle, and how to use it on the right. */
-export function ScreenDoc({ slug, title, description, files, builtWith, install, usage, children }: ScreenDocProps) {
+export function ScreenDoc({ slug, title, files, builtWith, install, usage, children }: ScreenDocProps) {
   const [viewport, setViewport] = useState<Viewport>('desktop');
   const [file, setFile] = useState<number | null>(null);
   useEffect(() => {
@@ -37,14 +36,6 @@ export function ScreenDoc({ slug, title, description, files, builtWith, install,
   return (
     <div className="screen-doc">
       <div className="screen-doc-main">
-        <header className="screen-doc-head">
-          <p className="canvas-eyebrow">Screens · {slug}.tsx</p>
-          <h1 className="canvas-title">
-            {title}
-            <i aria-hidden="true" /><i aria-hidden="true" /><i aria-hidden="true" /><i aria-hidden="true" />
-          </h1>
-          <p>{description}</p>
-        </header>
         <div className="screen-toolbar">
           <SegmentedControl label="Preview width" options={VIEW_OPTIONS} value={viewport} onChange={(v) => setViewport(v as Viewport)} />
           <span className="screen-toolbar-end">
