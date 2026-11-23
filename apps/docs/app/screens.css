@@ -43,7 +43,7 @@
   .screen-full-back:hover { background: var(--il-background-neutral-subtle-hovered); color: var(--il-text); }
   .screen-full-pick { display: inline-flex; }
   .screen-full-pick .il-button { font-weight: var(--il-font-weight-semibold); }
-  .screen-full-width { margin-inline-start: auto; color: var(--il-text-subtle); font: normal 500 1.25rem/1.25 var(--il-font-family-hand); }
+  .screen-full-width { margin-inline-start: auto; color: var(--il-text-subtle); font: var(--il-font-body-small); font-variant-numeric: tabular-nums; }
   .screen-full-stage { display: flex; justify-content: center; padding: var(--il-space-300) var(--gutter) var(--gutter); }
   .screen-full-canvas { height: calc(100dvh - var(--scr-offset)); overflow: auto; border: var(--il-border-width) solid var(--il-border); border-radius: var(--il-radius-large); background: var(--il-surface); box-shadow: var(--il-shadow-raised); }
   .screen-full-canvas .scr-frame { height: 100%; min-height: 0; }

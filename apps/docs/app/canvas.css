@@ -1,7 +1,7 @@
 /* SPDX-License-Identifier: Apache-2.0 */
 /* One layer order for the whole site, stated in every file so load order can never flip it. */
 @layer interlink.tokens, interlink.reset, interlink.fonts, interlink.base, interlink.components, interlink.utilities, site;
-/* The site's one look, set by the home page and carried to every page: a design canvas with a faint grid, handwritten labels and ink actions. */
+/* The site's one look, set by the home page and carried to every page: a design canvas with a faint grid and ink actions. Handwriting stays on the home page. */
 @layer site {
   :root { --grid: 6.25rem; --canvas-line: var(--il-surface-sunken); }
   .home, .site-body {
@@ -11,10 +11,7 @@
     background-position: -1px 0;
   }
 
-  /* Labels are handwritten, like notes on a canvas. Header links keep the body font. */
-  .site-nav-group, .site-toc-title { font: normal 500 1.25rem/1.25 var(--il-font-family-hand); letter-spacing: 0; text-transform: none; }
   .site-nav { background: var(--il-surface); }
-  .site-nav-group { padding-top: var(--il-space-300); color: var(--il-text-subtle); font-size: 1.125rem; }
   .site-toc { background: var(--il-surface); }
 
 

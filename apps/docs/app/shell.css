@@ -20,7 +20,7 @@
   .site-nav { position: sticky; top: 4.375rem; align-self: start; height: calc(100vh - 4.375rem); overflow-y: auto; padding: var(--il-space-200) var(--il-space-150) var(--il-space-400); border-right: var(--il-border-width) solid var(--il-border); }
   .site-nav-list { list-style: none; margin: 0; padding: 0; }
   .site-nav-list li + li { margin-top: 0; }
-  .site-nav-group { padding: var(--il-space-200) var(--il-space-075) var(--il-space-050); color: var(--il-text-subtlest); font: var(--il-font-body-small); font-weight: var(--il-font-weight-semibold); }
+  .site-nav-group { margin-inline-start: calc(var(--depth, 0) * var(--il-space-150) + 1.5rem); padding: var(--il-space-250) var(--il-space-075) var(--il-space-075); color: var(--il-text-subtlest); font: var(--il-font-body-small); font-weight: var(--il-font-weight-semibold); }
   .site-nav-row { display: flex; align-items: center; }
   .site-nav-toggle { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 1.5rem; height: 1.5rem; margin-inline-start: calc(var(--depth) * var(--il-space-150)); border: 0; background: none; color: var(--il-icon-subtle); border-radius: var(--il-radius-small); cursor: pointer; }
   .site-nav-toggle[aria-expanded='true'] .il-icon { transform: rotate(90deg); }

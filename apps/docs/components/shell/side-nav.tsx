@@ -27,7 +27,7 @@ const contains = (node: NavNode, path: string): boolean =>
   matches(node.url, path) || matches(node.index?.url, path) || (node.children ?? []).some((c) => contains(c, path));
 
 function Item({ node, path, status, depth }: { node: NavNode; path: string; status: Record<string, string>; depth: number }) {
-  if (node.type === 'separator') return <li className="site-nav-group">{node.name}</li>;
+  if (node.type === 'separator') return <li className="site-nav-group" style={{ ['--depth' as string]: depth }}>{node.name}</li>;
   const only = node.type === 'folder' ? lone(node) : undefined;
   if (only) return <Item node={{ type: 'page', name: node.name, url: only }} path={path} status={status} depth={depth} />;
   const url = node.type === 'folder' ? node.index?.url : node.url;
