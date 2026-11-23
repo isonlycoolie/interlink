@@ -52,10 +52,12 @@ export function ScreenDoc({ slug, title, description, files, builtWith, install,
         <div className="screen-use">
           <section>
             <h2>Install</h2>
+            <p>Add the packages the screen is built from.</p>
             {install}
           </section>
           <section>
             <h2>Use it</h2>
+            <p>Import the styles once, then render the screen in any page.</p>
             {usage}
           </section>
         </div>
