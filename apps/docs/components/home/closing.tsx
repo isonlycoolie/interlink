@@ -1,10 +1,9 @@
 // SPDX-License-Identifier: Apache-2.0
 import ChevronRightIcon from '@interlink/icons/core/chevron-right';
-import { Avatar } from '@interlink/react/avatar';
 import Link from 'next/link';
 import { PixelWord } from './pixel';
 
-/** The close: a big invitation, a comment from the team, and a striped band that leads into the docs. */
+/** The close: a big invitation, a striped band that leads into the docs, and the maker's signature. */
 export function Closing() {
   return (
     <section className="home-closing" aria-labelledby="home-build">
@@ -16,10 +15,6 @@ export function Closing() {
         <h2 id="home-build"><PixelWord text="Let's build" /></h2>
         <p>Tokens, components, guidelines and screens, all open. Start with one button or a whole product.</p>
       </div>
-      <figure className="home-comment">
-        <figcaption>Comment</figcaption>
-        <div><Avatar name="Interlink team" size="small" /><span><strong>Interlink team</strong>Open to contributions, new patterns and hard enterprise problems.</span></div>
-      </figure>
       <div className="home-band">
         <svg viewBox="0 0 1240 520" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 H 420 L 140 520 H 0 Z M 640 0 H 980 L 700 520 H 360 Z M 1180 0 H 1240 V 520 H 900 Z" /></svg>
         <Link href="/get-started" className="home-band-cta">
@@ -28,6 +23,13 @@ export function Closing() {
           <span aria-hidden="true"><ChevronRightIcon label="" color="currentColor" /></span>
         </Link>
       </div>
+      <footer className="home-sign">
+        <p>Made by isonlycoolie</p>
+        <svg className="home-signature" viewBox="0 0 260 70" role="img" aria-label="Signature of isonlycoolie">
+          <path d="M8 46 C 18 20, 30 14, 30 30 S 20 58, 34 54 C 46 50, 52 30, 62 34 C 70 38, 58 54, 70 52 C 82 50, 86 30, 98 34 C 108 38, 96 56, 110 52 C 124 48, 126 28, 140 32 C 152 36, 142 54, 156 50 C 172 46, 178 26, 192 30 C 204 34, 196 52, 210 48 C 226 44, 236 30, 252 24" />
+          <path d="M40 62 C 100 56, 170 58, 236 52" />
+        </svg>
+      </footer>
     </section>
   );
 }

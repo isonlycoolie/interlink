@@ -6,15 +6,14 @@
   .home-blob rect { fill: var(--il-assist-text-on-lime); }
   .home-build h2 { width: min(34rem, 100%); margin: 0 0 var(--il-space-300); }
   .home-build p { max-width: 28rem; margin: 0; font: var(--il-font-body-large); }
-  .home-comment { position: relative; z-index: 1; width: 18rem; margin: 0 0 calc(-1 * var(--il-space-1000)) var(--il-space-500); padding: var(--il-space-200); border-radius: var(--il-radius-large); background: var(--il-surface-overlay); box-shadow: var(--il-shadow-overlay); }
-  .home-comment figcaption { margin-bottom: var(--il-space-150); color: var(--il-text-subtle); font: var(--il-font-body-small); }
-  .home-comment div { display: flex; gap: var(--il-space-100); font: var(--il-font-body-small); }
-  .home-comment strong { display: block; }
+  .home-sign { display: flex; flex-direction: column; grid-column: 1 / -1; align-items: center; gap: var(--il-space-050); padding-top: var(--il-space-600); }
+  .home-sign p { margin: 0; color: var(--il-text-subtle); font: normal 600 1.75rem/1.2 var(--il-font-family-hand); }
+  .home-signature { width: 15rem; fill: none; stroke: var(--il-text); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2.5; }
   .home-band { position: relative; display: grid; grid-column: 1 / -1; place-items: center; height: 32rem; overflow: hidden; border-radius: 2.5rem; background: var(--il-assist-icon-saffron); }
   .home-band > svg { position: absolute; inset: 0; width: 100%; height: 100%; fill: var(--il-background-accent-orange-bolder); }
   .home-band-cta { position: relative; display: flex; align-items: center; gap: var(--il-space-200); padding: var(--il-space-150) var(--il-space-200); border: var(--il-space-050) solid var(--il-assist-background-brand-bold); background: var(--il-assist-icon-blue); color: var(--il-assist-text-on-blue); text-decoration: none; }
   .home-band-cta .home-pixel { flex: none; width: 14rem; fill: var(--il-assist-text-on-blue); }
   .home-band-cta > span { display: inline-grid; place-items: center; width: var(--il-space-500); height: var(--il-space-500); background: var(--il-background-accent-magenta-bolder); color: var(--il-assist-text-on-purple); }
   .home-band-cta:hover { color: var(--il-assist-text-on-blue); transform: rotate(-1deg); }
-  @media (max-width: 48rem) { .home-closing { grid-template-columns: 1fr; } .home-comment { margin: 0; } .home-band { height: 20rem; } }
+  @media (max-width: 48rem) { .home-closing { grid-template-columns: 1fr; } .home-band { height: 20rem; } }
 }
