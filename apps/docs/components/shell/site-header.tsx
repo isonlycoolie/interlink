@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
 import SearchIcon from '@interlink/icons/core/search';
 import Link from 'next/link';
+import { HeaderLinks } from './header-links';
 import { Logo } from './logo';
 import { SearchDialog } from './search-dialog';
 import { ThemeMenu } from './theme-menu';
@@ -16,12 +17,7 @@ export function SiteHeader() {
         <Logo />
       </Link>
       <nav className="site-header-nav" aria-label="Primary">
-        <Link href="/get-started" className="site-header-link il-focusable" data-active="">
-          Design system
-        </Link>
-        <Link href="/screens" className="site-header-link il-focusable">
-          Screens
-        </Link>
+        <HeaderLinks />
         <button type="button" className="site-header-link site-search-button il-focusable" aria-keyshortcuts="Control+K Meta+K" data-search-trigger="">
           <SearchIcon label="" />
           Search
